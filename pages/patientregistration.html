@@ -1,0 +1,120 @@
+<div class="top_bar">
+  <div><h2>Create Account</h2></div>
+</div>
+
+<md-content class="page_format">
+  <div class="search_tab md-whiteframe-2dp">
+  	<div layout="row" layout-align="space-between top">
+  	  <div layout="column" flex=50>
+  	  	<ul>
+  	  		<li>
+  	  			<md-input-container class="md-block reg_textbox" flex-gt-sm>
+  	  			  <label>First name</label>
+  	  			  <input ng-model="First_name">
+  	  			</md-input-container>
+  	  		</li>
+  	  		<li>
+  	  			<md-input-container class="md-block reg_textbox" flex-gt-sm>
+  	  			  <label>Last name</label>
+  	  			  <input ng-model="Last_name">
+  	  			</md-input-container>
+  	  		</li>
+  	  		<li>
+  	  			<md-input-container class="md-block reg_textbox" flex-gt-sm>
+  	  			  <label>Postal Code</label>
+  	  			  <input ng-model="Postal_Code">
+  	  			</md-input-container>
+  	  		</li>
+  	  		<li>
+  	  		  <md-input-container class="md-block reg_textbox" flex-gt-sm>
+                <label>Country</label>
+                <md-select class="dropdown_space" ng-model="user.state">
+                  <md-option ng-repeat="countrylist in country_list" value="{{countrylist.country1}}">{{countrylist.country1}}
+                  </md-option>
+                </md-select>
+              </md-input-container>
+  	  		</li>
+  	  		<li>
+  	  			<md-input-container class="md-block reg_textbox" flex-gt-sm>
+  	  			  <label>Date of Birth</label>
+  	  			  <input ng-model="Primary_phone">
+  	  			</md-input-container>
+  	  		</li>
+  	  		<li>
+  	  			<md-input-container class="md-block reg_textbox" flex-gt-sm>
+  	  			  <label>Primary phone</label>
+  	  			  <input ng-model="Primary_phone">
+  	  			</md-input-container>
+  	  		</li>
+  	  		<li>
+  	  			<md-input-container class="md-block reg_textbox" flex-gt-sm>
+  	  			  <label>Secondary phone</label>
+  	  			  <input ng-model="Secondary_phone">
+  	  			</md-input-container>
+  	  		</li>
+  	  	</ul>
+  	  </div>
+  	  <div layout="column" flex=50>
+  	  <ul>
+  		<li>
+  			<md-input-container class="md-block reg_textbox" flex-gt-sm>
+  			  <label>Address Line 1</label>
+  			  <input ng-model="Address_Line_1">
+  			</md-input-container>
+  		</li>
+  		<li>
+  			<md-input-container class="md-block reg_textbox" flex-gt-sm>
+  			  <label>Address Line 2</label>
+  			  <input ng-model="Address_Line_2">
+  			</md-input-container>
+  		</li>
+  		<li>
+  			<md-input-container class="md-block reg_textbox" flex-gt-sm>
+  			  <label>City</label>
+  			  <input ng-model="City">
+  			</md-input-container>
+  		</li>
+  		<li>
+  			<md-input-container class="md-block reg_textbox" flex-gt-sm>
+          <label>State</label>
+          <md-select class="dropdown_space" ng-model="user.state1">
+            <md-option ng-repeat="ctylist in city_list" value="{{ctylist.city1}}">{{ctylist.city1}}
+            </md-option>
+          </md-select>
+        </md-input-container>
+  		</li>
+  		<li>
+  			<md-input-container class="md-block reg_textbox" flex-gt-sm>
+  			  <label>Gender</label>
+  			  <input ng-model="Gender">
+  			</md-input-container>
+  		</li>
+  		<li>
+  			<md-input-container class="md-block reg_textbox" flex-gt-sm>
+  			  <label>Email address</label>
+  			  <input ng-model="Email_address">
+  			</md-input-container>
+  		</li>
+  		<li>
+  			<md-input-container class="md-block reg_textbox" flex-gt-sm>
+  			  <label>Re-enter email address</label>
+  			  <input ng-model="Re_enter">
+  			</md-input-container>
+  		</li>
+  	  </ul>
+  	  </div>
+  	</div>
+  	<div layout="row" layout-align="center" class= "submit_bottom">By submitting this form, you agree that you have read, understand, and accept our Terms & Conditions.</div>
+  	
+  		<div layout="column" layout-align="center center"><md-button class="submit_button_style long_button">SUBMIT</md-button></div>
+  		<div layout="column" layout-align="center center"><md-button class="cancel_button"><a href="#">CANCEL<a></md-button></div>
+  </div>
+  
+  <div class="bottom_text" layout="row" layout-align="center center">
+    <div layout="column"> About Clinical Trials </div>
+    <div layout="column"> About Quest </div>
+    <div layout="column"> Contact Us </div>
+    <div layout="column"> Privacy Policy </div>
+  </div>
+  <div class="bottom_last_text" layout="row" layout-align="center center">Quest Diagnostics Incorporated© 2000-2017. All rights reserved.</div>
+</md-content>

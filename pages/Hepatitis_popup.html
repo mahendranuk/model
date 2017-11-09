@@ -1,0 +1,21 @@
+
+<md-dialog class="add_trial" ng-hide="hide_dialog" style="width:50%">
+    <div layout="row" layout-align="space-between center">
+<div>&nbsp;</div>
+<md-button class="md-icon-button" ng-click="closeDialog()" style="font-size: 12px">
+            <i class="fa fa-times fa-2x"></i>
+          </md-button>
+</div>  
+   <div layout="column" layout-align="start" class="p-15 m-auto">
+ 
+   <div class="width_100">
+        <span style="    font-size: 16px;
+    width: 100%;
+    font-family: probold;
+    display: inline-block;
+    text-align: center;">Hepatitis C Patients by Genotype</span>
+   </div>
+    <iframe width="500" height="500" ng-src="{{hepatitis_pie}}" style="border:0;overflow: hidden;"></iframe>
+   </div>
+</md-dialog>
+

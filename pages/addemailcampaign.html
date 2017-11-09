@@ -1,0 +1,1048 @@
+<div class="outreach_email_header" layout="row" layout-align="space-between center" >
+  <div>
+   <h2 class="top_head_align p-l-20">New Campaign</h2>
+  </div>
+</div>
+<div layout="row"  style="background-color: #ECECEC;padding: 0 16px">
+  <md-button back-button style="float:left; color:green; font-weight:bold;"><i class="fa fa-angle-left" aria-hidden="true"></i> Back</md-button>
+</div> 
+
+
+
+
+<md-content class="md-padding">
+          <div ng-hide="email_campaign">
+            <div ng-hide="emailnav" class="navigation">
+              <div class="breadcrumb flat">
+                <a href="" class="active" ng-class="myClass1">
+                  <span ng-hide="recipient_fail"> RECIPIENTS</span>
+                  <span style="color: rgb(53,121,42) !important;" style="color=" ng-show="recipient_succ">
+                  <i class="fa fa-check" aria-hidden="true"></i> RECIPIENTS
+                  </span>
+                </a>
+                <a href="" ng-class="myClass2">
+                  <span ng-hide="setup_fail"> SETUP</span>
+                    <span style="color: rgb(53,121,42) !important;" ng-show="setup_succ"><i class="fa fa-check" aria-hidden="true"></i> SETUP
+                    </span>
+                  </a>
+                <a href="" ng-class="myClass3">
+                  <span ng-hide="templates_fail"> TEMPLATES</span>
+                  <span  style="color: rgb(53,121,42) !important;" ng-show="templates_succ"><i class="fa fa-check" aria-hidden="true"></i> TEMPLATES
+                  </span>
+                </a>
+                <a href="" ng-class="myClass4">
+                  <span ng-hide="review_fail"> REVIEW</span>
+                  <span style="color: rgb(53,121,42) !important;" ng-show="review_succ"><i class="fa fa-check" aria-hidden="true"></i> REVIEW
+                  </span>
+                </a>
+                <a href="" ng-class="myClass5">
+                  <span ng-hide="confirm_fail"> CONFIRM</span>
+                  <span  style="color: rgb(53,121,42) !important;" ng-show="confirm_succ"><i class="fa fa-check" aria-hidden="true"></i> CONFIRM
+                  </span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Start of patient Email List section -->
+
+            <div ng-hide="pat_email_list">
+            <div class="add_email_campaign_recipients_head" layout="row" layout-align="start">
+              <span>RECIPIENTS LIST</span>
+            </div>
+            <div  layout="column" class="add_email_campaign_recipients_body" layout="row" layout-align="start" style="box-shadow: -2px 2px 5px #b5b5b5;" >
+              <div layout="row" style="padding-left: 20px;">
+                 <div  style="width: 250px; padding-top: 25px;"><span> Select Trial</span></div>
+                 <div  style="width: 250px; padding-top: 0px;">
+                    <md-input-container>
+                      <label>Trial List</label>
+                      <md-select ng-model="triallist">
+                        <md-option value="List1" selected> STRENGTH Trial</md-option>
+                        <md-option value="List2" > Olaparib Trial</md-option>
+                        <md-option value="List3" > MiStent Trial </md-option>
+                      </md-select>
+                    </md-input-container>
+                  </div>
+
+              </div>
+              <div layout="row" style="padding-left: 20px;">
+                 
+            <!-- Modified -->
+
+                 <div  style="width: 250px;"><span> Who are you sending to?</span></div>
+                 <div  style="width: 80px; padding-left:4px; ">
+                   
+                    <md-radio-group ng-model="content">
+                      <md-radio-button ng-click="patientcontent()" id="first"  name="content" value="first" class="send_rad_button">Candidates</md-radio-button>
+                      <md-radio-button ng-click="physiciancontent()" id="other"  value="other" class="send_rad_button">Physicians</md-radio-button>
+                    </md-radio-group>
+
+              <!-- Modified -->
+                    
+                </div>
+
+              </div>
+              <div layout="column" style="padding-left: 20px;" ng-show="patcont">
+                <div layout="row">
+                 <div  style="width: 250px; padding-top: 25px;"><span> Recipients List</span></div>
+                 <div  style="width: 250px; padding-top: 0px;">
+                    <md-input-container>
+                      <label>Candidates List</label>
+                      <md-select ng-model="patientlist">
+                        <md-option value="List1" selected>Retention Candidates<p style="font-size: 12px; padding-top: 5px;">18,656 Candidates</p></md-option>
+                        <md-option value="List2">Candidates within 25mi<p style="font-size: 12px; padding-top: 5px;">53,749 Candidates</p></md-option>
+                        <md-option value="List2" > News Letter -  Testing<p style="font-size: 12px">12,226 Candidates</p></md-option>
+                        <md-option value="List3" > Intelligence Campaign List<p style="font-size: 12px">560 Candidates</p> </md-option>
+                        <md-option value="List4" > Master List<p style="font-size: 12px">1650 Candidates</p> </md-option>
+                      </md-select>
+                    </md-input-container>
+                  </div>
+                </div>
+                <div layout="row" style="padding-left: 0px;">
+                 <div  style="width: 250px;"><span> Campaign Type</span></div>
+                 <div  style="width: 150px; padding-left:4px; ">
+                    <md-radio-group ng-model="content_camp">
+                      <md-radio-button ng-click="normalbutton()" id="normal" value="Normal" class="send_rad_button">Normal Campaign</md-radio-button>
+                      <md-radio-button ng-click="ABbutton()" id="ab" value="AB" class="send_rad_button">A/B Campaign</md-radio-button>
+                    </md-radio-group>
+                </div>
+
+              </div>
+                  
+              </div>
+              <div ng-show="button_normal" class="md-padding" style="text-align: center; padding-top: 25px;">
+                    <md-button  class="md-primary big_btn" style="background-color:rgb(53,121,42)!important; color:white;" ng-click="patientdetails()">Save & Continue</md-button>
+              </div>
+              <div ng-show="button_AB" class="md-padding" style="text-align: center; padding-top: 25px;">
+                    <md-button  class="md-primary big_btn" style="background-color:rgb(53,121,42)!important; color:white;" ng-click="patientdetailsAB()">Save & Continue</md-button>
+              </div>
+               <div layout="column" style="padding-left: 20px;" ng-show="phycont">
+                <div layout="row">
+                 <div  style="width: 250px; padding-top: 25px;"><span>Recipients List</span></div>
+                 <div  style="width: 250px; padding-top: 0px;">
+                    <md-input-container>
+                      <label>Physicians List</label>
+                      <md-select ng-model="physicianlist">
+                        <md-option value="List1" selected>Physicians List<p style="font-size: 12px">350 Physicians</p></md-option>
+                        <md-option value="List2" > News Letter -  Testing<p style="font-size: 12px">226 Physicians</p></md-option>
+                        <md-option value="List3" > Physicians Campaign List<p style="font-size: 12px">560 Physicians</p> </md-option>
+                        <md-option value="List4" > Master List<p style="font-size: 12px">1650 Physicians</p> </md-option>
+                      </md-select>
+                    </md-input-container>
+                  </div>
+                 </div>
+                  <div class="md-padding" style="text-align: center; padding-top: 25px;">
+                    <md-button ng-click="physiciandetails()" class="md-primary big_btn" style="background-color:rgb(53,121,42)!important; color:white;">Save & Continue</md-button>
+                  </div>
+
+              </div>
+              <div ng-hide="save_cont" class="md-padding" style="text-align: center; padding-top: 25px;">
+                    <md-button  class="md-primary big_btn" style="background-color:rgb(53,121,42)!important; color:white;">Save & Continue</md-button>
+              </div>
+            </div>
+            </div>
+
+            <!-- Start of Patient Setup section -->
+
+
+            <div ng-show="pat_email_setup">
+            <div class="add_email_campaign_recipients_head" layout="row" layout-align="start"> 
+              <span>SETUP</span>
+            </div>
+            <div  layout="column" class="add_email_campaign_recipients_body" layout="row" layout-align="center center" style="box-shadow: -2px 2px 5px #b5b5b5;" >
+              <div layout="row" style="padding-left: 20px;">
+                 <div  style="width: 150px; padding-top: 25px;"><span> Campaign Name:</span></div>
+                 <div style="width: 300px;"><md-input-container  class="md-block" >
+                        
+                        <input  ng-model="campname">
+                  </md-input-container></div>
+
+              </div>
+              <div layout="row" style="padding-left: 20px;">
+                 <div  style="width: 150px; padding-top: 25px;"><span> Email Subject:</span></div>
+                 <div style="width: 300px;"><md-input-container  class="md-block" >
+                        
+                        <input ng-model="subject">
+                  </md-input-container></div>
+
+              </div>
+              <div layout="row" style="padding-left: 20px;">
+                 <div  style="width: 150px; padding-top: 25px;"><span>From Name:</span></div>
+                 <div style="width: 300px;"><md-input-container  class="md-block" >
+                        
+                        <input ng-model="fromname">
+                  </md-input-container></div>
+
+              </div>
+              <div layout="row" style="padding-left: 20px;">
+                 <div  style="width: 150px; padding-top: 25px;"><span>From Email:</span></div>
+                 <div style="width: 300px;"><md-input-container  class="md-block" >
+                        
+                        <input ng-model="fromemail">
+                  </md-input-container></div>
+
+              </div>
+              <div class="md-padding width_100" style="text-align: center;">
+                <md-button style="background-color:none !important; color:rgb(53,121,42);float: left;text-decoration: underline;" class="md-primary big_btn" ng-click="patemailsetupback()">BACK</md-button>
+                   <md-button style="background-color:rgb(53,121,42)!important; color:white;float: right;" class="md-primary big_btn" ng-click="patemailsetup()">Save & Continue</md-button>
+              </div>
+            </div>
+            </div>
+
+            <!-- Start of Pat_email_setup_AB -->
+            <div ng-show="pat_email_setup_AB">
+            <div class="add_email_campaign_recipients_head" layout="row" layout-align="start"> 
+              <span>SETUP</span>
+            </div>
+            <div  layout="column" class="add_email_campaign_recipients_body" layout="row" layout-align="center center" style="box-shadow: -2px 2px 5px #b5b5b5;" >
+              <div layout="row" style="padding-left: 20px;">
+                 <div  style="width: 150px; padding-top: 25px;"><span> Campaign Name:</span></div>
+                 <div style="width: 300px;"><md-input-container  class="md-block" >
+                        
+                        <input  ng-model="campname">
+                  </md-input-container></div>
+
+              </div>
+              <div layout="row" style="padding-left: 20px;">
+                 <div  style="width: 150px; padding-top: 25px;"><span> Email Subject:</span></div>
+                 <div style="width: 300px;"><md-input-container  class="md-block" >
+                        
+                        <input ng-model="subject">
+                  </md-input-container></div>
+
+              </div>
+              <div layout="row" style="padding-left: 20px;">
+                 <div  style="width: 150px; padding-top: 25px;"><span>From Name:</span></div>
+                 <div style="width: 300px;"><md-input-container  class="md-block" >
+                        
+                        <input ng-model="fromname">
+                  </md-input-container></div>
+
+              </div>
+              <div layout="row" style="padding-left: 20px;">
+                 <div  style="width: 150px; padding-top: 25px;"><span>From Email:</span></div>
+                 <div style="width: 300px;"><md-input-container  class="md-block" >
+                        
+                        <input ng-model="fromemail">
+                  </md-input-container></div>
+
+              </div>
+              <div class="md-padding width_100" style="text-align: center;">
+                <md-button style="background-color:none !important; color:rgb(53,121,42);float: left;text-decoration: underline;" class="md-primary big_btn" ng-click="patemailsetupbackAB()">BACK</md-button>
+                   <md-button style="background-color:rgb(53,121,42)!important; color:white;float: right;" class="md-primary big_btn" ng-click="patemailsetupAB()">Save & Continue</md-button>
+              </div>
+            </div>
+            </div>
+            <!-- Start of Pat_email_setup_AB -->
+
+            <!-- End of Start of Setup section -->
+
+            <!-- Start of Patient Setup section -->
+
+
+            <div ng-show="phy_email_setup">
+            <div class="add_email_campaign_recipients_head" layout="row" layout-align="start"> 
+              <span>SETUP</span>
+            </div>
+            <div  layout="column" class="add_email_campaign_recipients_body" layout="row" layout-align="center center" style="box-shadow: -2px 2px 5px #b5b5b5;" >
+              <div layout="row" style="padding-left: 20px;">
+                 <div  style="width: 150px; padding-top: 25px;"><span> Campaign Name:</span></div>
+                 <div style="width: 300px;"><md-input-container  class="md-block" >
+                        
+                        <input  ng-model="campname">
+                  </md-input-container></div>
+
+              </div>
+              <div layout="row" style="padding-left: 20px;">
+                 <div  style="width: 150px; padding-top: 25px;"><span> Email Subject:</span></div>
+                 <div style="width: 300px;"><md-input-container  class="md-block" >
+                        
+                        <input ng-model="subject">
+                  </md-input-container></div>
+
+              </div>
+              <div layout="row" style="padding-left: 20px;">
+                 <div  style="width: 150px; padding-top: 25px;"><span>From Name:</span></div>
+                 <div style="width: 300px;"><md-input-container  class="md-block" >
+                        
+                        <input ng-model="fromname">
+                  </md-input-container></div>
+
+              </div>
+              <div layout="row" style="padding-left: 20px;">
+                 <div  style="width: 150px; padding-top: 25px;"><span>From Email:</span></div>
+                 <div style="width: 300px;"><md-input-container  class="md-block" >
+                        
+                        <input ng-model="fromemail">
+                  </md-input-container></div>
+
+              </div>
+              <div layout="row" layout-align="space-between center" class="md-padding" style="text-align: center;width:100%">
+                <div >
+                    <md-button style="background-color:none !important; color:rgb(53,121,42);float: left;text-decoration: underline;" class="md-primary big_btn" ng-click="phyemailsetupback()">Back</md-button>
+                </div>
+                <div>
+                   <md-button style="background-color:rgb(53,121,42)!important; color:white;float: right;" class="md-primary big_btn" ng-click="phyemailsetup()">Save & Continue</md-button>
+                </div>
+              </div>
+            </div>
+            </div>
+
+            <!-- End of Physician Start of Setup section -->
+
+            <!-- Start of Patient Template section -->
+
+
+            <div ng-show="pat_email_template">
+            <div class="add_email_campaign_recipients_head" layout="row" layout-align="start"> 
+              <span>TEMPLATE</span>
+            </div>
+            <div  layout="column" class="add_email_campaign_recipients_body" layout="row" layout-align="start" style="box-shadow: -2px 2px 5px #b5b5b5;"  >
+              <div layout="row" style="padding-left: 20px;">
+                 <div  style="width: 150px; padding-top: 25px;"><span>Select Template:</span></div>
+                 <div  style="width:100%;padding: 10px; padding-top: 0px;">
+                    <md-input-container>
+                      <label>Templates</label>
+                      <md-select ng-model="templateslistA" style="width:500px !important;">
+                        <md-option value="List1" > <div layout="row" layout-align="space-between center"><div style="width: 440px;">Patients email A</div><div style="font-size: 12px;" class="template_green">Approved</div></div></md-option>
+                        <md-option value="List1" > <div layout="row" layout-align="space-between center"><div style="width: 440px;">Patients email B</div><div style="font-size: 12px;" class="template_green">Approved</div></div></md-option>
+                        <md-option value="List2" > <div layout="row" layout-align="space-between center"><div style="width: 440px;">Physicians invite email</div><div style="font-size: 12px;" class="template_green">Approved</div></div></md-option>
+                        <md-option value="List3" ><div layout="row" layout-align="space-between center"><div style="width: 440px;">Patients second followup</div><div style="font-size: 12px;" class="template_red">Pending</div></div></md-option>
+                        <md-option value="List4" ><div layout="row" layout-align="space-between center"><div style="width: 440px;">Patients engaement template</div><div style="font-size: 12px;" class="template_green">Approved</div></div></md-option>
+                      </md-select>
+                    </md-input-container>
+
+                  </div>
+                  <div  style="padding-top: 10px; padding-left: 20px;"><a  href="#!/createtemplate" ><md-button style="color: rgb(53,121,42) !important; background-color: white;"><i  style="color:rgb(53,121,42);" class="fa fa-plus" aria-hidden="true"></i>&nbsp;Create Template</md-button></a></div>
+              </div>
+              
+              <div class="md-padding" style="text-align: center; padding-top: 50px;">
+                  <md-button style="background-color:none !important; color:rgb(53,121,42);float: left;text-decoration: underline;" class="md-primary big_btn" ng-click="patemaildesignback()">Back</md-button>
+                   <md-button style="background-color:rgb(53,121,42)!important; color:white;float: right;" class="md-primary big_btn" ng-click="patemaildesign()">Save & Continue</md-button>
+              </div>
+            </div>
+            </div>
+
+            <!-- End of Patient Template section -->
+
+            <!-- Start of Patient Template AB section -->
+            <div ng-show="pat_email_template_AB">
+            <div class="add_email_campaign_recipients_head" layout="row" layout-align="start"> 
+              <span>TEMPLATE</span>
+            </div>
+            <div  layout="row" class="add_email_campaign_recipients_body" layout="row" layout-align="start" style="box-shadow: -2px 2px 5px #b5b5b5;"  >
+              <div style="padding-left: 20px; border:1px solid #d8d8d8;margin:5px;" flex=50>
+                 <div  style="width: 150px; padding-top: 25px;"><span>Select Template A:</span></div>
+                 <div layout="column" layout-align="space-between center">
+                 <div layout="row" style="width:100%;padding: 10px;padding-top: 0px;" flex=100 layout-align="space-between center">
+                    <md-input-container style="width:100%;">
+                      <label>Templates</label>
+                      <md-select ng-model="templateslistA" style="width:100% !important;margin-left:-10px;">
+                        <md-option value="List1" > <div layout="row" layout-align="space-between center"><div style="width: 440px;">Patients email A</div><div style="font-size: 12px;" class="template_green">Approved</div></div></md-option>
+                        <md-option value="List1" > <div layout="row" layout-align="space-between center"><div style="width: 440px;">Patients email B</div><div style="font-size: 12px;" class="template_green">Approved</div></div></md-option>
+                        <md-option value="List2" > <div layout="row" layout-align="space-between center"><div style="width: 440px;">Physicians invite email</div><div style="font-size: 12px;" class="template_green">Approved</div></div></md-option>
+                        <md-option value="List3" ><div layout="row" layout-align="space-between center"><div style="width: 440px;">Patients second followup</div><div style="font-size: 12px;" class="template_red">Pending</div></div></md-option>
+                        <md-option value="List4" ><div layout="row" layout-align="space-between center"><div style="width: 440px;">Patients engaement template</div><div style="font-size: 12px;" class="template_green">Approved</div></div></md-option>
+                      </md-select>
+                    </md-input-container>
+
+                  
+                  <div >
+                  <!-- <a style="color: rgb(53,121,42) !important; background-color: white;" href="#!/createtemplate" ><i  style="color:rgb(53,121,42);font-size:13px;" class="fa fa-plus" aria-hidden="true"></i>&nbsp;Create Template</a> -->
+                  </div>
+                  </div>
+                  </div>
+                    <div layout="row" class="temp_no_people">Percentage of Candidates
+                      <md-input-container style="width:25%;margin:0px 10px 0px 0px;" md-no-float>
+                      
+                 <!-- <label>From</label> -->
+                        <input ng-model="ratio_a">
+                      </md-input-container>
+                      <span style="line-height:3;padding: 0px 10px;">%</span>
+                    </div>
+                                     
+              </div>
+              
+
+              <div style="padding-left: 20px; border:1px solid #d8d8d8;margin:5px;" flex=50>
+                 <div  style="width: 150px; padding-top: 25px;"><span>Select Template B:</span></div>
+                 <div layout="column" layout-align="space-between center">
+                 <div layout="row" style="width:100%;padding: 10px;" flex=70 layout-align="space-between center">
+                    <md-input-container style="width:100%;">
+                      <label>Templates</label>
+                      <md-select ng-model="templateslistB" style="width:100% !important;margin-left:-10px;">
+                        <md-option value="List1" > <div layout="row" layout-align="space-between center"><div style="width: 440px;">Patients email A</div><div style="font-size: 12px;" class="template_green">Approved</div></div></md-option>
+                        <md-option value="List2" > <div layout="row" layout-align="space-between center"><div style="width: 440px;">Patients email B</div><div style="font-size: 12px;" class="template_green">Approved</div></div></md-option>
+                        <md-option value="List3" > <div layout="row" layout-align="space-between center"><div style="width: 440px;">Physicians invite email</div><div style="font-size: 12px;" class="template_green">Approved</div></div></md-option>
+                        <md-option value="List4" ><div layout="row" layout-align="space-between center"><div style="width: 440px;">Patients second followup</div><div style="font-size: 12px;" class="template_red">Pending</div></div></md-option>
+                        <md-option value="List5" ><div layout="row" layout-align="space-between center"><div style="width: 440px;">Patients engaement template</div><div style="font-size: 12px;" class="template_green">Approved</div></div></md-option>
+                      </md-select>
+                    </md-input-container>
+
+                  
+                  <div >
+                  <!-- <a style="color: rgb(53,121,42) !important; background-color: white;" href="#!/createtemplate" ><i  style="color:rgb(53,121,42);font-size:13px;" class="fa fa-plus" aria-hidden="true"></i>&nbsp;Create Template</a> -->
+                  </div>
+                  </div>
+                  </div>
+                    <div layout="row" class="temp_no_people">Percentage of Candidates
+                      <md-input-container style="width:25%;margin:0px 10px 0px 0px;" md-no-float>
+                      
+                 <!-- <label>From</label> -->
+                        <input ng-model="ratio_b">
+                      </md-input-container>
+                      <span style="line-height:3;padding: 0px 10px;">%</span>
+                    </div>
+                                     
+              </div>
+              
+              
+            </div>
+              <div class="md-padding" style="text-align: center; padding-top: 50px;">
+                  <md-button style="background-color:none !important; color:rgb(53,121,42);float: left;text-decoration: underline;" class="md-primary big_btn" ng-click="patemaildesignbackAB()">Back</md-button>
+                   <md-button style="background-color:rgb(53,121,42)!important; color:white;float: right;" class="md-primary big_btn" ng-click="patemaildesignAB()">Save & Continue</md-button>
+              </div>
+            </div>
+            <!-- End of Patient Template AB section -->
+
+            <!-- Start of Physician Template section -->
+
+            <div ng-show="phy_email_template">
+            <div class="add_email_campaign_recipients_head" layout="row" layout-align="start"> 
+              <span>TEMPLATE</span>
+            </div>
+            <div  layout="column" class="add_email_campaign_recipients_body" layout="row" layout-align="start" style="box-shadow: -2px 2px 5px #b5b5b5;"  >
+              <div layout="row" style="padding-left: 20px;">
+                 <div  style="width: 150px; padding-top: 25px;"><span>Select Template:</span></div>
+                 <div  style="width: 500px; padding-top: 0px;">
+                    <md-input-container>
+                      <label>Templates</label>
+                      <md-select ng-model="templateslist" style="width:500px !important;">
+                        <md-option value="List1" > <div layout="row" layout-align="space-between center"><div style="width: 440px;">Patients email A</div><div style="font-size: 12px;" class="template_green">Approved</div></div></md-option>
+                        <md-option value="List2" > <div layout="row" layout-align="space-between center"><div style="width: 440px;">Patients email B</div><div style="font-size: 12px;" class="template_green">Approved</div></div></md-option>
+                        <md-option value="List3" > <div layout="row" layout-align="space-between center"><div style="width: 440px;">Physicians invite email</div><div style="font-size: 12px;" class="template_green">Approved</div></div></md-option>
+                        <md-option value="List4" ><div layout="row" layout-align="space-between center"><div style="width: 440px;">Patients second followup</div><div style="font-size: 12px;" class="template_red">Pending</div></div></md-option>
+                        <md-option value="List5" ><div layout="row" layout-align="space-between center"><div style="width: 440px;">Patients engaement template</div><div style="font-size: 12px;" class="template_green">Approved</div></div></md-option>
+                      </md-select>
+                    </md-input-container>
+
+                  </div>
+                  <div  style="padding-top: 10px; padding-left: 20px;"><a  href="#!/createtemplate" ><md-button style="color: rgb(53,121,42) !important; background-color: white;"><i  style="color:rgb(53,121,42);" class="fa fa-plus" aria-hidden="true"></i>&nbsp;Create Template</md-button></a></div>
+
+              </div>
+              
+              <div class="md-padding" style="text-align: center; padding-top: 50px;">
+                    <md-button style="background-color:none !important; color:rgb(53,121,42);float: left;text-decoration: underline;" class="md-primary big_btn" ng-click="phyemaildesignback()">Back</md-button>
+                   <md-button style="background-color:rgb(53,121,42)!important; color:white;float: right;" class="md-primary big_btn" ng-click="phyemaildesign()">Save & Continue</md-button>
+              </div>
+            </div>
+            </div>
+
+            <!-- End of Physician Template section -->
+
+            <!-- Start of Design section -->
+
+
+            <div ng-show="pat_email_design">
+
+              <div class="add_email_campaign_recipients_head" layout="row" layout-align="start" > 
+                <span>REVIEW</span>
+              </div>
+              
+              <div layout="column" class="add_email_campaign_recipients_body" layout="row" layout-align="start" style="box-shadow: -2px 2px 5px #b5b5b5;" >
+
+                      <span style="padding-top: 10px; font-size: 15px; color: black; padding-left: 20px; padding-bottom: 10px;font-weight: bold">Overview</span>
+                      <div layout="row" layout-align="space-between center" style=" padding:0px 20px;" >
+                        <div class="email_outreach_detail_details_leftdiv" style="border: solid 1px rgba(0, 0, 0, 0.15); ">
+                         <span>Recipients Count</span>
+                        </div>
+                        <div class="email_outreach_detail_details_rightdiv" style="border: solid 1px rgba(0, 0, 0, 0.15); border-left: none;">
+                          <span style="padding-left: 10px; ">18,656</span>
+                        </div>
+                      </div>
+                      <div layout="row" layout-align="space-between center" style=" padding:0px 20px;" >
+                        <div class="email_outreach_detail_details_leftdiv" style="border: solid 1px rgba(0, 0, 0, 0.15); ">
+                         <span>From name</span>
+                        </div>
+                        <div class="email_outreach_detail_details_rightdiv" style="border: solid 1px rgba(0, 0, 0, 0.15); border-left: none;">
+                          <span style="padding-left: 10px; ">Quest Diagnostics</span>
+                        </div>
+                      </div>
+                      <div layout="row" layout-align="space-between center" style="padding:0px 20px;">
+                        <div class="email_outreach_detail_details_leftdiv">
+                         <span>From email</span>
+                        </div>
+                        <div class="email_outreach_detail_details_rightdiv">
+                          <span style="padding-left: 10px;">clinicaltrial@questdiagnostics.com</span>
+                        </div>
+                      </div>
+                      <div layout="row" layout-align="space-between center" style="padding:0px 20px;">
+                        <div class="email_outreach_detail_details_leftdiv">
+                         <span>Subject line</span>
+                        </div>
+                        <div class="email_outreach_detail_details_rightdiv">
+                          <span style="padding-left: 10px;">Help us explore a potential way to protect your heart</span>
+                        </div>
+                      </div>
+                      <div layout="row" layout-align="space-between center" style="padding:0px 20px;">
+                        <div class="email_outreach_detail_details_leftdiv">
+                         <span>Recipients</span>
+                        </div>
+                        <div class="email_outreach_detail_details_rightdiv">
+                          <span style="padding-left: 10px;"> Sent to list: Retention candidates</span>
+                        </div>
+                      </div> 
+
+                      <span style="padding-top: 20px; font-size: 15px; color: black; padding-left: 20px;font-weight: bold;">Message</span>
+                <div layout="column" layout-align="center center" style="width: 100%;padding:0px 20px; text-align: justify;">
+                        <div><img src="assets\images\quest_logo.jpg" height="110px" width="300px"></div>
+                        <!-- <div style="height: 110px; width: 300px; border:solid 1px rgba(0, 0, 0, 0.30);">
+                          <div  style="height: 30px; width: 100%; border-bottom:solid 1px  rgba(0, 0, 0, 0.30);"><i class="fa fa-pencil-square-o" style="float: right;  color:rgb(53,121,42);  " aria-hidden="true"></i></div>
+                          
+                        </div> -->
+                        <div class="email_template">
+                          <p>Dear [Patient Name],</p><br/>
+                          <p>The STRENGTH Trial is looking at an investigational medication to help reduce the risk of serious heart problems in people who have high levels of triglycerides (a type of fat found in the blood that can raise your risk of heart disease), low levels of high-density lipoprotein-cholesterol (HDL-C; the "good" cholesterol), and other risk factors for heart disease.
+            </p>
+            <br>
+            <p>The STRENGTH Trial will examine whether this investigational medication can lower triglyceride levels to help prevent serious events such as heart attacks and strokes when taken for an extended period of time. The study will involve approximately 13,000 people and will last for about 3–5 years.
+
+            </p>
+            <br>
+            <p>Quest Diagnostics is working to help recruit patients to the STRENGTH Trial. We believe it is important to evaluate potential new therapies that may improve healthcare quality. 
+
+            </p>
+            <br>
+            <p>Compensation is being offered as a per visit stipend.
+
+            </p>
+            <br>
+            <h5>If you are interested</h5>
+            <br>
+            <p>If you are interested in seeing whether you might be a candidate for this study, please confirm your interest and answer a few questions at <a href="#">https://www.mySTRENGTHtrial.com.</a>
+            </p>
+            <br>
+            <p>If you do not want to receive further information about this (or other) study, please notify us at <a href="#">https://www.mySTRENGTHtrial.com/optout</a> or email mySTRENGTHtrial_opt_out@QuestDiagnostics.com and Quest will not send you further communications.</p>
+            <br>
+            <p>Note: This initiative was assessed for HIPAA compliance by Quest Diagnostics.
+            </p>
+            <br>
+            <p>Thank you for your consideration.
+            </p>
+            <br/>
+            <p>Sincerely,</p><br/>
+            <p>Dr. Harvey W. Kaufman, M.D.<br>
+            Senior Medical Director, Medical Informatics  <br>
+            Quest Diagnostics <br>
+            Madison, NJ 07940 USA <br>
+            QuestDiagnostics.com<br>
+            </p>
+                        </div>
+                      </div>
+                <div class="md-padding" style="text-align: center;">
+                    <md-button style="background-color:none !important; color:rgb(53,121,42);float: left;text-decoration: underline;" class="md-primary big_btn" ng-click="patemailreviewback()">Back</md-button>
+                   <md-button style="background-color:rgb(53,121,42)!important; color:white;float: right;" class="md-primary big_btn" ng-click="patemailreview()">Save & Continue</md-button>
+                </div>
+              </div>
+            </div>
+
+            <!-- End of Design section -->
+
+            <!-- Start of Design Section AB -->
+            <div ng-show="pat_email_design_AB">
+
+              <div class="add_email_campaign_recipients_head" layout="row" layout-align="start" > 
+                <span>REVIEW</span>
+              </div>
+              <div layout="row" layout-align="space-between center">
+                <div style="font-weight: bold;" flex=80>OVERVIEW</div>
+                <div flex=10>Select Review</div>
+                <div flex=10>
+                  <md-input-container>
+                    <md-select ng-model="reviewab">
+                      <md-option ng-click="reviewAselect()" value="Review A" selected>Review A</md-option>
+                      <md-option ng-click="reviewBselect()" value="Review B">Review B</md-option>
+                    </md-select>
+                  </md-input-container>
+                </div>
+              </div>
+              <div ng-hide="review_A" layout="column" class="add_email_campaign_recipients_body" layout="row" layout-align="start" style="box-shadow: -2px 2px 5px #b5b5b5;" >
+
+                      <span style="padding-top: 10px; font-size: 15px; color: black; padding-left: 20px; padding-bottom: 10px;font-weight: bold">Review A</span>
+                      <div layout="row" layout-align="space-between center" style=" padding:0px 20px;" >
+                        <div class="email_outreach_detail_details_leftdiv" style="border: solid 1px rgba(0, 0, 0, 0.15); ">
+                         <span>Recipients Count</span>
+                        </div>
+                        <div class="email_outreach_detail_details_rightdiv" style="border: solid 1px rgba(0, 0, 0, 0.15); border-left: none;">
+                          <span style="padding-left: 10px; ">14,925</span>
+                        </div>
+                      </div>
+                      <div layout="row" layout-align="space-between center" style=" padding:0px 20px;" >
+                        <div class="email_outreach_detail_details_leftdiv" style="border: solid 1px rgba(0, 0, 0, 0.15); ">
+                         <span>From name</span>
+                        </div>
+                        <div class="email_outreach_detail_details_rightdiv" style="border: solid 1px rgba(0, 0, 0, 0.15); border-left: none;">
+                          <span style="padding-left: 10px; ">Quest Diagnostics</span>
+                        </div>
+                      </div>
+                      <div layout="row" layout-align="space-between center" style="padding:0px 20px;">
+                        <div class="email_outreach_detail_details_leftdiv">
+                         <span>From email</span>
+                        </div>
+                        <div class="email_outreach_detail_details_rightdiv">
+                          <span style="padding-left: 10px;">clinicaltrial@questdiagnostics.com</span>
+                        </div>
+                      </div>
+                      <div layout="row" layout-align="space-between center" style="padding:0px 20px;">
+                        <div class="email_outreach_detail_details_leftdiv">
+                         <span>Subject line</span>
+                        </div>
+                        <div class="email_outreach_detail_details_rightdiv">
+                          <span style="padding-left: 10px;">Help us explore a potential way to protect your heart</span>
+                        </div>
+                      </div>
+                      <div layout="row" layout-align="space-between center" style="padding:0px 20px;">
+                        <div class="email_outreach_detail_details_leftdiv">
+                         <span>Recipients</span>
+                        </div>
+                        <div class="email_outreach_detail_details_rightdiv">
+                          <span style="padding-left: 10px;"> Sent to list: Retention candidates</span>
+                        </div>
+                      </div> 
+
+                      <span style="padding-top: 20px; font-size: 15px; color: black; padding-left: 20px;font-weight: bold;">Message</span>
+                <div layout="column" layout-align="center center" style="width: 100%;padding:0px 20px; text-align: justify;">
+                        <div><img src="assets\images\quest_logo.jpg" height="110px" width="300px"></div>
+                        <!-- <div style="height: 110px; width: 300px; border:solid 1px rgba(0, 0, 0, 0.30);">
+                          <div  style="height: 30px; width: 100%; border-bottom:solid 1px  rgba(0, 0, 0, 0.30);"><i class="fa fa-pencil-square-o" style="float: right;  color:rgb(53,121,42);  " aria-hidden="true"></i></div>
+                          
+                        </div> -->
+                        <div class="email_template">
+                          <p>Dear [Patient Name],</p><br/>
+                          <p>The STRENGTH Trial is looking at an investigational medication to help reduce the risk of serious heart problems in people who have high levels of triglycerides (a type of fat found in the blood that can raise your risk of heart disease), low levels of high-density lipoprotein-cholesterol (HDL-C; the "good" cholesterol), and other risk factors for heart disease.
+            </p>
+            <br>
+            <p>The STRENGTH Trial will examine whether this investigational medication can lower triglyceride levels to help prevent serious events such as heart attacks and strokes when taken for an extended period of time. The study will involve approximately 13,000 people and will last for about 3–5 years.
+
+            </p>
+            <br>
+            <p>Quest Diagnostics is working to help recruit patients to the STRENGTH Trial. We believe it is important to evaluate potential new therapies that may improve healthcare quality. 
+
+            </p>
+            <br>
+            <p>Compensation is being offered as a per visit stipend.
+
+            </p>
+            <br>
+            <h5>If you are interested</h5>
+            <br>
+            <p>If you are interested in seeing whether you might be a candidate for this study, please confirm your interest and answer a few questions at <a href="#">https://www.mySTRENGTHtrial.com.</a>
+            </p>
+            <br>
+            <p>If you do not want to receive further information about this (or other) study, please notify us at <a href="#">https://www.mySTRENGTHtrial.com/optout</a> or email mySTRENGTHtrial_opt_out@QuestDiagnostics.com and Quest will not send you further communications.</p>
+            <br>
+            <p>Note: This initiative was assessed for HIPAA compliance by Quest Diagnostics.
+            </p>
+            <br>
+            <p>Thank you for your consideration.
+            </p>
+            <br/>
+            <p>Sincerely,</p><br/>
+            <p>Dr. Harvey W. Kaufman, M.D.<br>
+            Senior Medical Director, Medical Informatics  <br>
+            Quest Diagnostics <br>
+            Madison, NJ 07940 USA <br>
+            QuestDiagnostics.com<br>
+            </p>
+                        </div>
+                      </div>
+                <div class="md-padding" style="text-align: center;">
+                    <md-button style="background-color:none !important; color:rgb(53,121,42);float: left;text-decoration: underline;" class="md-primary big_btn" ng-click="patemailreviewbackAB()">Back</md-button>
+                   <md-button style="background-color:rgb(53,121,42)!important; color:white;float: right;" class="md-primary big_btn" ng-click="patemailreviewAB()">Save & Continue</md-button>
+                </div>
+              </div>
+
+              <div ng-show="review_B" layout="column" class="add_email_campaign_recipients_body" layout="row" layout-align="start" style="box-shadow: -2px 2px 5px #b5b5b5;" >
+
+                      <span style="padding-top: 10px; font-size: 15px; color: black; padding-left: 20px; padding-bottom: 10px;font-weight: bold">Review B</span>
+                      <div layout="row" layout-align="space-between center" style=" padding:0px 20px;" >
+                        <div class="email_outreach_detail_details_leftdiv" style="border: solid 1px rgba(0, 0, 0, 0.15); ">
+                         <span>Recipients Count</span>
+                        </div>
+                        <div class="email_outreach_detail_details_rightdiv" style="border: solid 1px rgba(0, 0, 0, 0.15); border-left: none;">
+                          <span style="padding-left: 10px; ">3,731</span>
+                        </div>
+                      </div>
+                      <div layout="row" layout-align="space-between center" style=" padding:0px 20px;" >
+                        <div class="email_outreach_detail_details_leftdiv" style="border: solid 1px rgba(0, 0, 0, 0.15); ">
+                         <span>From name</span>
+                        </div>
+                        <div class="email_outreach_detail_details_rightdiv" style="border: solid 1px rgba(0, 0, 0, 0.15); border-left: none;">
+                          <span style="padding-left: 10px; ">Quest Diagnostics</span>
+                        </div>
+                      </div>
+                      <div layout="row" layout-align="space-between center" style="padding:0px 20px;">
+                        <div class="email_outreach_detail_details_leftdiv">
+                         <span>From email</span>
+                        </div>
+                        <div class="email_outreach_detail_details_rightdiv">
+                          <span style="padding-left: 10px;">clinicaltrial@questdiagnostics.com</span>
+                        </div>
+                      </div>
+                      <div layout="row" layout-align="space-between center" style="padding:0px 20px;">
+                        <div class="email_outreach_detail_details_leftdiv">
+                         <span>Subject line</span>
+                        </div>
+                        <div class="email_outreach_detail_details_rightdiv">
+                          <span style="padding-left: 10px;">Help us explore a potential way to protect your heart</span>
+                        </div>
+                      </div>
+                      <div layout="row" layout-align="space-between center" style="padding:0px 20px;">
+                        <div class="email_outreach_detail_details_leftdiv">
+                         <span>Recipients</span>
+                        </div>
+                        <div class="email_outreach_detail_details_rightdiv">
+                          <span style="padding-left: 10px;"> Sent to list: Retention candidates</span>
+                        </div>
+                      </div> 
+
+                      <span style="padding-top: 20px; font-size: 15px; color: black; padding-left: 20px;font-weight: bold;">Message</span>
+                <div layout="column" layout-align="center center" style="width: 100%;padding:0px 20px; text-align: justify;">
+                        <div><img src="assets\images\quest_logo.jpg" height="110px" width="300px"></div>
+                        <!-- <div style="height: 110px; width: 300px; border:solid 1px rgba(0, 0, 0, 0.30);">
+                          <div  style="height: 30px; width: 100%; border-bottom:solid 1px  rgba(0, 0, 0, 0.30);"><i class="fa fa-pencil-square-o" style="float: right;  color:rgb(53,121,42);  " aria-hidden="true"></i></div>
+                          
+                        </div> -->
+                        <div class="email_template">
+                          <p>Dear [Patient Name],</p><br> <!-- Review B -->
+                          <p class="reviewB_emailpage">Help us explore a potential way to protect your heart.</p><br>
+                          <p>The STRENGTH Trial is looking at an investigational medication to help reduce the risk of serious heart problems in people who have high levels of triglycerides (a type of fat found in the blood that can raise your risk of heart disease), low levels of high-density lipoprotein-cholesterol (HDL-C; the "good" cholesterol), and other risk factors for heart disease.</p><br>
+            <p>The STRENGTH Trial will examine whether this investigational medication can lower triglyceride levels to help prevent serious events such as heart attacks and strokes when taken for an extended period of time. The study will involve approximately 13,000 people and will last for about 3–5 years.</p><br>
+            <p>Quest Diagnostics is working to help recruit patients to the STRENGTH Trial. We believe it is important to evaluate potential new therapies that may improve healthcare quality.  Based on a review of Quest Diagnostics data, which likely includes some laboratory test results ordered by your physician, we believe that you might have interest in this Trial.</p><br>
+            <div class="reviewB_emailpage">What is involved.
+            <ul>
+              <li>Fourteen visits over 3-5 year study period</li>
+              <li>Nine telephone follow-ups calls over 3-5 year study period</li>
+              <li>Routine laboratory tests</li>
+              <li>Physical exams</li>
+              <li>Blood pressure checks</li>
+              <li>One EKG</li>
+            </ul>
+            </div><br>
+            <p>Compensation is being offered as a per visit stipend.</p><br>
+            <p class="reviewB_emailpage">If you are interested</p><br>
+            <p>If you are interested in seeing whether you might be a candidate for this study, please confirm your interest and answer a few questions at <a style="color: green;" href="#">https://www.mySTRENGTHtrial.com.</a><br>
+            </p>
+            <p>If you do not want to receive further information about this (or other) study, please notify us at <a style="color: green;" href="#">https://www.mySTRENGTHtrial.com/optout</a> or <a style="color: green;" href="#">email mySTRENGTHtrial_opt_out@QuestDiagnostics.com </a>and Quest will not send you further communications.</p><br>
+            <p>Note: This initiative was assessed for HIPAA compliance by Quest Diagnostics.
+            </p><br>
+            <p>Thank you for your consideration.
+            </p>
+            <br/>
+            <p>Sincerely,</p>
+            <p>Dr. Harvey W. Kaufman, M.D.<br>
+            Senior Medical Director, Medical Informatics  <br>
+            Quest Diagnostics <br>
+            Madison, NJ 07940 USA <br>
+            QuestDiagnostics.com<br>
+            </p>
+                        </div>
+                      </div>
+                <div class="md-padding" style="text-align: center;">
+                    <md-button style="background-color:none !important; color:rgb(53,121,42);float: left;text-decoration: underline;" class="md-primary big_btn" ng-click="patemailreviewbackAB()">Back</md-button>
+                   <md-button style="background-color:rgb(53,121,42)!important; color:white;float: right;" class="md-primary big_btn" ng-click="patemailreviewAB()">Save & Continue</md-button>
+                </div>
+              </div>
+            </div>
+            <!-- End of Design Section AB -->
+
+            <!-- Start of physician Design section -->
+
+
+            <div ng-show="phy_email_design">
+
+              <div class="add_email_campaign_recipients_head" layout="row" layout-align="start" > 
+                <span>REVIEW</span>
+              </div>
+              <div  layout="column" class="add_email_campaign_recipients_body" layout="row" layout-align="start" style="box-shadow: -2px 2px 5px #b5b5b5;" >
+
+                      <span style="padding-top: 10px; font-size: 15px; color: black; padding-left: 20px; padding-bottom: 10px;font-weight: bold">Overview</span>
+                      <div layout="row" layout-align="space-between center" style=" padding:0px 20px;" >
+                        <div class="email_outreach_detail_details_leftdiv" style="border: solid 1px rgba(0, 0, 0, 0.15); ">
+                         <span>Recipients Count</span>
+                        </div>
+                        <div class="email_outreach_detail_details_rightdiv" style="border: solid 1px rgba(0, 0, 0, 0.15); border-left: none;">
+                          <span style="padding-left: 10px; ">350</span>
+                        </div>
+                      </div>
+                      <div layout="row" layout-align="space-between center" style=" padding:0px 20px;" >
+                        <div class="email_outreach_detail_details_leftdiv" style="border: solid 1px rgba(0, 0, 0, 0.15); ">
+                         <span>From name</span>
+                        </div>
+                        <div class="email_outreach_detail_details_rightdiv" style="border: solid 1px rgba(0, 0, 0, 0.15); border-left: none;">
+                          <span style="padding-left: 10px; ">Quest Diagnostics</span>
+                        </div>
+                      </div>
+                      <div layout="row" layout-align="space-between center" style="padding:0px 20px;">
+                        <div class="email_outreach_detail_details_leftdiv">
+                         <span>From email</span>
+                        </div>
+                        <div class="email_outreach_detail_details_rightdiv">
+                          <span style="padding-left: 10px;">clinicaltrial@questdiagnostics.com</span>
+                        </div>
+                      </div>
+                      <div layout="row" layout-align="space-between center" style="padding:0px 20px;">
+                        <div class="email_outreach_detail_details_leftdiv">
+                         <span>Subject line</span>
+                        </div>
+                        <div class="email_outreach_detail_details_rightdiv">
+                          <span style="padding-left: 10px;">Help us explore potential candidates</span>
+                        </div>
+                      </div>
+                      <div layout="row" layout-align="space-between center" style="padding:0px 20px;">
+                        <div class="email_outreach_detail_details_leftdiv">
+                         <span>Recipients</span>
+                        </div>
+                        <div class="email_outreach_detail_details_rightdiv">
+                          <span style="padding-left: 10px;"> Sent to list: Physicians first set</span>
+                        </div>
+                      </div> 
+
+                      <span style="padding-top: 20px; font-size: 15px; color: black; padding-left: 20px;font-weight: bold;">Message</span>
+                <div layout="column" layout-align="center center" style="width: 100%;padding:0px 20px; text-align: justify;">
+                        <div><img src="assets\images\quest_logo.jpg" height="110px" width="300px"></div>
+                        <!-- <div style="height: 110px; width: 300px; border:solid 1px rgba(0, 0, 0, 0.30);">
+                          <div  style="height: 30px; width: 100%; border-bottom:solid 1px  rgba(0, 0, 0, 0.30);"><i class="fa fa-pencil-square-o" style="float: right;  color:rgb(53,121,42);  " aria-hidden="true"></i></div>
+                          
+                        </div> -->
+                        <div>
+                          <p>Dear Dr.[Physician Name],</p><br/>
+                          <p>Quest Diagnostics is working to help recruit patients with atherogenic dyslipidemia (high triglycerides with low LDL-cholesterol) while on statin therapy for a clinical research program. We believe it is important to evaluate potential new therapies that may improve healthcare quality.  Based on a review of Quest data we believe that you may have patients that qualify for a study. Attached is a list of your patients who may be eligible for the study.
+
+            </p>
+            <p>For each patient you evaluate, reimbursement is available from Quest for your time spent identifying potential study candidates.
+
+            </p>
+            <h5>The STRENGTH Study </h5>
+            <p>High triglycerides levels can add to the adverse effect of known risk factors for heart disease and stroke such as high total cholesterol, diabetes and hypertension. Statins have been shown to be effective in reducing heart attack and stroke. However, a significant number of people who receive statins continue to be at high risk because their triglycerides levels remain high. The STRENGTH study will examine whether taking the investigational treatment Epanova® (an omega-3 fatty acid capsule which can lower triglycerides) together with a statin reduces the risk of heart attack and stroke when compared to taking the statin with corn oil (also in capsule form).
+
+            </p>
+            <h5>Eligibility Criteria</h5>
+            <div style="padding-left: 30px;">
+              <ul>
+                <li>CVD, one of:
+                <ul>
+                  <li>Heart disease (includes having had a heart attack or heart procedure)</li>
+
+                  <li>Peripheral vascular disease
+            </li>
+                  <li>Carotid artery disease (includes history of stroke) Or diabetes mellitus (type 1 or 2).
+            </li>
+                </ul>
+                </li>
+                <li>Currently on or beginning statin therapy</li>
+                <li>TG level ≥180 and &lt;500 mg/dL and HDL-C &lt;42 mg/dL for men or HDL-C &lt;47 mg/dL for women</li>
+                <li>LDL-C <100 mg/dL</li>
+              </ul>
+            </div>
+            <h5>What is involved</h5>
+            <div style="padding-left: 30px;">
+              <ul>
+                <li>Fourteen visits over 3-5 year study period
+            </li>
+                <li>Nine telephone follow-ups calls over 3-5 year study period
+            </li>
+                
+                <li>Routine laboratory tests
+            </li>
+                <li>Physical exams
+
+            </li>
+                <li>Blood pressure checks
+            </li>
+                <li>One EKG
+
+            </li>
+              </ul>
+            </div> 
+            <p>Patients who enroll in the study will only be seen for study-related visits and will be referred back to you for all non-study- related care.
+            </p>
+            <p>If you are interested in sharing this information with your patients, please confirm your interest at<a href="#">https://www.mystrengthtrial.com/hcp</a>.where additional information is also available.
+            </p>
+           
+            <p>Note: This initiative was assessed for HIPAA compliance by Quest Diagnostics.
+
+            </p>
+            
+            <p>Thank you for your consideration.
+            </p>
+            <br/>
+            <p>Sincerely,</p><br/>
+            <p>Dr. Harvey W. Kaufman, M.D.<br>
+            Senior Medical Director, Medical Informatics  <br>
+            Quest Diagnostics <br>
+            3 Giralda Farms<br>
+            Madison, NJ 07940 USA <br>
+            Harvey.W.Kaufman@QuestDiagnostics.com <br>
+            QuestDiagnostics.com<br>
+            </p>
+                        </div>
+                      </div>
+                <div class="md-padding" style="text-align: center;">
+                    <md-button style="background-color:none !important; color:rgb(53,121,42);float: left;text-decoration: underline;" class="md-primary big_btn" ng-click="phyemailreviewback()">Back</md-button>
+                   <md-button style="background-color:rgb(53,121,42)!important; color:white;float: right;" class="md-primary big_btn" ng-click="phyemailreview()">Save & Continue</md-button>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- End of Physician Design section -->
+
+            <!-- Start of Patient Confirm section -->
+
+
+            <div style="margin-bottom: 20px;" ng-show="pat_email_confirm" >
+            <div class="add_email_campaign_recipients_head" layout="row" layout-align="start" > 
+              <span>CONFIRM</span>
+            </div>
+            <div  layout="column" class="add_email_campaign_recipients_body" layout="row" layout-align="start"  style="box-shadow: -2px 2px 5px #b5b5b5;">
+                 <div layout="row" style="padding-left: 20px;">
+                 <div  style="width: 250px; padding-top: 25px;"><span>Test Email</span></div>
+                 <div  style="width: 300px; padding-top: 0px;">
+                    <md-input-container  class="md-block" >
+                        
+                        <input style="width: 300px;" placeholder="Email Address" ng-model="testemail">
+                  </md-input-container>
+
+                  </div>
+                  <div  style="padding-top: 10px;"><md-button style="color: rgb(53,121,42) !important; background-color: white;">&nbsp;Send</md-button></div>
+
+              </div>
+              <div layout="row" style="padding-left: 20px;">
+                 <div  style="width: 250px;"><span>When you are going to send emails?</span></div>
+                 <div  style="width: 60px; padding-left:4px; ">
+                    <md-radio-group ng-model="sendemail">
+                   <md-radio-button id="first"  name="content" value="first" >
+                    Now
+                  </md-radio-button>
+                  <md-radio-button id="other"  value="other" >
+                    Later
+                  </md-radio-button></md-radio-group>
+                </div>
+
+              </div>
+             
+               <div layout="row" style="padding-left: 20px;" ng-show="sendemail == 'other'">
+                 <div  style="width: 250px; padding-top: 25px;"><span>Schedule for Campaign</span></div>
+                 <div  style="width: 250px; padding-top: 20px; padding-left: 0px;">
+                   <span>Select Date:</span> <md-datepicker  ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+                  </div>
+
+              </div>
+
+              
+              
+              <div class="md-padding" style="text-align: center;">
+                  <md-button style="background-color:none !important; color:rgb(53,121,42);float: left;text-decoration: underline;" class="md-primary big_btn" ng-click="patconfirmback()">Back</md-button>
+                   <md-button style="background-color:rgb(53,121,42)!important; color:white;line-height:50px;float: right;" class="md-primary big_btn" href="#!/patient_email" ng-click="confirm_fail=!confirm_fail;confirm_succ=!confirm_succ">Confirm</md-button>
+              </div>
+            </div>
+            </div>
+            <!-- End of Patient Confirm -->
+            <!-- Start of Patient Confirm AB -->
+            <div style="margin-bottom: 20px;" ng-show="pat_email_confirm_AB" >
+            <div class="add_email_campaign_recipients_head" layout="row" layout-align="start" > 
+              <span>CONFIRM</span>
+            </div>
+            <div  layout="column" class="add_email_campaign_recipients_body" layout="row" layout-align="start"  style="box-shadow: -2px 2px 5px #b5b5b5;">
+                 <div layout="row" style="padding-left: 20px;">
+                 <div  style="width: 250px; padding-top: 25px;"><span>Test Email</span></div>
+                 <div  style="width: 300px; padding-top: 0px;">
+                    <md-input-container  class="md-block" >
+                        
+                        <input style="width: 300px;" placeholder="Email Address" ng-model="testemail">
+                  </md-input-container>
+
+                  </div>
+                  <div  style="padding-top: 10px;"><md-button style="color: rgb(53,121,42) !important; background-color: white;">&nbsp;Send</md-button></div>
+
+              </div>
+              <div layout="row" style="padding-left: 20px;">
+                 <div  style="width: 250px;"><span>When you are going to send emails?</span></div>
+                 <div  style="width: 60px; padding-left:4px; ">
+                    <md-radio-group ng-model="sendemail">
+                   <md-radio-button id="first" name="content" value="first" >
+                    Now
+                  </md-radio-button>
+                  <md-radio-button id="other" value="other" >
+                    Later
+                  </md-radio-button></md-radio-group>
+                </div>
+
+              </div>
+             
+               <div layout="row" style="padding-left: 20px;" ng-show="sendemail == 'other'">
+                 <div  style="width: 250px; padding-top: 25px;"><span>Schedule for Campaign</span></div>
+                 <div  style="width: 250px; padding-top: 20px; padding-left: 0px;">
+                   <span>Select Date:</span> <md-datepicker  ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+                  </div>
+
+              </div>
+
+              
+              
+              <div class="md-padding" style="text-align: center;">
+                  <md-button style="background-color:none !important; color:rgb(53,121,42);float: left;text-decoration: underline;" class="md-primary big_btn" ng-click="patconfirmbackAB()">Back</md-button>
+                   <md-button style="background-color:rgb(53,121,42)!important; color:white;line-height:50px;float: right;" class="md-primary big_btn" href="#!/campaign_email" ng-click="confirm_fail=!confirm_fail;confirm_succ=!confirm_succ">Confirm</md-button>
+              </div>
+            </div>
+            </div>
+            <!-- End of Patient Confirm AB -->
+            <!-- Start of Physician Confirm -->
+            </div>
+            <div style="margin-bottom: 20px;" ng-show="phy_email_confirm" >
+            <div class="add_email_campaign_recipients_head" layout="row" layout-align="start" > 
+              <span>CONFIRM</span>
+            </div>
+            <div  layout="column" class="add_email_campaign_recipients_body" layout="row" layout-align="start"  style="box-shadow: -2px 2px 5px #b5b5b5;">
+                 <div layout="row" style="padding-left: 20px;">
+                 <div  style="width: 250px; padding-top: 25px;"><span>Test Email</span></div>
+                 <div  style="width: 300px; padding-top: 0px;">
+                    <md-input-container  class="md-block" >
+                        
+                        <input style="width: 300px;" placeholder="Email Address" ng-model="testemail">
+                  </md-input-container>
+
+                  </div>
+                  <div  style="padding-top: 10px;"><md-button style="color: rgb(53,121,42) !important; background-color: white;">&nbsp;Send</md-button></div>
+
+              </div>
+              <div layout="row" style="padding-left: 20px;">
+                 <div  style="width: 250px;"><span>When you are going to send emails?</span></div>
+                 <div  style="width: 60px; padding-left:4px; ">
+                    <md-radio-group ng-model="sendemail">
+                   <md-radio-button id="first"  name="content" value="first" >
+                    Now
+                  </md-radio-button>
+                  <md-radio-button id="other"  value="other" >
+                    Later
+                  </md-radio-button></md-radio-group>
+                </div>
+
+              </div>
+             
+               <div layout="row" style="padding-left: 20px;" ng-show="sendemail == 'other'">
+                 <div  style="width: 250px; padding-top: 25px;"><span>Schedule for Campaign</span></div>
+                 <div  style="width: 250px; padding-top: 20px; padding-left: 0px;">
+                   <span>Select Date:</span> <md-datepicker  ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+                  </div>
+
+              </div>              
+              
+              <div class="md-padding" style="text-align: center;">
+                    <md-button style="background-color:none !important; color:rgb(53,121,42);float: left;text-decoration: underline;" class="md-primary big_btn" ng-click="phyconfirmback()">Back</md-button>
+                   <md-button style="background-color:rgb(53,121,42)!important; color:white;line-height:50px;float: right;" class="md-primary big_btn" href="#!/physician_email" ng-click="confirm_fail=!confirm_fail;confirm_succ=!confirm_succ">Confirm</md-button>
+              </div>
+            </div>
+            </div>
+            <!-- End of Physician Confirm -->
+        </md-content>

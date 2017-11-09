@@ -1,0 +1,64 @@
+
+<style>
+md-autocomplete input[type='search']{
+	border: none !important;
+}
+</style>
+
+<md-dialog class="add_trial" ng-hide="hide_dialog">
+    <form ng-cloak>
+        <div class="modal-header">
+
+            <div class="col-md-2">
+                <h5 class="modal-title"><i class="fa fa-forumbee" aria-hidden="true"></i> Edit Filter</h5>
+            </div>
+           
+            <div class="col-md-1">
+
+            </div>
+        </div>
+<br clear="all">
+			   
+			
+			  
+			   <!-- Checkbox Section -->
+			   
+			  <div layout="row" layout-align="space-between center" style="margin-top: 50px" class="md-padding">
+    <div class="sub_answers md-padding" style="width:75%; margin:0 auto" layout="row" layout-align="space-between center">
+                                                                            <rzslider rz-slider-model="hdl.min" rz-slider-high="hdl.max" rz-slider-options="hdl.options">
+                                                                            </rzslider>
+                                                                            
+     </div>
+     
+          <div >
+          <md-checkbox ng-model="data.male" aria-label="Male">
+          Male
+          </md-checkbox>
+           <md-checkbox ng-model="data.female" aria-label="Female">
+            Female
+          </md-checkbox>
+        </div>
+     </div>
+			   
+			  
+			
+			
+<div class=" btn_top_10 submit_sec" >
+
+
+
+<md-divider></md-divider>
+<md-button class="md-primary fr" ng-click="hideDialog('hide')">Cancel</md-button>
+<md-button class="md-primary fr" ng-click="showControl('hide');showDemographics = !showDemographics ">Submit</md-button>
+
+</div>
+			   
+			   
+        </div>
+		
+
+
+
+    </form>
+</md-dialog>
+

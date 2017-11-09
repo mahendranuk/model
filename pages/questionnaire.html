@@ -1,0 +1,212 @@
+
+
+<div class="outreach_email_header " layout="row" layout-align="space-between center" >
+  <div class="p-15 p-b-0">
+    <h2 class="top_head_align p-15">Questionnaire</h2>
+   </div>
+   <div class="md-padding">
+
+        <a style="color:white; text-decoration: none;"><md-button class="md-raised md-primary big_btn" "><i  style="color:white;" class="fa fa-plus" aria-hidden="true"></i> Create</md-button></a>
+       </div>
+</div>
+  <div layout="row"  layout-align="space-between center"  style="background-color: #ECECEC;padding: 0 16px">
+    <md-button back-button style="float:left; color:green; font-weight:bold;"><i class="fa fa-angle-left" aria-hidden="true"></i> Back</md-button>
+    <md-button class="md-primary" ng-click="show_filter = !show_filter " style="font-size: 13px; border:0px solid rgba(53, 121, 42,0);color: rgba(0, 0, 0, 0.60);" >Filter Option <i class="fa fa-angle-down" aria-hidden="true" style="color: rgba(0, 0, 0, 0.60);" ></i></md-button>
+      </div>
+
+<div layout="row" layout-sm="column" layout-xs="column" class="md-padding" >
+   <div flex class="flex">
+      <!--  <div layout="row"  layout-align="space-between center" class="trial_head">
+      <h2> <img src="assets/svg/list.svg"/ width="35">All Trials</h2>
+      
+      </div> -->
+     
+      
+
+      <div layout="row"  ng-show="show_filter" layout-align="start" style="position:relative;border-radius: 3px;margin-bottom: 10px;border-radius: 0px;    border-bottom: 1px solid #dbdbdb;" >
+   <div layout="column"  layout-align="start stretch" class="filter-section" layout-padding>
+     <span class="filter_head">Trials</span>
+     <md-checkbox>Trial 1</md-checkbox>
+     <md-checkbox>Trial 2</md-checkbox>
+     <md-checkbox>Trial 3</md-checkbox>
+     <md-checkbox>Trial 4</md-checkbox>
+
+   </div>
+   
+   
+
+    <div layout="column"  layout-align="start stretch" class="filter-section campaign_date_filter" layout-padding>
+     <span class="filter_head">Date</span>
+    <form name="myOtherForm" flex-gt-xs>
+        <h6>Select date range</h6>
+
+        <md-input-container>
+          <label>From date</label>
+          <md-datepicker ng-model="myDate1" name="dateField" md-min-date="minDate1"
+            md-max-date="maxDate1"></md-datepicker>
+
+          <div ng-messages="myOtherForm.dateField.$error">
+            <div ng-message="valid">The entered value is not a date!</div>
+            <div ng-message="required">This date is required!</div>
+            <div ng-message="mindate">Date is too early!</div>
+            <div ng-message="maxdate">Date is too late!</div>
+          </div>
+        </md-input-container>
+
+         <md-input-container>
+          <label>To date</label>
+          <md-datepicker ng-model="myDate" name="dateField" md-min-date="minDate"
+            md-max-date="maxDate"></md-datepicker>
+
+          <div ng-messages="myOtherForm.dateField.$error">
+            <div ng-message="valid">The entered value is not a date!</div>
+            <div ng-message="required">This date is required!</div>
+            <div ng-message="mindate">Date is too early!</div>
+            <div ng-message="maxdate">Date is too late!</div>
+          </div>
+        </md-input-container>
+      </form>
+    
+
+   </div>
+
+   <md-button class="md-primary" ng-click="show_filter = !show_filter " style="font-size: 13px; border:1px solid rgb(53, 121, 42); position: absolute;    bottom: 0px; right: 10px;line-height: 10px;" >Apply filter <i class="fa fa-filter" aria-hidden="true" style="color:#CCC" ></i></md-button>
+  </div>
+
+
+<div><md-table-pagination style="float: right !important; border: none;" md-limit="query.limit" md-limit-options="[5, 10, 15]" md-page="query.page" md-total="{{identifyData.count}}" md-on-paginate="getDesserts" md-page-select></md-table-pagination></div>
+
+
+
+
+<!-- email campaign list -->
+<div style="padding-left: 30px !important;" layout="row"  layout-align="start" >
+<div style="padding-top: 20px;"><md-checkbox md-no-ink aria-label="Checkbox No Ink"  class="md-primary" >   
+
+</md-checkbox></div>
+<div>
+<md-select ng-model="armor" placeholder="Action" class="md-no-underline" required md-no-asterisk="false" style="padding-top: 0px;">
+          <md-option value="cloth">Edit</md-option>
+          <md-option value="leather">Delete</md-option>
+          <md-option value="chain">Status</md-option>
+          <md-option value="plate">Add to List</md-option>
+        </md-select>
+        </div>
+  
+  
+  
+</div>
+
+
+
+
+
+<div class="email_outreach_body email_list_camp"  layout="column" layout-align="start" ng-repeat="identifyData in identifyData.data">
+  <div  layout="row" class="email_oureach_list"  layout-align="space-between center" >
+  <div style="padding-left: 20px;"><md-checkbox md-no-ink aria-label="Checkbox No Ink"  class="md-primary" style="width:5%;">   
+      </md-checkbox></div>
+    <div layout="column" style="width:100%">
+    <div layout="row" layout-align="start"   >
+        <a href="" style="text-decoration: none; color:black; padding-top: 5px;"><span class="email_head_text">{{identifyData.title}}</span></a>
+        
+    </div>
+    <div layout="row" layout-align="start"  flex="35"  >
+        <p class="email_outreach_senton">{{identifyData.senton}}</p> 
+    </div>
+    <div layout="row" layout-align="start"  flex="35"  >
+         <p class="email_outreach_senton">Trial Name: {{identifyData.trialname}}</p>
+         </div>
+    </div>
+
+    <!-- <div layout="column" layout-align="starrt"  style="margin-left: 150px;" class="email_outreach_body_div">
+        <span>{{identifyData.subscription.value}}</span>
+        <p>Subscribers</p> 
+    </div>
+    <div layout="column" layout-align="start"  class="email_outreach_body_div">
+        <span>{{identifyData.unsubscription.value}}</span>
+        <p>Unsubscribers</p> 
+    </div>
+    <div layout="column" layout-align="star t" style="margin-right: 150px;" class="email_outreach_body_div no_border_right">
+        <span>{{identifyData.clicks.value}}</span>
+        <p>Clicks</p> 
+    </div> -->
+    
+      
+    <div flex="10" layout="row" layout-align="space-between center" style="float: right !important;">
+     <div layout="row" layout-align="center center" >
+        <a href="#!/outreach_question"><i class="fa fa-pencil" aria-hidden="true"></i></a>      
+    </div>
+       <div layout="row" layout-align="center center">
+        <i class="fa fa-clone" aria-hidden="true"></i>      
+    </div>
+    <div layout="row" layout-align="center center">
+        <i class="fa fa-download" aria-hidden="true"></i>       
+    </div>
+    <div  layout="row" layout-align="center center">
+        <i class="fa fa-trash" aria-hidden="true"></i>     
+    </div>
+    </div>
+  </div>
+ 
+</div>
+<md-table-pagination md-limit="query.limit" md-limit-options="[5, 10, 15]" md-page="query.page" md-total="{{identifyData.count}}" md-on-paginate="getDesserts" md-page-select></md-table-pagination>
+
+
+<!-- <md-table-container>
+  <table md-table md-row-select multiple ng-model="selected" md-progress="promise">
+    <thead md-head md-order="query.order" md-on-reorder="getDesserts">
+      <tr md-row>
+        <th md-column><span></span></th>
+         <th md-column class="email_outreach_center_text"></th>
+          <th md-column class="email_outreach_center_text" class="email_outreach_center_text"></th>
+          <th md-column class="email_outreach_center_text" class="email_outreach_center_text"></th>
+          
+          <th md-column class="email_outreach_center_text"></th>
+     
+      </tr>
+    </thead>
+    <tbody md-body >
+      <tr md-row md-select="identifyData" md-select-id="name" md-auto-select ng-repeat="identifyData in identifyData.data" >
+        <td md-cell >
+          <a  style="text-decoration: none;">
+            <div layout="column" layout-align="start" >
+              <span class="email_head_text" >{{identifyData.campname}}</span>
+              <p class="email_outreach_senton">{{identifyData.senton}}</p> 
+            </div>
+          </a>
+        </td>
+        <td md-cell class="email_outreach_center_text">
+            <div layout="column" layout-align="start">
+              <span class="email_outreach_bold_text">{{identifyData.subscription.value}}</span>
+              <p class="email_outreach_senton">Subscribers</p> 
+            </div> 
+        </td>
+        <td md-cell class="email_outreach_center_text">
+            <div layout="column" layout-align="start" >
+              <span class="email_outreach_bold_text">{{identifyData.unsubscription.value}}</span>
+              <p class="email_outreach_senton">Unsubscribers</p> 
+            </div> 
+        </td>
+        <td md-cell class="email_outreach_center_text">
+            <div layout="column" layout-align="start" >
+              <span class="email_outreach_bold_text">{{identifyData.clicks.value}}</span>
+              <p class="email_outreach_senton">Clicks</p> 
+            </div> 
+        </td>
+        <td md-cell class="email_outreach_center_text">
+          <a href="#"><i  class="fa fa-clone" aria-hidden="true"></i></a>
+          <a href="#"><i style="padding-left:20px; " class="fa fa-download" aria-hidden="true"></i></a>
+          <a href="#"><i style="padding-left:20px; " class="fa fa-trash" aria-hidden="true"></i></a>
+
+        </td>
+        
+      </tr>
+    </tbody>
+  </table>
+</md-table-container>
+<md-table-pagination md-limit="query.limit" md-limit-options="[5, 10, 15]" md-page="query.page" md-total="{{identifyData.count}}" md-on-paginate="getDesserts" md-page-select></md-table-pagination> -->
+
+
+
+
+

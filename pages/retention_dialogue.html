@@ -1,0 +1,337 @@
+
+ <md-dialog class="fullscreen-dialog" aria-label="Full Screen Dialog Test"  >
+      <md-toolbar style="padding: 20px 0;">
+        <div class="md-toolbar-tools">
+          
+          <h2 flex="flex" style="font-size: 24px; color:white">Retention Factor Analysis</h2>
+          <md-button class="md-icon-button" ng-click="closeDialog()">
+            <i class="fa fa-times fa-2x"></i>
+          </md-button>
+        </div>
+      </md-toolbar>
+      <md-dialog-content>
+      <div layout="row" layout-align="space-between start">
+
+        <div flex="20" class="bg_lite">
+
+        <div  ng-init="showDiv = true">
+  
+   <div layout="column"  layout-align="space-between stretch" style="position:relative;  border-radius: 0px;" >
+   <div layout="column">
+<span class="filter_head filter_head_first" style="padding: 24px 18px;margin-bottom: 20px;
+    background-color: rgba(204, 204, 204, 0.35);">Filter</span>
+
+<div layout="column"  layout-align="start stretch" class="filter-section fl_w" layout-padding>
+     <span class="filter_head" ng-click="filter_source=!filter_source" layout="row"  layout-align="space-between center"><span>Source </span><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+     <div ng-show = "filter_source" layout="column"  layout-align="start stretch">
+       <md-checkbox>Data Lake ({{data_ret}})</md-checkbox>
+       <md-checkbox>MyQuest ({{myquest_ret}})</md-checkbox>
+       <md-checkbox style="margin-right:0px;">External Recruiters ({{external_ret}})</md-checkbox>
+       <md-checkbox>Outreach ({{outreach_ret}})</md-checkbox>
+       <a style="text-align: right; cursor:pointer;border-bottom: 1px dotted #d8d8d8;padding: 0 5px 0 0;width: 100%;">more</a>
+     </div>
+
+   </div>
+   <div layout="column"  layout-align="start stretch" class="filter-section fl_w" layout-padding>
+     <span class="filter_head" ng-click="filter_location=!filter_location" layout="row"  layout-align="space-between center"><span>Location</span><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+     <div ng-show = "filter_location" layout="column"  layout-align="start stretch" >
+       <md-checkbox>Alabama ({{Alabama_ret}})</md-checkbox>
+       <md-checkbox>Alaska ({{Alaska_ret}})</md-checkbox>
+       <md-checkbox>California ({{Athens_ret}})</md-checkbox>
+       <md-checkbox>Illinois ({{Illinois_ret}})</md-checkbox>
+        <div layout="row"  layout-align="space-between center" class="filter-section fl_w" layout-padding>
+     <md-input-container class="md-block" style="width:75%; display: inline">
+                <label>Radius</label>
+                <input value="25" type="number" />
+              </md-input-container>
+                <a  class="md-primary md-button md-ink-ripple" md-ink-ripple="#A7A8AA" style="font-size: 13px;background-color: rgb(53, 121, 42);color: white;line-height: 25px;">Go<div class="md-ripple-container"></div></a>
+    </div>
+       <a style="text-align: right; cursor:pointer;border-bottom: 1px dotted #d8d8d8;padding: 0 5px 0 0;width: 100%;">more</a>
+    
+     </div>
+   </div>
+    <div layout="column"  layout-align="start stretch" class="filter-section fl_w" layout-padding>
+     <span class="filter_head" ng-click="filter_age=!filter_age" layout="row"  layout-align="space-between center"><span>Age</span><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+     <div ng-show="filter_age" layout="column"  layout-align="start stretch">
+     <md-checkbox>1-25 years ({{age1_ret}})</md-checkbox>
+     <md-checkbox>25-50 years ({{age2_ret}})</md-checkbox>
+     <md-checkbox>50-75 years ({{age3_ret}})</md-checkbox>
+     <md-checkbox>Above 75 years ({{age4_ret}})</md-checkbox>
+      <div layout="row" layout-align="start stretch">
+       <md-input-container flex class="md-block">
+                 <label>From</label>
+                   <input>
+       </md-input-container>
+       <md-input-container flex class="md-block">
+                 <label>To</label>
+                   <input>
+       </md-input-container>
+     <a flex class="md-primary md-button md-ink-ripple" md-ink-ripple="#A7A8AA" style="font-size: 13px;background-color: rgb(53, 121, 42);
+    color: white;width: 25%;margin: 0 auto;margin-top: 15px; " ng-click="modify_age()">Go<div class="md-ripple-container"></div></a>
+      </div>
+ <!-- <a style="text-align: right; cursor:pointer;border-bottom: 1px dotted #d8d8d8;padding: 0 5px 0 0;width: 100%;">more</a> -->
+    </div>
+   </div>
+
+    <div layout="column"  layout-align="start stretch" class="filter-section fl_w" layout-padding>
+    <span class="filter_head" ng-click="gender_filter=!gender_filter" layout="row"  layout-align="space-between center"><span>Gender</span><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+     
+     <div ng-show ="gender_filter">
+     <md-checkbox>Male({{male_ret}})</md-checkbox>
+     <md-checkbox>Female ({{female_ret}})</md-checkbox>
+    </div>
+
+   </div>
+
+
+  </div>
+
+   </div>
+   <div class="width_100">
+     
+     <div style="position: relative;width:100%;border-bottom: 1px solid #D8D8D8;margin-bottom: 10px;">
+       <div style="
+    padding-bottom: 10px;">
+         
+         <div layout="column"   layout-align="space-between center" style="position:relative;  border-radius: 0px;">
+ 
+<!-- <h3>STRENGTH-specific analysis</h3> -->
+<div layout="column"  layout-align="start stretch" class="filter-section fl_w" layout-padding>
+     <span class="filter_head" ng-click="filter_healthstatus=!filter_healthstatus" layout="row"  layout-align="space-between center"><span>Health Status</span><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+     <div ng-show="filter_healthstatus" layout="column"  layout-align="start stretch">
+     <md-checkbox style="width:200px">Atherosclerosis</md-checkbox>
+     <md-checkbox>Coronary artery disease</md-checkbox>
+     <md-checkbox>Cerebrovascular disease</md-checkbox>
+     <md-checkbox> Aortic aneurysm</md-checkbox>
+     <a style="text-align: right; cursor:pointer;border-bottom: 1px dotted #d8d8d8;padding: 0 5px 0 0;width: 100%;">more</a>
+     </div>
+   </div>
+   <div layout="column"  layout-align="start stretch" class="filter-section fl_w" layout-padding>
+      <span class="filter_head" ng-click="filter_diagn=!filter_diagn" layout="row"  layout-align="space-between center"><span>Diagnostic or Lab Test</span><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+     <div ng-show="filter_diagn" layout="column"  layout-align="start stretch" class="tg_holder">
+     <md-checkbox style="width:200px" ng-click="showCustom($event)">HDL-Cholesterol</md-checkbox>
+     <md-checkbox>LDL-Cholesterol</md-checkbox>
+     <md-checkbox ng-click="tg_range=!tg_range">Triglycerides</md-checkbox>
+     <md-checkbox>Total cholesterol</md-checkbox>
+    <div ng-show="tg_range" class="tg_range md-whiteframe-2dp">
+        <div layout="row"  layout-align="space-between center" class="filter-section fl_w" layout-padding>
+     <md-input-container flex class="md-block" style="display: inline">
+                <label>Min</label>
+                <input type="numbermin" />
+              </md-input-container>
+     <md-input-container flex class="md-block" style="display: inline">
+                <label>Max</label>
+                <input type="numbermax" />
+              </md-input-container>
+                <a flex class="md-primary md-button md-ink-ripple" md-ink-ripple="#A7A8AA" style="font-size: 13px;background-color: rgb(53, 121, 42);
+    color: white;line-height: 25px;" ng-click="modify_tgl()">Go<div class="md-ripple-container"></div></a>
+    </div>
+              
+    </div>
+     <a style="text-align: right; cursor:pointer;border-bottom: 1px dotted #d8d8d8;padding: 0 5px 0 0;width: 100%;">more</a>
+     </div>
+    
+   </div>
+    <div layout="column"  layout-align="start stretch" class="filter-section fl_w" layout-padding>
+     <span class="filter_head" style="width:100%" ng-click="filter_treatment=!filter_treatment" layout="row"  layout-align="space-between center"><span>Treatment or Health Care</span><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+     <div ng-show="filter_treatment" layout="column"  layout-align="start stretch" >
+     <md-checkbox style="width:200px">chemotherapy</md-checkbox>
+     <md-checkbox>angiogram</md-checkbox>
+     <md-checkbox>Immunotherapy</md-checkbox>
+     <md-checkbox>Targeted Therapy</md-checkbox>
+     <a style="text-align: right; cursor:pointer;border-bottom: 1px dotted #d8d8d8;padding: 0 5px 0 0;width: 100%;">more</a>
+     </div>
+
+
+   </div>
+
+    <div layout="column"  layout-align="start stretch" class="filter-section fl_w" layout-padding>
+     <span class="filter_head" ng-click="filter_lifestyle=!filter_lifestyle" layout="row"  layout-align="space-between center"><span>Lifestyle Choice</span><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+     <div ng-show="filter_lifestyle" layout="column"  layout-align="start stretch" >
+     <md-checkbox style="width:200px">Addictive behavior</md-checkbox>
+     <md-checkbox>Bedtime</md-checkbox>
+      <md-checkbox>Exercise</md-checkbox>
+     <md-checkbox> Diet</md-checkbox>
+    <a style="text-align: right; cursor:pointer;border-bottom: 1px dotted #d8d8d8;padding: 0 5px 0 0;">more</a>
+    </div>
+   </div>
+
+<md-button class="md-primary" ng-click="modify_radius()" style="font-size: 13px; background-color: rgb(53, 121, 42);border:1px solid rgb(53, 121, 42);line-height: 10px;color:white" >Apply filter <i class="fa fa-filter" aria-hidden="true" style="color:#FFF" ></i></md-button>
+
+
+   </div>
+       </div>
+      
+     </div>
+
+   </div>
+   
+  </div></div>
+
+<div flex="80">
+
+
+<div layout="row" layout-align="space-between center"  style="padding: 10px 18px;margin-bottom: 2px;margin-left: 4px;
+    background-color: rgba(204, 204, 204, 0.35);">
+<div flex="10">Input Set:</div>
+<div flex="25">
+    <md-select ng-model="analysis" placeholder="Go to" class="md-no-underline goto_list" style="display: inline">
+            <md-option value="retention" selected>Candidates within 25mi</md-option>
+            <md-option value="location">Candidates within 15mi</md-option>
+            <!-- <md-option value="patients">Data set 2</md-option> -->
+         
+        </md-select></div>
+        <div flex="45" class="results_count">Results: <span>{{candidate_set2_count}}</span></div>
+<div flex="20" layout="row" layout-align="space-between center" style="width:15%; ">
+ <a  class="md-primary md-button md-ink-ripple" md-ink-ripple="#A7A8AA" style="font-size: 13px;background-color: rgb(53, 121, 42);
+    color: white; " ng-click= "add_outreach =! add_outreach">Save Candidates<div class="md-ripple-container"></div></a>
+<div class="bg_white bx_shd" style="position: absolute;top: 130px;z-index: 9999;right: 25px; width: 300px;" ng-show="add_outreach">
+   <div layout="column"  layout-align="space-between center" class="filter-section fl_w">
+     <md-input-container class="md-block" style="width:75%; display: inline">
+                <label>Name</label>
+                <input type="text" />
+              </md-input-container>
+                <a  class="md-primary md-button md-ink-ripple" md-ink-ripple="#A7A8AA" style="font-size: 13px;background-color: rgb(53, 121, 42);
+    color: white;" ng-click= "add_outreach =! add_outreach">Save<div class="md-ripple-container"></div></a>
+    </div>
+
+
+</div>
+
+       </div>
+</div>
+  
+<div class="md-padding retention_chart" flex="80" style="margin: 0 auto;">
+<div class="legend_sec">
+<ul>
+  <li>
+    <span class="legend_style legend_green"></span>
+    <span class="legend_label">Positive Correlation</span>
+  </li>
+  <li>
+    <span class="legend_style legend_red"></span>
+    <span class="legend_label">Negative Correlation</span>
+  </li>
+</ul>
+</div>
+   
+  <script src="assets/js/d3.v3.min.js" ></script>
+<script>
+
+var data = [
+    {
+        "age": "Age",
+        "value": "0.7",
+        "color": "#D32F2F"
+    },
+    {
+        "age": "Triglycerides",
+        "value": "0.6",
+        "color": "#66cc7c"
+    },
+    {
+        "age": "CVD",
+        "value": "0.4",
+        "color": "#66cc7c"
+    },
+    {
+        "age": "HDL-C",
+        "value": "0.4",
+        "color": "#D32F2F"
+    },
+    {
+        "age": "LDL-C",
+        "value": "0.35",
+        "color": "#66cc7c"
+    },
+    {
+        "age": "Diabetes",
+        "value": "0.3",
+        "color": "#66cc7c"
+    },
+    {
+        "age": "",
+        "value": "1",
+        "color": "white"
+    }
+];
+
+var margin = {top: 20, right: 20, bottom: 30, left: 40},
+    width = 600 - margin.left - margin.right,
+    height = 400 - margin.top - margin.bottom;
+
+var x = d3.scale.ordinal()
+.rangeRoundBands([0, width], .1);
+
+var y = d3.scale.linear()
+.range([height, 0]);
+
+var xAxis = d3.svg.axis()
+.scale(x)
+.orient("bottom");
+
+var yAxis = d3.svg.axis()
+.scale(y)
+.orient("left")
+.ticks(10, "");
+
+var svg = d3.select(".retention_chart").append("svg")
+.attr("width", width + margin.left + margin.right)
+.attr("height", height + margin.top + margin.bottom)
+.append("g")
+.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+
+x.domain(data.map(function(d) { return d.age; }));
+y.domain([0, d3.max(data, function(d) { return d.value; })]);
+
+svg.append("g")
+.attr("class", "x axis")
+.attr("transform", "translate(0," + height + ")")
+.call(xAxis);
+
+svg.append("g")
+.attr("class", "y axis")
+.call(yAxis)
+.append("text")
+.attr("transform", "rotate(-90)")
+.attr("y", 6)
+.attr("dy", ".71em")
+.style("text-anchor", "end")
+.text("");
+
+svg.selectAll(".bar")
+.data(data)
+.enter().append("rect")
+.attr("class", "bar")
+.attr("x", function(d) { return x(d.age); })
+.attr("width", x.rangeBand())
+.attr("y", function(d) { return y(d.value); })
+.attr("height", function(d) { return height - y(d.value); })
+.style("fill", function(d) { return d.color; });
+
+function type(d) {
+    d.frequency = +d.frequency;
+    return d;
+}
+
+</script>
+
+   </div>
+
+
+
+</div>
+      </div>
+
+
+
+
+  
+      </md-dialog-content>
+    </md-dialog>
+
+
+
+
+

@@ -1,0 +1,727 @@
+
+<!--  Header -->
+
+<div class="top_identity_detail" layout="row" layout-align="space-between center" id="top" >
+  <div>
+   <md-button back-button style="float:left; color:green; font-weight:bold;"><i class="fa fa-angle-left" aria-hidden="true"></i> Back</md-button>
+   </div>
+   <!-- <div style="float:right" >
+   <md-button ><a href="" style="color:rgb(53,121,42); text-decoration: none; font-weight:bold;"><i  style="color:rgb(53,121,42);" class="fa fa-pencil" aria-hidden="true"></i></a></md-button>
+   </div> -->
+</div>
+
+<md-content class="bg_lite">
+<!--  Patient Information -->
+
+
+<div layout="row" layout-align="start center" class="patientinformation md-padding p-t-0 br-bt">
+  
+   <h2>Patient Information</h2>
+</div>
+
+
+<!--  Patient Profile-->
+
+
+<div layout="row" layout-align="space-between center" class="top_identity_profile md-padding " style="" >
+   <div layout="row" flex="40"><h6><div class="divround">TA</div></h6>
+      <div layout="column" layout-align="start start" class="patientprofile" style="width: inherit;">
+
+         <div style="padding-top:10px;padding-left:20px; font-family: probold; color:#6d6d6d;font-size: 12px; "> PATIENT PROFILE </div>
+         <div class="patientprofilename">Anderson, Thomas</div>
+      </div>
+      </div>
+   
+
+
+   <div layout="row" flex="60" class="patient_top_section patient_top_section_1 min-width">
+       <div class="patient_top_data" flex=15>DOB
+           
+     <p class="fontprofilepatient">05/18/1980</p>
+            
+       </div>
+       <div class="patient_top_data" flex=10>Age
+           
+     <p class="fontprofilepatient">36</p>
+            
+       </div>
+
+       <div class="patient_top_data" flex=10>
+          Sex<p class="fontprofilepatient">Male</p>
+             
+       </div>
+        <div class="patient_top_data" flex=15>
+          Patient ID<p class="fontprofilepatient">234A-8456</p>
+           
+       </div>
+       <div class="patient_top_data" flex=20>
+          MyQuest User<p class="fontprofilepatient">Yes</p>
+             
+       </div>
+       <div class="patient_top_data" flex=20>
+          Opt-In for Trials<p class="fontprofilepatient">Yes</p>
+             
+       </div>
+   </div>
+
+      <!-- <div>
+   <md-button ><a href="" style="color:rgb(53,121,42); text-decoration: none; font-weight:bold;"><i  style="color:rgb(53,121,42);" class="fa fa-pencil" aria-hidden="true"></i></a></md-button>
+   </div> --> 
+
+</div>
+
+
+<!-- CONTACT AND REFERENCE INFORMATION -->
+<div class="md-padding patient_detail_info">
+
+<div class="patientinformationdetail" layout="column"       layout-align="start">
+   <div class="patientinfodetail">CONTACT AND REFERENCE INFORMATION
+      <span class="trigger1" ng-click="show=!show"><i class="fa fa-chevron-down" aria-hidden="true"></i>
+      </span>
+   </div>
+
+</div>
+
+
+<!-- CONTACT AND REFERENCE INFORMATION  DETAILS - SHOW-->
+
+
+<div  ng-hide="show" class="patientinformationdetails" layout="column"       layout-align="start">
+   <div class="patientinfodetail">
+      
+
+      <div layout="row" layout-align="space-between center"  class="md-padding  br-bt">
+      <div class="contactinformation">Contact Information
+      </div>
+      <div style="margin-right: 10px;">
+      <a href="" style="color:rgb(53,121,42); text-decoration: none; font-weight:bold;"><i  style="color:rgb(53,121,42);" class="fa fa-pencil" aria-hidden="true"></i></a>
+      </div></div>
+
+
+
+
+
+      <div layout="row" layout-align="start center" class="md-padding patient_detail">
+         <div class="p-10" flex="15"><div class="primary">Primary Phone</div>
+         <div class="fontprofile">(631) 213-3421</div></div>
+        <div class="p-10" flex="10"> <div class="primary">Type</div>
+            <div class="fontprofile1">Mobile</div></div>
+        
+         <div class="p-10" flex="30"><div class="primary">Preference</div> <div class="fontprofile1">Can receive  SMS notifications</div></div>
+        
+         <div class="p-10" flex="15"><div class="primary">Secondary phone</div>  <div class="fontprofile1">(631) 213-2518</div></div>
+       
+         <div class="p-10" flex="15"><div class="primary">Type</div> <div class="fontprofile1">Work</div></div>
+         
+         <div class="p-10" flex="15"><div class="primary">Extension</div>
+         <div class="fontprofile1">231</div>    </div>
+          
+      </div>
+     
+      <div layout="row" layout-align="start center" class="md-padding patient_detail">
+         <div class="p-10" flex="25"><div class="primary">Email</div>
+       <div class="fontprofile">thomas.anderson@gmail.com</div></div>
+        <div class="p-10" flex="45"> <div class="primary">Preference</div>
+
+         <div class="fontprofile1">Patient's preferred form of contact, Can receive notifications
+       </div></div>
+       <div class="p-10 " flex="30">
+         <div class="primary">Address</div>
+   <div class="fontprofile">181 Augusta Dr., Medford, NY 11763</div>
+       </div>
+      
+          
+      </div>
+  
+ <hr>
+      <div layout="row" layout-align="space-between center"  class="md-padding  br-bt">
+      <div class="contactinformation">Reference Information
+      </div>
+      </div>
+   <div layout="row" layout-align="start center" class="md-padding patient_detail">
+         <div class="p-10" flex="25"><div class="primary">Lab Reference ID</div>
+          <div class="fontprofile">A49201</div></div>
+    
+        <div class="p-10" flex="45"> <div class="primary">Health ID</div>
+        <div class="fontprofile">Mobile</div></div>
+         <div class="p-10" flex="30"><div class="primary">Photo ID image</div>
+          <div class="fontprofile">None
+      <!-- <h5 style="color:green;font-size:13px; font-family:probold; text-align:left;margin:0; margin-top: 5px; border-bottom: none"> View</h5> --></div>
+         
+   </div></div>
+ 
+   
+    </div>
+</div><br>
+<div layout="column" layout-align="start" class="patientinformationdetail ">
+<div class="patientinfodetail">MEDICAL HISTORY
+<span class="trigger1" ng-click="show3=!show3"><i class="fa fa-chevron-down" aria-hidden="true"></i></span></div>
+</div>
+<div  ng-show="show3" class="eligibility_criteria_details"  layout="column" layout-align="start">
+
+<!-- inside question answered toggle -->
+
+
+
+
+<!-- inside DDX report toggle -->
+
+
+<div class="patientinfodetail p-15">
+   
+   <div class="contactinformation p-15">Laboratory History<a href="" style="color:rgb(53,121,42); text-decoration: none; font-weight:bold; float: right; margin-right:10px; "><i  style="color:rgb(53,121,42);" class="fa fa-pencil" aria-hidden="true"></i></a></div>
+  
+   <!-- <div class="hr2"><hr></div> -->
+   <div layout="row"       layout-align="start">
+    <div style="padding-left: 10px !important;padding-top: 10px; width: 100%">
+
+   <table style="border-style:5px solid green; width: 98% !important;">
+   <tr>
+      <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Laboratory History</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">CPT Code 
+</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Date of First Known Occurrence Within the Lookback Period </td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Date of Most Recent Known Occurrence  </td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Number of Known Occurrences Within the Lookback Period </td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px; width: 20%">Clinician and/or Facility Associated with the Most Recent Known Occurrence </td>
+   
+   </tr>
+    <tr>
+    <td ><span ng-click="showlipidresult()" style="border-bottom: 1px dotted #000; cursor: help">Lipid Panel </span></td>
+    <td >80061</td>
+    <td >04/28/2015</td>
+    <td >05/05/2015 </td>
+    <td >2</td>
+    <td >Quest Diagnostics - Medford PSC</td>
+   
+   </tr>
+    <tr>
+      <td >Chemistry Screen Panel </td>
+    <td >80053</td>
+    <td >05/20/2015</td>
+    <td >05/20/2015 </td>
+    <td >3</td>
+    <td >Franklin Hospital</td>
+   
+   </tr>
+  <tr>
+      <td >Complete Blood Count (Includes Differential and Platelets)</td>
+    <td >85025</td>
+    <td >05/20/2015</td>
+    <td >05/20/2015</td>
+    <td >1</td>
+    <td >Franklin Hospital</td>
+   
+   </tr>
+   <tr>
+      <td >Prothrombin Time with INR </td>
+    <td >85610</td>
+    <td >05/20/2015</td>
+    <td >05/20/2015</td>
+    <td >2</td>
+    <td >Baltimore General Hospital</td>  
+   
+   </tr>
+   </table>
+   </div>
+
+   </div><br><hr>  
+   <div class="contactinformation p-15">Diagnosis History</div>
+   <div layout="row"       layout-align="start">
+    <div style="padding-left: 10px !important;padding-top: 10px;">
+
+   <table style="border-style:5px solid green; width: 98%;">
+   <tr>
+      <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Diagnosis History</td>
+      <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Source</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">ICD-9 or ICD-10  </td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Date of First Known Occurrence Within the Lookback Period </td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Date of Most Recent Known Occurrence  </td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Number of Known Occurrences Within the Lookback Period </td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Clinician and/or Facility Associated with the Most Recent Known Occurrence </td>
+
+   
+   </tr>
+    <tr>
+      <td >Atherosclerosis</td>
+      <td >Data Diagnostics Report</td>
+    <td >125.10</td>
+    <td>10/01/2014</td>
+    <td >11/01/2014</td>
+    <td >1</td>
+    <td >Franklin Hospital</td> 
+   
+   </tr>
+  <tr>
+      <td >Spinal Stenosis  (probability 80%)</td>
+      <td >ScriptCheck</td>
+    <td >V10.3</td>
+
+    <td>09/29/2014</td>
+    <td >09/30/2014</td>
+    <td >1</td>
+    <td >Eduardo Fuentes, DO</td> 
+   </tr>
+   </table>
+   </div>
+   </div><br><hr>  
+    <div class="contactinformation p-15">Medication History</div>
+   <div layout="row"       layout-align="start">
+    <div style="padding-left: 10px !important;padding-top: 10px;">
+
+   <table style="border-style:5px solid green; width: 98%;">
+
+   <tr>
+      <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Medication History</td>
+      <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Source</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">NDC Code  </td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Date of Most Recent Known Fill</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px; width: 20%;">Number of Known FIlls Within the Lookback Period</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;width: 20%;">Clinician and/or Facility Associated with the Most Recent Known Fill </td>
+
+   
+   </tr>
+    <tr>
+      <td >Simvastatin</td>
+    <td >ScriptCheck</td>
+    <td >00378-5403</td>
+    <td>06/22/2015</td>
+    <td >7</td>
+    <td >CTR Pharmacy</td>
+    
+   
+   </tr>
+    <tr>
+      <td >Albuterol Inhaler</td>
+    <td >Data Diagnostics Report</td>
+    <td >53002-0902</td>
+    <td>06/15/2015</td>
+    <td >4</td>
+    <td >CTR Pharmacy</td>
+    
+   
+   </tr>
+  <tr>
+      <td >Fluticasone Proprionate</td>
+    <td >ScriptCheck</td>
+    <td >53002-0902</td>
+    <td>06/15/2015</td>
+    <td >2</td>
+    <td >Main Street Pharmacy</td>
+ 
+   
+   </tr>
+   <tr>
+    <td >Percocet 325/5</td>
+    <td >ScriptCheck</td>
+    <td >53002-0902</td>
+    <td>02/11/2015</td>
+    <td >5</td>
+    <td >Hank’s Drugs</td>
+
+   
+   </tr>
+   <tr>
+    <td >Percocet 325/5</td>
+    <td >Data Diagnostics Report</td>
+    <td >53002-0902</td>
+    <td>03/20/2015</td>
+    <td >5</td>
+    <td >CTR Pharmacy </td>
+
+   
+   </tr>
+   <tr>
+    <td >Percocet 325/5</td>
+    <td >ScriptCheck</td>
+    <td >53002-0902</td>
+    <td>03/10/2015</td>
+    <td >3</td>
+    <td >Main Street Pharmacy</td>
+
+   
+   </tr>
+   </table>
+   </div>
+   </div><br><hr>
+   <div class="contactinformation p-15">Surgical Procedure History</div>
+   <div layout="row"       layout-align="start">
+    <div style="padding-left: 10px !important;padding-top: 10px; width: 100%">
+
+   <table style="border-style:5px solid green; width: 98% !important;">
+   <tr>
+      <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px; width: 50%">Known Surgical Procedure History </td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">CPT Code 
+</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Date</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Clinician and/or Facility  </td>
+   
+   </tr>
+    <tr>
+      <td >Laminectomy, facetectomy and foraminotomy (unilateral or bilateral with decompression of spinal cord, cauda equine and/or nerve root[s], [eg. Spinal or lateral recess stenosis]), single vertebral segment; lumbar</td>
+    <td >63047</td>
+    <td >05/20/2015</td>
+    <td >Franklin Hospital</td>
+   
+    
+   
+   </tr>
+  <tr>
+      <td >Valvotomy (Commisurotomy), mitral valve, closed heart</td>
+    <td >33420</td>
+    <td >11/01/2014</td>
+    <td >Franklin Hospital</td>
+   
+   
+   
+   </tr>
+   
+   </table>
+   </div>
+
+   </div><br><hr>
+   <div class="contactinformation p-15">Vaccination History</div>
+   <div layout="row"       layout-align="start">
+    <div style="padding-left: 10px !important;padding-top: 10px; width: 100%">
+
+   <table style="border-style:5px solid green; width: 98% !important;">
+   <tr>
+      <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px; width: 50%">Known Vaccination History</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">CPT Code 
+</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Date</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Clinician and/or Facility  </td>
+   
+   </tr>
+    <tr>
+      <td >Afluria (IIV3) </td>
+    <td >90656</td>
+    <td >10/01/2014</td>
+    <td >Thomas Boyer, MD</td>   
+   </tr>
+
+   
+   </table>
+   </div>
+
+   </div><br><hr>
+   <div class="contactinformation p-15">Radiological Study History </div>
+   <div layout="row"       layout-align="start">
+    <div style="padding-left: 10px !important;padding-top: 10px; width: 100%">
+
+   <table style="border-style:5px solid green; width: 98% !important;">
+   <tr>
+      <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px; width: 50%">Known Radiological Study History </td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">CPT Code 
+</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Date</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Clinician and/or Facility  </td>
+   
+   </tr>
+    <tr>
+      <td >Magnetic resonance imaging, spinal canal and contents, lumbar; without contrast material </td>
+    <td >72148</td>
+    <td >05/10/2015</td>
+    <td >Franklin Hospital</td>   
+   </tr>
+   <tr>
+      <td >Chest X-Ray 2-view</td>
+    <td >71020</td>
+    <td >05/10/2015</td>
+    <td >Franklin Hospital</td>   
+   </tr>
+
+   
+   </table>
+   </div>
+
+   </div><br><hr>
+   <div class="contactinformation p-15">Clinician Visit History</div>
+   <div layout="row"       layout-align="start">
+    <div style="padding-left: 10px !important;padding-top: 10px;">
+
+   <table style="border-style:5px solid green; width: 98%;">
+   <tr>
+      <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Known Clinician Visit History</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Date of First Known Encounter Within the Lookback Period </td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Date of Most Recent Known Encounter</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px; ">Number of Known FIlls Within the Lookback Period</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Clinician and/or Facility Associated with the Most Recent Known Fill </td>
+
+   
+   </tr>
+    <tr>
+      <td >Office or other outpatient visit for the evaluation and management of an established patient</td>
+    <td >06/12/2015</td>
+    <td>08/25/2015</td>
+    <td >2</td>
+    <td >Anna Schultz, MD</td>
+    
+   
+   </tr>
+  <tr>
+      <td >Office or other outpatient visit for the evaluation and management of an established patient</td>
+    <td >10/01/2014</td>
+    <td>07/12/2015</td>
+    <td>4</td>
+    <td>Thomas Boyer, MD</td>
+ 
+   
+   </tr>
+   <tr>
+    <td >Office or other outpatient visit for the evaluation and management of an established patient</td>
+    <td >09/29/2014</td>
+    <td>07/12/2015</td>
+    <td >5</td>
+    <td >Eduardo Fuentes, DO</td>
+
+   
+   </tr>
+   </table>
+   </div>
+   </div><br><hr>
+   <div class="contactinformation p-15">Cardiac Study History </div>
+   <div layout="row"       layout-align="start">
+    <div style="padding-left: 10px !important;padding-top: 10px;">
+
+   <table style="border-style:5px solid green; width: 98%; ">
+   <tr>
+      <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px; width: 50%">Known Cardiac Study History </td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">CPT Code</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Date of Most Recent Known Study</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px; ">Number of Known Study Within the Lookback Period</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Clinician and/or Facility Associated with the Most Recent Known Fill </td>
+
+   
+   </tr>
+    <tr>
+      <td >Echocardiography, transthoracic, real-time with image documentation (2D), includes M-mode recording, when performed, complete, with spectral Doppler echocardiography, and with color flow Doppler echocardiography</td>
+    <td >93306  </td>
+    <td>05/15/2015</td>
+    <td >2</td>
+    <td >Franklin Hospital</td>
+    
+   </tr>
+   </table>
+   </div>
+   </div><br>
+
+   <md-button  style="float:left; color:green;font-size:13px; font-weight:bold;" > For more details download patient report here</md-button>
+    </div>
+
+
+</div>
+
+    
+
+<br>
+
+<div layout="column" layout-align="start" class="patientinformationdetail">
+<div class="patientinfodetail">QUESTIONNAIRE
+<span class="trigger1" ng-click="show1=!show1"><i class="fa fa-chevron-down" aria-hidden="true"></i></span></div>
+</div>
+<div ng-show="show1" class="eligibility_criteria_details p-15"  layout="column" layout-align="start ">
+<div class="patientinfodetailnopadding">
+   <div class="eligibility_criteria1">Ongoing Trial</div>
+   <div class="contactinformation" style="margin-bottom: 20px;">Outcomes Study to Assess STatin Residual Risk Reduction With EpaNova in HiGh CV Risk PatienTs With Hypertriglyceridemia (STRENGTH)</div>
+   <div layout="row"       layout-align="start" ">
+   
+   <div class="eligibility_criteria_q1"><strong>Question Answered</strong>
+    
+   </div>
+
+   <div class="eligibility_criteria2"><strong>Expected Answers</strong>
+      <!-- <a href="" style="color:rgb(53,121,42); text-decoration: none; font-weight:bold; float: right; margin-right:10px; "><i  style="color:rgb(53,121,42);" class="fa fa-pencil" aria-hidden="true"></i></a> -->
+      </div>
+   </div>
+   <div layout="row"       layout-align="start" ">
+   
+   <div class="eligibility_criteria_q2">Please confirm your age
+    <div class="fontprofile22">36</div>
+   </div>
+
+   <div class="eligibility_criteria22">Please confirm your age
+   <div class="fontprofile4">Age between 18 and 99</div>
+      <!-- <a href="" style="color:rgb(53,121,42); text-decoration: none; font-weight:bold; float: right; margin-right:10px; "><i  style="color:rgb(53,121,42);" class="fa fa-pencil" aria-hidden="true"></i></a> -->
+      </div>
+   </div>
+  
+   <div layout="row"       layout-align="start ">
+   
+   <div class="eligibility_criteria_q2">Please confirm that you are taking a statin drug such as simvastatin (Zocor), atorvastatin (Lipitor), rosuvastatin (Crestor), or other statin:
+    <div class="fontprofile22">Yes, I Confirm</div>
+   </div>
+
+   <div class="eligibility_criteria22">Please confirm that you are taking a statin drug such as simvastatin (Zocor), atorvastatin (Lipitor), rosuvastatin (Crestor), or other statin:
+      <div class="fontprofile4">Yes, I Confirm</div>
+      </div>
+   </div>
+  
+   
+   <div layout="row"       layout-align="start ">
+   <div class="eligibility_criteria3">Please confirm that your HDL (“good”) cholesterol is lower than normal:
+    <div class="fontprofile5">Yes, I Confirm</div>
+   </div>
+  
+   <div class="eligibility_criteria4">Please confirm that your HDL (“good”) cholesterol is lower than normal:
+    <div class="fontprofile6">Yes, I Confirm</div>
+   </div>
+   
+   </div>
+   <div layout="row"       layout-align="start ">
+   <div class="eligibility_criteria3">Please confirm that you have a history of heart problems such as atherosclerosis, heart attack, stroke, or have diabetes:
+    <div class="fontprofile5">Yes, I Confirm</div>
+   </div>
+  
+   <div class="eligibility_criteria4">Please confirm that you have a history of heart problems such as atherosclerosis, heart attack, stroke, or have diabetes:
+      <div class="fontprofile6">Yes, I Confirm</div>
+   </div>
+   
+   </div>
+   
+   <div layout="row"       layout-align="start">
+    <div class="eligibility_criteria3">
+
+   Are you allergic to omega-3 carboxylic acids, omega-3 fatty acids, omega-3-acid ethyl esters or Corn oil?
+   <div class="fontprofile5">No</div>
+   </div>
+
+    <div class="eligibility_criteria4">
+Are you allergic to omega-3 carboxylic acids, omega-3 fatty acids, omega-3-acid ethyl esters or Corn oil?
+<div class="fontprofile6">No</div>
+   </div>
+   </div>
+    </div>
+    
+
+</div>
+<br>
+
+
+<div layout="column" layout-align="start" class="patientinformationdetail">
+<div class="patientinfodetail">OUTREACH HISTORY
+<span class="trigger1" ng-click="show5=!show5"><i class="fa fa-chevron-down" aria-hidden="true"></i></span></div>
+</div>
+<div  ng-show="show5" class="eligibility_criteria_details p-15"  layout="column" layout-align="start">
+<div class="patientinfodetail">
+   <div layout="row" layout-align="space-between center">
+   <div class="contactinformation">Campaign History</div>
+   <div>
+   <!-- <a href="" style="color:rgb(53,121,42); text-decoration: none; font-weight:bold; padding-top: 15px; ">
+    <i  style="color:rgb(53,121,42);" class="fa fa-pencil" aria-hidden="true"></i>
+    </a> -->
+    <md-button  style="color:white;background-color:rgb(53,121,42)!important;font-size:12px; font-weight:bold;"> Add to Campaign</md-button>
+    
+    </div>
+  </div>
+   <!-- <div class="hr2"><hr></div> -->
+   <div layout="row" layout-align="start">
+    <div style=padding-top: 10px;">
+
+      <table style="border-style:5px solid green; width: 100%;">
+   <tr>
+      <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Action</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Campaign Name</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Start Date</td>
+        <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Type</td>
+        
+        <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Responded</td>
+        <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Updated at</td>
+   
+   </tr>
+    <tr>
+      <td style="border-style:5px solid green; width: 300px;  align:justify;" class="link"><a href="">Edit</a> |
+      <a href="">Del</a> | <a href="">View</a></td>
+    <td style="border-style:thick 2px; width: 210px;">Patient’s First Email</td>
+    <td style="border-style:thick 2px; width: 210px;">09/08/2016</td>
+        <td style="border-style:thick 2px; width: 210px;">Email</td>
+        
+        <td style="border-style:thick 2px; width: 210px;"><i style="color:rgb(53,121,42);" class="fa fa-check" aria-hidden="true"></td>
+        <td style="border-style:thick 2px; width: 210px;">01/01/2017 8:54 AM</td>
+   
+   </tr>
+  <tr> 
+   </tr>
+   <tr>
+   </tr>
+   </table>
+   </div>
+   </div>
+ 
+  <div layout="row"       layout-align="space-between center">
+   <div class="contactinformation">Social Post History</div>
+   <div style="padding-top: 10px;"><md-button  style="color:white;background-color:rgb(53,121,42)!important;font-size:12px; font-weight:bold;"> New Post</md-button></div>
+  </div>
+  <div layout="row"       layout-align="start">
+    <div style="margin-bottom:20px; ">
+
+   <table style="border-style:5px solid green; width: 100%;">
+   <tr>
+      <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Action</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Post Name</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Start Date</td>
+        <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Type</td>
+   
+        <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Updated at</td>
+   
+   </tr>
+    <tr>
+      <td style="border-style:5px solid green; width: 300px;  text-align:justify;" class="link"><a href="">Edit</a> |
+      <a href="">Del</a> | <a href="">View</a></td>
+    <td style="border-style:thick 2px; width: 210px;">Check out this clinical trial</td>
+    <td style="border-style:thick 2px; width: 210px;">12/12/2017</td>
+        <td style="border-style:thick 2px; width: 210px;">Facebook</td>
+       
+     
+        <td style="border-style:thick 2px; width: 420px;">01/19/2017 09:00 AM</td>
+   
+   </tr>
+  <tr>
+     
+   
+   </tr>
+   <tr>
+      
+   
+   </tr>
+   </table>
+   </div>
+
+
+
+
+   </div><br>
+   
+  
+</div>
+
+
+    </div>
+    <br>
+<div layout="column" layout-align="start" class="patientinformationdetail">
+<div class="patientinfodetail">PREVIOUS TRIALS
+<span class="trigger1" ng-click="prev_trials=!prev_trials"><i class="fa fa-chevron-down" aria-hidden="true"></i></span></div>
+</div>
+<div  ng-show="prev_trials" class="eligibility_criteria_details p-15"  layout="column" layout-align="start">
+  <div class="patientinfodetail">
+     <div layout="row" layout-align="space-between center">
+   <div class="p-15 prev_trials_style" style="padding-top: 0 !important;text-align: center;">
+   No trials found
+   <!-- <div class="contactinformation">Efficacy and Safety of Belimumab in Patients With Active Lupus Nephritis</div>
+      <div class="contactinformation">Clinical Trial on the Efficacy and Safety of Sirolimus-Eluting Stent (MiStent® System)</div>
+   <div class="contactinformation" style="margin-bottom:20px; ">AZD9291 Versus Gefitinib or Erlotinib in Patients With Locally Advanced or Metastatic Non-small Cell Lung Cancer</div> -->
+
+  </div>
+    </div>
+     
+    
+  </div>
+</div> 
+
+</div><br>
+
+
+
+
+</md-content>
+

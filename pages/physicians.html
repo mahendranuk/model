@@ -1,0 +1,110 @@
+
+     
+     <div  layout="row" layout-sm="column" layout-xs="column" layout-align="space-between center" class="widget_sec bg_white br-bt">
+       <div class="md-padding">
+       <h2 style="font-size: 35px; font-weight: 100;font-family: prolight;">  Physicians</h2>
+       
+
+
+       </div>
+       <div class="md-padding">
+        <md-button class="md-raised md-primary big_btn" ><a href="#!/physicians" style="color:white; text-decoration: none"><i  style="color:white;" class="fa fa-plus" aria-hidden="true"></i> Add new</a></md-button>
+       </div>
+  
+   </div>
+ 
+
+
+
+  <div layout="row"  layout-align="start center" style="padding-top: 0;" layout-padding>
+  
+  <div flex>
+  <div layout="column"  layout-align="center stretch" >
+  <div layout="row"  layout-align="space-between center" style="padding-top: 0;" layout-padding>
+   
+   <div >
+
+       <span  ng-click="show_filter = !show_filter " style="font-size: 15px; cursor: pointer; outline: none" class="patient_add2">Filter Option <i class="fa fa-angle-down fa-lg" aria-hidden="true"></i></span>
+       
+   </div>
+  </div>
+   <div layout="column"  ng-show="show_filter" layout-align="space-between stretch" style="position:relative;border-radius: 3px;margin-bottom:5px;border-radius: 3px;padding-bottom: 0; padding-top: 0" layout-padding>
+    <span class="patient_add2" style="padding: 0 8px">Search By</span>
+   <div layout="row" layout-align="space-between center" >
+    
+      <md-radio-group ng-model="data.group1" layout="row" layout-align="start center" class="filter-section" layout-padding style="padding-left: 0; width:50%; border-right: 2px solid #D8D8D8; margin-right: 15px">
+
+      <md-radio-button value="all" class="md-primary patient_name">All</md-radio-button>
+      <md-radio-button value="Patients"  class="md-primary patient_name"> Filter 1 </md-radio-button>
+      <md-radio-button value="Physicians"  class="md-primary patient_name">Filter 2</md-radio-button>
+
+    </md-radio-group>
+     <md-input-container md-no-float style="width:50%" class="identify_search">
+        
+        <input ng-model="user.title"  placeholder="Refine">
+      </md-input-container>
+
+   </div>
+
+   <div layout="row" layout-align="space-between center" >
+   <div  ng-repeat="alphaData in alphaData.data">
+
+   <span class="patient_add2"> {{alphaData.id}} </span>
+   </div>
+   </div>
+ 
+    
+    
+
+   
+  </div>
+  </div>
+  
+ <div  class=" ">
+   <md-table-pagination md-limit="query.limit"  md-page="query.page" md-total="{{identifyData.count}}" md-on-paginate="getDesserts" md-page-select></md-table-pagination>
+  
+
+<span class="list_head" >Top  Physicians</span>
+  <div ng-repeat="physician in phy_list"  class=" bg_white m-b-10 bx_shd " layout="column" layout-wrap>
+   <div layout="row" layout-wrap layout-align="space-around center" >
+    <span class="rounded_text md-margin" flex="5" style="text-transform: uppercase;">{{ physician.physician_name | myfilter}}</span>
+    <span flex="50">
+      <div class="patient_name"><a href="#!/physiciandetail">{{ physician.physician_name }}</a></div>
+      <div class="patient_add">{{ physician.Address }}</div>
+    </span>
+    <span flex="5" class="br-rt">
+    <div class="patient_add" ></div>
+    <div class="patient_name"></div>
+    </span>
+    <span flex="10" class="br-rt">
+    <div class="patient_add">Physician NPI</div>
+    <div  class="patient_name">
+      {{ physician.Phy_ID }}
+    </div>
+    </span>
+    <span flex="10">
+    <div class="patient_add">Speciality</div>
+    <div  class="patient_name">
+    {{ physician.Speciality }}
+    </div>
+    </span>
+    <!-- <span flex="10"  class="patient_name"><a>View profile</a></span> -->
+   </div>
+   <div layout="row" layout-wrap layout-align="space-between center" class="footer_sec">
+
+<div class="patient_add"></div>
+<div class="patient_add1 m-l-15" >Last Trial : {{ physician.last_trial }}</div>
+
+   </div>
+ 
+  </div>
+
+</div>
+</div>
+  </div>
+
+
+</div>
+<md-content  layout-xs="column" layout="row">
+                  <div class="bg_white drp_sh sec text-right width_100" >© 2017 Quest Diagnostics Incorporated. All rights reserved.</div>
+</md-content>

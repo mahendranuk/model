@@ -1,0 +1,77 @@
+
+<md-dialog class="add_trial" ng-hide="hide_dialog">
+    <form ng-cloak>
+        <div class="modal-header">
+
+<div layout="row" layout-align="space-between center">
+                <h5 class="modal-title"><i class="fa fa-forumbee" aria-hidden="true"></i> Health status</h5>
+                <md-button class="md-icon-button" ng-click="closeDialog()" style="font-size: 12px">
+            <i class="fa fa-times fa-2x"></i>
+          </md-button>
+            </div>
+            <div class="col-md-9">
+                <ul class="list-inline tool-sec pull-right inlne">
+                   <!--  <li>
+                        <p class="add_textbox" ng-click="show_text = 1"><i class="fa fa-file-text-o" aria-hidden="true"></i> Text box</p>
+                    </li> -->
+                   <!--  <li>
+                        <p class="add_dropdown" ng-click="show_dropdown = 1"><i class="fa fa-angle-down" aria-hidden="true"></i> Drop down</p>
+                    </li>
+                    <li>
+                        <p class="add_radio"  ng-click="show_radio = 1"><i class="fa fa-circle-o-notch" aria-hidden="true"></i> Radio</p>
+                    </li>
+                    <li>
+                        <p class="add_checkbox"  ng-click="show_checkbox = 1"><i class="fa fa-check-square-o" aria-hidden="true"></i> Checkbox</p>
+                    </li>
+                    <li>
+                        <p class="add_textarea" ng-click="show_textarea = 1"><i class="fa fa-square-o" aria-hidden="true"></i> Text area</p>
+                    </li>
+                     <li>
+                        <p class="add_range" ng-click="show_range = 1"><i class="fa fa-sliders" aria-hidden="true"></i> Range</p>
+                    </li> -->
+                </ul>
+            </div>
+            <div class="col-md-1">
+
+            </div>
+        </div>
+<!-- Textbox section -->
+        <div class='add_textbox_sec'>
+           <div class="sec" layout="column"  layout-align="space-between start">
+
+			            <div layout="column" layout-align="start start">
+			  	 <md-checkbox  class="md-primary " aria-label="Mandatory">Disease, Symptom and Sign</md-checkbox>
+			  	 <md-checkbox  class="md-primary" aria-label="Mandatory">Pregnancy-related activity</md-checkbox>
+			  	 <md-checkbox  class="md-primary " aria-label="Mandatory">Neoplasm status</md-checkbox>
+			  	 <md-checkbox  class="md-primary " aria-label="Mandatory">Disease stage</md-checkbox>
+			  	 <md-checkbox  class="md-primary " aria-label="Mandatory">Organ or tissue status</md-checkbox>
+			  	 <md-checkbox  class="md-primary" aria-label="Mandatory"> Life expectancy</md-checkbox>
+			  	
+
+			  </div>
+               </div>
+
+			  
+			   
+			  
+                
+			  </div> 
+		<br>	
+<div class=" btn_top_10 submit_sec" >
+
+
+
+<md-divider></md-divider>
+<md-button class="md-primary fr" ng-click="showControl6('hide');">Submit</md-button>
+<md-button class="md-primary fr" ng-click="hideDialog('hide')">Cancel</md-button>
+
+</div>
+			   
+			   
+        </div>
+		
+
+
+
+    </form>
+</md-dialog>

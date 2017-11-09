@@ -1,0 +1,549 @@
+ 
+<div  layout="row" layout-sm="column" layout-xs="column" layout-align="space-between center" class="widget_sec md-padding bg_white br-bt " id="top">
+       <div class="md-padding">
+       <h3 class="base_color">Welcome, <span style="font-family:probold">David</span></h3>
+       <!-- <span>You are in dashboard</span> -->
+
+
+       </div>
+       <div class="md-padding">
+        <!-- <md-button class="md-raised md-primary big_btn" ><a href="#!/createtrial" style="color:white; text-decoration: none"><i  style="color:white;" class="fa fa-plus" aria-hidden="true"></i> Add new Trial</a></md-button> -->
+       </div>
+  
+</div>
+
+<div class="md-padding ">
+<div  layout="column" layout-align="space-between center" class="bx_shd bg_white">
+
+<div layout="row" layout-align="space-between center" class="fl_w br-bt">
+
+<h5 style="padding-left: 32px; border-bottom: 0;    font-size: 16px;"> <img src="assets/svg/list.svg"/ width="35">Overview</h5>
+ <div style="padding-right: 32px;">
+ <md-menu>
+          <md-button aria-label="Open demo menu"  ng-click="$mdOpenMenu($event)">
+            <h5 style="border-bottom: 0">Last 30 days <i class="fa fa-caret-down" aria-hidden="true"></i></h5>
+          </md-button>
+          <md-menu-content width="3" class="home_dropdown">
+            <md-menu-item >
+             Last 15 days
+            </md-menu-item>
+            <md-menu-item >
+             Last 30 days
+            </md-menu-item>
+            <md-menu-item>
+             Last 60days
+            </md-menu-item>
+          </md-menu-content>
+        </md-menu>
+</div>
+</div>
+<div layout="column" layout-align="center center" class="fl_w md-padding" >
+                
+                   <div layout="row" flex class="width_100 numbers_dash">
+                         <div flex layout="column" layout-align="center center" class="pos_re">
+                          <div class="metric_status"><i class="fa fa-sort-asc" aria-hidden="true"></i></div>
+                          <div class="value">4.3 : 1</div>
+                           <div class="value_label">Conversion ratio from Interested to Qualified</div>
+                         </div>
+                         <div flex layout="column" layout-align="center center" class="pos_re">
+                          <div class="metric_status"><i class="fa fa-stop" aria-hidden="true"></i></div>
+                           <div class="value">55 days</div>
+                           <div class="value_label">Avg. days from Contacted to Qualified</div>
+                         </div>
+                          <div flex layout="column" layout-align="center center" class="pos_re">
+                           <div class="metric_status"><i class="fa fa-sort-asc red" aria-hidden="true"></i></div>
+                           <div class="value">$235</div>
+                           <div class="value_label">Recruiting Expenses per Qualified Candidate</div>
+                         </div>
+                       
+                    
+                     </div>
+ </div>
+<div layout="row" layout-align="space-between center" class="fl_w">
+  
+<!--div flex class="md-padding">
+<h4 class="graph_head">Trials Status</h4>
+  <iframe width="450" height="400" ng-src="{{detailFrame}}" style="border:0;"></iframe>
+</div-->
+   <div flex class="md-padding bar_chart">
+   <h4 class="graph_head">Trials Status</h4>
+   
+
+<script>
+
+var margin = {top: 20, right: 20, bottom: 30, left: 40},
+    width = 400,
+    height = 250;
+
+var x0 = d3.scale.ordinal()
+    .rangeRoundBands([0, width], .1);
+
+var x1 = d3.scale.ordinal();
+
+var y = d3.scale.linear()
+    .range([height, 0]);
+
+var color = d3.scale.ordinal()
+    .range(["#5F89B3", "#80276B", "#00587C", "#63666B", "#DBAA29", "#d0743c", "#ff8c00"]);
+
+var xAxis = d3.svg.axis()
+    .scale(x0)
+    .orient("bottom");
+
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left")
+    .tickFormat(d3.format(".2s"));
+
+var svg1 = d3.select(".bar_chart").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+d3.csv("assets/json/trial_status.csv", function(error, data) {
+//d3.csv("../assets/json/trial_status.csv", function(error, data) {
+  if (error) throw error;
+
+  var ageNames = d3.keys(data[0]).filter(function(key) { return key !== "State"; });
+
+  data.forEach(function(d) {
+    d.ages = ageNames.map(function(name) { return {name: name, value: +d[name]}; });
+  });
+
+  x0.domain(data.map(function(d) { return d.State; }));
+  x1.domain(ageNames).rangeRoundBands([0, x0.rangeBand()]);
+  y.domain([0, d3.max(data, function(d) { return d3.max(d.ages, function(d) { return d.value; }); })]);
+
+  svg1.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis);
+
+  svg1.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("");
+
+  var state = svg1.selectAll(".state")
+      .data(data)
+    .enter().append("g")
+      .attr("class", "state")
+      .attr("transform", function(d) { return "translate(" + x0(d.State) + ",0)"; });
+
+  state.selectAll("rect")
+      .data(function(d) { return d.ages; })
+    .enter().append("rect")
+      .attr("width", x1.rangeBand())
+      .attr("x", function(d) { return x1(d.name); })
+      .attr("y", function(d) { return y(d.value); })
+      .attr("height", function(d) { return height - y(d.value); })
+      .style("fill", function(d) { return color(d.name); });
+
+d3.selectAll('.x.axis>.tick text')
+    
+    .text(function(d){
+//console.log(d) ;
+try{
+      return d.toString().substring(0,9);
+   }catch(e){
+   console.log(e);
+   }
+    });
+
+  d3.selectAll('.x.axis>.tick')
+    .append('title')
+    .text(function(d){
+      //console.log('dd'+d);
+      return d;
+    });
+      
+
+  var legend = svg1.selectAll(".legend")
+      .data(ageNames.slice().reverse())
+    .enter().append("g")
+      .attr("class", "legend")
+      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+  legend.append("rect")
+      .attr("x", width - 18)
+      .attr("width", 18)
+      .attr("height", 18)
+      .style("fill", color);
+
+  legend.append("text")
+      .attr("x", width - 24)
+      .attr("y", 9)
+      .attr("dy", ".35em")
+      .style("text-anchor", "end")
+      .text(function(d) { return d; });
+
+});
+
+</script>
+      
+   </div>
+   <div class="br-rt md-padding outreach_chart" flex>
+    <h4 class="graph_head">Outreach Status</h4>
+  <script src="assets/js/d3.v3.min.js"></script>
+<script>
+
+var margin = {top: 20, right: 20, bottom: 30, left: 40},
+    width = 400,
+    height = 250;
+
+var x0 = d3.scale.ordinal()
+    .rangeRoundBands([0, width], .1);
+
+var x1 = d3.scale.ordinal();
+
+var y = d3.scale.linear()
+    .range([height, 0]);
+
+var color = d3.scale.ordinal()
+    .range(["#5F89B3", "#80276B", "#DBAA29", "#63666B", "#00587C", "#d0743c", "#ff8c00"]);
+
+var xAxis = d3.svg.axis()
+    .scale(x0)
+    .orient("bottom");
+
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left")
+    .tickFormat(d3.format(".2s"));
+
+
+
+var svg2 = d3.select(".outreach_chart").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+d3.csv("assets/json/outreach_status.csv", function(error, data) {
+  if (error) throw error;
+
+  var ageNames = d3.keys(data[0]).filter(function(key) { return key !== "State"; });
+
+  data.forEach(function(d) {
+    d.ages = ageNames.map(function(name) { return {name: name, value: +d[name]}; });
+  });
+
+  x0.domain(data.map(function(d) { return d.State; }));
+  x1.domain(ageNames).rangeRoundBands([0, x0.rangeBand()]);
+  y.domain([0, d3.max(data, function(d) { return d3.max(d.ages, function(d) { return d.value; }); })]);
+
+  svg2.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis);
+
+  svg2.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("");
+
+  var state = svg2.selectAll(".state")
+      .data(data)
+    .enter().append("g")
+      .attr("class", "state")
+      .attr("transform", function(d) { return "translate(" + x0(d.State) + ",0)"; });
+
+  state.selectAll("rect")
+      .data(function(d) { return d.ages; })
+    .enter().append("rect")
+      .attr("width", x1.rangeBand())
+      .attr("x", function(d) { return x1(d.name); })
+      .attr("y", function(d) { return y(d.value); })
+      .attr("height", function(d) { return height - y(d.value); })
+      .style("fill", function(d) { return color(d.name); });
+
+d3.selectAll('.x.axis>.tick text')
+    
+    .text(function(d){
+//console.log(d) ;
+try{
+      return d.toString().substring(0,9);
+   }catch(e){
+   console.log(e);
+   }
+    });
+
+  d3.selectAll('.x.axis>.tick')
+    .append('title')
+    .text(function(d){
+      //console.log('dd'+d);
+      return d;
+    });
+      
+
+  var legend = svg2.selectAll(".legend")
+      .data(ageNames.slice().reverse())
+    .enter().append("g")
+      .attr("class", "legend")
+      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+  legend.append("rect")
+      .attr("x", width - 18)
+      .attr("width", 18)
+      .attr("height", 18)
+      .style("fill", color);
+
+  legend.append("text")
+      .attr("x", width - 24)
+      .attr("y", 9)
+      .attr("dy", ".35em")
+      .style("text-anchor", "end")
+      .text(function(d) { return d; });
+
+});
+
+</script>
+
+   </div>
+
+</div>
+ 
+
+</div>
+
+
+
+</div>
+
+<div  layout="row" layout-sm="column" layout-xs="column" layout-padding>
+   <div flex class="flex" ng-repeat="i in [1] track by $index" >
+      <span class="list_head" >Active Trials</span>
+     
+     <md-card ng-repeat="trial in trial_list | limitTo: 5 " class="trial_list" style="margin:0; margin-bottom: 8px">
+      <md-card-content>
+            <md-content>
+            <div layout="row"  layout-align="space-between start" class="trial_head">
+             <!--  <div><img src="assets/svg/trial.svg"/></div> -->
+              <div flex="95"> 
+              <span class="trial_list_head flex-90" ><a href="#!/trialdetail">{{trial.title}}</a></span><br>
+              <span class="trial_creator_name">Created By <span>{{trial.created_by}}</span></span></div>
+
+              
+              <div  flex="5" class="text-center"> <a class=" md-ink-ripple pointer" ng-click="showDiv4 = !showDiv4"><i class="fa fa-lg fa-chevron-down" aria-hidden="true"></i></a></div>
+            </div>
+               
+            </md-content>
+      </md-card-content>
+         
+         <div class="cssSlideUp" ng-show="showDiv4">
+            <md-divider ></md-divider>
+            <div layout="row" layout-align="space-between center" class="fl_w">
+              
+            <div flex class="md-padding">
+            <h4 class="graph_head">Recruiting Results</h4>
+              <iframe width="450" height="400" ng-src="{{recruiting_results}}" style="border:0;"></iframe>
+            </div>
+            <div flex class="md-padding">
+            <h4 class="graph_head">Outreach by Channel</h4>
+               <iframe width="450" height="400" ng-src="{{outreach_channel}}" style="border:0;"></iframe>
+            </div>
+            </div>
+
+            <!--div flex class="flex chart_sec" layout="row" layout-align="center center">
+               <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}">
+                  <md-card-title>
+                     <md-card-title-text>
+                        <span class="md-headline">Recruiting Results</span>
+                        <img src="assets/svg/graph_1.svg"/>
+                     </md-card-title-text>
+                  </md-card-title>
+               </md-card>
+               <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}">
+                  <md-card-title>
+                     <md-card-title-text>
+                        <span class="md-headline">Outreach via Physicians</span>
+                        <img src="assets/svg/graph_2.svg"/>
+                     </md-card-title-text>
+                  </md-card-title>
+               </md-card>
+               <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}">
+                  <md-card-title>
+                     <md-card-title-text>
+                        <span class="md-headline">Direct Patient Outreach</span>
+                        <img src="assets/svg/graph_3.svg"/>
+                     </md-card-title-text>
+                  </md-card-title>
+                 
+               </md-card>
+            </div-->
+            <div flex class="flex md-padding p-t-0"  >
+               <md-divider ></md-divider>
+               <p>{{trial.description}}</p>
+               
+               
+            </div>
+         </div>
+         <div  layout="row" flex-gt-xs="100" layout-sm="row" layout-xs="row" layout-align="space-between center"  layout-fill class=" trail_list text-center bg_grey"  >
+            <div class="list_item" flex  >
+               <span class="trial_sub_head">Condition</span>
+               <div class="trial_content" style="font-style: italic;">{{trial.Condition}}</div>
+            </div>
+            <div class="list_item" flex layout-align="center center">
+               <span class="trial_sub_head">Sponsors</span>
+               <div class="trial_content">{{trial.Sponsor}}</div>
+            </div>
+            <div class="list_item" flex layout-align="center center">
+               <span class="trial_sub_head">Identified</span>
+               <div class="trial_content"> {{trial.Identified  | number : fractionSize}} </div>
+            </div>
+            <div class="list_item" flex layout-align="center center">
+               <span class="trial_sub_head">Pre-Screened</span>
+               <div class="trial_content"> <md-tooltip md-direction="top"> % of Identified</md-tooltip>{{trial.Pre_Screened  | number : fractionSize}} ({{(trial.Pre_Screened / trial.Identified) * 100 | number:2 }}%)</div>
+            </div>
+            <div class="list_item" flex layout-align="center center">
+               <span class="trial_sub_head">Qualified</span>
+               <div class="trial_content"> <md-tooltip md-direction="top">% of Pre-Screened</md-tooltip> {{trial.Qualified  | number : fractionSize}} ({{(trial.Qualified / trial.Pre_Screened) * 100 | number:2}}%)</div>
+            </div>
+            <div class="list_item" flex layout-align="center center">
+               <span class="trial_sub_head">Enrolled</span>
+               <div class="trial_content"><md-tooltip md-direction="top">% of Qualified</md-tooltip>  {{trial.Enrolled  | number : fractionSize}} ({{(trial.Enrolled / trial.Qualified) * 100 | number:2}}%)</div>
+            </div>
+         </div>
+      </md-card>
+
+
+
+</div>
+
+
+
+
+
+
+   </div>
+
+<div class="md-padding">
+      <span class="list_head m-t-15" >Top Analytics</span>
+      <div >
+<div  layout="column" layout-align="space-between center" class="bx_shd bg_white">
+
+<div layout="row" layout-align="space-between center" class="fl_w br-bt">
+
+<h5 style="padding-left: 32px; border-bottom: 0;font-size: 16px;"> <img src="assets/svg/list.svg"/ width="35">Results</h5>
+ <div style="padding-right: 32px;"><md-menu>
+          <md-button aria-label="Open demo menu"  ng-click="$mdOpenMenu($event)">
+            <h5 style="border-bottom: 0">Last 30 days <i class="fa fa-caret-down" aria-hidden="true"></i></h5>
+          </md-button>
+          <md-menu-content width="3" class="home_dropdown">
+            <md-menu-item >
+             Last 15 days
+            </md-menu-item>
+            <md-menu-item >
+             Last 30 days
+            </md-menu-item>
+            <md-menu-item>
+             Last 60days
+            </md-menu-item>
+          </md-menu-content>
+        </md-menu>
+</div>
+</div>
+
+<div layout="row" layout-align="space-between start" class="fl_w">
+   
+
+
+</div>
+
+
+</div>
+
+<div layout="row"  layout-align="center stretch" layout-sm="column" style="padding: 0; padding-bottom: 5px; margin-top: 15px" layout-padding >
+      <md-card style="min-height: 200px;padding: 0;" class="analytic_widget fl_w">
+        <md-card-title style="background-color: rgb(53,121,42);">
+          <md-card-title-text>
+          <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
+            <span class="md-headline" ng-click="showDiv1 = true;showDiv2 = false;showDiv3 = false; showDiv = false">PATIENTS BY LOCATION</span>
+             
+          
+            
+            </div>
+          </md-card-title-text>
+        </md-card-title>
+                <img ng-src="assets/svg/world_map-01.svg" class="md-card-image" alt="widget"  ng-click="showlocation()">
+       
+      </md-card>
+<md-card style="min-height: 200px;padding: 0;" class="analytic_widget fl_w">
+        <md-card-title style="background-color: rgb(53,121,42);">
+          <md-card-title-text>
+            <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
+            <span class="md-headline" ng-click="showDiv1 = true;showDiv2 = false;showDiv3 = false; showDiv = false">RETENTION FACTOR ANALYSIS</span>
+             
+          
+            
+            </div>
+          
+          </md-card-title-text>
+        </md-card-title>
+        <img ng-src="assets/svg/signup_chart-01.svg" class="md-card-image" alt="widget"  ng-click="showRetention()">
+        
+      </md-card>
+
+       <md-card style="min-height: 200px;padding: 0; " class="analytic_widget fl_w">
+
+        <md-card-title style="background-color:rgb(53,121,42);">
+          <md-card-title-text>
+          <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
+            <span class="md-headline" ng-click="showDiv1 = true;showDiv2 = false;showDiv3 = false; showDiv = false">CANDIDATES ANALYSIS</span>
+             
+          
+            
+            </div>
+           
+          </md-card-title-text>
+        </md-card-title>
+        <img ng-src="assets/svg/age_chart-01.svg" class="md-card-image" alt="widget" ng-click="showPatientanalytics()">
+       
+      </md-card>
+
+
+</div>
+
+</div>
+
+<!-- <div layout="row" class="analytic_dash">
+
+   <div flex class="md-padding md-whiteframe-3dp" ng-click="showRetention()">
+   <h4 class="graph_head">Ratio of Patients by Gender</h4>
+    <i class="fa fa-venus-mars"></i>
+    <span>Updated at: 12/09/2017 11:30PM GMT</span>
+   </div>
+
+   <div flex class="md-padding md-whiteframe-3dp">
+   <h4 class="graph_head">Number of Patients who have Serious medical conditions</h4>
+    <i class="fa fa-medkit"></i>
+    <span>Updated at: 12/21/2017 10:30PM GMT</span>
+   </div>
+   <div flex class="md-padding md-whiteframe-3dp">
+   <h4 class="graph_head">Number of Patients who have Serious medical conditions</h4>
+    <i class="fa fa-medkit"></i>
+    <span>Updated at: 12/21/2017 10:30PM GMT</span>
+   </div>
+ </div>   -->
+
+</div>
+
+</div>
+
+
+</div>
+
+<md-content  layout-xs="column" layout="row">
+                  <div class="bg_white drp_sh sec text-right width_100" >© 2017 Quest Diagnostics Incorporated. All rights reserved.</div>
+</md-content>

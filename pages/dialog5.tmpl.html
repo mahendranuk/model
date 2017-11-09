@@ -1,0 +1,46 @@
+
+<md-dialog class="add_trial" ng-hide="hide_dialog">
+    <form ng-cloak>
+        <div class="modal-header">
+
+            <div class="col-md-2">
+                <h5 class="modal-title"><i class="fa fa-forumbee" aria-hidden="true"></i> Add New Category</h5>
+            </div>
+            
+           
+        </div>
+<!-- Textbox section -->
+        <div class='add_textbox_sec'>
+           <div class="sec" layout="column"  layout-align="space-between start">
+
+			           <div >
+      
+                        <tree-view checkbox click="myClick(node)" model="nodes"></tree-view>
+      
+                        </div>
+               </div>
+
+			  
+			   
+			  
+                
+			  </div> 
+		<br>	
+<div class=" btn_top_10 submit_sec" >
+
+
+
+<md-divider></md-divider>
+<md-button class="md-primary fr" ng-click="hideDialog('hide')">Cancel</md-button>
+<md-button class="md-primary fr" ng-click="showControl7('hide');">Submit</md-button>
+
+</div>
+			   
+			   
+        </div>
+		
+
+
+
+    </form>
+</md-dialog>

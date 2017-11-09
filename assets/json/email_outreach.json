@@ -1,0 +1,105 @@
+{
+  "count": 5,
+  "data": [
+    {
+      "campname": "Patient’s First Email", 
+      "link":"#!/emailoutreachdetail",
+      "senton": "Sent on Sun, Sep 08, 2016 9:00 am",
+      "subscription": { "value": "18,656" },
+      "unsubscription": { "value": 242 },
+      "clicks": { "value": "4,664" },
+      "trialname": "Outcomes Study to Assess STatin Residual Risk Reduction With EpaNova in HiGh CV Risk PatienTs With Hypertriglyceridemia (STRENGTH)"
+      
+    },
+    {
+      "campname": "Physician Campaign", 
+      "link":"#!/emailoutreachdetail",
+      "senton": "Sent on Mon, Aug 22, 2016 10:00 am",
+      "subscription": { "value": 456 },
+      "unsubscription": { "value": 10 },
+      "clicks": { "value": 5 },
+      "trialname": "Outcomes Study to Assess STatin Residual Risk Reduction With EpaNova in HiGh CV Risk PatienTs With Hypertriglyceridemia (STRENGTH)"
+      
+    },
+    {
+      "campname": "Campaign A/B Testing", 
+      "link":"#!/campaignab_testing",
+      "senton": "Sent on Sun, Sept 15, 2016 9:00 am",
+      "subscription": { "value": "18,656" },
+      "unsubscription": { "value": 643 },
+      "clicks": { "value": "13,146" },
+      "trialname": "Outcomes Study to Assess STatin Residual Risk Reduction With EpaNova in HiGh CV Risk PatienTs With Hypertriglyceridemia (STRENGTH)"
+      
+    },
+    {
+      "campname": "Patient outbound email", 
+      "link":"#!/emailoutreachdetail",
+      "senton": "Sent on Sun, May 08, 2016 9:00 am",
+      "subscription": { "value": 201 },
+      "unsubscription": { "value": 56 },
+      "clicks": { "value": 2 },
+      "trialname": "Efficacy and Safety Study of TLC388 to Advanced Hepatocellular Carcinoma"
+      
+    },
+    {
+      "campname": "Campaign - Atlanta", 
+      "link":"#!/emailoutreachdetail",
+      "senton": "Sent on Sun, May 08, 2016 9:00 am",
+      "subscription": { "value": 321 },
+      "unsubscription": { "value": 101 },
+      "clicks": { "value": 4 },
+      "trialname": "Clinical Trial on the Efficacy and Safety of Sirolimus-Eluting Stent (MiStent® System)"
+      
+    },
+    {
+      "campname": "Demographic target", 
+      "link":"#!/emailoutreachdetail",
+      "senton": "Sent on Sun, May 08, 2016 9:00 am",
+      "subscription": { "value": 95 },
+      "unsubscription": { "value": 21 },
+      "clicks": { "value": 1 },
+      "trialname": "AZD9291 Versus Gefitinib or Erlotinib in Patients With Locally Advanced or Metastatic Non-small Cell Lung Cancer"
+      
+    },
+    {
+      "campname": "Patient outbound email", 
+      "link":"#!/emailoutreachdetail",
+      "senton": "Sent on Sun, May 08, 2016 9:00 am",
+      "subscription": { "value": 159 },
+      "unsubscription": { "value": 62 },
+      "clicks": { "value": 2 },
+      "trialname": "Efficacy and Safety of Belimumab in Patients With Active Lupus Nephritis"
+      
+    },
+    {
+      "campname": "Campaign - Atlanta", 
+      "link":"#!/emailoutreachdetail",
+      "senton": "Sent on Sun, May 08, 2016 9:00 am",
+      "subscription": { "value":88 },
+      "unsubscription": { "value": 18 },
+      "clicks": { "value": 0 },
+      "trialname": "Outcomes Study to Assess STatin Residual Risk Reduction With EpaNova in HiGh CV Risk PatienTs With Hypertriglyceridemia (STRENGTH)" 
+      
+    },
+    {
+      "campname": "Patient outbound email", 
+      "link":"#!/emailoutreachdetail",
+      "senton": "Sent on Sun, May 08, 2016 9:00 am",
+      "subscription": { "value": 189 },
+      "unsubscription": { "value": 45 },
+      "clicks": { "value": 4 },
+      "trialname": "Outcomes Study to Assess STatin Residual Risk Reduction With EpaNova in HiGh CV Risk PatienTs With Hypertriglyceridemia (STRENGTH)"
+      
+    },
+    {
+      "campname": "Campaign - Atlanta", 
+      "link":"#!/emailoutreachdetail",
+      "senton": "Sent on Sun, May 08, 2016 9:00 am",
+      "subscription": { "value":88 },
+      "unsubscription": { "value": 18 },
+      "clicks": { "value": 0 },
+      "trialname": "Outcomes Study to Assess STatin Residual Risk Reduction With EpaNova in HiGh CV Risk PatienTs With Hypertriglyceridemia (STRENGTH)" 
+      
+    }
+  ]
+}

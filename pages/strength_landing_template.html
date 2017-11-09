@@ -1,0 +1,105 @@
+
+
+<!-- Header -->
+
+<div class="outreach_header" layout="row" layout-align="space-between center" >
+  <div style="padding-left: 20px;"><h2>STRENGTH Landing Page</h2>
+  </div>
+  <!-- <div class="md-padding">
+    <a href="#!/emailoutreach" style="color:white; text-decoration: none"> <md-button style="background-color:rgb(53,121,42)!important; color:white;" class="md-primary big_btn" >&nbsp;&nbsp;Templates</md-button></a>
+  </div> -->
+</div>
+<div layout="row"  style="background-color: #ECECEC;padding: 0 16px;margin-bottom:10px;" layout-align="space-between center">
+  <md-button back-button style="float:left; color:green; font-weight:bold;"><i class="fa fa-angle-left" aria-hidden="true"></i> Back</md-button>
+  <div layout="row" layout-align="space-around center">
+   <md-select ng-model="newele" placeholder="New element" class="md-no-underline" style="margin-right: 15px">
+          <md-option value="text">Text box</md-option>
+          <md-option value="file">File upload</md-option>
+          <md-option value="txtarea">Textarea</md-option>
+          
+ </md-select>
+    <md-select ng-model="selectedVal"" placeholder="Select Template" class="md-no-underline">
+          <md-option value="basic" selected>Basic</md-option>
+          <md-option value="custom">Custom</md-option>
+         
+        </md-select>
+        </div>
+</div>
+
+<!-- Body - Template Type -->
+<div class="p-15 bg_white"  ng-show="selectedVal=='basic'">
+<div layout="column" layout-align="space-between stretch" class="p-15" >
+<md-input-container>
+        <label>Welcome message</label>
+        <input type="text" value="Welcome [Patient Name]">
+  </md-input-container>
+<div layout="row">
+
+
+  <div flex="80">
+    <md-input-container class="width_100">
+        <label>Choose banner</label>
+        <input type="text" value="patient-landing.jpg">
+      </md-input-container>
+  </div>
+  <div flex="20">
+      <md-button  style="color:rgb(53,121,42);font-size:13px; font-weight:bold; width: 15%;">Upload</md-button>
+  </div>
+</div>
+
+
+       <md-input-container>
+        <label>Title</label>
+        <input type="text" value="Help us explore a potential way to protect your heart.">
+      </md-input-container>
+
+       <md-input-container class="md-block">
+              <textarea  md-select-on-focus placeholder="Description">The STRENGTH Trial is looking at an investigational medication to help reduce the risk of serious heart problems in people who have high levels of triglycerides (a type of fat found in the blood that can raise your risk of heart disease), low levels of high-density lipoprotein-cholesterol (HDL-C; the "good" cholesterol), and other risk factors for heart disease.
+</textarea>
+        </md-input-container>
+<div class="width_100" layout="row">
+  <div layout="row" layout-align="center center" flex="10">Questionnaire:</div>
+  <div flex="40">
+<md-input-container class="md-block">
+            <md-select ng-model="selectedUser" placeholder="Select">
+                <md-option value="phase1" selected>STRENGTH Screening Questionnaire</md-option>
+                <md-option value="phase2">Physician questions</md-option>
+                <md-option value="phase3">Trend screening</md-option>
+            </md-select>
+        </md-input-container>
+  </div>
+  <div style="margin-left: 20px;width:100%" flex="55">
+    <md-input-container style="width:100%;">
+    <label>CTA Button Label</label>
+    <input type="text" value="Continue">
+    </md-input-container>
+  </div>
+</div>
+       <!-- <md-input-container>
+        <label>Call to action URL</label>
+        <input ng-model="user.button" type="text">
+      </md-input-container> -->
+      <div layout="row" layout-align="center center" >
+      <md-button  style="color:white; background-color:rgb(53,121,42)!important;font-size:13px; font-weight:bold; width: 15%;" ng-click="previewlanding()">Preview</md-button>
+      <md-button  style="color:white; background-color:rgb(53,121,42)!important;font-size:13px; font-weight:bold; width: 15%;" ng-click="showpurpose=!showpurpose">Save</md-button>
+      </div>
+</div>
+
+</div>
+
+
+<div class="p-15 bg_white" ng-show="selectedVal=='custom'">
+<div layout="column" layout-align="space-between stretch" class="p-15" >
+    
+
+    <iframe width="1200" height="400" ng-src="{{html_editor}}" style="border:0;"></iframe>
+      
+      <div layout="column" layout-align="end center" >
+      <md-button  style="color:white; background-color:rgb(53,121,42)!important;font-size:13px; font-weight:bold; width: 15%;" ng-click="showpurpose=!showpurpose">Save</md-button>
+      </div>
+</div>
+
+</div>
+
+
+

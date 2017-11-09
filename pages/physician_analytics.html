@@ -1,0 +1,438 @@
+
+ <md-dialog class="fullscreen-dialog" aria-label="Full Screen Dialog Test"  >
+      <md-toolbar style="padding: 20px 0;">
+        <div class="md-toolbar-tools">
+          
+          <h2 flex="flex" style="font-size: 24px; color:white">Physician Analytics</h2>
+          <md-button class="md-icon-button" ng-click="closeDialog()">
+            <i class="fa fa-times fa-2x"></i>
+          </md-button>
+        </div>
+      </md-toolbar>
+      <md-dialog-content class="patient_analytics_list">
+      <div layout="row" layout-align="space-between start">
+
+         <div flex="20" ng-hide="filter_sec1" class="bg_lite" >
+
+        <div  ng-init="showDiv = true">
+  
+   <div layout="column"  layout-align="space-between stretch" style="position:relative;  border-radius: 0px;" >
+   <div layout="column">
+<span class="filter_head filter_head_first" style="padding: 24px 18px;margin-bottom: 20px;
+    background-color: rgba(204, 204, 204, 0.35);">Filter</span>
+
+
+   <div layout="column"  layout-align="start stretch" class="filter-section fl_w" layout-padding>
+     <span class="filter_head" ng-click="filter_location=!filter_location" layout="row"  layout-align="space-between center"><span>Location</span><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+     <div ng-show = "filter_location" layout="column"  layout-align="start stretch" >
+       <md-checkbox>Alabama ({{Alabama_phy}})</md-checkbox>
+       <md-checkbox>Alaska ({{Alaska_phy}})</md-checkbox>
+       <md-checkbox>California ({{Athens_phy}})</md-checkbox>
+       <md-checkbox>Illinois ({{Illinois_phy}})</md-checkbox>
+        <div layout="row"  layout-align="space-between center" class="filter-section fl_w" layout-padding>
+     <md-input-container class="md-block" style="width:75%; display: inline">
+                <label>Radius</label>
+                <input value="15" type="number" />
+              </md-input-container>
+                <a  class="md-primary md-button md-ink-ripple" md-ink-ripple="#A7A8AA" style="font-size: 13px;background-color: rgb(53, 121, 42);
+    color: white;line-height: 25px;">Go<div class="md-ripple-container"></div></a>
+    </div>
+       <a style="text-align: right; cursor:pointer;border-bottom: 1px dotted #d8d8d8;padding: 0 5px 0 0;width: 100%;">more</a>
+   
+     </div>
+   </div>
+    <!--div layout="column"  layout-align="start stretch" class="filter-section fl_w" layout-padding>
+     <span class="filter_head" ng-click="filter_age=!filter_age" layout="row"  layout-align="space-between center"><span>Age</span><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+     <div ng-hide="filter_age" layout="column"  layout-align="start stretch">
+     <md-checkbox>1-25 years (3,216)</md-checkbox>
+     <md-checkbox>25-50 years (13,133)</md-checkbox>
+     <md-checkbox>50-75 years (758)</md-checkbox>
+     <md-checkbox>Above 75 years (3,156)</md-checkbox>
+ 
+    
+      <div layout="row"  layout-align="start stretch">
+       <md-input-container class="md-block" style="width:100%">
+                 <label>From</label>
+                   <input>
+       </md-input-container>
+       <md-input-container class="md-block" style="width:100%">
+                 <label>To</label>
+                   <input>
+       </md-input-container>
+       <a href="#!/analytic_detail" class="md-primary  md-button md-ink-ripple " md-ink-ripple="#A7A8AA" style="font-size: 13px;background-color: rgb(53, 121, 42);color: white; min-width: 45px;margin-bottom: 0; margin-top: 12px;" >Go </a>
+      </div>
+ <a style="text-align: right; cursor:pointer;border-bottom: 1px dotted #d8d8d8;padding: 0 5px 0 0;width: 100%;">more</a>
+    </div>
+   </div-->
+
+    <!--div layout="column"  layout-align="start stretch" class="filter-section fl_w" layout-padding>
+    <span class="filter_head" ng-click="gender_filter=!gender_filter" layout="row"  layout-align="space-between center"><span>Gender</span><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+     
+     <div ng-hide ="gender_filter">
+     <md-checkbox>Male(23,156)</md-checkbox>
+     <md-checkbox>Female (1,254)</md-checkbox>
+    </div>
+
+   </div-->
+   <div layout="column"  layout-align="start stretch" class="filter-section fl_w" layout-padding>
+     <span class="filter_head" ng-click="filter_count=!filter_count" layout="row"  layout-align="space-between center"><span>Number of Patients</span><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+     <div ng-hide="filter_count" layout="column"  layout-align="start stretch">
+        
+      <div layout="row"  layout-align="start stretch">
+       <md-input-container class="md-block" style="width:100%">
+                 <label>From</label>
+                   <input>
+       </md-input-container>
+       <md-input-container class="md-block" style="width:100%">
+                 <label>To</label>
+                   <input>
+       </md-input-container>
+       <a ng-click="order('0'); candidate_set3_count = 350" class="md-primary  md-button md-ink-ripple " md-ink-ripple="#A7A8AA" style="font-size: 13px;background-color: rgb(53, 121, 42);color: white; min-width: 45px;margin-bottom: 0; margin-top: 12px;" >Go </a>
+      </div>
+ 
+    </div>
+   </div>
+
+
+  </div>
+
+   </div>
+   <div class="width_100">
+     
+     <div style="position: relative;width:100%;border-bottom: 1px solid #D8D8D8;margin-bottom: 10px;">
+       <div style="
+    padding-bottom: 10px;">
+         
+         <div layout="column"   layout-align="space-between center" style="position:relative;  border-radius: 0px;">
+ 
+<!-- <h3>STRENGTH-specific analysis</h3> -->
+
+   
+    
+
+    
+
+ <md-button class="md-primary" ng-click="modify_radius()" style="font-size: 13px; background-color: rgb(53, 121, 42);border:1px solid rgb(53, 121, 42);line-height: 10px;color:white" >Apply filter <i class="fa fa-filter" aria-hidden="true" style="color:#FFF" ></i></md-button>
+
+
+   </div>
+       </div>
+      
+     </div>
+
+   </div>
+   
+  </div></div>
+
+<div flex="{{width1}}" layout="column">
+ <div layout="row" layout-align="space-between center"  style="padding: 10px 18px;margin-bottom: 2px;margin-left: 4px;
+    background-color: rgba(204, 204, 204, 0.35);">
+<div flex="10">Input Set:</div>
+<div flex="25">
+    <md-select ng-model="analysis" placeholder="Go to" class="md-no-underline goto_list" style="display: inline">
+           <md-option value="retention" selected>Retention candidates</md-option>
+          <md-option value="location">Candidates within 25mi</md-option>
+          <md-option value="patients">Candidates within 15mi</md-option>
+         
+        </md-select></div>
+        <div flex="45" class="results_count">Results: <span>{{candidate_set3_count}}</span></div>
+<div flex="20" layout="row" layout-align="space-between center" style="width:15%; ">
+ <a  class="md-primary md-button md-ink-ripple" md-ink-ripple="#A7A8AA" style="font-size: 13px;background-color: rgb(53, 121, 42);
+    color: white; " ng-click= "add_outreach =! add_outreach">Save Physicians<div class="md-ripple-container"></div></a>
+<div class="bg_white bx_shd" style="position: absolute;top: 130px;z-index: 9999;right: 25px; width: 300px;" ng-show="add_outreach">
+   <div layout="column"  layout-align="space-between center" class="filter-section fl_w">
+     <md-input-container class="md-block" style="width:75%; display: inline">
+                <label>Name</label>
+                <input type="text" />
+              </md-input-container>
+                <a  class="md-primary md-button md-ink-ripple" md-ink-ripple="#A7A8AA" style="font-size: 13px;background-color: rgb(53, 121, 42);
+    color: white;" ng-click= "add_outreach =! add_outreach">Save<div class="md-ripple-container"></div></a>
+    </div>
+
+
+</div>
+
+       </div>
+</div>
+
+<!-- patient detailed view begins -->
+
+<div class="top_identity_detail" layout="row" layout-align="space-between center" ng-show="patient_analytic_back">
+  <div>
+   <md-button ng-click="clickBackPatient()" style="float:left; color:green; font-weight:bold;"><i class="fa fa-angle-left" aria-hidden="true"></i> Back</md-button>
+   </div>
+   <!-- <div style="float:right" >
+   <md-button ><a href="" style="color:rgb(53,121,42); text-decoration: none; font-weight:bold;"><i  style="color:rgb(53,121,42);" class="fa fa-pencil" aria-hidden="true"></i></a></md-button>
+   </div> -->
+</div>
+<div class="width_100" ng-show="patient_detail_view">
+<div layout="row" layout-align="space-between center" class="top_identity_profile md-padding " style="" >
+   <div layout="row" flex="40"><h6><div class="divround">JA</div></h6>
+      <div layout="column" layout-align="start start" class="patientprofile" style="width: inherit;">
+
+         <div style="padding-top:10px;padding-left:20px; font-family: probold; color:#6d6d6d;font-size: 12px; "> PHYSICIAN PROFILE </div>
+         <div class="patientprofilename">John R. Abraham</div>
+      </div>
+      </div>
+   
+
+
+   <div layout="row" flex="60" class="patient_top_section patient_top_section_1 phy_top_section min-width" layout-align="end center">
+   <div class="patient_top_data">DOB
+       
+ <p class="fontprofilepatient">05/22/1976</p>
+        
+   </div>
+<div class="patient_top_data" flex=15>Age
+       
+ <p class="fontprofilepatient">40</p>
+        
+   </div>
+   <div class="patient_top_data">
+      Sex<p class="fontprofilepatient">Male</p>
+         
+   </div>
+    <div class="patient_top_data">
+      Physician NPI<p class="fontprofilepatient">2514789642</p>
+       
+   </div>
+   <div class="patient_top_data">
+      Speciality<p class="fontprofilepatient">Cardiology</p>
+         
+   </div>
+  <!--  <div class="patient_top_data">
+      Opt-In for Trials<p class="fontprofilepatient">Yes</p>
+         
+   </div> -->
+   </div>
+
+      <!-- <div>
+   <md-button ><a href="" style="color:rgb(53,121,42); text-decoration: none; font-weight:bold;"><i  style="color:rgb(53,121,42);" class="fa fa-pencil" aria-hidden="true"></i></a></md-button>
+   </div> --> 
+
+</div>
+
+
+<!-- CONTACT AND REFERENCE INFORMATION -->
+<div class="md-padding patient_detail_info">
+
+<div class="patientinformationdetail" layout="column"       layout-align="start">
+   <div class="patientinfodetail">CONTACT AND REFERENCE INFORMATION
+      <span class="trigger1" ng-click="show=!show"><i class="fa fa-chevron-down" aria-hidden="true"></i>
+      </span>
+   </div>
+
+</div>
+
+
+<!-- CONTACT AND REFERENCE INFORMATION  DETAILS - SHOW-->
+
+
+<div  ng-hide="show" class="patientinformationdetails" layout="column"       layout-align="start">
+   <div class="patientinfodetail">
+      
+
+      <div layout="row" layout-align="space-between center"  class="md-padding  br-bt">
+      <div class="contactinformation">Contact Information
+      </div>
+      <div style="margin-right: 10px;">
+      <a href="" style="color:rgb(53,121,42); text-decoration: none; font-weight:bold;"><i  style="color:rgb(53,121,42);" class="fa fa-pencil" aria-hidden="true"></i></a>
+      </div></div>
+
+
+
+
+
+      <div layout="row" layout-align="start center" class="md-padding patient_detail">
+         <div class="p-10" flex="15"><div class="primary">Primary Phone</div>
+         <div class="fontprofile">(631) 415-2431</div></div>
+        <div class="p-10" flex="10"> <div class="primary">Type</div>
+            <div class="fontprofile1">Mobile</div></div>
+        
+         <div class="p-10" flex="30"><div class="primary">Preference</div> <div class="fontprofile1">Can receive  SMS notifications</div></div>
+        
+         <div class="p-10" flex="15"><div class="primary">Secondary phone</div>  <div class="fontprofile1">(631) 415-1527</div></div>
+       
+         <div class="p-10" flex="15"><div class="primary">Type</div> <div class="fontprofile1">Work</div></div>
+         
+         <div class="p-10" flex="15"><div class="primary">Extension</div>
+         <div class="fontprofile1">231</div>    </div>
+          
+      </div>
+     
+      <div layout="row" layout-align="start center" class="md-padding patient_detail">
+         <div class="p-10" flex="25"><div class="primary">Email</div>
+       <div class="fontprofile">johnrabraham@gmail.com</div></div>
+        <div class="p-10" flex="45"> <div class="primary">Preference</div>
+
+         <div class="fontprofile1">Physician's preferred form of contact, Can receive notifications
+       </div></div>
+       <div class="p-10 " flex="30">
+         <div class="primary">Address</div>
+   <div class="fontprofile">242 Quaker Path, Stony Brook, NY 11790</div>
+       </div>
+      
+          
+      </div>
+  
+ <hr>
+      <div layout="row" layout-align="space-between center"  class="md-padding  br-bt">
+      <div class="contactinformation">Reference Information
+      </div>
+      </div>
+   <div layout="row" layout-align="start center" class="md-padding patient_detail">
+         <div class="p-10" flex="25"><div class="primary">Lab Reference ID</div>
+          <div class="fontprofile">A49201</div></div>
+    
+        <div class="p-10" flex="45"> <div class="primary">Physician NPI</div>
+        <div class="fontprofile">2514789642</div></div>
+         <div class="p-10" flex="30"><div class="primary">Photo ID image</div>
+          <div class="fontprofile">none
+     <!--  <h5 style="color:green;font-size:13px; font-family:probold; text-align:left;margin:0; margin-top: 5px; border-bottom: none"> View</h5> --></div>
+         
+   </div></div>
+ 
+   
+    </div>
+</div>
+<br>
+  <div layout="column" layout-align="start" class="patientinformationdetail">
+<div class="patientinfodetail">Candidates associated (125)
+<span class="trigger1" ng-click="prev_trials=!prev_trials"><i class="fa fa-chevron-down" aria-hidden="true"></i></span></div>
+</div>
+<div  ng-hide="prev_trials" class="eligibility_criteria_details p-15"  layout="column" layout-align="start">
+  <div class="patientinfodetail">
+     <div layout="row" layout-align="space-between center">
+   <div class="p-15 prev_trials_style" style="padding-top: 0 !important; width:100%">
+ <div ng-repeat="patient in patients_list"  class=" bg_white m-b-10 bx_shd "  layout="column" layout-wrap>
+   <div layout="row" layout-wrap layout-align="space-around center" >
+    <span class="rounded_text md-margin" flex="5" style="text-transform: uppercase;">{{ patient.patient_name | myfilter}}</span>
+    <span flex="40">
+      <div class="patient_name"><a >{{ patient.patient_name }}</a></div>
+      <div class="patient_add">{{ patient.Address }}</div>
+    </span>
+    <span flex="10" class="br-rt">
+    <div class="patient_add" >Gender</div>
+    <div>{{ patient.Gender }}</div>
+    </span>
+    <span flex="10" class="br-rt">
+    <div class="patient_add">Age</div>
+    <div>
+    {{ patient.Age }}
+    </div>
+    </span>
+    <span flex="10">
+    <div class="patient_add">Status</div>
+    <div>
+    {{ patient.stage }}
+    </div>
+    </span>
+    <!-- <span flex="10"  class="patient_name"><a>View profile</a></span> -->
+   </div>
+
+
+  <!--  <div layout="row" layout-wrap layout-align="start center" class="footer_sec">
+
+<div class="patient_add1"><i class="fa fa-clock-o" aria-hidden="true"></i></div>
+<div class="patient_add m-l-15">09.13.16</div>
+
+   </div> -->
+ 
+  </div>
+  </div>
+    </div>
+     
+    
+  </div>
+</div>
+
+</div>
+
+
+
+
+
+
+    </div>
+<div class="md-padding user_list" ng-hide="patient_list">
+<md-table-container >
+  <table md-table md-row-select multiple md-progress="promise">
+    <thead md-head md-order="test" >
+      <tr md-row>
+        <th md-column md-order-by="nameToLower"><span>Name</span></th>
+         <th md-column ><span>Speciality</span></th>
+         <th md-column md-order-by="Pat_countToLower"><span>Patient Count</span></th>
+         <th md-column ><span>Physician Location</span></th>
+         <th md-column ><span>Nearest Trial Site</span></th>
+         
+         <th md-column ><span>Edit/Delete</span></th>
+     <!-- >    <th md-column md-numeric md-order-by="calories.value"><span>Age</span></th>
+        <th md-column md-numeric>Gender</th>
+        <th md-column md-numeric>Source</th>
+        <th md-column md-numeric>Trial Site</th>
+        <th md-column md-numeric>Patient Location</th>
+       <th md-column md-numeric>Edit/Delete</th> 
+       <th md-column md-numeric>Edit/Delete</th> -->
+      </tr>
+    </thead>
+    <tbody md-body>
+
+      <tr md-row md-select="physiciananalytics" md-select-id="name" md-auto-select ng-repeat="physiciananalytics in physician_analytics ">
+        <td md-cell><span ng-click="clickPhysiciandetail();" style="text-decoration: none; cursor: pointer;  color: rgb(34,103,42);">{{physiciananalytics.name}}</span></td>
+        <td md-cell>{{physiciananalytics.speciality}}</td>
+        <td md-cell>{{physiciananalytics.pat_count}}</td>
+        <td md-cell>{{physiciananalytics.physicianLocation}}</td>
+        <td md-cell>{{physiciananalytics.trialSite}}</td>
+        
+        <td md-cell class="edit-sec"><a href=""><i class="fa fa-pencil" aria-hidden="true"></i></a><!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a> --></td>
+        <!-- <td md-cell>{{dessert.iron.value}}{{dessert.iron.unit}}</td> -->
+      </tr>
+
+    </tbody>
+  </table>
+</md-table-container>
+
+<md-table-pagination md-limit="query.limit"  md-page="query.page" md-total="{{identifyData.count}}" md-on-paginate="getDesserts" md-page-select></md-table-pagination>
+
+</div>
+</div>
+</div>
+<!-- patient detailed view ends -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+      </div>
+
+
+
+
+
+
+        
+      </md-dialog-content>
+    </md-dialog>
+
+
+
+
+

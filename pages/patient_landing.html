@@ -1,0 +1,476 @@
+
+  <div  ng-hide="failure_time" style="    min-height: 100px;" layout="row" layout-align="space-between center" class="bg_white">
+<div layout="row" layout-sm="column" layout-align="center center" class="bg_white  patient_landing" layout-xs="column" style="margin: 0 auto; padding-bottom: 20px"  >
+ 
+   <div class="patient_container">
+
+   
+
+      <div class="start_questionairre" ng-hide="show_question_area">
+
+      
+         <h3> Please answer the following questions to see if you may qualify for the study. </h3>
+
+      <h4> All information you enter will remain private/confidential and will only be used to determine if you might be eligible for the study. </h4>
+
+      <h6> <span class="color_red">*</span>Required field </h6>
+<div class="steppers">
+  <span class="bg step1"> </span>
+  <span class="bg step2"> </span>
+  <span class="bg step3"> </span>
+  <span class="bg step4"> </span>
+  <span class="bg step5"> </span>
+ 
+</div>
+
+      <form class="form_criteria">
+
+         <div class="step1" ng-hide="show_age" layout="column"    layout-align="space-between  stretch">
+         <md-input-container class="md-block" style="width:100%">
+                   <br> 
+                   <label class="lbl">1. Please select your age </label>
+                   <br>
+                    <md-select ng-model="user.state">
+                     <md-option value="17_bel">17 or below</md-option>
+                     <md-option value="18">18 </md-option>
+<md-option value="19">19 </md-option>
+<md-option value="20">20 </md-option>
+<md-option value="21">21 </md-option>
+<md-option value="22">22 </md-option>
+<md-option value="23">23 </md-option>
+<md-option value="24">24 </md-option>
+<md-option value="25">25 </md-option>
+<md-option value="26">26 </md-option>
+<md-option value="27">27 </md-option>
+<md-option value="28">28 </md-option>
+<md-option value="29">29 </md-option>
+<md-option value="30">30 </md-option>
+<md-option value="31">31 </md-option>
+<md-option value="32">32 </md-option>
+<md-option value="33">33 </md-option>
+<md-option value="34">34 </md-option>
+<md-option value="35">35 </md-option>
+<md-option value="36">36 </md-option>
+<md-option value="37">37 </md-option>
+<md-option value="38">38 </md-option>
+<md-option value="39">39 </md-option>
+<md-option value="40">40 </md-option>
+<md-option value="41">41 </md-option>
+<md-option value="42">42 </md-option>
+<md-option value="43">43 </md-option>
+<md-option value="44">44 </md-option>
+<md-option value="45">45 </md-option>
+<md-option value="46">46 </md-option>
+<md-option value="47">47 </md-option>
+<md-option value="48">48 </md-option>
+<md-option value="49">49 </md-option>
+<md-option value="50">50 </md-option>
+<md-option value="51">51 </md-option>
+<md-option value="52">52 </md-option>
+<md-option value="53">53 </md-option>
+<md-option value="54">54 </md-option>
+<md-option value="55">55 </md-option>
+<md-option value="56">56 </md-option>
+<md-option value="57">57 </md-option>
+<md-option value="58">58 </md-option>
+<md-option value="59">59 </md-option>
+<md-option value="60">60 </md-option>
+<md-option value="61">61 </md-option>
+<md-option value="62">62 </md-option>
+<md-option value="63">63 </md-option>
+<md-option value="64">64 </md-option>
+<md-option value="65">65 </md-option>
+<md-option value="66">66 </md-option>
+<md-option value="67">67 </md-option>
+<md-option value="68">68 </md-option>
+<md-option value="69">69 </md-option>
+<md-option value="70">70 </md-option>
+<md-option value="71">71 </md-option>
+<md-option value="72">72 </md-option>
+<md-option value="73">73 </md-option>
+<md-option value="74">74 </md-option>
+<md-option value="75">75 </md-option>
+<md-option value="76">76 </md-option>
+<md-option value="77">77 </md-option>
+<md-option value="78">78 </md-option>
+<md-option value="79">79 </md-option>
+<md-option value="80">80 </md-option>
+<md-option value="81">81 </md-option>
+<md-option value="82">82 </md-option>
+<md-option value="83">83 </md-option>
+<md-option value="84">84 </md-option>
+<md-option value="85">85 </md-option>
+<md-option value="86">86 </md-option>
+<md-option value="87">87 </md-option>
+<md-option value="88">88 </md-option>
+<md-option value="89">89 </md-option>
+<md-option value="90">90 </md-option>
+<md-option value="91">91 </md-option>
+<md-option value="92">92 </md-option>
+<md-option value="93">93 </md-option>
+<md-option value="94">94 </md-option>
+<md-option value="95">95 </md-option>
+<md-option value="96">96 </md-option>
+<md-option value="97">97 </md-option>
+<md-option value="98">98 </md-option>
+<md-option value="99">99 </md-option>
+<md-option value="100">100 </md-option>
+
+                    </md-select>
+                    <!-- <md-slider flex md-discrete ng-model="rating1" step="1" min="18" max="99" aria-label="rating" class="md-primary">
+                        </md-slider> -->
+                 </md-input-container>
+
+
+                <div layout="row" layout-wrap="" layout-xs="column" layout-sm="column" layout-align="end start" layout-padding="" class="continue_btn layout-padding layout-wrap layout-xs-column layout-sm-column layout-align-end-start layout-row" >
+          <a class="md-primary md-button md-ink-ripple" md-ink-ripple="#A7A8AA" style="font-size: 13px;background-color: rgb(53, 121, 42);
+    color: white; line-height: 22px" ng-click="show_gender_fun();">Continue<div class="md-ripple-container"></div></a>
+         </div>
+                               
+         </div>
+
+
+
+          <div class="step2" ng-show="show_gender"  layout="column"    layout-align="space-between  stretch">
+        <!--   <p>Selected Value: <span class="radioValue">{{ gender }}</span> </p> -->
+         <md-input-container class="md-block" style="width:100%">
+                   <label class="lbl">2. Are you currently taking any statin medication to treat high LDL (“bad”) cholesterol? </label>
+                   <br><br>
+                      <md-radio-group ng-model="gender">
+
+      <md-radio-button value="Female" class="md-primary">Yes</md-radio-button>
+      <md-radio-button value="Male" class="md-primary"> No </md-radio-button>
+      <md-radio-button value="None" class="md-primary"> I don't know </md-radio-button>
+
+    </md-radio-group>   
+                  
+
+                 </md-input-container>
+
+
+              <div layout="row" layout-wrap="" ng-show="gender == 'Female'" layout-xs="column" layout-sm="column" layout-align="end start" layout-padding="" class="continue_btn layout-padding layout-wrap layout-xs-column layout-sm-column layout-align-end-start layout-row" >
+          <a class="md-primary md-button md-ink-ripple" md-ink-ripple="#A7A8AA" style="font-size: 13px;background-color: rgb(53, 121, 42);
+    color: white; line-height: 22px" ng-click="show_HDL_fun();">Continue<div class="md-ripple-container"></div></a>
+         </div>
+
+
+         <div layout="row" layout-wrap="" ng-hide="gender == 'Female'" layout-xs="column" layout-sm="column" layout-align="end start" layout-padding="" class="continue_btn layout-padding layout-wrap layout-xs-column layout-sm-column layout-align-end-start layout-row" >
+          <a class="md-primary md-button md-ink-ripple" md-ink-ripple="#A7A8AA" style="font-size: 13px;background-color: rgb(53, 121, 42);
+    color: white; line-height: 22px" ng-click="show_final_fail_fun();">Continue<div class="md-ripple-container"></div></a>
+         </div>
+                
+                
+         </div>
+
+
+<div class="step2" ng-show="show_HDL"  layout="column"    layout-align="space-between  stretch">
+ <!-- <p>Selected Value: <span class="radioValue">{{ hdl }}</span> </p> -->
+         <md-input-container class="md-block" style="width:100%">
+                   <label class="lbl">3. Which of the following best describes you? </label>
+                   <br><br>
+                   
+                   <md-radio-group ng-model="hdl">
+
+      <md-radio-button value="42" class="md-primary">My HDL (“good”) cholesterol level is lower than normal</md-radio-button>
+      <md-radio-button value="47" class="md-primary"> My HDL (“good”) cholesterol level is normal or higher than normal </md-radio-button>
+       <md-radio-button value="90" class="md-primary"> I do not know if my HDL (“good”) cholesterol level is lower than normal </md-radio-button>
+
+    </md-radio-group>   
+
+                 </md-input-container>
+
+
+
+          <div layout="row" layout-wrap="" layout-xs="column" ng-show="hdl == '42'"  layout-sm="column" layout-align="end start" layout-padding="" class="continue_btn layout-padding layout-wrap layout-xs-column layout-sm-column layout-align-end-start layout-row" >
+          <a class="md-primary md-button md-ink-ripple" md-ink-ripple="#A7A8AA" style="font-size: 13px;background-color: rgb(53, 121, 42);
+    color: white; line-height: 22px" ng-click="show_allergy_fun();">Continue<div class="md-ripple-container"></div></a>
+         </div>
+
+           <div layout="row" layout-wrap="" ng-hide="hdl == '42'" layout-xs="column" layout-sm="column" layout-align="end start" layout-padding="" class="continue_btn layout-padding layout-wrap layout-xs-column layout-sm-column layout-align-end-start layout-row" >
+          <a class="md-primary md-button md-ink-ripple" md-ink-ripple="#A7A8AA" style="font-size: 13px;background-color: rgb(53, 121, 42);
+    color: white; line-height: 22px" ng-click="show_final_fail_fun();">Continue<div class="md-ripple-container"></div></a>
+         </div>
+                
+                
+         </div>
+                
+
+                 
+         
+
+
+
+         <div class="step2" ng-show="show_allergy"  layout="column"    layout-align="space-between  stretch">
+         <md-input-container class="md-block" style="width:100%">
+                   <label class="lbl">4. Do you have a history of heart problems or stroke?  </label>
+                   <br><br>
+
+                      <md-radio-group ng-model="history">
+
+      <md-radio-button value="yes" class="md-primary">Yes</md-radio-button>
+       <md-radio-button value="no" class="md-primary">No</md-radio-button>
+
+    </md-radio-group>  
+ 
+                 </md-input-container>
+
+
+
+          <div layout="row" layout-wrap="" layout-xs="column" layout-sm="column" layout-align="end start" layout-padding="" class="continue_btn layout-padding layout-wrap layout-xs-column layout-sm-column layout-align-end-start layout-row" >
+          <a class="md-primary md-button md-ink-ripple" md-ink-ripple="#A7A8AA" style="font-size: 13px;background-color: rgb(53, 121, 42);
+    color: white; line-height: 22px" ng-click="show_statin_fun();">Continue<div class="md-ripple-container"></div></a>
+         </div>
+                
+
+                 
+         </div>
+
+
+
+<div class="step2" ng-show="show_statin"  layout="column"    layout-align="space-between  stretch">
+<!--  <p>Selected Value: <span class="radioValue">{{ data.statin }}</span> </p> -->
+         <md-input-container class="md-block" style="width:100%">
+                   <label class="lbl">5. Have you been treated for any type of cancer (except skin cancer) in the past 2 years? </label>
+                   <br><br>
+                   
+                   <md-radio-group ng-model="data.statin">
+
+      <md-radio-button value="1" class="md-primary">Yes</md-radio-button>
+      <md-radio-button value="0" class="md-primary"> No </md-radio-button>
+      <md-radio-button value="2" class="md-primary"> I don’t know </md-radio-button>
+
+    </md-radio-group>   
+
+                 </md-input-container>
+
+
+
+          <div layout="row" layout-wrap="" layout-xs="column" layout-sm="column" layout-align="end start" layout-padding="" class="continue_btn layout-padding layout-wrap layout-xs-column layout-sm-column layout-align-end-start layout-row" >
+          <a class="md-primary md-button md-ink-ripple" md-ink-ripple="#A7A8AA" style="font-size: 13px;background-color: rgb(53, 121, 42);
+    color: white; line-height: 22px" ng-click="show_acid_fun();">Continue<div class="md-ripple-container"></div></a>
+         </div>
+                
+
+                 
+ </div>
+
+
+         <div class="step2" ng-show="show_acid"  layout="column"    layout-align="space-between  stretch">
+<!--  <p>Selected Value: <span class="radioValue">{{ data.statin }}</span> </p> -->
+         <md-input-container class="md-block" style="width:100%">
+                   <label class="lbl">5. Are you allergic to Omega-3 carboxylic acids, Omega-3 fatty acids, Omega-3-acid ethyl esters or Corn oil?</label>
+                   <br><br>
+                   
+                   <md-radio-group ng-model="acid">
+
+      <md-radio-button value="1" class="md-primary">Yes</md-radio-button>
+      <md-radio-button value="0" class="md-primary"> No </md-radio-button>
+      <md-radio-button value="2" class="md-primary"> I don’t know </md-radio-button>
+
+    </md-radio-group>   
+
+                 </md-input-container>
+
+
+
+          <div layout="row" layout-wrap="" layout-xs="column" layout-sm="column" layout-align="end start" layout-padding="" class="continue_btn layout-padding layout-wrap layout-xs-column layout-sm-column layout-align-end-start layout-row" >
+          <a class="md-primary md-button md-ink-ripple" md-ink-ripple="#A7A8AA" style="font-size: 13px;background-color: rgb(53, 121, 42);
+    color: white; line-height: 22px" ng-click="show_form_fun();">Continue<div class="md-ripple-container"></div></a>
+         </div>
+                
+
+                 
+         </div>
+
+
+
+
+         
+
+      </form>
+
+      </div>
+
+
+      <div class="form_view" ng-show="show_form" layout="column" layout-align="center center">
+
+
+         <div class="show_final1 success">
+
+             <h1 style="margin-top: 3px !important"> Thank you for your interest. </h1>
+             <h4> Please fill out the below form to register yourself with our  portal.</h4>
+
+         </div>
+
+         <md-content layout-padding class="fl_w">
+    <div>
+      
+          <h2 style="text-align: center" class="br-bt"> Registration </h2>
+<form name="userForm" class="p-10">
+      <div layout-gt-sm="row">
+       <md-input-container class="md-block" flex-gt-sm>
+            <label>First Name</label>
+            <input ng-model="firstName">
+          </md-input-container>
+
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Last Name</label>
+            <input ng-model="lastname">
+          </md-input-container>
+      </div>
+
+      <div layout-gt-sm="row">
+
+           <md-input-container  class="md-block" flex-gt-sm>
+        <label>Email</label>
+        <input ng-model="user.email" type="email">
+      </md-input-container>
+
+
+       <md-input-container class="md-block" flex-gt-sm>
+          <label>Gender</label>
+          <md-select name="type" ng-model="project.type" required>
+            <md-option value="male">Male</md-option>
+            <md-option value="female">Female</md-option>
+          </md-select>
+        </md-input-container>
+
+      </div>
+
+      <div layout-gt-sm="row">
+         <md-input-container class="md-block" flex-gt-sm>
+          <label>Address</label>
+          <input ng-model="user.address">
+        </md-input-container>
+
+        <md-input-container class="md-block" flex-gt-sm>
+          <input ng-model="user.address2" placeholder="Address 2">
+        </md-input-container>
+
+
+        </div>
+
+
+      <div layout-gt-sm="row">
+    <md-input-container class="md-block" flex-gt-sm>
+            <label>City</label>
+            <input ng-model="user.city">
+          </md-input-container>
+
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Postal Code</label>
+            <input name="postalCode" ng-model="user.postalCode" placeholder="12345"
+                   required ng-pattern="/^[0-9]{5}$/" md-maxlength="5">
+  </div>
+      <div layout-gt-sm="row">
+    <md-input-container class="md-block" flex-gt-sm>
+            <label>Password</label>
+            <input ng-model="user.password">
+          </md-input-container>
+
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Confirm Password</label>
+            <input name="postalCode" ng-model="user.repassword">
+  </div>
+  <div class="md-padding" style="border:1px solid #e7e7e7">
+<div layout="row" layout-align="space-between center">
+<h4 style="border-bottom: none; font-size:14px">Authorize Quest to check eligibility for this Trial and store your information in our database </h4>
+ <div flex-gt-sm="20">
+                                                                <md-checkbox class="md-checkbox-medium" ng-model="authorize1" aria-label="Checkbox 1" checked style="border-bottom: none; font-size:14px">
+                                                                    Yes, I authorize</md-checkbox>
+</div>
+
+</div>
+<div layout="row" layout-align="space-between center">
+<h4 style="border-bottom: none; font-size:14px">Authorize Quest to access Rx and Medical History for this Trial</h4>
+ <div flex-gt-sm="20">
+                                                                <md-checkbox class="md-checkbox-medium" ng-model="authorize2" aria-label="Checkbox 1" checked style="border-bottom: none; font-size:14px">
+                                                                    Yes, I authorize</md-checkbox>
+</div>
+
+</div>
+</div>
+       <div layout="row" layout-wrap="" layout-xs="column" layout-sm="column" layout-align="end start" layout-padding="" class="continue_btn layout-padding layout-wrap layout-xs-column layout-sm-column layout-align-end-start layout-row" >
+          <a class="md-primary md-button md-ink-ripple" md-ink-ripple="#A7A8AA" style="font-size: 13px;background-color: rgb(53, 121, 42);
+    color: white; line-height: 22px" ng-click="show_final_fun();">Submit<div class="md-ripple-container"></div></a>
+         </div>
+
+      </form>
+    </div>
+    <md-content>
+
+
+      </div>
+
+
+
+        
+           
+
+   </div>
+</div>
+
+
+</div>
+<div layout="column" layout-align="center stretch" style="height: 100%" ng-show="finalsubm">
+ <div class="show_final success md-padding" layout="row" layout-align="center stretch" ng-show="show_success_msg">
+
+
+<div style="width:500px; margin:0 auto" layout="column" layout-align="center stretch">
+
+<div class="succ"><i class="fa fa-check fa-5x" aria-hidden="true"></i></div>
+<div  class="bg_white" layout="column" layout-align="center center"><h1>  Thank you for your time. Your details have been succesfully registered with us. </h1><md-button  href="#!/home" class="md-primary md-raised" style="margin-bottom: 15px">Continue</md-button></div>
+<!-- ng-click="complete()" -->
+</div>
+
+
+
+             
+
+</div>
+
+<div class="show_final failure succ_1 bg_light" layout="row" layout-align="center center" ng-show="show_failure_msg">
+<div style="width:90%" layout="column" layout-align="center stretch" class="bg_white md-padding">
+<h2>  Thank you for your time and for completing these questions. Unfortunately, you (or your patient) are not eligible for this study. </h2>
+
+
+<div class="md-padding" >
+<h4 style="color: #928d8d;font-size: 23px;font-family: proregular;">Would you be interested in the following ?</h4>
+<div layout="column" layout-align="start start" style="width:50%; margin: 0 auto; border: 2px solid rgba(232, 232, 232, 0.46);">
+
+ <div >
+                                                                <md-checkbox class="md-checkbox-medium" ng-model="authorize3" aria-label="Checkbox 1" checked style="border-bottom: none; font-size:14px">
+                                                                    <h4>Receive email alerts about other trials.</h4></md-checkbox>
+</div>
+
+<div >
+                                                                <md-checkbox class="md-checkbox-medium" ng-model="authorize4" aria-label="Checkbox 1" checked style="border-bottom: none; font-size:14px">
+                                                                    <h4>Receive email alerts on other Quest opportunities.</h4></md-checkbox>
+</div>
+
+</div>
+
+ <div layout="column"  layout-align="center center" layout-padding=""  style="width:50%; margin: 0 auto; " >
+     
+          <a class="md-primary md-button md-ink-ripple" md-ink-ripple="#A7A8AA" style="font-size: 13px;background-color: rgb(53, 121, 42);
+    color: white; line-height: 22px; width:250px" ng-click="wish=!wish">Submit<div class="md-ripple-container"></div></a>
+    <h5 class="pointer" ng-click="failure_time=!failure_time; show_failure_msg=!show_failure_msg;show_question_area=!show_question_area;finalsubm=!finalsubm">No thanks</h5>
+         </div>
+</div>
+<h5 ng-show="wish" style="text-align: center;
+    border-bottom: none;
+    font-family: prolight;
+    font-size: 24px;
+    margin: 0 0 10px 0;
+    color: rgb(53,121,42);
+    
+    padding: 10px;">Thank You !</h5>
+</div>
+           
+       
+
+</div>
+</div>
+<md-content  layout-xs="column" layout="row" class="bg_light">
+                  <div class=" sec text-right width_100" >© 2017 Quest Diagnostics Incorporated. All rights reserved.</div>
+</md-content>

@@ -1,0 +1,976 @@
+<div class="md-white " layout="row" layout-align="space-between center" id="div1">
+  <div>
+   <md-button back-button style="float:left"><i class="fa fa-angle-left" aria-hidden="true"></i> Back</md-button>
+   </div>
+   <div style="float:right" >
+   
+   <md-button><i class="fa fa-ellipsis-v" aria-hidden="true"></i></md-button>
+   </div>
+</div>
+
+<md-content id="edit_trial">
+            <div class=" bg_grey" style="padding: 2px 16px; background-color: #ececec;" id="trialdetail_top">
+              
+               <h2>Create Trial</h2>
+               <div class="sec" layout="row" layout-align="space-between start">
+	                 <md-input-container class="md-block" style="width:75%">
+				        <label>Title</label>
+				        <input md-maxlength="30"  md-no-asterisk name="title" ng-model="project.description">
+				        
+				    </md-input-container>
+                   <md-input-container class="md-block" flex-gt-sm>
+			            <label>Status</label>
+			            <md-select ng-model="user.state">
+			              <md-option value="Active">
+			               Active
+			              </md-option>
+			              <md-option value="inactive">
+			               InActive
+			              </md-option>
+			            </md-select>
+			          </md-input-container>
+              </div>
+             
+               <h4 class="m-t-15">Sponsors and Collaborators</h4>
+
+
+               <div class="list_details_content widget_sec" layout="row" layout-align="space-between center" id="trialdetail_top">
+
+       <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" style="margin-left: 0">
+                  <md-card-title>
+                     <md-card-title-text  style="text-align: center;">
+                        <span class="md-headline">Trial ID: NCT02104817</span>
+                       <div class="trial_content" style="font-style: italic;margin-top: 25px">Status: <span class="green trial_status">Recruiting</span></div>
+                     </md-card-title-text>
+                  </md-card-title>
+                  <!--   <md-card-actions layout="row" layout-align="end center">
+                     <i class="fa fa-caret-right" aria-hidden="true"></i>
+                     
+                     </md-card-actions> -->
+        </md-card>
+
+         <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}">
+                  <md-card-title>
+                     <md-card-title-text >
+                        <span class="md-headline">Sponsor</span>
+                      <div layout="row" layout-align="space-between center" style="width:100%">
+                  <md-input-container class="md-block" flex-gt-sm>
+		            <label>Sponsor's Name</label>
+		            <input >
+		          </md-input-container>
+		          
+
+		           <!-- <md-input-container>
+		           	 <label>Sponser's logo</label>
+           			 <input id="fileInput" name="file" type="file"  multiple>
+           			</md-input-container> -->
+
+           			<a id="addnewbtn" class="md-ink-ripple"><i class="fa fa-plus" aria-hidden="true"></i> Add more</a>
+                </div>
+                     </md-card-title-text>
+                  </md-card-title>
+                  <!--   <md-card-actions layout="row" layout-align="end center">
+                     <i class="fa fa-caret-right" aria-hidden="true"></i>
+                     
+                     </md-card-actions> -->
+        </md-card>
+
+        <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" style="margin-right: 0">
+                  <md-card-title>
+                     <md-card-title-text  style="text-align: center;">
+                        <span class="md-headline">Collaborators</span>
+                      <div layout="row" layout-align="space-between center" style="width:100%">
+                  <md-input-container class="md-block" flex-gt-sm>
+		            <label>Collaborator's Name</label>
+		            <input>
+		          </md-input-container>
+		         <a id="addnewbtn" class="md-ink-ripple"><i class="fa fa-plus" aria-hidden="true"></i> Add more</a>
+
+		           
+                </div>
+                     </md-card-title-text>
+                  </md-card-title>
+                  <!--   <md-card-actions layout="row" layout-align="end center">
+                     <i class="fa fa-caret-right" aria-hidden="true"></i>
+                     
+                     </md-card-actions> -->
+        </md-card>
+   
+  
+   
+</div>
+
+<md-content>
+    <md-tabs md-dynamic-height md-border-bottom style="margin-top: 20px">
+      <md-tab label="Status">
+        <md-content class="md-padding mini_section" style="padding:2px 16px 16px 16px ">
+          <h2 class="m-t-15">Status</h2>
+               <div class="section_4 sec" layout-xs="column" layout="row" layout-align="space-around start">
+                  
+		           <md-input-container class="md-block" flex-gt-sm >
+		            <label>Study Start Date</label>
+		           
+			          <md-datepicker ng-model="myDate" name="dateField" md-min-date="minDate"
+			            md-max-date="maxDate" style="width:25%"></md-datepicker>
+
+			          
+			       
+		          </md-input-container>
+		           <md-input-container class="md-block" flex-gt-sm>
+		            <label>Study Completion Date</label>
+		            <md-datepicker ng-model="myDate" name="dateField" md-min-date="minDate"
+			            md-max-date="maxDate" style="width:25%"></md-datepicker>
+		          </md-input-container>
+		           <md-input-container class="md-block" flex-gt-sm>
+		            <label>Primary Completion Date</label>
+		            <md-datepicker ng-model="myDate" name="dateField" md-min-date="minDate"
+			            md-max-date="maxDate" style="width:25%"></md-datepicker>
+		          </md-input-container>
+               </div>
+                <h2 class="m-t-15">Location</h2>
+                <div  layout="column" layout-align="space-between start" class="sec">
+                <md-input-container class="md-block" style="width:100%">
+			          <label>State</label>
+			        <md-chips
+        ng-model="state"
+        readonly="ctrl.readonly"
+        md-removable="ctrl.removable"
+        placeholder="Enter a state"
+        delete-button-label="Remove Tag"
+        delete-hint="Press delete to remove state"
+        secondary-placeholder="+State" class="chip_state" ng-focus="showSuggestions = true" ></md-chips>
+
+			        </md-input-container>
+
+			        <md-input-container class="md-block" style="width:100%">
+			          <label>Range(Miles)</label><br>
+			           <md-slider flex md-discrete ng-model="rating1" step="50" min="50" max="500" aria-label="rating" class="md-primary">
+                        </md-slider>
+			        </md-input-container>
+			        <div ng-show="showSuggestions" style="width: 100%; text-align: center; background-color: #ececec">
+			        <img class="map" src="assets/svg/us-vector-map.svg" width="800">
+			        </div>
+               
+               </div>
+        </md-content>
+      </md-tab>
+      <md-tab label="Purpose">
+        <md-content class="md-padding mini_section" style="padding:2px 16px 16px 16px ">
+          <h2 class="m-t-15">Purpose</h2>
+               <div class="sec" layout="row" layout-align="space-between start">
+
+                <md-input-container class="md-block" style="width:100%">
+			          <label>Description</label>
+			          <textarea ng-model="user.biography" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+			        </md-input-container>
+               </div>
+        </md-content>
+      </md-tab>
+      
+       <md-tab label="Criteria">
+        <md-content class="md-padding">
+          <h2 class="m-t-15">Eligibility</h2>
+               <div class="sec" layout="row" layout-align="space-between start">
+
+                <md-input-container class="md-block" style="width:100%">
+			           <label>Age Eligible</label>
+		               <input >
+			    </md-input-container>
+			    <md-input-container class="md-block" style="width:100%">
+			           <label>Genders Eligible</label>
+			             <md-select ng-model="user.state">
+				              <md-option value="Active">
+				               Male
+				              </md-option>
+				              <md-option value="inactive">
+				               Female
+				              </md-option>
+				            </md-select>
+			    </md-input-container>
+			    <md-input-container class="md-block" style="width:100%">
+			           <label>Accepts Healthy Volunteers</label>
+		               <md-select ng-model="user.state">
+			              <md-option value="Active">
+			               Yes
+			              </md-option>
+			              <md-option value="inactive">
+			               No
+			              </md-option>
+			            </md-select>
+			    </md-input-container>
+               </div>
+ <h2 class="m-t-15">Inclusion Criteria</h2>
+               <!-- Inclusion Criteria -->
+               <div layout="column" layout-align="space-between start" style="width:100%;">
+
+    <div style="width:100%;min-height: 200px; border: 1px solid #d2cfcf;
+    padding: 5px 15px; background-color: white; width: 100%" layout="row" layout-align="space-between start">
+    	<div class="criteria-sec" layout="column" layout-align="space-around start" style="padding-top: 10px;padding-bottom: 10px;width:100%">
+               <!-- <h5 style="border-bottom: none; text-transform: uppercase;">Inclusion criteria</h5> -->
+
+                <md-card md-theme="default" class=" _md md-default-theme">
+		         <md-card-content>
+		            <md-content class="_md md-default-theme criteria_list">
+		            	<div layout="row" layout-align="space-between start" style="padding: 5px;">
+		              <div class="crit_head" ng-click="showDemographicsEthical = !showDemographicsEthical">Health Status</div>
+		             
+		              </div>
+		              <div style="margin-top: 10px; padding: 15px;border-top: 1px Solid #efefef;" ng-show="showDemographicsEthical">
+                          
+		              <div layout="column" layout-align="space-around start" >
+
+		              <div style="width: 100%" ng-init="searchresult = true">
+
+		               <md-input-container class="md-block " >
+				        <label style="font-family: prolight;font-size: 22px !important;color: #adacac !important;">Search criteria type</label  ng-init="myVar = true;">
+				        <input md-maxlength="30"  md-no-asterisk name="title"  class="searchcriteria" ng-model="myVar">
+				       
+				        
+				       </md-input-container>
+
+				       <div ng-show = "searchresultsec == true" style="width:100%">
+				       <h3>Reference Range(s)</h3>
+				       <h5>Total Cholesterol</h5>
+				       <table style="width: 100%;">
+				       <tr class="thead">
+				       <td width="7%"> </td>
+				       <td width="20%">Age</td>
+				       <td width="20%">Male (mg/dL)</td>
+				       <td width="20%">Female (mg/dL)</td>
+				       <td width="20%" align="center"></td>
+
+				       </tr>
+				       <tr>
+				       <td><md-checkbox  class="md-primary md-button" ></md-checkbox></td>
+				       <td> < 20 Years</td>
+				       <td>125-170</td>
+				       <td>125-170</td>
+				       <td><i class="fa fa-pencil" aria-hidden="true"></i></td>
+				       </tr>
+				        <tr>
+				        <td><md-checkbox  class="md-primary md-button" ></md-checkbox></td>
+				       <td> >= 20 Years</td>
+				       <td>125-200</td>
+				       <td>125-200</td>
+				       <td><i class="fa fa-pencil" aria-hidden="true"></i></td>
+				       </tr>
+				       </table>
+
+
+				       <h5>HDL Cholesterol</h5>
+				        <table style="width: 100%;">
+				       <tr >
+				       <td width="33%"><=4 Years</td>
+				       <td width="33%">Not established</td>
+				       <td width="33%">Not established</td>
+
+				       </tr>
+				       <tr>
+				       <td> 5-14 Years</td>
+				       <td>38-76</td>
+				       <td>	37-75</td>
+				       </tr>
+				        <tr>
+				       <td>15-19 Years</td>
+				       <td>31-65</td>
+				       <td>36-76</td>
+				       </tr>
+				       <tr>
+				       <td>>19 Years</td>
+				       <td> >=40</td>
+				       <td> >=46</td>
+				       </tr>
+				       </table>
+
+
+				       <h5>Triglycerides</h5>
+				       <table style="width: 100%;">
+				       <tr >
+				       <td width="33%"><=9 Years</td>
+				       <td width="33%">30-104</td>
+				       <td width="33%">33-115</td>
+
+				       </tr>
+				       <tr>
+				       <td> 10-14 Years</td>
+				       <td>33-129</td>
+				       <td>38-135</td>
+				       </tr>
+				        <tr>
+				       <td>15-19 Years</td>
+				       <td>38-152</td>
+				       <td>40-136</td>
+				       </tr>
+				       <tr>
+				       <td>>19 Years</td>
+				       <td> < 150 </td>
+				       <td> < 150 </td>
+				       </tr>
+				       </table>
+				       <h5>LDL-Cholesterol </h5>
+				       <table style="width: 100%;">
+				       <tr>
+				       <td width="33%"> < 20 Years</td>
+				       <td width="33%"> < 110 </td>
+				       <td width="33%"> < 110</td>
+
+				       </tr>
+				       <tr>
+				       <td> >= 20 Years</td>
+				       <td>< 130</td>
+				       <td>< 130</td>
+				       </tr>
+				        <tr>
+				       <td> >= 20 Years</td>
+				       <td>125-200</td>
+				       <td>125-200</td>
+				       </tr>
+				       </table>
+ 						<h5>Non-HDL Cholesterol</h5>
+ 						<table style="width: 100%;">
+				       <tr>
+				       <td width="33%"> < 20 Years</td>
+				       <td width="33%"> < 120 mg/dL </td>
+				       <td width="33%"> < 120 mg/dL</td>
+
+				       </tr>
+				       <tr>
+				       <td> >= 20 Years</td>
+				       <td colspan="2">Target for non-HDL cholesterol is 30 mg/dL higher than LDL cholesterol target</td>
+				       
+				       </tr>
+				       
+				       </table>
+
+				       </div>
+
+
+
+
+				       <div ng-if="myVar" layout="column" layout-align="space-between end" ng-show="searchresult">
+      
+                        <tree-view checkbox click="myClick(node)" model="nodes" style="width:100%">
+                        	
+
+                        </tree-view>
+      <md-button class="md-default" ng-click="show();" style="font-size: 13px;border: 1px solid #dcdcdc; background-color: rgb(53,121,42); color:white; font-weight: bold" >Submit</md-button>
+                        </div>
+
+		              </div>
+
+		              <div>
+		              </div>
+
+		              </div>
+
+
+
+
+                      </div>
+		            </md-content>
+		         </md-card-content>
+		       </md-card>
+               <md-card md-theme="default" class=" _md md-default-theme"  >
+		         <md-card-content>
+		            <md-content class="_md md-default-theme criteria_list">
+		            	<div layout="row" layout-align="space-between start">
+		              <div class="crit_head" ng-click="collapsiblebody4 = !collapsiblebody4">Ethical Consideration </div>
+		              
+		              </div>
+		              <div class="cssSlideUp" style="background-color: #ececec;; margin-top: 10px; padding: 15px" ng-show="collapsiblebody4 ">
+                              <div class="col-md-12 p-b-10">
+                                
+                               
+                                 <nav class="accordion arrows">
+                              <div class="draggable">
+                            
+                              <section class="box">
+                                 <a ng-click="showCustom1($event)" class="pull-right " href=""><i class="fa fa-sliders" aria-hidden="true"></i></a>
+                                 <label class="box-close" for="acc-close"></label>
+                                 <div class="box-content">
+                                    <label>Patient preference for treatment</label>
+                                       <ul>
+                                          <li>Agree</li>
+                                          <li>Not agree</li>
+                                          
+                                       </ul>
+
+                                 </div>
+                              </section>
+                              </div>
+                             
+                              
+                              
+                           </nav>
+                           </div>
+                           </div>
+		            </md-content>
+		         </md-card-content>
+		       </md-card>
+		       
+			   <md-card md-theme="default" class=" _md md-default-theme">
+		         <md-card-content>
+		            <md-content class="_md md-default-theme criteria_list">
+		            	<div layout="row" layout-align="space-between start">
+		              <div class="crit_head" ng-click="collapsiblebody52 = !collapsiblebody52">Demographics </div>
+		              
+		              </div>
+		              <div class="cssSlideUp" style=" margin-top: 10px; padding: 15px" ng-show="collapsiblebody52 ">
+                             <div class="col-md-12 p-b-10" >
+                                 <div layout="row" layout-align="space-between start" style="width:100%;background-color: #ececec; padding: 12px">
+                               <span ng-click="showdemo_1 = !showdemo_1" style="font-size: 13px;font-weight: 700;color: rgb(53,121,42)">AGE</span>
+                               <a ng-click="showCustom1($event)" class="pull-right " href=""><i class="fa fa-sliders" aria-hidden="true"></i></a></div>
+                                 <nav class="accordion arrows" style="background-color: #ececec; margin-top: 2px; padding: 15px" ng-show="showdemo_1">
+                              <div class="draggable">
+                            
+                              <section class="box">
+                                   
+                                 <label class="box-close" for="acc-close"></label>
+                                 <div class="box-content">
+                                    <label>Age of men who have ....</label>
+                                       <ul>
+                                          <li>20–40</li>
+                                          <li>40-60</li>
+                                          <li>above 60</li>
+                                         
+                                       </ul>
+
+                                 </div>
+                              </section>
+                              </div>
+                             
+                              
+                              
+                           </nav>
+
+
+                           </div>
+                           <div class="col-md-12 p-b-10" style="margin-top: 10px">
+                                 <div layout="row" layout-align="space-between start" style="width:100%;background-color: #ececec; padding: 12px">
+                               <span ng-click="showdemo_2 = !showdemo_2" style="font-size: 13px;font-weight: 700;color: rgb(53,121,42); text-transform: uppercase;">Special patient characteristic</span>
+                               <a ng-click="showCustom1($event)" class="pull-right " href=""><i class="fa fa-sliders" aria-hidden="true"></i></a></div>
+                                 <nav class="accordion arrows" style="background-color: #ececec; margin-top: 2px; padding: 15px" ng-show="showdemo_2">
+                              <div class="draggable">
+                            
+                              <section class="box">
+                                   
+                                 <label class="box-close" for="acc-close"></label>
+                                 <div class="box-content">
+                                    <label>Undergoing any treatment ?</label>
+                                       <ul>
+                                          <li>Yes</li>
+                                          <li>No</li>
+                                          
+                                         
+                                       </ul>
+
+                                 </div>
+                              </section>
+                              </div>
+                             
+                              
+                              
+                           </nav>
+
+                           
+                           </div>
+
+                           <div class="col-md-12 p-b-10" style="margin-top: 10px">
+                                 <div layout="row" layout-align="space-between start" style="width:100%;background-color: #ececec; padding: 12px">
+                               <span ng-click="showdemo_3 = !showdemo_3" style="font-size: 13px;font-weight: 700;color: rgb(53,121,42); text-transform: uppercase;">Literacy</span>
+                               <a ng-click="showCustom1($event)" class="pull-right " href=""><i class="fa fa-sliders" aria-hidden="true"></i></a></div>
+                                 <nav class="accordion arrows" style="background-color: #ececec; margin-top: 2px; padding: 15px" ng-show="showdemo_3">
+                              <div class="draggable">
+                            
+                              <section class="box">
+                                   
+                                 <label class="box-close" for="acc-close"></label>
+                                 <div class="box-content">
+                                    <label>Able to understand and speak English ?</label>
+                                       <ul>
+                                          <li>Yes</li>
+                                          <li>No</li>  
+                                       </ul>
+
+                                 </div>
+                              </section>
+                              </div>
+                             
+                              
+                              
+                           </nav>
+
+                           
+                           </div>
+                           </div>
+		            </md-content>
+		         </md-card-content>
+		       </md-card>
+			  
+		     <md-card md-theme="default" class=" _md md-default-theme" >
+		         <md-card-content>
+		            <md-content class="_md md-default-theme criteria_list">
+		            	<div layout="row" layout-align="space-between start">
+		              <div class="crit_head" ng-click="collapsiblebody51 = !collapsiblebody51">Treatment or Health Care </div>
+		               
+		              </div>
+		              <div class="cssSlideUp" style="background-color: #ececec;; margin-top: 10px; padding: 15px" ng-show="collapsiblebody51 ">
+                              <div class="col-md-12 p-b-10">
+                                
+                               
+                                 <nav class="accordion arrows">
+                              <div class="draggable">
+                            
+                              <section class="box">
+                                 <a ng-click="showCustom1($event)" class="pull-right " href=""><i class="fa fa-sliders" aria-hidden="true"></i></a>
+                                 <label class="box-close" for="acc-close"></label>
+                                 <div class="box-content">
+                                    <label>Pharmaceutical substance or drug</label>
+                                       <ul>
+                                          <li>No prior Gabapentin</li>
+                                          <li>I had </li>
+                                          
+                                       </ul>
+
+                                 </div>
+                              </section>
+                              </div>
+                             
+                              
+                              
+                           </nav>
+                           </div>
+                           </div>
+		            </md-content>
+		         </md-card-content>
+		       </md-card>
+
+		       <md-card md-theme="default" class=" _md md-default-theme" >
+		         <md-card-content>
+		            <md-content class="_md md-default-theme criteria_list">
+		            	<div layout="row" layout-align="space-between start">
+		              <div class="crit_head" ng-click="collapsiblebody5 = !collapsiblebody5">Lifestyle Choice</div>
+		               
+		              </div>
+		              <div class="cssSlideUp" style="background-color: #ececec;; margin-top: 10px; padding: 15px" ng-show="collapsiblebody5 ">
+                              <div class="col-md-12 p-b-10">
+                                
+                               
+                                 <nav class="accordion arrows">
+                              <div class="draggable">
+                            
+                              <section class="box">
+                                 <a ng-click="showCustom1($event)" class="pull-right " href=""><i class="fa fa-sliders" aria-hidden="true"></i></a>
+                                 <label class="box-close" for="acc-close"></label>
+                                 <div class="box-content">
+                                    <label>Your Addictive behavior</label>
+                                       <ul>
+                                          <li>Alchol</li>
+                                          <li>Drugs</li>
+                                          <li>Non addictive</li>
+                                       </ul>
+
+                                 </div>
+                              </section>
+                              </div>
+                             
+                              
+                              
+                           </nav>
+                           </div>
+                           </div>
+		            </md-content>
+		         </md-card-content>
+		       </md-card>
+
+		         <md-card md-theme="default" class=" _md md-default-theme">
+		         <md-card-content>
+		            <md-content class="_md md-default-theme criteria_list">
+		            	<div layout="row" layout-align="space-between start">
+		              <div class="crit_head" ng-click="collapsiblebody53 = !collapsiblebody53">Diagnostic or lab test  </div>
+		               
+		              </div>
+		              <div class="cssSlideUp" style="background-color: #ececec;; margin-top: 10px; padding: 15px" ng-show="collapsiblebody53 ">
+                              <div class="col-md-12 p-b-10">
+                                
+                               
+                                 <nav class="accordion arrows">
+                              <div class="draggable">
+                            
+                              <section class="box">
+                                 <label class="box-title" for="cb1">Diagnostic or lab results</label><a ng-click="showCustom8($event)" data-toggle='modal' data-target='#manage_option' class="pull-right "><i class="fa fa-sliders" aria-hidden="true"></i></a>
+                                 <label class="box-close" for="acc-close"></label>
+                                 <div class="box-content">
+                                    
+                                       <ul>
+                                          <li>Neutrophil count ⩾ 1000/mm3</li>
+                                         
+                                       </ul>
+
+                                 </div>
+                              </section>
+                              </div>
+                             
+                              
+                              
+                           </nav>
+                           </div>
+                           </div>
+		            </md-content>
+		         </md-card-content>
+		       </md-card>
+		       <div layout="row" layout-align="end center" style="width:100%">
+<a ng-click="showCustom1($event)" style="color:rgb(53,121,42);" href="">More</a>
+	</div>	      
+               </div>
+
+    </div>
+
+
+
+    </div>
+          <!-- Exclusion Criteria -->
+			  <h2 class="m-t-15">Exclusion Criteria</h2>
+			      <div layout="column" layout-align="space-between start" style="width:100%;margin-top: 15px">
+ <div style="width:100%;min-height: 200px; border: 1px solid #d2cfcf;
+    padding: 5px 15px; background-color: white; width: 100%" layout="row" layout-align="space-between start">
+    	<div class="criteria-sec" layout="column" layout-align="space-around start" style="padding-top: 10px;padding-bottom: 10px;width:100%">
+    	<md-card md-theme="default" class=" _md md-default-theme">
+		         <md-card-content>
+		            <md-content class="_md md-default-theme criteria_list">
+		            	<div layout="row" layout-align="space-between start">
+		              <div class="crit_head" ng-click="showDemographicsEthical = !showDemographicsEthical">Health Status</div>
+		             
+		              </div>
+		              <div style="margin-top: 10px; padding: 15px" ng-show="showDemographicsEthical">
+                              <div class="col-md-12 p-b-10" >
+                                 <div layout="row" layout-align="space-between start" style="width:100%;">
+                               <h3 ng-click="showhealth_1 = !showhealth_1">Disease, Symptom and Sign</h3>
+                               <a ng-click="showCustom1($event)" class="pull-right " href=""><i class="fa fa-sliders" aria-hidden="true"></i></a></div>
+                                 <nav class="accordion arrows" style="background-color: #ececec; margin-top: 10px; padding: 15px" ng-show="showhealth_1">
+                              <div class="draggable">
+                            
+                              <section class="box">
+                                   
+                                 <label class="box-close" for="acc-close"></label>
+                                 <div class="box-content">
+                                    <label>Are you allergic to omega-3 fatty acids, corn oil, fish, or shellfish? </label>
+                                       <ul>
+                                          <li>Yes</li>
+                                          <li>No</li>
+                                          <li>I dont know</li>
+                                         
+                                       </ul>
+
+                                 </div>
+                              </section>
+                              </div>
+                             
+                              
+                              
+                           </nav>
+                           </div>
+                           </div>
+		            </md-content>
+		         </md-card-content>
+		       </md-card>
+               <md-card md-theme="default" class=" _md md-default-theme"  >
+		         <md-card-content>
+		            <md-content class="_md md-default-theme criteria_list">
+		            	<div layout="row" layout-align="space-between start">
+		              <div class="crit_head" ng-click="collapsiblebody4 = !collapsiblebody4">Ethical Consideration </div>
+		              
+		              </div>
+		              <div class="cssSlideUp" style="background-color: #ececec;; margin-top: 10px; padding: 15px" ng-show="collapsiblebody4 ">
+                              <div class="col-md-12 p-b-10">
+                                
+                               
+                                 <nav class="accordion arrows">
+                              <div class="draggable">
+                            
+                              <section class="box">
+                                 <a ng-click="showCustom1($event)" class="pull-right " href=""><i class="fa fa-sliders" aria-hidden="true"></i></a>
+                                 <label class="box-close" for="acc-close"></label>
+                                 <div class="box-content">
+                                    <label>Patient preference for treatment</label>
+                                       <ul>
+                                          <li>Agree</li>
+                                          <li>Not agree</li>
+                                          
+                                       </ul>
+
+                                 </div>
+                              </section>
+                              </div>
+                             
+                              
+                              
+                           </nav>
+                           </div>
+                           </div>
+		            </md-content>
+		         </md-card-content>
+		       </md-card>
+		       
+			   <md-card md-theme="default" class=" _md md-default-theme">
+		         <md-card-content>
+		            <md-content class="_md md-default-theme criteria_list">
+		            	<div layout="row" layout-align="space-between start">
+		              <div class="crit_head" ng-click="collapsiblebody52 = !collapsiblebody52">Demographics </div>
+		              
+		              </div>
+		              <div class="cssSlideUp" style=" margin-top: 10px; padding: 15px" ng-show="collapsiblebody52 ">
+                             <div class="col-md-12 p-b-10" >
+                                 <div layout="row" layout-align="space-between start" style="width:100%;background-color: #ececec; padding: 12px">
+                               <span ng-click="showdemo_1 = !showdemo_1" style="font-size: 13px;font-weight: 700;color: rgb(53,121,42)">AGE</span>
+                               <a ng-click="showCustom1($event)" class="pull-right " href=""><i class="fa fa-sliders" aria-hidden="true"></i></a></div>
+                                 <nav class="accordion arrows" style="background-color: #ececec; margin-top: 2px; padding: 15px" ng-show="showdemo_1">
+                              <div class="draggable">
+                            
+                              <section class="box">
+                                   
+                                 <label class="box-close" for="acc-close"></label>
+                                 <div class="box-content">
+                                    <label>Age of men who have ....</label>
+                                       <ul>
+                                          <li>20–40</li>
+                                          <li>40-60</li>
+                                          <li>above 60</li>
+                                         
+                                       </ul>
+
+                                 </div>
+                              </section>
+                              </div>
+                             
+                              
+                              
+                           </nav>
+
+
+                           </div>
+                           <div class="col-md-12 p-b-10" style="margin-top: 10px">
+                                 <div layout="row" layout-align="space-between start" style="width:100%;background-color: #ececec; padding: 12px">
+                               <span ng-click="showdemo_2 = !showdemo_2" style="font-size: 13px;font-weight: 700;color: rgb(53,121,42); text-transform: uppercase;">Special patient characteristic</span>
+                               <a ng-click="showCustom1($event)" class="pull-right " href=""><i class="fa fa-sliders" aria-hidden="true"></i></a></div>
+                                 <nav class="accordion arrows" style="background-color: #ececec; margin-top: 2px; padding: 15px" ng-show="showdemo_2">
+                              <div class="draggable">
+                            
+                              <section class="box">
+                                   
+                                 <label class="box-close" for="acc-close"></label>
+                                 <div class="box-content">
+                                    <label>Undergoing any treatment ?</label>
+                                       <ul>
+                                          <li>Yes</li>
+                                          <li>No</li>
+                                          
+                                         
+                                       </ul>
+
+                                 </div>
+                              </section>
+                              </div>
+                             
+                              
+                              
+                           </nav>
+
+                           
+                           </div>
+
+                           <div class="col-md-12 p-b-10" style="margin-top: 10px">
+                                 <div layout="row" layout-align="space-between start" style="width:100%;background-color: #ececec; padding: 12px">
+                               <span ng-click="showdemo_3 = !showdemo_3" style="font-size: 13px;font-weight: 700;color: rgb(53,121,42); text-transform: uppercase;">Literacy</span>
+                               <a ng-click="showCustom1($event)" class="pull-right " href=""><i class="fa fa-sliders" aria-hidden="true"></i></a></div>
+                                 <nav class="accordion arrows" style="background-color: #ececec; margin-top: 2px; padding: 15px" ng-show="showdemo_3">
+                              <div class="draggable">
+                            
+                              <section class="box">
+                                   
+                                 <label class="box-close" for="acc-close"></label>
+                                 <div class="box-content">
+                                    <label>Able to understand and speak English ?</label>
+                                       <ul>
+                                          <li>Yes</li>
+                                          <li>No</li>  
+                                       </ul>
+
+                                 </div>
+                              </section>
+                              </div>
+                             
+                              
+                              
+                           </nav>
+
+                           
+                           </div>
+                           </div>
+		            </md-content>
+		         </md-card-content>
+		       </md-card>
+    	<md-card md-theme="default" class=" _md md-default-theme" >
+		         <md-card-content>
+		            <md-content class="_md md-default-theme criteria_list">
+		            	<div layout="row" layout-align="space-between start">
+		              <div class="crit_head" ng-click="collapsiblebody51 = !collapsiblebody51">Treatment or Health Care </div>
+		               
+		              </div>
+		              <div class="cssSlideUp" style="background-color: #ececec;; margin-top: 10px; padding: 15px" ng-show="collapsiblebody51 ">
+                              <div class="col-md-12 p-b-10">
+                                
+                               
+                                 <nav class="accordion arrows">
+                              <div class="draggable">
+                            
+                              <section class="box">
+                                 <a ng-click="showCustom1($event)" class="pull-right " href=""><i class="fa fa-sliders" aria-hidden="true"></i></a>
+                                 <label class="box-close" for="acc-close"></label>
+                                 <div class="box-content">
+                                    <label>Pharmaceutical substance or drug</label>
+                                       <ul>
+                                          <li>No prior Gabapentin</li>
+                                          <li>I had </li>
+                                          
+                                       </ul>
+
+                                 </div>
+                              </section>
+                              </div>
+                             
+                              
+                              
+                           </nav>
+                           </div>
+                           </div>
+		            </md-content>
+		         </md-card-content>
+		       </md-card>
+
+		       <md-card md-theme="default" class=" _md md-default-theme" >
+		         <md-card-content>
+		            <md-content class="_md md-default-theme criteria_list">
+		            	<div layout="row" layout-align="space-between start">
+		              <div class="crit_head" ng-click="collapsiblebody5 = !collapsiblebody5">Lifestyle Choice</div>
+		               
+		              </div>
+		              <div class="cssSlideUp" style="background-color: #ececec;; margin-top: 10px; padding: 15px" ng-show="collapsiblebody5 ">
+                              <div class="col-md-12 p-b-10">
+                                
+                               
+                                 <nav class="accordion arrows">
+                              <div class="draggable">
+                            
+                              <section class="box">
+                                 <a ng-click="showCustom1($event)" class="pull-right " href=""><i class="fa fa-sliders" aria-hidden="true"></i></a>
+                                 <label class="box-close" for="acc-close"></label>
+                                 <div class="box-content">
+                                    <label>Your Addictive behavior</label>
+                                       <ul>
+                                          <li>Alchol</li>
+                                          <li>Drugs</li>
+                                          <li>Non addictive</li>
+                                       </ul>
+
+                                 </div>
+                              </section>
+                              </div>
+                             
+                              
+                              
+                           </nav>
+                           </div>
+                           </div>
+		            </md-content>
+		         </md-card-content>
+		       </md-card>
+
+		         <md-card md-theme="default" class=" _md md-default-theme">
+		         <md-card-content>
+		            <md-content class="_md md-default-theme criteria_list">
+		            	<div layout="row" layout-align="space-between start">
+		              <div class="crit_head" ng-click="collapsiblebody53 = !collapsiblebody53">Diagnostic or lab test  </div>
+		               
+		              </div>
+		              <div class="cssSlideUp" style="background-color: #ececec;; margin-top: 10px; padding: 15px" ng-show="collapsiblebody53 ">
+                              <div class="col-md-12 p-b-10">
+                                
+                               
+                                 <nav class="accordion arrows">
+                              <div class="draggable">
+                            
+                              <section class="box">
+                                 <label class="box-title" for="cb1">Diagnostic or lab results</label><a ng-click="showCustom8($event)" data-toggle='modal' data-target='#manage_option' class="pull-right "><i class="fa fa-sliders" aria-hidden="true"></i></a>
+                                 <label class="box-close" for="acc-close"></label>
+                                 <div class="box-content">
+                                    
+                                       <ul>
+                                          <li>Neutrophil count ⩾ 1000/mm3</li>
+                                         
+                                       </ul>
+
+                                 </div>
+                              </section>
+                              </div>
+                             
+                              
+                              
+                           </nav>
+                           </div>
+                           </div>
+		            </md-content>
+		         </md-card-content>
+		       </md-card>
+
+		       <div layout="row" layout-align="end center" style="width:100%">
+<a ng-click="showCustom1($event)" style="color:rgb(53,121,42);" href="">More</a>
+	</div>	  
+
+    </div>
+</div>
+
+
+			      </div>    
+        </md-content>
+      </md-tab>
+
+      <md-tab label="Contacts">
+        <md-content class="md-padding mini_section" style="padding:2px 16px 16px 16px ">
+          <h2 class="m-t-15">Contacts</h2>
+               <div class="sec" layout="row" layout-align="space-between start">
+                <md-input-container class="md-block" style="width:100%">
+			          <label>Contact details</label>
+			          <textarea ng-model="user.biography" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+			        </md-input-container>
+               </div>
+        </md-content>
+      </md-tab>
+
+    </md-tabs>
+  </md-content>
+
+               
+
+
+               
+
+              
+
+               
+             
+                
+              
+               
+               
+            </div>
+            
+ <div  layout="row" layout-align="center center" class="md-padding">
+            <md-button style="background-color: rgb(205, 205, 205);
+    color: #5c5b5b;
+    border: 1px solid #bbb;"><i class="fa fa-times" aria-hidden="true"></i> Cancel</md-button>
+               <md-button style="background-color: rgb(53,121,42); color:white;"><i class="fa fa-floppy-o" aria-hidden="true"></i> Save</md-button>
+               
+               </div>
+
+</md-content>

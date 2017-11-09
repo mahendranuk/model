@@ -1,0 +1,25 @@
+{
+  "name": "quest",
+  "version": "1.0.0",
+  "description": "Quest PDR portal prototype",
+  "main": "app.js",
+  "dependencies": {
+    "browser-sync": "^2.18.5",
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.5",
+    "gulp": "^3.9.1",
+    "gulp-util": "^3.0.7"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://cedricsandarscs@bitbucket.org/capestart/qpdr.git"
+  },
+  "author": "Cedric Sandars",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/capestart/qpdr#readme"
+}

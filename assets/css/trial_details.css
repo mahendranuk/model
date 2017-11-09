@@ -1,0 +1,108 @@
+/* trials detaill */
+
+body{
+	/* background:red !important; */
+}
+
+.trial_detail_page{
+	
+}
+.trial_detail_page h1{
+	color: #212121;
+    font-size: 19px;
+    line-height: 27px;
+}
+.trial_detail_page .trial_detail{
+	color:#484848;
+}
+
+.trial_detail_page .trial_basic_detail h4{
+	margin:10px 5px 5px 10px;
+	    font-size: 18px;
+}
+.trial_detail_page .trial_basic_detail h5{
+	margin:5px 5px 10px 10px;
+	font-size: 16px;
+    font-weight: normal;
+}
+.trial_detail_page h2.side_title{
+	color:#22672A;
+	    margin: 5px 0px;
+	font-size:19px;
+	border-bottom: dotted 1px #85ab8a;
+    padding-bottom: 5px;
+}
+ .widget_sec md-card-title{
+	background:#357a2a;
+}.widget_sec .md-headline{
+	color:#fff;
+	border-bottom:none;
+	text-align: left;
+}
+.widget_sec md-card-title {
+    padding: 8px 16px 5px;
+    margin-bottom: 15px;
+	max-height: 30px;
+}
+.visible_hidden{
+	visibility:hidden;
+}
+.card_content p{
+	    color: rgba(0,0,0,0.8);
+}
+.card_content{
+	font-size:14px;
+}
+md-card{
+	box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.30) !important;
+}
+md-card.status_card{}
+md-card.status_card .heading{
+	color:#484848;
+	font-size:15px;
+	font-weight:normal;
+}
+md-card.status_card md-list-item.md-3-line{
+    min-height: 36px;
+    height: 36px;
+}
+md-card.status_card md-list-item.md-3-line .fl{
+	line-height:36px;
+}
+
+
+md-card.investig_card md-list-item.md-3-line{
+	
+}
+md-card.status_card.min_height_card .card_content{
+    min-height: 125px;
+}
+.padding_top_zero{
+padding-top:0px !important;
+}
+md-card.listing_item_card ul li{
+    line-height: 19px;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 15px;
+}
+md-card.listing_item_card ul li ul{
+	margin-top:7px;
+}
+md-card.listing_item_card ul li:before{
+    content: '\f054';
+    font-family: fontAwesome;
+    position: absolute;
+    left: 0px;
+    font-size: 10px;
+    top: 1px;
+    color: #357a2a;
+}
+md-card.listing_item_card .card_content
+{
+    min-height: 360px;
+}
+.md-media-sm.card-media{
+	width:100%;
+	text-align:center;
+}

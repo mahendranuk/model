@@ -1,0 +1,70 @@
+
+<md-dialog class="add_analytic" ng-hide="hide_dialog">
+    <form ng-cloak>
+        <div class="modal-header">
+
+            <div >
+                <h3 class="modal-title"><i class="fa fa-forumbee" aria-hidden="true"></i> Add Analytics </h3>
+            </div>
+
+             <div class="col-md-9">
+                <!-- <ul class="list-inline tool-sec pull-right inlne">
+                    <li>
+                        <p class="add_textbox" ng-click="show_text = 1"><i class="fa fa-plus" aria-hidden="true"></i> Add new</p>
+                    </li>
+                   
+                </ul> -->
+            </div>
+            
+          
+        </div>
+  <div layout="row"  layout-align="start center" style="background-color: #FFF; padding: 0px 25px" layout-padding class="add_analytic_modal">
+    <div flex>
+        <ul>
+            <li>
+                <md-checkbox ng-disabled="false" aria-label="Disabled checkbox" ng-model="data.cb4">
+            Patients by Gender
+          </md-checkbox>
+            </li>
+            <li>
+                <md-checkbox ng-disabled="false" aria-label="Disabled checkbox" ng-model="data.cb5">
+            Signups by Source
+          </md-checkbox>
+            </li>
+            <li>
+                <md-checkbox ng-disabled="false" aria-label="Disabled checkbox" ng-model="data.cb6">
+            Patients by Age
+          </md-checkbox>
+            </li>
+            <li>
+                <md-checkbox ng-disabled="false" aria-label="Disabled checkbox" ng-model="data.cb7">
+            Highest registration by State
+          </md-checkbox>
+            </li>
+            <li>
+                <md-checkbox ng-disabled="false" aria-label="Disabled checkbox" ng-model="data.cb8">
+            Some other chart
+          </md-checkbox>
+            </li>
+        </ul>
+    </div>
+  </div>
+        
+
+<div class=" btn_top_10 submit_sec" >
+
+		<md-divider></md-divider>
+		<md-button class="md-primary fr" ng-click="closeDialog()">Submit</md-button>
+        <md-button ng-click="closeDialog()">Cancel</md-button>
+        </md-button>
+
+</div>
+			   
+			   
+        </div>
+		
+
+
+
+    </form>
+</md-dialog>

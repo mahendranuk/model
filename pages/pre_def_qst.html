@@ -1,0 +1,73 @@
+           <div class="md-padding">
+       <h4>Inclusion criteria</h4>
+       <div layout="column" layout-align="stretch center  ">
+       <div class="md-padding">
+       <h5>Demographic</h5>
+           <md-checkbox  ng-model="inc_1">
+            Age
+          </md-checkbox>
+          <md-checkbox  ng-model="inc_2">
+            Gender
+          </md-checkbox>
+          <md-checkbox  ng-model="inc_3">
+             Special patient characteristic
+          </md-checkbox>
+         
+       </div>
+
+        <div class="md-padding">
+       <h5>Health status </h5>
+           <md-checkbox  ng-model="inc_4">
+            Disease Condition
+          </md-checkbox>
+         
+       </div>
+
+       <div class="md-padding">
+       <h5>Diagnostic or lab test</h5>
+           <md-checkbox  ng-model="inc_5">
+           HDL Cholesterol
+          </md-checkbox>
+          <md-checkbox  ng-model="inc_6">
+           LDL-Cholesterol
+          </md-checkbox>
+            <md-checkbox  ng-model="inc_7">
+           Triglyceride
+          </md-checkbox>
+         
+       </div>
+
+       <div class="md-padding" ng-click="show_qstn_add">
+       <h5>Treatment or Health Care</h5>
+           <md-checkbox  ng-model="inc_8">
+            Pharmaceutical substance or drug
+          </md-checkbox>
+         
+       </div>
+       </div>
+       <md-divider></md-divider>
+       <br>
+       <h4>Exclusion criteria</h4>
+         <div layout="column" layout-align="stretch center  ">
+       <div class="md-padding">
+        <h5>Health Status</h5>
+           <md-checkbox  ng-model="inc_9">
+          Allergic condition
+          </md-checkbox>
+         
+       </div>
+        <div class="md-padding">
+        <h5>Treatment or Health Care</h5>
+           <md-checkbox>
+         Pharmaceutical substance or drug
+          </md-checkbox>
+         
+       </div>
+       </div>
+       <br>
+       <div>
+       </div>
+       <div layout="row" layout-align="end center  ">
+       <md-button style="background-color:rgb(53,121,42)!important; color:white;" class="md-primary " ng-click="closeDialog();q_6=!q_6" >Submit</md-button>
+       </div>
+        </div>

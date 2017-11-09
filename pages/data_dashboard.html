@@ -1,0 +1,140 @@
+<div layout="row" layout-sm="column" layout-xs="column" id="top">
+   <div flex class="flex"  >
+       <div layout="row"  layout-align="space-between center" class="trial_head md-padding"  style="background-color: white">
+      <h2 style="font-size: 35px; font-weight: 100;font-family: prolight;">Data Dashboard</h2>
+      <!--  <div><a class="md-primary  md-button md-ink-ripple " md-ink-ripple="#A7A8AA" style="font-size: 13px;background-color: rgb(53, 121, 42);
+    color: white; " >Map View  <i class="fa fa-map" aria-hidden="true" style="color: white;"></i></a>
+       <md-button class="md-primary" ng-click="showCustom($event)" style="font-size: 13px; border:1px solid rgb(53, 121, 42)" >Add question <i class="fa fa-plus" aria-hidden="true" style="color:rgb(53,121,42);"></i></md-button>
+       </div> -->
+      </div>
+    
+
+      <div layout="column" layout-align="center center" class="fl_w md-padding" >
+      <div layout="row" flex class="width_100 numbers_dash">
+                        
+                             <div flex layout="column" layout-align="center center" class="pos_re" ng-click="highvolume()" style="cursor: pointer;">
+                          
+                           <div class="value" ><i class="fa fa-table" aria-hidden="true" style="margin-right: 5px;"></i> 137.6 million</div>
+                           <div class="value_label">High Volume Tests </div>
+                            
+                         </div>
+
+
+
+                          <div flex layout="column" layout-align="center center" class="pos_re">
+                          
+                           <div class="value" >137,498,773</div>
+                           <div class="value_label">Total Patients</div>
+                            
+                         </div>
+
+                          <div flex layout="column" layout-align="center center" class="pos_re">
+                          
+                           <div class="value" >414,000</div>
+                           <div class="value_label">Total Physicians</div>
+                            
+                         </div>
+
+                       
+                       
+                    
+                     </div>
+                     <div layout="row" flex class="width_100 numbers_dash">
+                        
+                         
+
+                          <div flex layout="column" layout-align="center center" class="pos_re" ng-click="hepatitisPop()" style="outline: none;cursor: pointer">
+                          
+                           <div class="value" "><i class="fa fa-users" aria-hidden="true" style="margin-right: 20px;"></i>540,000 </div>
+                           <div class="value_label">Patients with Hepatitis C</div>
+                            
+                         </div>
+                       <div flex layout="column" layout-align="center center" class="pos_re">
+                          <div class="metric_status"><i class="fa fa-sort-asc" aria-hidden="true"></i></div>
+                          <div class="value" >4,574,795</div>
+                           <div class="value_label"> Patients with borderline high or high LDL Cholesterol</div>
+                         </div>
+                         <div flex layout="column" layout-align="center center" class="pos_re">
+                          <div class="metric_status"><i class="fa fa-stop" aria-hidden="true"></i></div>
+                           <div class="value">14,310,288</div>
+                           <div class="value_label">Patients with Diabetes or pre-diabetes</div>
+                         </div>
+                    
+                     </div>
+
+
+                   <div layout="row" flex class="width_100 numbers_dash">
+                         
+                          <div flex layout="column" layout-align="center center" class="pos_re">
+                           <div class="metric_status"><i class="fa fa-sort-asc red" aria-hidden="true"></i></div>
+                           <div class="value">988,000</div>
+                           <div class="value_label">Patients with Chronic Kidney Disease</div>
+                         </div>
+                        <div flex layout="column" layout-align="center center" class="pos_re">
+                          <div class="metric_status"><i class="fa fa-sort-asc" aria-hidden="true"></i></div>
+                          <div class="value">1,423,831</div>
+                           <div class="value_label">Patients with Vitamin D deficiency or insufficiency</div>
+                         </div>
+                         <div flex layout="column" layout-align="center center" class="pos_re">
+                          <div class="metric_status"><i class="fa fa-stop" aria-hidden="true"></i></div>
+                           <div class="value">9,000</div>
+                           <div class="value_label">PATIENTS WITH CHRONIC MYELOID LEUKEMIA (CML)</div>
+                         </div>
+                    
+                     </div>
+                  
+
+                     
+                       <div layout="row" flex class="width_100 numbers_dash" ng-show="read_more" >
+
+                         <div flex layout="column" layout-align="center center" class="pos_re">
+                          <div class="metric_status"><i class="fa fa-sort-asc" aria-hidden="true"></i></div>
+                          <div class="value" >75,000</div>
+                           <div class="value_label">PATIENTS WITH POSITIVE SCREENING FOR COLORECTAL CANCER (InSure FIT test)</div>
+                         </div>
+
+                         <div flex layout="column" layout-align="center center" class="pos_re">
+                          <div class="metric_status"><i class="fa fa-stop" aria-hidden="true"></i></div>
+                           <div class="value"> 675,000</div>
+                           <div class="value_label">PATIENTS WITH COMMON ALLERGIES</div>
+                         </div>
+                          
+                       
+                    
+                     </div>
+
+                      <div layout="row" flex class="width_100 numbers_dash" ng-show="read_more">
+                       
+                         <div flex layout="column" layout-align="center center" class="pos_re">
+                          <div class="metric_status"><i class="fa fa-sort-asc" aria-hidden="true"></i></div>
+                          <div class="value">379</div>
+                           <div class="value_label">PATIENTS WITH ALS POSITIVE BIOMARKERS</div>
+                         </div>
+                          
+                         <div flex layout="column" layout-align="center center" class="pos_re">
+                          <div class="metric_status"><i class="fa fa-stop" aria-hidden="true"></i></div>
+                           <div class="value">3,600</div>
+                           <div class="value_label">PATIENTS WITH ROTAVIRUS ANTIGEN</div>
+                         </div>
+                       
+                    
+                     </div>
+
+
+                    
+                    
+                      <div layout="row" flex class="width_100 numbers_dash" layout-align="end center">
+                      <h4 class="p-15" style="border-bottom: none; cursor: pointer; outline: none;font-family: probold;" ng-hide= "moredt" ng-click="moredata()">More data <i class="fa fa-angle-double-down" aria-hidden="true"></i></h4>
+                      <h4 class="p-15" style="border-bottom: none; cursor: pointer; outline: none;font-family: probold;"  ng-show = "lemoredt" ng-click="hidemoredata()">Less data <i class="fa fa-angle-double-up" aria-hidden="true"></i></h4>
+                      </div>
+
+
+ </div>
+
+  
+
+</div>
+</div>
+<md-content  layout-xs="column" layout="row">
+                  <div class="bg_white drp_sh sec text-right width_100" >© 2017 Quest Diagnostics Incorporated. All rights reserved.</div>
+</md-content>

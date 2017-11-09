@@ -1,0 +1,168 @@
+<div class="outreach_header1" layout="row" layout-align="space-between center" >
+  <div>
+   <h2 class="top_head_align">New Campaign</h2>
+   </div>
+</div>
+<div layout="row"  style="background-color: #ECECEC;padding: 0 16px">
+  <md-button back-button style="float:left; color:green; font-weight:bold;"><i class="fa fa-angle-left" aria-hidden="true"></i> Back</md-button>
+</div> 
+
+<div>
+<md-divider></md-divider>
+<script type="text/ng-template" id="toast-template.html"><md-toast>
+  <span flex>Custom toast!</span>
+  <md-button ng-click="closeToast()">
+    Close
+  </md-button>
+</md-toast>
+</script>
+<!-- <div ng-show="success_msg" class="bg_white md-padding" style="transition: all 0.2s; position: absolute;bottom: 0;left: 0;right: 0; z-index: 999">
+<div class="sucess_msg"> Your post has been published sucessfully</div>
+</div> -->
+<div layout="row" layout-align="stretch center" class="m-t-15 md-padding">
+
+            <div flex="20" class="m-r-10">
+            <h5>Accounts</h5>
+            <ul class="social_link">
+            <li ng-click="display_facebook()" class="social_active facebook active"><i class="fa fa-facebook-square" aria-hidden="true" ></i> &nbsp;Facebook</li>
+            <li ng-click="display_twitter()" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i> &nbsp;Twitter</li>
+            <li ng-click="display_googlep()" class="googleplus"><i class="fa fa-google-plus" aria-hidden="true"></i> &nbsp;Google Plus</li>
+            <li ng-click="display_instagram()" class="instagram"><i class="fa fa-instagram" aria-hidden="true"></i> &nbsp;Instagram</li>
+            <!-- <li><i class="fa fa-users" aria-hidden="true"></i> &nbsp;Health Forums</li> -->
+            <li ng-click="display_trend()" class="trend"><i class="fa fa-users" aria-hidden="true" ></i> &nbsp;Trend</li>
+            </ul>
+            </div>
+
+            <!-- Start of Outreach- Facebook -->
+            <div flex="80" ng-hide="fb_section">
+            <h5>Create post</h5>
+            <div layout="column" layout-align="stretch start" class="bg_white md-padding">
+
+             <md-input-container class="md-block">
+                      <label>Content</label>
+                        <textarea  md-select-on-focus></textarea>
+              </md-input-container>
+              <md-input-container class="md-block">
+              <label><i class="fa fa-link" aria-hidden="true"></i> &nbsp;Post Url</label>
+              <input/>
+              </md-input-container>
+            </div>
+            <div layout="row" layout-align="space-between center" class="bg_white md-padding">
+            <md-button style="background-color:rgb(53,121,42)!important; color:white;" class="md-primary " ng-click="showfbpost()">Preview</md-button>
+            <div layout="row" layout-align="space-between center">
+             <h5 style="cursor: pointer;margin-right: 10px; font-size: 14px"><i class="fa fa-times" aria-hidden="true"></i> &nbsp;Cancel</h5>
+              <h5 style="cursor: pointer;margin-right: 10px; font-size: 14px"><i class="fa fa-clock-o" aria-hidden="true"></i> &nbsp;Schedule</h5>
+               <md-button style="background-color:rgb(53,121,42)!important; color:white;" class="md-primary " ng-click="show()" >Publish</md-button>
+            </div>
+            </div>
+            </div>
+            <!-- End of Outreach-Facebook -->
+
+            <!-- Start of Outreach- Twitter -->
+            <div flex="80" ng-show="twitter_section">
+            <h5>Create Tweet</h5>
+            <div layout="column" layout-align="stretch start" class="bg_white md-padding">
+
+             <md-input-container class="md-block">
+                      <label>Content</label>
+                        <textarea  md-select-on-focus></textarea>
+              </md-input-container>
+              <md-input-container class="md-block">
+              <label><i class="fa fa-link" aria-hidden="true"></i> &nbsp;Post Url</label>
+              <input/>
+              </md-input-container>
+            </div>
+            <div layout="row" layout-align="space-between center" class="bg_white md-padding">
+            <md-button style="background-color:rgb(53,121,42)!important; color:white;" class="md-primary " ng-click="showfbpost()">Preview</md-button>
+            <div layout="row" layout-align="space-between center">
+             <h5 style="cursor: pointer;margin-right: 10px; font-size: 14px"><i class="fa fa-times" aria-hidden="true"></i> &nbsp;Cancel</h5>
+              <h5 style="cursor: pointer;margin-right: 10px; font-size: 14px"><i class="fa fa-clock-o" aria-hidden="true"></i> &nbsp;Schedule</h5>
+               <md-button style="background-color:rgb(53,121,42)!important; color:white;" class="md-primary " ng-click="show()" >Publish</md-button>
+            </div>
+            </div>
+            </div>
+            <!-- End of Outreach- Twitter -->
+
+            <!-- Start of Outreach- Googleplus -->
+            <div flex="80" ng-show="googlep_section">
+            <h5>Create post</h5>
+            <div layout="column" layout-align="stretch start" class="bg_white md-padding">
+
+             <md-input-container class="md-block">
+                      <label>Content</label>
+                        <textarea  md-select-on-focus></textarea>
+              </md-input-container>
+              <md-input-container class="md-block">
+              <label><i class="fa fa-link" aria-hidden="true"></i> &nbsp;Post Url</label>
+              <input/>
+              </md-input-container>
+            </div>
+            <div layout="row" layout-align="space-between center" class="bg_white md-padding">
+            <md-button style="background-color:rgb(53,121,42)!important; color:white;" class="md-primary " ng-click="showfbpost()">Preview</md-button>
+            <div layout="row" layout-align="space-between center">
+             <h5 style="cursor: pointer;margin-right: 10px; font-size: 14px"><i class="fa fa-times" aria-hidden="true"></i> &nbsp;Cancel</h5>
+              <h5 style="cursor: pointer;margin-right: 10px; font-size: 14px"><i class="fa fa-clock-o" aria-hidden="true"></i> &nbsp;Schedule</h5>
+               <md-button style="background-color:rgb(53,121,42)!important; color:white;" class="md-primary " ng-click="show()" >Publish</md-button>
+            </div>
+            </div>
+            </div>
+            <!-- End of Outreach- Google Plus -->
+
+            <!-- Start of Outreach- Instagram -->
+            <div flex="80" ng-show="instagram_section">
+            <h5>Create post</h5>
+            <div layout="column" layout-align="stretch start" class="bg_white md-padding">
+
+             <md-input-container class="md-block">
+                      <label>Content</label>
+                        <textarea  md-select-on-focus></textarea>
+              </md-input-container>
+              <md-input-container class="md-block">
+              <label><i class="fa fa-link" aria-hidden="true"></i> &nbsp;Post Url</label>
+              <input/>
+              </md-input-container>
+            </div>
+            <div layout="row" layout-align="space-between center" class="bg_white md-padding">
+            <md-button style="background-color:rgb(53,121,42)!important; color:white;" class="md-primary " ng-click="showfbpost()">Preview</md-button>
+            <div layout="row" layout-align="space-between center">
+             <h5 style="cursor: pointer;margin-right: 10px; font-size: 14px"><i class="fa fa-times" aria-hidden="true"></i> &nbsp;Cancel</h5>
+              <h5 style="cursor: pointer;margin-right: 10px; font-size: 14px"><i class="fa fa-clock-o" aria-hidden="true"></i> &nbsp;Schedule</h5>
+               <md-button style="background-color:rgb(53,121,42)!important; color:white;" class="md-primary " ng-click="show()" >Publish</md-button>
+            </div>
+            </div>
+            </div>
+            <!-- End of Outreach- Instagram -->
+
+            <!-- Start of Outreach- Trend -->
+            <div flex="80" ng-show="trend_section">
+            <h5>Create trend</h5>
+            <div layout="column" layout-align="stretch start" class="bg_white md-padding">
+
+             <md-input-container class="md-block">
+                      <label>Campaign name</label>
+                        <input />
+              </md-input-container>
+
+              <md-input-container class="md-block">
+                      <label>Trial name</label>
+                        <input />
+              </md-input-container>
+
+              <md-input-container class="md-block">
+                      <label>Description</label>
+                        <textarea  md-select-on-focus></textarea>
+              </md-input-container>             
+            </div>
+            <div layout="row" layout-align="space-between center" class="bg_white md-padding">
+            <md-button style="background-color:rgb(53,121,42)!important; color:white;" class="md-primary " ng-click="showtrend()">Preview</md-button>
+            <div layout="row" layout-align="space-between center">
+             <h5 style="cursor: pointer;margin-right: 10px; font-size: 14px"><i class="fa fa-times" aria-hidden="true"></i> &nbsp;Cancel</h5>
+              <h5 style="cursor: pointer;margin-right: 10px; font-size: 14px"><i class="fa fa-clock-o" aria-hidden="true"></i> &nbsp;Schedule</h5>
+               <md-button style="background-color:rgb(53,121,42)!important; color:white;" class="md-primary " ng-click="show()" >Publish</md-button>
+            </div>
+            </div>
+            </div>
+            <!-- End of Outreach- Twitter -->
+            </div>
+
+</div>

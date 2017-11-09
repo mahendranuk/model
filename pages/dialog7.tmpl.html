@@ -1,0 +1,136 @@
+
+<md-dialog class="add_trial" ng-hide="hide_dialog">
+    <form ng-cloak>
+        <div class="modal-header">
+
+            <div class="col-md-2">
+                <h5 class="modal-title"><i class="fa fa-forumbee" aria-hidden="true"></i> Edit Criteria</h5>
+            </div>
+           
+            <div class="col-md-1">
+
+            </div>
+        </div>
+<br clear="all">
+			   
+			
+			  
+			   <!-- Checkbox Section -->
+			   
+			     <div  style="margin-top: 30px; padding: 15px">
+			   <div layout="row"  layout-align="space-between start">
+		       <div style="width:100%">
+					<md-input-container class="md-block" style="width:100%">
+			          <label>Check Box</label>
+			          <input ng-model="editcriteria_date"/>
+			        </md-input-container>
+ 				<div class="option_container" layout="column" layout-align="space-between start">
+			    
+						<md-input-container class="md-block" style="width:100%">
+			         
+			         <div >
+				     <!--  <h3>Filter by age</h3>-->
+				      <p>Selected range: {{lower1}}-{{upper1}}</p>  
+				      <range-slider lower-value="lower1" upper-value="upper1" min-gap="2" step="1" min="min" max="max" class="md-primary "></range-slider>
+				      
+				    </div>
+			        </md-input-container>
+						
+					
+			   </div>
+              
+			   <div layout="row" layout-align="space-around start" style="padding-left: 20px; padding-right:20px; background-color: #f8f8f8">
+			    <md-input-container class="md-block" flex>
+			            <label>Condition</label>
+			            <md-select ng-model="custom">
+			              <md-option value="6" selected>
+			               If
+			              </md-option>
+			              
+			            </md-select>
+			          </md-input-container>
+			          <md-input-container class="md-block" flex>
+			            <label>Criteria</label>
+			            <md-select ng-model="custom1">
+			              <md-option value="1" selected>
+			              Age limit
+			              </md-option>
+			              
+			            </md-select>
+			          </md-input-container>
+			           <md-input-container class="md-block" flex>
+			            <label>Condition</label>
+			            <md-select ng-model="custom2">
+			              <md-option value="8" selected>
+			               Between
+			              </md-option>
+			              <md-option value="9">
+			               Contain
+			              </md-option>
+			              <md-option value="10">
+			              Greater than
+			              </md-option>
+			              <md-option value="11">
+			               Equals
+
+			              </md-option>
+			              <md-option value="12">
+			              Less than
+
+			              </md-option>
+			            </md-select>
+			          </md-input-container>
+			           <md-input-container class="md-block" flex>
+			           <label>Value</label>
+			           <input/>
+			           </md-input-container>
+			   </div>
+
+			    <div layout="row" layout-align="space-between start" style="padding-left: 20px; padding-right:20px;background-color: #f8f8f8"">
+			     <md-input-container class="md-block" flex>
+			           <label>Question</label>
+			           <input/>
+			           </md-input-container>
+			    </div>
+			   
+			    </div>
+
+
+
+
+
+			       <div layout="column"  layout-align="space-between start" style="background-color: rgba(244, 242, 242, 0.29);margin-left: 20px;padding-right: 15px;border-radius: 3px;box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.20);">
+ 					<div layout="row"  layout-align="space-between start">
+			         <md-input-container >
+			        <md-button type='button' class='md-primary ' style="background-color: rgba(232, 232, 232, 0.35);"><i class='fa fa-plus' aria-hidden='true'></i> Add</md-button></md-input-container >      <md-input-container ><md-button type='button' class='md-primary cancel' style="background-color: rgba(232, 232, 232, 0.35);">Cancel</md-button>
+			        </md-input-container >
+			         </div>
+					
+			          </div>
+               </div>
+			   
+			  
+
+			   </div>
+			   
+			  
+			
+			
+<div class=" btn_top_10 submit_sec" >
+
+
+
+<md-divider></md-divider>
+<md-button class="md-primary fr" ng-click="hideDialog('hide')">Cancel</md-button>
+<md-button class="md-primary fr" ng-click="showControl('hide');showDemographics = !showDemographics ">Submit</md-button>
+
+</div>
+			   
+			   
+        </div>
+		
+
+
+
+    </form>
+</md-dialog>

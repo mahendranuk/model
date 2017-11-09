@@ -1,0 +1,148 @@
+<div class="outreach_header" layout="row" layout-align="space-between center" id="top" >
+  <div style="padding-left: 20px;"><h2>Outreach</h2>
+   </div>
+
+         <div layout="column" flex="33" flex-sm="100" flex-xs="100" layout-align="center center">
+        <md-menu md-offset="0 -7">
+          <md-button aria-label="Open demo menu" style="background-color:rgb(53,121,42)!important; color:white;" class="md-primary big_btn" ng-click="$mdOpenMenu($event)">
+            View/Create&nbsp;<i class="fa fa-chevron-down"></i>
+          </md-button>
+          <md-menu-content width="4" class="outreach_menu">
+            <md-menu-item>
+              <md-button href="#!/emailoutreach"><i style="" class="fa fa-envelope-o" aria-hidden="true"></i><span>Email Campaign</span></md-button>
+            </md-menu-item>
+            <md-menu-item>
+              <md-button href="#!/social_outreach"><i   class="fa fa-globe" aria-hidden="true"></i><span>Social Outreach</span></md-button>
+            </md-menu-item>
+            <md-menu-item>
+              <md-button href="#!/questionnaire"><i class="fa fa-check-square" aria-hidden="true"></i><span>Questionnaire</span></md-button>
+            </md-menu-item>
+            <md-menu-item>
+              <md-button href="#!/landingpage"><i class="fa fa-columns" aria-hidden="true"></i><span>Landing Pages</span></md-button>
+            </md-menu-item>
+          </md-menu-content>
+        </md-menu>
+      </div>
+</div>
+<!-- <div class="outreach_body" layout="row" layout-align="space-between center" >
+	<div  class="outreach_email"  style="">
+ 		<img ng-src="assets/svg/gender_chart-01.svg" class="md-card-image" alt="widget" src="assets/svg/gender_chart-01.svg">
+    <div style="padding: 10px; background-color: rgba(0, 0, 0, 0.30) !important;">Email Outreach</div>
+ 	</div>
+ 	<div  class="outreach_social" layout-align="start none">
+ 		<img ng-src="assets/svg/signup_chart-01.svg" class="md-card-image" alt="widget" src="assets/svg/signup_chart-01.svg">
+    <div style="padding: 10px; background-color: rgba(0, 0, 0, 0.30) !important;">Social Outreach</div>
+
+	</div>
+  	<div  class="outreach_landing" layout-align="start none">
+ 		<img ng-src="assets/svg/gender_chart-01.svg" class="md-card-image" alt="widget" src="assets/svg/gender_chart-01.svg">
+    <div style="padding: 10px; background-color: rgba(0, 0, 0, 0.30) !important;">Landing Pages</div>
+
+ 	</div>
+</div> -->
+<!-- <div style="padding: 15px 10px; margin-bottom: 10px;font-size: 22px;"><h3 style="font-size: 22px;"> Overview</h3></div> -->
+<span class="list_head m-t-15 md-padding" style="margin:0px;    padding-bottom: 0px;">Overview</span>
+<div class="md-padding ">
+           <div layout="row" layout-align="space-between center" class="fl_w bx_shd bg_white">
+             <div flex  style="text-align: center" class="p-15">
+              <h4 class="graph_head">Email summary</h4>
+              <iframe width="470" height="400" ng-src="{{outreach_summary}}" style="border:0;"></iframe>
+             <!-- <img ng-src="assets/svg/outreach_1.svg" class="md-card-image br-rt" alt="widget"> -->
+             </div>
+
+             <div flex style="text-align: center" class="p-15">
+              <h4 class="graph_head">Outreach by Location</h4>
+              <iframe width="470" height="400" ng-src="{{outreach_location}}" style="border:0;"></iframe>
+               <!-- <img ng-src="assets/svg/outreach_2.svg" class="md-card-image" alt="widget"> -->
+             </div>
+           </div>
+           </div>
+<span class="list_head m-t-15 md-padding" style="margin:0px;    padding-bottom: 10px;">Top Campaigns</span>
+<div class="email_outreach_body"  layout="column" layout-align="start" >
+  <div  layout="row" class="email_oureach_list p-b-5"  layout-align="space-between center" >
+    
+    <div flex="35" layout="column" layout-align="start" class="camp_name">
+        <a href="#!/emailoutreachdetail" style="text-decoration: none; color:black;"><span class="email_head_text"></span>Patient’s First Email</a>
+        <p class="email_outreach_senton">Type: Email Campaign</p> 
+    </div>
+
+    <div flex="15">
+        <span>18,656</span>
+        <p>Subscribers</p> 
+    </div>
+    <div flex="15">
+        <span>242</span>
+        <p>Unsubscribes</p> 
+    </div>
+    <div flex="15">
+        <span>4,664</span>
+        <p>Opened</p> 
+    </div>
+    <div flex="20">
+       
+        <p>Sun, Sep 08, 2016 09:00 am</p> 
+    </div>
+  </div>
+   <md-divider></md-divider>
+  <div class="outreach_trial_name p-t-5">        <p class="email_outreach_senton">Trial Name</p>:&nbsp;<span>Outcomes Study to Assess STatin Residual Risk Reduction With EpaNova in HiGh CV Risk PatienTs With Hypertriglyceridemia (STRENGTH)</span> </div>
+</div>
+
+<div class="email_outreach_body"  layout="column" layout-align="start" >
+  <div  layout="row" class="email_oureach_list p-b-5"  layout-align="space-between center" >
+    
+    <div flex="35" layout="column" layout-align="start" class="camp_name">
+        <a href="#!/emailoutreachdetail" style="text-decoration: none; color:black;"><span class="email_head_text"></span>Physician Outreach</a>
+        <p class="email_outreach_senton">Type: Email Campaign</p> 
+    </div>
+
+    <div flex="15">
+        <span>350</span>
+        <p>Subscribers</p> 
+    </div>
+    <div flex="15">
+        <span>10</span>
+        <p>Unsubscribes</p> 
+    </div>
+    <div flex="15">
+        <span>121</span>
+        <p>Opened</p> 
+    </div>
+    <div flex="20">
+       
+        <p>Mon, Aug 22, 2016 10:00 am</p> 
+    </div>
+  </div>
+  <md-divider></md-divider>
+  <div class="outreach_trial_name p-t-5">        <p class="email_outreach_senton">Trial Name</p>:&nbsp;<span>Outcomes Study to Assess STatin Residual Risk Reduction With EpaNova in HiGh CV Risk PatienTs With Hypertriglyceridemia (STRENGTH)</span> </div>
+</div>
+<div class="email_outreach_body"  layout="column" layout-align="start" >
+  <div  layout="row" class="email_oureach_list p-b-5"  layout-align="space-between center" >
+    
+    <div flex="35" layout="column" layout-align="start" class="camp_name">
+        <a href="#!/emailoutreachdetail" style="text-decoration: none; color:black;"><span class="email_head_text"></span>Check out this clinical trial</a>
+        <p class="email_outreach_senton">Type: Social Outreach</p> 
+    </div>
+
+    <div flex="15">
+        <span>Facebook</span>
+        <p>Type</p> 
+    </div>
+    <div flex="15">
+        <span>1,223</span>
+        <p>Reach</p> 
+    </div>
+    <div flex="15">
+        <span>1,145</span>
+        <p>Clicks</p> 
+    </div>
+    <div flex="20">
+       
+        <p>Sun, Dec 12, 2016 09:00 am</p> 
+    </div>
+  </div>
+   <md-divider></md-divider>
+  <div class="outreach_trial_name p-t-5">        <p class="email_outreach_senton">Trial Name</p>:&nbsp;<span>Outcomes Study to Assess STatin Residual Risk Reduction With EpaNova in HiGh CV Risk PatienTs With Hypertriglyceridemia (STRENGTH)</span> </div>
+</div>
+<md-content  layout-xs="column" layout="row">
+                  <div class="bg_white drp_sh sec text-right width_100" >© 2017 Quest Diagnostics Incorporated. All rights reserved.</div>
+</md-content>

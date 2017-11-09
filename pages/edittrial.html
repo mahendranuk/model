@@ -1,0 +1,383 @@
+<div class="md-white " layout="row" layout-align="space-between center" id="div1">
+  <div>
+   <md-button back-button style="float:left"><i class="fa fa-angle-left" aria-hidden="true"></i> Back</md-button>
+   </div>
+   <!-- <div style="float:right" >
+   
+   <md-button><a  href="#!/analytic_landing" style="color:rgb(174, 183, 172); font-size: 30px" ><i class="fa fa-pie-chart" aria-hidden="true"></i></a></md-button>
+   </div> -->
+</div>
+
+<md-content id="edit_trial">
+            <div class="section_1 bg_grey">
+              
+               <h2>Edit Trial</h2>
+               <div class="sec" layout="row" layout-align="space-between start">
+	                 <md-input-container class="md-block" style="width:75%">
+				        <label>Title</label>
+				        <textarea name="title" ng-model="trialtitle" md-select-on-focus></textarea>
+				       
+				        
+				    </md-input-container>
+                   <md-input-container class="md-block" flex-gt-sm>
+			            <label>Status</label>
+			            <md-select ng-model="user.state">
+			              <md-option value="Active" selected>
+			               Active
+			              </md-option>
+			              <md-option value="inactive">
+			               InActive
+			              </md-option>
+			            </md-select>
+			          </md-input-container>
+              </div>
+             
+               <h4 class="m-t-15">Sponsors and Collaborators</h4>
+               <div class="section_3 sec" layout="column" layout-align="space-between center">
+               
+                <div layout="row" layout-align="space-between center" style="width:100%">
+                  <md-input-container class="md-block" flex>
+		            <label>Sponser's Name</label>
+		            <input name="sponcername" ng-model="sponcername">
+		          </md-input-container>
+		          
+
+		          <!--  <md-input-container>
+		           	 <label>Sponser's logo</label>
+           			 <input id="fileInput" name="file" type="file"  multiple>
+           			</md-input-container> -->
+
+           			<a id="addnewbtn" class="md-ink-ripple"><i class="fa fa-plus" aria-hidden="true"></i> Add</a>
+                </div>
+                <div layout="row" layout-align="space-between center" style="width:100%">
+                  <md-input-container class="md-block" flex>
+		            <label>Collaborators's Name</label>
+		            <input name="collaborator" ng-model="collaboratorname">
+		          </md-input-container>
+		          <a id="addnewbtn" class="md-ink-ripple"><i class="fa fa-plus" aria-hidden="true"></i> Add</a>
+
+		           
+                </div>
+               </div>
+
+
+               <h4 class="m-t-15">Status</h4>
+               <div class="section_4 sec" layout-xs="column" layout="row" layout-align="space-around start">
+                  
+		           <md-input-container class="md-block" flex-gt-sm >
+		            <label>Study Start Date</label>
+		           
+			          <md-datepicker ng-model="startdate" name="startdate" md-min-date="minDate"
+			            md-max-date="maxDate" style="width:25%"></md-datepicker>
+
+			          
+			       
+		          </md-input-container>
+		           <md-input-container class="md-block" flex-gt-sm>
+		            <label>Study Completion Date</label>
+		            <md-datepicker ng-model="studycompletiondate" name="studycompletiondate" md-min-date="minDate"
+			            md-max-date="maxDate" style="width:25%"></md-datepicker>
+		          </md-input-container>
+		           <md-input-container class="md-block" flex-gt-sm>
+		            <label>Primary Completion Date</label>
+		            <md-datepicker ng-model="primarycompletiondate" name="primarycompletiondate" md-min-date="minDate"
+			            md-max-date="maxDate" style="width:25%"></md-datepicker>
+		          </md-input-container>
+               </div>
+
+               <h4 class="m-t-15">Purpose</h4>
+               <div class="sec" layout="row" layout-align="space-between start">
+
+                <md-input-container class="md-block" style="width:100%">
+			          <label>Description</label>
+			          <textarea ng-model="trialpurpose" md-maxlength="500"  md-select-on-focus></textarea>
+			        </md-input-container>
+               </div>
+
+                <h4 class="m-t-15">Eligibility</h4>
+               <div class="sec" layout="row" layout-align="space-between start">
+
+                <md-input-container class="md-block" style="width:100%">
+			           <label>Age Eligible</label>
+		               <input ng-model="elibiltyage" >
+			    </md-input-container>
+			    <md-input-container class="md-block" style="width:100%">
+			           <label>Genders Eligible</label>
+			             <md-select ng-model="eligiblitygender">
+				              <md-option value="male" selected>
+				               Male
+				              </md-option>
+				              <md-option value="female">
+				               Female
+				              </md-option>
+				            </md-select>
+			    </md-input-container>
+			    <md-input-container class="md-block" style="width:100%">
+			           <label>Accepts Healthy Volunteers</label>
+		               <md-select ng-model="volunteer">
+			              <md-option value="yes" selected>
+			               Yes
+			              </md-option>
+			              <md-option value="no">
+			               No
+			              </md-option>
+			            </md-select>
+			    </md-input-container>
+               </div>
+               <!-- Inclusion Criteria -->
+               <div layout="column" layout-align="space-between start">
+               <div layout="row" layout-align="space-between start" style="width:100%">
+               <h2 class="m-t-15" ><i class="fa fa-columns" aria-hidden="true"></i> CRITERIA</h2></div>
+               <div layout="row" layout-align="space-between start" style="width:100%;margin-top: 25px; "><h4 >Inclusion Criteria</h4><md-button class="md-primary" ng-click="showCustom2($event)" style="font-size: 13px; " >Add Category <i class="fa fa-plus" aria-hidden="true" style="color:rgb(53,121,42);"></i></md-button></div>
+
+               </div>
+               <div class="criteria-sec" layout="column" layout-align="space-around start" style="padding-top: 10px;padding-bottom: 10px;">
+               <!-- <h5 style="border-bottom: none; text-transform: uppercase;">Inclusion criteria</h5> -->
+             
+			   
+               	 <md-card md-theme="default" class=" _md md-default-theme" >
+		         <md-card-content>
+		            <md-content class="_md md-default-theme criteria_list">
+		            	<div layout="row" layout-align="space-between start">
+		              <div class="crit_head" ng-click="showDemographicsEthical0 = !showDemographicsEthical0">Demographics</div>
+		               <div class="popup" ng-click="showCustom($event)">Add new  <i class="fa fa-plus" aria-hidden="true" style="color:rgb(53,121,42);"></i></div>
+		              </div>
+		              <div class="cssSlideUp" style="background-color: #ececec;; margin-top: 10px; padding: 15px" ng-show="showDemographicsEthical0">
+                              <div class="col-md-12 p-b-10" >
+                                
+                               
+                                 <nav class="accordion arrows">
+                              <div class="draggable">
+                            
+                              <section class="box">
+                                 <label class="box-title" for="cb1">Age limit</label><a ng-click="showCustom8($event)" data-toggle='modal' data-target='#manage_option' class="pull-right "><i class="fa fa-sliders" aria-hidden="true"></i></a>
+                                 <label class="box-close" for="acc-close"></label>
+                                 <div class="box-content">
+                                    
+                                       <ul>
+                                          <li>22 to 30(Male)</li>
+                                         
+                                       </ul>
+
+                                 </div>
+                              </section>
+                              </div>
+                             
+                              
+                              
+                           </nav>
+                           </div>
+                           </div>
+		            </md-content>
+		         </md-card-content>
+		       </md-card>
+			     <md-card md-theme="default" class=" _md md-default-theme" ng-show="inclusioncriteria">
+		         <md-card-content>
+		            <md-content class="_md md-default-theme criteria_list">
+		            	<div layout="row" layout-align="space-between start">
+		              <div class="crit_head" ng-click="showDemographicsEthical = !showDemographicsEthical">Health Status</div>
+		               <div class="popup" ng-click="showCustom($event)">Add new  <i class="fa fa-plus" aria-hidden="true" style="color:rgb(53,121,42);"></i></div>
+		              </div>
+		              <div class="cssSlideUp" style="background-color: #ececec; margin-top: 10px; padding: 15px" ng-show="showDemographicsEthical">
+                              <div class="col-md-12 p-b-10" >
+                                
+                               
+                                 <nav class="accordion arrows">
+                              <div class="draggable">
+                            
+                              <section class="box">
+                                   <a ng-click="showCustom1($event)" class="pull-right " href=""><i class="fa fa-sliders" aria-hidden="true"></i></a>
+                                 <label class="box-close" for="acc-close"></label>
+                                 <div class="box-content">
+                                    <label>Are you allergic to omega-3 fatty acids, corn oil, fish, or shellfish? </label>
+                                       <ul>
+                                          <li>Yes</li>
+                                          <li>No</li>
+                                          <li>I dont know</li>
+                                         
+                                       </ul>
+
+                                 </div>
+                              </section>
+                              </div>
+                             
+                              
+                              
+                           </nav>
+                           </div>
+                           </div>
+		            </md-content>
+		         </md-card-content>
+		       </md-card>
+		       <md-card md-theme="default" class=" _md md-default-theme" ng-show="inclusioncriteria">
+		         <md-card-content>
+		            <md-content class="_md md-default-theme criteria_list">
+		            	<div layout="row" layout-align="space-between start">
+		              <div class="crit_head" ng-click="showDemographicsEthical1 = !showDemographicsEthical1">Treatment or Health Care </div>
+		               <div class="popup" ng-click="showCustom($event)">Add new  <i class="fa fa-plus" aria-hidden="true" style="color:rgb(53,121,42);"></i></div>
+		              </div>
+		              <div class="cssSlideUp" style="background-color: #ececec;; margin-top: 10px; padding: 15px" ng-show="showDemographicsEthical1">
+                              <div class="col-md-12 p-b-10" >
+                                
+                               
+                                 <nav class="accordion arrows">
+                              <div class="draggable">
+                            
+                              <section class="box">
+                                   <a ng-click="" class="pull-right " href=""><i class="fa fa-sliders" aria-hidden="true"></i></a>
+                                 <label class="box-close" for="acc-close"></label>
+                                 <div class="box-content">
+                                    <label>Have you ever done Therapy or surgery</label>
+                                       <ul>
+                                          <li>Yes</li>
+                                          <li>No</li>
+                                          <li>I dont know</li>
+                                         
+                                       </ul>
+
+                                 </div>
+                              </section>
+                              </div>
+                             
+                              
+                              
+                           </nav>
+                           </div>
+                           </div>
+		            </md-content>
+		         </md-card-content>
+		       </md-card>
+			   
+			   
+		     
+
+		      
+               </div>
+			   <div style="border-bottom: 1px solid #CCC; height: 2px"></div>
+			   <!-- Exclusion Criteria -->
+			   
+			      <div layout="row" layout-align="space-between start" style="width:100%;margin-top: 25px;"><h4 >Exclusion Criteria</h4><md-button class="md-primary" ng-click="showCustom3($event)" style="font-size: 13px; " >Add Category <i class="fa fa-plus" aria-hidden="true" style="color:rgb(53,121,42);"></i></md-button></div>
+               <div class="criteria-sec" layout="column" layout-align="space-around start" style="padding-top: 10px;padding-bottom: 10px;">
+               <!-- <h5 style="border-bottom: none; text-transform: uppercase;">Inclusion criteria</h5> -->
+               <md-card md-theme="default" class=" _md md-default-theme"  ng-show="new_exclusion_criteria">
+		         <md-card-content>
+		            <md-content class="_md md-default-theme criteria_list">
+		            	<div layout="row" layout-align="space-between start">
+		              <div class="crit_head" ng-click="collapsiblebody4 = !collapsiblebody4">Ethical Consideration </div>
+		               <div class="popup" ng-click="showCustom($event)">Add new  <i class="fa fa-plus" aria-hidden="true" style="color:rgb(53,121,42);"></i></div>
+		              </div>
+		              <div class="cssSlideUp" style="background-color: #ececec;; margin-top: 10px; padding: 15px" ng-show="collapsiblebody4 ">
+                              <div class="col-md-12 p-b-10">
+                                
+                               
+                                 <nav class="accordion arrows">
+                              <div class="draggable">
+                            
+                              <section class="box">
+                                 <a ng-click="showCustom1($event)" class="pull-right " href=""><i class="fa fa-sliders" aria-hidden="true"></i></a>
+                                 <label class="box-close" for="acc-close"></label>
+                                 <div class="box-content">
+                                    <label>Patient preference for treatment</label>
+                                       <ul>
+                                          <li>Agree</li>
+                                          <li>Not agree</li>
+                                          <li>I dont know</li>
+                                          
+                                       </ul>
+
+                                 </div>
+                              </section>
+                              </div>
+                             
+                              
+                              
+                           </nav>
+                           </div>
+                           </div>
+		            </md-content>
+		         </md-card-content>
+		       </md-card>
+		       <md-card md-theme="default" class=" _md md-default-theme"  ng-show="new_exclusion_criteria">
+		         <md-card-content>
+		            <md-content class="_md md-default-theme criteria_list">
+		            	<div layout="row" layout-align="space-between start">
+		              <div class="crit_head" ng-click="collapsiblebody5 = !collapsiblebody5">Lifestyle Choice</div>
+		               <div class="popup" ng-click="showCustom($event)">Add new  <i class="fa fa-plus" aria-hidden="true" style="color:rgb(53,121,42);"></i></div>
+		              </div>
+		              <div class="cssSlideUp" style="background-color: #ececec;; margin-top: 10px; padding: 15px" ng-show="collapsiblebody5 ">
+                              <div class="col-md-12 p-b-10">
+                                
+                               
+                                 <nav class="accordion arrows">
+                              <div class="draggable">
+                            
+                              <section class="box">
+                                 <a ng-click="showCustom1($event)" class="pull-right " href=""><i class="fa fa-sliders" aria-hidden="true"></i></a>
+                                 <label class="box-close" for="acc-close"></label>
+                                 <div class="box-content">
+                                    <label>Your Addictive behavior</label>
+                                       <ul>
+                                          <li>Alchol</li>
+                                          <li>Drugs</li>
+                                          <li>Non addictive</li>
+                                       </ul>
+
+                                 </div>
+                              </section>
+                              </div>
+                             
+                              
+                              
+                           </nav>
+                           </div>
+                           </div>
+		            </md-content>
+		         </md-card-content>
+		       </md-card>
+			   
+			  
+		      
+               </div>
+                <h4 class="m-t-15">Study Location</h4>
+               <div  layout="column" layout-align="space-between start" class="sec">
+                <md-input-container class="md-block" style="width:100%">
+			          <label>State</label>
+			          <md-chips ng-model="state" name="fruitName" readonly="ctrl.readonly"
+                md-removable="ctrl.removable" md-max-chips="5">
+        <md-chip-template>
+          <strong>{{$chip}}</strong>
+          
+        </md-chip-template>
+      </md-chips>
+			        </md-input-container>
+
+			        <md-input-container class="md-block" style="width:100%">
+			          <label>Range(Miles)</label><br>
+			           <md-slider flex md-discrete ng-model="rating1" step="50" min="50" max="500" aria-label="rating" class="md-primary">
+                        </md-slider>
+			        </md-input-container>
+			        <div style="width: 100%; text-align: center; background-color: #ececec">
+			        <img src="assets/svg/us-vector-map.svg" width="800">
+			        </div>
+               
+               </div>
+                <h4 class="m-t-15">Contacts</h4>
+               <div  layout="row" layout-align="space-between start" class="sec">
+                <md-input-container class="md-block" style="width:100%">
+			          <label>Contact details</label>
+			          <textarea ng-model="contact" md-maxlength="500"  md-select-on-focus></textarea>
+			        </md-input-container>
+               
+               </div>
+
+               
+            </div>
+            <div  layout="row" layout-align="center center" class="md-padding">
+            <md-button style="background-color: rgb(205, 205, 205);
+    color: #5c5b5b;
+    border: 1px solid #bbb;"><i class="fa fa-times" aria-hidden="true"></i> Cancel</md-button>
+               <md-button style="background-color: rgb(53,121,42); color:white;"><i class="fa fa-floppy-o" aria-hidden="true"></i> Save</md-button>
+               
+               </div>
+
+</md-content>

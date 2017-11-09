@@ -1,0 +1,43 @@
+[
+	{
+		"Title":"Outcomes Study to Assess STatin Residual Risk Reduction With EpaNova in HiGh CV Risk PatienTs With Hypertriglyceridemia (STRENGTH)",
+		"Condition":"Cardiovascular Disease",
+		"Sponsor":"AstraZeneca",
+		"Start_Date":"05/02/2016",
+		"Trial_Location":"Newton, MA",
+		"Status":"Recruiting"
+	},
+	{
+		"Title":"Clinical Trial on the Efficacy and Safety of Sirolimus-Eluting Stent (MiStent® System)",
+		"Condition":"Coronary Heart Disease",
+		"Sponsor":"Micell Technologies",
+		"Start_Date":"12/10/2015",
+		"Trial_Location":"Newton, MA",
+		"Status":"Closed"
+	},
+	{
+		"Title":"AZD9291 Versus Gefitinib or Erlotinib in Patients With Locally Advanced or Metastatic Non-small Cell Lung Cancer",
+		"Condition":"Non-small Cell Lung Carcinoma",
+		"Sponsor":"AstraZeneca",
+		"Start_Date":"07/23/2013",
+		"Trial_Location":"Newton, MA",
+		"Status":"Recruiting"
+	},
+	{
+		"Title":"Efficacy and Safety of Belimumab in Patients With Active Lupus Nephritis",
+		"Condition":"Lupus Nephritis",
+		"Sponsor":"Human Genome Sciences Inc., a GSK Company",
+		"Start_Date":"09/24/2014",
+		"Trial_Location":"Newton, MA",
+		"Status":"Closed"
+	},
+	{
+		"Title":"A Phase III Clinical Trial of Fruquintinib in Patients With Advanced Non-small Cell Lung Cancer",
+		"Condition":"NSCLC",
+		"Sponsor":"Hutchison Medipharma Limited",
+		"Start_Date":"09/24/2014",
+		"Trial_Location":"Newton, MA",
+		"Status":"Closed"
+	}
+	
+]

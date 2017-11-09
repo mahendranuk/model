@@ -1,0 +1,477 @@
+
+<md-dialog class="add_trial" ng-hide="hide_dialog">
+    <form ng-cloak>
+        <div class="modal-header">
+
+            <div class="col-md-2">
+                <h5 class="modal-title"><i class="fa fa-forumbee" aria-hidden="true"></i> Add New</h5>
+            </div>
+            <div class="col-md-9">
+                <ul class="list-inline tool-sec pull-right inlne">
+                    <li>
+                        <p class="add_textbox" ng-click="show_text = 1"><i class="fa fa-file-text-o" aria-hidden="true"></i> Text box</p>
+                    </li>
+                    <li>
+                        <p class="add_dropdown" ng-click="show_dropdown = 1"><i class="fa fa-angle-down" aria-hidden="true"></i> Drop down</p>
+                    </li>
+                    <li>
+                        <p class="add_radio" ng-click="show_radio = 1"><i class="fa fa-circle-o-notch" aria-hidden="true"></i> Radio</p>
+                    </li>
+                    <li>
+                        <p class="add_checkbox" ng-click="show_checkbox = 1"><i class="fa fa-check-square-o" aria-hidden="true"></i> Checkbox</p>
+                    </li>
+                    <li>
+                        <p class="add_textarea" ng-click="show_textarea = 1"><i class="fa fa-square-o" aria-hidden="true"></i> Text area</p>
+                    </li>
+                     <li>
+                        <p class="add_range" ng-click="show_range = 1"><i class="fa fa-sliders" aria-hidden="true"></i> Range</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-1">
+
+            </div>
+        </div>
+<!-- Textbox section -->
+        <div class='add_textbox_sec'>
+           <div class="sec" layout="row" ng-show="show_text" layout-align="space-between start">
+
+                <md-input-container class="md-block" style="width:100%">
+			          <label>Textbox</label>
+			          <input/>
+			        </md-input-container>
+			        <div layout="column"  layout-align="space-between start" style="background-color: rgba(244, 242, 242, 0.29);margin-left: 20px;padding-right: 15px;border-radius: 3px;box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.20);">
+ 					<div layout="row"  layout-align="space-between start">
+			         <md-input-container >
+			        <md-button type='button' class='md-primary ' style="background-color: rgba(232, 232, 232, 0.35);"><i class='fa fa-plus' aria-hidden='true'></i> Add</md-button></md-input-container >      <md-input-container ><md-button type='button' class='md-primary cancel' style="background-color: rgba(232, 232, 232, 0.35);">Cancel</md-button>
+			        </md-input-container >
+			         <md-input-container>
+			        <md-checkbox  class="md-primary md-button" aria-label="Mandatory">Mandatory</md-checkbox>
+			        </md-input-container></div>
+					<div layout="row"  layout-align="space-between center" class="md-padding" style="width:100%; padding-right: 0">
+					<md-input-container class="md-block criteria_selection" style="width:70%">
+			            <label>Criteria</label>
+			            <md-select ng-model="user.option">
+			              <md-option value="option1">
+			          Inclusion criteria
+			              </md-option>
+			              <md-option value="option2">
+			               Exclusion criteria
+			              </md-option>
+			            </md-select>
+			          </md-input-container>
+
+			          <md-input-container class="md-block criteria_selection" style="width:100%">
+			            <label>Gender</label>
+			            <md-select ng-model="gender.option">
+			              <md-option value="option1">
+			         Male
+			              </md-option>
+			              <md-option value="option2">
+			             Female
+			              </md-option>
+			               <md-option value="option3">
+			             All
+			              </md-option>
+			            </md-select>
+			          </md-input-container>
+			          </div>
+			          </div>
+               </div>
+			   
+			   <!-- Dropdown section -->
+			   
+			    <div class="sec" ng-show="show_dropdown">
+			    <div layout="row"  layout-align="space-between start">
+		   
+		         <div layout="column"  layout-align="space-between start" flex>
+					<md-input-container class="md-block" style="width:100%">
+			          <label>Dropdown</label>
+			          <input/>
+			        </md-input-container>
+			         
+					 <div class="option_container" layout="column" layout-align="space-between start" flex>
+			    
+						<md-input-container class="md-block" style="width:100%" md-no-float>
+						
+						  <input placeholder="option 1"/>
+						</md-input-container>
+						        <md-input-container class="md-block" style="width:100%" md-no-float>
+								 
+								  <input placeholder="option 2"/>
+								</md-input-container>
+								<md-input-container class="md-block" style="width:100%" md-no-float>
+								 
+								  <input placeholder="option 3"/>
+								</md-input-container>
+					
+			         </div>
+					  
+					</div>
+
+			          <div layout="column"  layout-align="space-between start" style="background-color: rgba(244, 242, 242, 0.29);margin-left: 20px;padding-right: 15px;border-radius: 3px;box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.20);">
+ 					<div layout="row"  layout-align="space-between start">
+			         <md-input-container >
+			        <md-button type='button' class='md-primary ' style="background-color: rgba(232, 232, 232, 0.35);"><i class='fa fa-plus' aria-hidden='true'></i> Add</md-button></md-input-container >      <md-input-container ><md-button type='button' class='md-primary cancel' style="background-color: rgba(232, 232, 232, 0.35);">Cancel</md-button>
+			        </md-input-container >
+			         <md-input-container>
+			        <md-checkbox  class="md-primary md-button" aria-label="Mandatory">Mandatory</md-checkbox>
+			        </md-input-container></div>
+					<div layout="row"  layout-align="space-between center" class="md-padding" style="width:100%; padding-right: 0">
+					<md-input-container class="md-block criteria_selection" style="width:70%">
+			            <label>Criteria</label>
+			            <md-select ng-model="user.option">
+			              <md-option value="option1">
+			          Inclusion criteria
+			              </md-option>
+			              <md-option value="option2">
+			               Exclusion criteria
+			              </md-option>
+			            </md-select>
+			          </md-input-container>
+
+			          <md-input-container class="md-block criteria_selection" style="width:100%">
+			            <label>Gender</label>
+			            <md-select ng-model="gender.option">
+			              <md-option value="option1">
+			         Male
+			              </md-option>
+			              <md-option value="option2">
+			             Female
+			              </md-option>
+			               <md-option value="option3">
+			             All
+			              </md-option>
+			            </md-select>
+			          </md-input-container>
+			          </div>
+			          </div>
+               </div>
+
+			   </div>
+			   
+			   <!-- Radio section -->
+			   
+			     <div class="sec" ng-show="show_radio">
+			  <div layout="row"  layout-align="space-between start">
+		   
+		         <div layout="column"  layout-align="space-between start" flex>
+					<md-input-container class="md-block" style="width:100%">
+			          <label>Radio</label>
+			          <input/>
+			        </md-input-container>
+			         
+					 <div class="option_container" layout="column" layout-align="space-between start" flex>
+			    
+						<md-input-container class="md-block" style="width:100%" md-no-float>
+						
+						  <input placeholder="option 1"/>
+						</md-input-container>
+						        <md-input-container class="md-block" style="width:100%" md-no-float>
+								 
+								  <input placeholder="option 2"/>
+								</md-input-container>
+								<md-input-container class="md-block" style="width:100%" md-no-float>
+								 
+								  <input placeholder="option 3"/>
+								</md-input-container>
+					
+			         </div>
+					  
+					</div>
+
+			          <div layout="column"  layout-align="space-between start" style="background-color: rgba(244, 242, 242, 0.29);margin-left: 20px;padding-right: 15px;border-radius: 3px;box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.20);">
+ 					<div layout="row"  layout-align="space-between start">
+			         <md-input-container >
+			        <md-button type='button' class='md-primary ' style="background-color: rgba(232, 232, 232, 0.35);"><i class='fa fa-plus' aria-hidden='true'></i> Add</md-button></md-input-container >      <md-input-container ><md-button type='button' class='md-primary cancel' style="background-color: rgba(232, 232, 232, 0.35);">Cancel</md-button>
+			        </md-input-container >
+			         <md-input-container>
+			        <md-checkbox  class="md-primary md-button" aria-label="Mandatory">Mandatory</md-checkbox>
+			        </md-input-container></div>
+					<div layout="row"  layout-align="space-between center" class="md-padding" style="width:100%; padding-right: 0">
+					<md-input-container class="md-block criteria_selection" style="width:70%">
+			            <label>Criteria</label>
+			            <md-select ng-model="user.option">
+			              <md-option value="option1">
+			          Inclusion criteria
+			              </md-option>
+			              <md-option value="option2">
+			               Exclusion criteria
+			              </md-option>
+			            </md-select>
+			          </md-input-container>
+
+			          <md-input-container class="md-block criteria_selection" style="width:100%">
+			            <label>Gender</label>
+			            <md-select ng-model="gender.option">
+			              <md-option value="option1">
+			         Male
+			              </md-option>
+			              <md-option value="option2">
+			             Female
+			              </md-option>
+			               <md-option value="option3">
+			             All
+			              </md-option>
+			            </md-select>
+			          </md-input-container>
+			          </div>
+			          </div>
+               </div>
+
+			   </div>
+			  
+			   <!-- Checkbox Section -->
+			   
+			     <div class="sec" ng-show="show_checkbox">
+			   <div layout="row"  layout-align="space-between start">
+		   
+		         <div layout="column"  layout-align="space-between start" flex>
+					<md-input-container class="md-block" style="width:100%">
+			          <label>Radio</label>
+			          <input/>
+			        </md-input-container>
+			         
+					 <div class="option_container" layout="column" layout-align="space-between start" flex>
+			    
+						<md-input-container class="md-block" style="width:100%" md-no-float>
+						
+						  <input placeholder="option 1"/>
+						</md-input-container>
+						        <md-input-container class="md-block" style="width:100%" md-no-float>
+								 
+								  <input placeholder="option 2"/>
+								</md-input-container>
+								<md-input-container class="md-block" style="width:100%" md-no-float>
+								 
+								  <input placeholder="option 3"/>
+								</md-input-container>
+					
+			         </div>
+					  
+					</div>
+
+			          <div layout="column"  layout-align="space-between start" style="background-color: rgba(244, 242, 242, 0.29);margin-left: 20px;padding-right: 15px;border-radius: 3px;box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.20);">
+ 					<div layout="row"  layout-align="space-between start">
+			         <md-input-container >
+			        <md-button type='button' class='md-primary ' style="background-color: rgba(232, 232, 232, 0.35);"><i class='fa fa-plus' aria-hidden='true'></i> Add</md-button></md-input-container >      <md-input-container ><md-button type='button' class='md-primary cancel' style="background-color: rgba(232, 232, 232, 0.35);">Cancel</md-button>
+			        </md-input-container >
+			         <md-input-container>
+			        <md-checkbox  class="md-primary md-button" aria-label="Mandatory">Mandatory</md-checkbox>
+			        </md-input-container></div>
+					<div layout="row"  layout-align="space-between center" class="md-padding" style="width:100%; padding-right: 0">
+					<md-input-container class="md-block criteria_selection" style="width:70%">
+			            <label>Criteria</label>
+			            <md-select ng-model="user.option">
+			              <md-option value="option1">
+			          Inclusion criteria
+			              </md-option>
+			              <md-option value="option2">
+			               Exclusion criteria
+			              </md-option>
+			            </md-select>
+			          </md-input-container>
+
+			          <md-input-container class="md-block criteria_selection" style="width:100%">
+			            <label>Gender</label>
+			            <md-select ng-model="gender.option">
+			              <md-option value="option1">
+			         Male
+			              </md-option>
+			              <md-option value="option2">
+			             Female
+			              </md-option>
+			               <md-option value="option3">
+			             All
+			              </md-option>
+			            </md-select>
+			          </md-input-container>
+			          </div>
+			          </div>
+               </div>
+
+			   </div>
+			   
+			   <!-- Textarea section -->
+			    <div class="sec" ng-show="show_textarea">
+			    <div class="" layout="row"  layout-align="space-between start">
+
+                <md-input-container class="md-block" style="width:100%">
+			          <label>Textarea</label>
+			          <textarea rows="3"></textarea>
+			        </md-input-container>
+			        <div layout="column"  layout-align="space-between start" style="background-color: rgba(244, 242, 242, 0.29);margin-left: 20px;padding-right: 15px;border-radius: 3px;box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.20);">
+ 					<div layout="row"  layout-align="space-between start">
+			         <md-input-container >
+			        <md-button type='button' class='md-primary ' style="background-color: rgba(232, 232, 232, 0.35);"><i class='fa fa-plus' aria-hidden='true'></i> Add</md-button></md-input-container >      <md-input-container ><md-button type='button' class='md-primary cancel' style="background-color: rgba(232, 232, 232, 0.35);">Cancel</md-button>
+			        </md-input-container >
+			         <md-input-container>
+			        <md-checkbox  class="md-primary md-button" aria-label="Mandatory">Mandatory</md-checkbox>
+			        </md-input-container></div>
+					<div layout="row"  layout-align="space-between center" class="md-padding" style="width:100%; padding-right: 0">
+					<md-input-container class="md-block criteria_selection" style="width:70%">
+			            <label>Criteria</label>
+			            <md-select ng-model="user.option">
+			              <md-option value="option1">
+			          Inclusion criteria
+			              </md-option>
+			              <md-option value="option2">
+			               Exclusion criteria
+			              </md-option>
+			            </md-select>
+			          </md-input-container>
+
+			          <md-input-container class="md-block criteria_selection" style="width:100%">
+			            <label>Gender</label>
+			            <md-select ng-model="gender.option">
+			              <md-option value="option1">
+			         Male
+			              </md-option>
+			              <md-option value="option2">
+			             Female
+			              </md-option>
+			               <md-option value="option3">
+			             All
+			              </md-option>
+			            </md-select>
+			          </md-input-container>
+			          </div>
+			          </div>
+               </div>
+               </div>
+
+                 <!-- Range slider section -->
+			   <div class="sec" ng-show="show_range">
+			    <div class="" layout="row"  layout-align="space-between start">
+
+                   <md-input-container class="md-block" style="width:100%">
+			          <label>Range</label>
+			          <input/>
+			         <div >
+				     <!--  <h3>Filter by age</h3>-->
+				      <p>Selected range: {{lower}}-{{upper}}</p> 
+				      <range-slider lower-value="lower" upper-value="upper" min-gap="2" step="1" min="min" max="max" class="md-primary "></range-slider>
+				      
+				    </div>
+			        </md-input-container>
+ 					<div layout="column"  layout-align="space-between start" style="background-color: rgba(244, 242, 242, 0.29);margin-left: 20px;padding-right: 15px;border-radius: 3px;box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.20);">
+ 					<div layout="row"  layout-align="space-between start">
+			         <md-input-container >
+			        <md-button type='button' class='md-primary ' style="background-color: rgba(232, 232, 232, 0.35);"><i class='fa fa-plus' aria-hidden='true'></i> Add</md-button></md-input-container >      <md-input-container ><md-button type='button' class='md-primary cancel' style="background-color: rgba(232, 232, 232, 0.35);">Cancel</md-button>
+			        </md-input-container >
+			         <md-input-container>
+			        <md-checkbox  class="md-primary md-button" aria-label="Mandatory">Mandatory</md-checkbox>
+			        </md-input-container></div>
+					<div layout="row"  layout-align="space-between center" class="md-padding" style="width:100%; padding-right: 0">
+					<md-input-container class="md-block criteria_selection" style="width:70%">
+			            <label>Criteria</label>
+			            <md-select ng-model="user.option">
+			              <md-option value="option1">
+			          Inclusion criteria
+			              </md-option>
+			              <md-option value="option2">
+			               Exclusion criteria
+			              </md-option>
+			            </md-select>
+			          </md-input-container>
+
+			          <md-input-container class="md-block criteria_selection" style="width:100%">
+			            <label>Gender</label>
+			            <md-select ng-model="gender.option">
+			              <md-option value="option1">
+			         Male
+			              </md-option>
+			              <md-option value="option2">
+			             Female
+			              </md-option>
+			               <md-option value="option3">
+			             All
+			              </md-option>
+			            </md-select>
+			          </md-input-container>
+			          </div>
+			          </div>
+			          </div>
+
+               </div>
+
+               <div>
+               </div>
+
+            <div layout="column" layout-align="start start" layout-wrap ng-show="healthCriteria">
+			  	 <md-checkbox  class="md-primary md-button" >Disease, Symptom and Sign</md-checkbox>
+			  	 <md-checkbox  class="md-primary md-button" >Pregnancy-related activity </md-checkbox>
+			  	 <md-checkbox  class="md-primary md-button">Neoplasm status</md-checkbox>
+			  	 <md-checkbox  class="md-primary md-button">Disease stage</md-checkbox>
+			  	 <md-checkbox  class="md-primary md-button" >Allergy</md-checkbox>
+			  	 <md-checkbox  class="md-primary md-button"> Organ or tissue status </md-checkbox>
+			  	 <md-checkbox  class="md-primary md-button"> Life expectancy</md-checkbox>
+			  	
+
+			  </div>
+            <div layout="column" layout-align="start start" layout-wrap ng-show="demoCriteria">
+			  	 <md-checkbox  class="md-primary md-button" >Age</md-checkbox>
+			  	 <md-checkbox  class="md-primary md-button" >Special patient </md-checkbox>
+			  	 <md-checkbox  class="md-primary md-button">characteristic</md-checkbox>
+			  	 <md-checkbox  class="md-primary md-button">Literacy</md-checkbox>
+			  	 <md-checkbox  class="md-primary md-button" >Gender</md-checkbox>
+			  	 <md-checkbox  class="md-primary md-button"> Address </md-checkbox>
+			  	 <md-checkbox  class="md-primary md-button"> Ethnicity</md-checkbox>
+			  	
+
+			  </div>
+			   <div layout="column" layout-align="start start" layout-wrap ng-show="treatmentCriteria">
+			  	 <md-checkbox  class="md-primary md-button" >Pharmaceutical substance or drug</md-checkbox>
+			  	 <md-checkbox  class="md-primary md-button" >Therapy or surgery </md-checkbox>
+			  	 <md-checkbox  class="md-primary md-button">Device</md-checkbox>
+			  	
+			  	
+
+			  </div>
+			   <div layout="column" layout-align="start start" layout-wrap ng-show="diagnosticCriteria">
+			  	 <md-checkbox  class="md-primary md-button" >Diagnostic or lab results</md-checkbox>
+			  	 <md-checkbox  class="md-primary md-button" >Receptor status</md-checkbox>
+			  	
+			  	
+
+			  </div>
+			   <div layout="column" layout-align="start start" layout-wrap ng-show="ethicalCriteria">
+			  	 <md-checkbox  class="md-primary md-button" >Consent</md-checkbox>
+			  	 <md-checkbox  class="md-primary md-button" >Enrollment in other studies </md-checkbox>
+			  	 <md-checkbox  class="md-primary md-button">Capacity</md-checkbox>
+			  	 <md-checkbox  class="md-primary md-button">Patient preference</md-checkbox>
+			  	 <md-checkbox  class="md-primary md-button" >Compliance with protocol</md-checkbox>
+			  	
+			  	
+
+			  </div>
+			   <div layout="column" layout-align="start start" layout-wrap ng-show="lifestyleCriteria">
+			  	 <md-checkbox  class="md-primary md-button" >Addictive behavior</md-checkbox>
+			  	 <md-checkbox  class="md-primary md-button" >Bedtime </md-checkbox>
+			  	 <md-checkbox  class="md-primary md-button">Exercise</md-checkbox>
+			  	 <md-checkbox  class="md-primary md-button">Diet</md-checkbox>
+			  	 
+			  	
+
+			  </div>
+
+			  </div> 
+		<br>	
+<div class=" btn_top_10 submit_sec" >
+
+
+
+<md-divider></md-divider>
+<md-button class="md-primary fr" ng-click="hideDialog('hide')">Cancel</md-button>
+<md-button class="md-primary fr" ng-click="showControl('hide');showDemographics = !showDemographics ">Submit</md-button>
+
+</div>
+			   
+			   
+        </div>
+		
+
+
+
+    </form>
+</md-dialog>

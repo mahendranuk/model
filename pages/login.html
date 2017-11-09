@@ -1,0 +1,49 @@
+<!-- <div layout="row" layout-align="center" class="p-15 bg_lite">
+<span style="font-size: 16px; font-family: proregular; color:#908686; padding: 5px">Welcome to Quest PDR Portal</span>
+</div> -->
+
+<md-content  flex="100" class="bg_white" layout="row" layout-align="center stretch">
+       <div flex layout-align="center center" layout="column" >
+
+      <div class="inset"></div>
+      <span class="md-display-2" style="font-family: prolight">Login</span>
+      <form name="projectForm" flex="100" class="login_form">
+
+               <md-input-container class="md-block userName">
+                  <label >User Name</label>
+                 
+                  <input required name="userName"  >
+                  <div ng-messages="projectForm.userName.$error">
+                     <div ng-message="required">This is required.</div>
+                  </div>
+               </md-input-container>
+               <md-input-container class="md-block password">
+                  <label>Password</label>
+                  <input required type="password" name="userPassword" minlength="10" maxlength="100" />
+                  <div class="hint" ng-show="showHints">How can we reach you?</div>
+               </md-input-container>
+               <md-input-container layout-align="top center" flex layout="column">
+                   <md-button ng-disabled="false" class="md-raised md-primary text-white" href="#!/my_trials" style="width:250px">Login</md-button>
+                   <a href="#" class="login_forget">Forgot your Login details?</a>
+               </md-input-container>
+               
+      </form>
+     
+     </div>
+
+   
+
+  </md-content>
+
+<md-content  layout-xs="column" layout="row" style="font-family: prolight;
+    position: fixed;
+    text-align: center;
+    bottom: 0px;
+    right:0px;
+    left:0px;
+   
+    ">
+                  <div class="bg_white drp_sh sec text-right width_100" >© 2017 Quest Diagnostics Incorporated. All rights reserved.</div>
+</md-content>
+ 
+ 

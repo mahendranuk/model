@@ -1,0 +1,86 @@
+
+<md-dialog class="add_trial" ng-hide="hide_dialog">
+    <form ng-cloak>
+        <div class="modal-header">
+
+            <div >
+                <h5 class="modal-title"><i class="fa fa-forumbee" aria-hidden="true"></i> Add Analytics </h5>
+            </div>
+
+             <div class="col-md-9">
+                <ul class="list-inline tool-sec pull-right inlne">
+                    <li>
+                        <p class="add_textbox" ng-click="show_text = 1"><i class="fa fa-plus" aria-hidden="true"></i> Add new</p>
+                    </li>
+                   <!--  <li>
+                        <p class="add_dropdown" ng-click="show_dropdown = 1"><i class="fa fa-angle-down" aria-hidden="true"></i> Drop down</p>
+                    </li>
+                    <li>
+                        <p class="add_radio"  ng-click="show_radio = 1"><i class="fa fa-circle-o-notch" aria-hidden="true"></i> Radio</p>
+                    </li>
+                    <li>
+                        <p class="add_checkbox"  ng-click="show_checkbox = 1"><i class="fa fa-check-square-o" aria-hidden="true"></i> Checkbox</p>
+                    </li>
+                    <li>
+                        <p class="add_textarea" ng-click="show_textarea = 1"><i class="fa fa-square-o" aria-hidden="true"></i> Text area</p>
+                    </li>
+                     <li>
+                        <p class="add_range" ng-click="show_range = 1"><i class="fa fa-sliders" aria-hidden="true"></i> Range</p>
+                    </li> -->
+                </ul>
+            </div>
+            
+          
+        </div>
+  <div layout="row"  layout-align="start center" style="background-color: #FFF; margin-top: 50px; padding: 25px" layout-padding>
+  <md-input-container class="md-block" style="width:100%">
+			          <label>Textbox</label>
+			          <input/>
+			        </md-input-container>
+  </div>
+         <div layout="row"  layout-align="start center" style="background-color: #FFF;margin-bottom: 45px !important;" layout-padding>
+
+         <div style="width:80%">
+         <div ng-drop="true" ng-drop-success="onDropComplete1($data,$event)" style="border:1px dotted rgb(211, 47, 47)">
+          <span class="title">Drop area</span>
+
+          <div ng-repeat="obj in droppedObjects1" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccess1($data,$event)" ng-center-anchor="{{centerAnchor}}">
+              {{obj.name}}
+          </div>
+
+          </div>
+         </div>
+
+         <div>
+         <ul class="draggable-objects" layout="column"  layout-align="start center">
+            <li  ng-repeat="obj in draggableObjects" >
+                <div ng-drag="true" ng-drag-data="obj" data-allow-transform="true"> {{obj.name}} </div>
+            </li>
+        </ul>
+         </div>
+
+
+
+
+       
+         </div>
+
+       
+        
+
+<div class=" btn_top_10 submit_sec" >
+
+		<md-divider></md-divider>
+		<md-button class="md-primary fr" ng-click="hideDialog('hide')">Cancel</md-button>
+		<md-button class="md-primary fr" ng-click="showControl('hide');showDemographics = !showDemographics ">Submit</md-button>
+
+</div>
+			   
+			   
+        </div>
+		
+
+
+
+    </form>
+</md-dialog>

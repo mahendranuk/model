@@ -1,0 +1,200 @@
+.patient_landing{
+	padding: 10px;
+}
+.patient_container{
+	width: 980px;
+	margin: 0 auto;
+}
+.color_red{
+	color: red;
+}
+.patient_container label.lbl{
+	font-size: 18px !important;
+}
+
+
+.patient_container  md-radio-button .md-label{
+	position: relative;
+	top: 3px;
+	font-size: 16px;
+    font-family: prolight;
+    line-height: 27px;
+}
+
+.show_final.success h2{
+	color: #35792a;
+	font-weight: 300;
+	font-size: 25px;
+}
+
+.show_final.success h4{
+font-size: 20px;
+    border-bottom: none;
+        font-family: prolight;
+        text-align: center;
+    }
+
+   .make_ht100, .show_final.failure{
+    	height: 100%;
+    }
+.show_final.failure h2{
+	
+	font-weight: 300;
+	font-size: 30px;
+    text-align: center;
+}
+.show_final.failure h1,
+.show_final.success h1 {
+	    font-family: prolight;
+    font-weight: normal;
+    font-size: 30px;
+    text-align: center;
+}
+.show_final.failure h4{
+
+    font-weight: normal;
+    font-size: 31px;
+    border-bottom: none;
+    font-family: prolight;
+    text-align: center;
+}
+
+.patient_container h3,
+.patient_container h4{
+	margin-bottom: 10px;
+}
+md-input-container.md-block{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.steppers .bg{
+    height: 10px;
+    width: 100px;
+    background: #cadcc7;
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+  
+}
+.steppers .bg.visited,
+.steppers .bg.step1{	    
+    background: #35792a;
+}
+.enb_transistion{
+  transition: all 0.5s ease;
+
+  }
+.steppers{
+	margin-top:25px;
+	overflow: hidden;
+    margin-bottom: 15px;
+}
+.start_questionairre>h1{
+	    font-family: prolight;
+    font-weight: normal;
+    font-size: 36px;
+}
+.patient_container h3{
+	    font-size: 25px;
+    font-weight: normal;
+}
+.patient_container h4{
+    font-weight: normal;
+    font-size: 18px;
+}
+.patient_container .start_questionairre md-radio-button.md-primary{
+	text-transform: initial;
+    margin-bottom: 5px;
+}
+
+
+
+
+/* Outreach question module */
+.outreach_container{
+        width: 850px;
+    margin: 0 auto;
+}
+
+.outreach_container .ques_controller{
+position: fixed;
+    top: 100px;
+    right: 30px;
+    height: 200px;
+    width: 70px;
+    background: #ffffff;
+    text-align: center;
+}
+.outreach_container md-input-container{
+    margin-top:0px;
+    margin-bottom: 0px;
+}
+.fl{
+    float:left !important;
+}
+.blue_color{
+        color: #2196F3 !important;
+}
+.padd_bott0{
+    padding-bottom: 0px !important;
+}
+.options_circle{
+    font-size: 18px;
+    position: relative;
+    top: 10px;
+}
+.opt_height,
+.inp_ctrl_selector md-option{
+    height:40px !important;
+}
+.outreach_container md-select{
+    margin-top:0px;
+    margin-bottom: 0px;
+}
+i.inp_fa{
+    font-size: 16px;
+    position: relative;
+    top: 2px;
+    margin-right: 6px;
+    width: 20px;
+    background: #fbfbfb;
+    height: 22px;
+    line-height: 22px;
+}
+.outreach_container h1.main_title{
+font-size: 30px;
+    font-family: prolight;
+    font-weight: normal;
+    margin-top: 10px;
+    text-align: center;
+
+}
+
+.outreach_container .form_title{
+    font-size: 30px;
+}
+.outreach_container .add_qn_btn{
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 auto;
+    background: #35792a;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 16px;
+    margin-top: 15px;
+    outline: none;
+}
+
+.box_shad_top{
+    box-shadow: 0px -2px 4px 0px rgba(0,0,0,0.30) !important;
+        margin-top: 10px;
+    padding-top: 15px;
+}
+
+.top20{
+    position: relative;
+    top:20px;
+}
+.md-checkbox-medium h4{font-size: 16px !important;
+    font-family: proregular !important;}

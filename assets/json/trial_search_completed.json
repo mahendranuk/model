@@ -1,0 +1,51 @@
+[
+	{
+		"Title":"Heart Failure Exercise And Resistance Training Camp (HEART Camp)",
+		"Condition":"Heart Failure",
+		"Sponsor":"University of Nebraska",
+		"Start_Date":"06/15/2012",
+		"Trial_Location":"Nebraska",
+		"Status":"Closed"
+	},
+	{
+		"Title":"Peripheral Venous Oxygen Saturation and Biomarkers to Estimate Cardiac Output and Filling Pressures in Heart Failure",
+		"Condition":"Congestive Heart Failure",
+		"Sponsor":"Massachusetts General Hospital",
+		"Start_Date":"07/19/2011",
+		"Trial_Location":"Massachusetts",
+		"Status":"Closed"
+	},
+	{
+		"Title":"Patient Activation in High-Risk Patients With Heart Failure",
+		"Condition":"Heart Failure",
+		"Sponsor":"VA Office of Research and Development",
+		"Start_Date":"11/29/2005",
+		"Trial_Location":"Texas",
+		"Status":"Closed"
+	},
+	{
+		"Title":"Safety and Efficacy Study of the QuickFlex Micro Model 1258T Left Heart Pacing Lead",
+		"Condition":"Heart Failure",
+		"Sponsor":"St. Jude Medical",
+		"Start_Date":"09/29/2009",
+		"Trial_Location":"Minnesota",
+		"Status":"Closed"
+	},
+	{
+		"Title":"PARTNERS HF: Program to Access and Review Trending Information and Evaluate Correlation to Symptoms in Patients With Heart Failure",
+		"Condition":"Heart Failure, Congestive",
+		"Sponsor":"Medtronic Cardiac Rhythm and Heart Failure",
+		"Start_Date":"01/18/2006",
+		"Trial_Location":"Newton, MA",
+		"Status":"Closed"
+	},
+	{
+		"Title":"Efficiency Study of Triple-Site Cardiac Resynchronization in Patients With Heart Failure",
+		"Condition":"Congestive Heart Failure",
+		"Sponsor":"Silesian Centre for Heart Diseases",
+		"Start_Date":"04/12/2008",
+		"Trial_Location":"Minnesota",
+		"Status":"Closed"
+	}
+	
+]

@@ -1,0 +1,257 @@
+<div class="top_bar">
+  <div><h2>Find Clinical Trials</h2></div>
+  <p> Search on this site to find clinical trials and register to get more information or participate in them </p>
+</div>
+
+<md-content class="page_format" layout="column" layout-align="space-between stretch" >
+  
+  <div class="search_tab md-whiteframe-2dp">
+    <div layout="row" layout-align="space-between center">
+      <div class="font_used"><p>Enter Keywords: </p></div>
+    </div>
+    
+    <div layout="row" layout-align="space-between top">
+    <div class="search_bar" flex=80>
+      <md-input-container class="md-block md-input-container md-errors-spacer" flex-gt-sm>
+        <label>Search</label>
+        <input ng-model="searchtopic">
+      </md-input-container>
+      <div layout="row" layout-align="end">
+        <md-button class="search_button_style" ng-click="showfilter=!showfilter">Show Filter <i class="fa fa-angle-down fa-lg" aria-hidden="true"></i></md-button>
+      </div>
+    </div>
+  <div class="search_symbol" layout-align="center center" flex=5>
+    <div ng-click="showdetail()" style="outline:none"><i class="fa fa-search" aria-hidden="true"></i></div>
+  </div>
+  <div class="search_option" flex=15>
+    <p ng-click="advsearch()">Advanced Search</p>
+    <p ng-click="topicbrowse()"> Browse by Topics</p>
+  </div>
+  </div>
+  <div ng-show="showfilter">
+    <md-divider></md-divider>
+    <div layout="row" class="search_detail">
+      <div flex=10> Optional: </div>
+      <div flex=25 layout="row">
+        <div>Gender:</div> 
+        <div class="radio_option"> 
+          <md-radio-group>
+          <md-radio-button value="Male"><i class="fa fa-male" aria-hidden="true"></i>&nbsp;Male</md-radio-button>
+          <md-radio-button value="Female"><i class="fa fa-female" aria-hidden="true"></i>&nbsp;Female</md-radio-button>
+          </md-radio-group>
+        </div>
+      </div>
+      <div flex=45> 
+          <span>Age:</span>
+          <md-input-container>
+            <label>From</label>
+            <input ng-model="age_from">
+          </md-input-container>
+          
+          <md-input-container>
+            <label>To</label>
+            <input ng-model="age_to">
+          </md-input-container>
+
+      </div>
+      <div flex=30 class="input_zipcode"> 
+        <md-input-container>
+          <label>Zip Code</label>
+          <input ng-model="user.zipcode">
+        </md-input-container>
+      </div>
+  </div>
+  </div>
+
+  </div>
+
+   <div class="search_display p-15" ng-show="patientdetail" layout="column" flex="100">
+   <div class="search_result" layout="row" layout-align="center">Results Found: 1,010</div>
+     <div ng-repeat="trial in trialsearch">
+      <md-card class="home_card">
+        <div class="card_inner_color" layout="row">
+          <div class="md-headline card_inner" flex="100">
+            <p> {{trial.Title}} </p>
+            
+          </div>
+          
+        </div>
+        <md-card-content class="second_card" layout-sm="100%" layout="row" layout-align="space-around center"> <div class="side_line" flex=20>
+          <span> Condition </span>
+          <div><i> {{trial.Condition}} </i></div>
+        </div>
+        <div class="side_line" flex=20> 
+          <span> Sponsor </span>
+          <div> {{trial.Sponsor}} </div>
+        </div>
+        <div class="side_line" flex=20> 
+          <span> Start Date </span>
+          <div> {{trial.Start_Date}} </div>
+        </div>
+        <div class="side_line" flex=20> 
+          <span> Trial Location </span>
+          <div> {{trial.Trial_Location}} </div>
+        </div>
+        <div class="side_line" flex=20> 
+          <span> Status </span>
+          <div> {{trial.Status}} </div>
+        </div>      
+        </md-card-content>
+      </md-card>
+    </div>
+    <div class="force-overflow style-1 bg_white p-15 m-r-3 m-b-3">
+  <div layout="row" layout-align="space-between center" style="width:100%">
+  <h4 style="border-bottom: none">For more details <a href="https://clinicaltrials.gov/" style="text-decoration: underline;">click here</a></h4>
+  </div>
+</div>
+    </div> 
+
+    <div ng-show="adv_sch_list" class="search_tab md-whiteframe-2dp">
+      <div class="search_tool font_used">Advanced Search</div>
+      <md-divider></md-divider>
+      <div class="search_tool small_font">Targeted Search</div>
+      <div class="search_symbol" layout="column">
+        <div layout="row">
+        <div class="input_list" flex=50>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Conditions</label>
+            <input ng-model="Conditions">
+          </md-input-container>
+        </div>
+        <div class="input_list" flex=50>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Interventions</label>
+            <input ng-model="Interventions">
+          </md-input-container>
+        </div>
+        </div>
+        <div layout="row">
+        <div class="input_list" flex=50>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Title Acronym/Titles</label>
+            <input ng-model="TitleAcronyms">
+          </md-input-container>
+        </div>
+        <div class="input_list" flex=50>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Outcome Measures</label>
+            <input ng-model="OutcomeMeasures">
+          </md-input-container>
+        </div>
+        </div>
+        <div layout="row">
+        <div class="input_list" flex=50>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Sponsor/Collaborators</label>
+            <input ng-model="Sponsor">
+          </md-input-container>
+        </div>
+        <div class="input_list" flex=50>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Sponsor (Lead)</label>
+            <input ng-model="SponsorLead">
+          </md-input-container>
+        </div>
+        </div>
+        <div layout="row">
+        <div class="input_list" flex=50>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Study IDs</label>
+            <input ng-model="StudyIDs">
+          </md-input-container>
+        </div>
+        </div>
+      </div>
+      <md-divider></md-divider>
+      <div class="search_tool small_font">Additional Criteria</div>
+        <div layout="column">
+          <div layout="row">
+            <div class="search_tool " flex=30>Phase</div>
+            <div class="checkbox_font" flex=70> 
+              <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">Phase 0</md-checkbox>
+              <md-checkbox ng-model="data.cb2" aria-label="Checkbox 2">Phase 1</md-checkbox>
+              <md-checkbox ng-model="data.cb3" aria-label="Checkbox 3">Phase 2</md-checkbox>
+              <md-checkbox ng-model="data.cb4" aria-label="Checkbox 4">Phase 3</md-checkbox>
+              <md-checkbox ng-model="data.cb5" aria-label="Checkbox 5">Phase 4</md-checkbox>
+            </div>
+          </div>
+          <div layout="row">
+          <div class="search_tool" flex=30> Funder Type </div>
+          <div layout="row" flex=70>
+            <div layout="column" flex 50>
+              <md-checkbox ng-model="data.cb6" aria-label="Checkbox 6">NIH</md-checkbox>
+              <md-checkbox ng-model="data.cb7" aria-label="Checkbox 7">Industry</md-checkbox>
+            </div>
+            <div layout="column" flex 50>
+              <md-checkbox ng-model="data.cb8" aria-label="Checkbox 8">Other U.S. Federal agency</md-checkbox>
+              <md-checkbox ng-model="data.cb9" aria-label="Checkbox 9">All others (individuals, universities, organizations)</md-checkbox>
+            </div>
+          </div>
+          </div>
+          <div layout="row">
+          <div class="search_tool" flex=30>Safety Issue</div>
+          <div>
+            <md-checkbox ng-model="data.cb10" aria-label="Checkbox 10">Has an Outcome Measure designated as a safety issue</md-checkbox>
+          </div>
+          </div>
+        </div>
+        <div layout="column" layout-align="end end">
+          <md-button class="advance_search_button">Search</md-button>
+        </div>
+    </div>
+
+
+        <div ng-show="browse_by_topics" class="search_tab md-whiteframe-2dp p-15">
+          <p>Browse Topics</p>
+          <md-divider></md-divider>
+          <div layout="row">
+            <div layout="column" flex=50>
+              <ul>
+                <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><span>Bacterial and Fungal Diseases</span></li>
+                <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><span>Behaviors and Mental Disorders</span></li>
+                <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><span>Blood and Lymph Conditions</span></li>
+                <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><span>Cancers and Other Neoplasms</span></li>
+                <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><span>Digestive System Diseases</span></li>
+                <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><span>Diseases and Abnormalities at or Before Birth</span></li>
+                <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><span>Disorders of Environmental Origin</span></li>
+                <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><span>Ear, Nose, and Throat Diseases</span></li>
+                <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><span>Eye Diseases</span></li>
+                <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><span>Gland and Hormone Related Diseases</span></li>
+                <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><span>Heart and Blood Diseases</span></li>
+                <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><span>Immune System Diseases</span></li>
+                <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><span>Mouth and Tooth Diseases</span></li>
+              </ul>
+            </div>
+            <div layout="column" flex=50>
+              <ul>
+                <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><span>Muscle, Bone, and Cartilage Diseases</span></li>
+                <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><span>Nervous System Diseases</span></li>
+                <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><span>Nutritional and Metabolic Diseases</span></li>
+                <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><span>Occupational Diseases</span></li>
+                <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><span>Parasitic Diseases</span></li>
+                <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><span>Respiratory Tract (Lung and Bronchial) Diseases</span></li>
+                <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><span>Skin and Connective Tissue Diseases</span></li>
+                <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><span>Substance Related Disorders</span></li>
+                <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><span>Symptoms and General Pathology</span></li>
+                <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><span>Urinary Tract, Sexual Organs, and Pregnancy Conditions</span></li>
+                <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><span>Viral Diseases</span></li>
+                <li><i class="fa fa-angle-double-right" aria-hidden="true"></i><span>Wounds and Injuries</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+
+
+</md-content>
+
+<div class="bg_white p-15">
+   <div class="bottom_text" layout="row" layout-align="center center">
+    <div> About Clinical Trials </div>
+    <div> About Quest </div>
+    <div> Contact Us </div>
+    <div> Privacy Policy </div>
+  </div>
+  <div class="bottom_last_text" layout="row" layout-align="center center">Quest Diagnostics Incorporated© 2000-2017. All rights reserved.</div>
+</div>

@@ -1,0 +1,85 @@
+<div class="top_bar">
+  <div><h2>Saved & Completed Trials</h2></div>
+</div>
+<md-content class="search_tool p-15">
+<span class="list_head " style="padding-left: 10px;margin-bottom: 0;">Saved Trials</span>
+  <div layout="column" ng-repeat="list in trialsearch">
+
+	<md-card class="trail_card">
+	  <div class="search_tool" layout="column">
+		  <div layout="row" layout-align="space-between center" >
+		  	<div class="trail_card_head" flex="90">{{list.Title}}</div>
+		  	<div style="font-family: probold; font-size:12px; text-align: left; padding: 15px; color: #c0bebe;" flex="10"><i class="fa fa-spinner" aria-hidden="true"></i> {{list.Status}}</div>
+		  </div>
+	  </div>
+	  <div class="second_card card_bottom" layout="row" layout-align="space-around center">
+	  	<div class="card_sideline1" layout="column" layout-align="center center" flex=20>
+	  		<div>Condition</div>
+	  		<div> {{list.Condition}} </div>
+	  	</div>
+	  	<div class="card_sideline1" layout="column" layout-align="center center" flex=20>
+	  		<div>Sponsors</div>
+	  		<div> {{list.Sponsor}} </div>
+	  	</div>
+	  	<div class="card_sideline1" layout="column" layout-align="center center" flex=20>
+	  		<div>Start Date</div>
+	  		<div> {{list.Start_Date}} </div>
+	  	</div>
+	  	<div class="card_sideline1" layout="column" layout-align="center center" flex=20>
+	  		<div>Pre-Screened</div>
+	  		<div> {{list.Trial_Location}} </div>
+	  	</div>
+	  	<div class="card_sideline1" layout="column" layout-align="center center" flex=20>
+	  		<div>Status</div>
+	  		<div> {{list.Status}} </div>
+	  	</div>
+	  </div>	
+	</md-card>
+  </div>
+<br>
+<md-divider></md-divider>
+<br>
+  <span class="list_head " style="padding-left: 10px;margin-bottom: 0;">Completed Trials</span>
+  <div layout="column" ng-repeat="list in trialsearchcompleted | limitTo: 4">
+
+	<md-card class="trail_card">
+	  <div class="search_tool" layout="column">
+		  <div layout="row" layout-align="space-between center" >
+		  	<div class="trail_card_head" flex="90">{{list.Title}}</div>
+		  	<div style="font-family: probold; font-size:12px; text-align: left; padding: 15px; color: #c0bebe;" flex="10"><i class="fa fa-spinner" aria-hidden="true"></i> {{list.Status}}</div>
+		  </div>
+	  </div>
+	  <div class="second_card card_bottom" layout="row" layout-align="space-around center">
+	  	<div class="card_sideline1" layout="column" layout-align="center center" flex=20>
+	  		<div>Condition</div>
+	  		<div> {{list.Condition}} </div>
+	  	</div>
+	  	<div class="card_sideline1" layout="column" layout-align="center center" flex=20>
+	  		<div>Sponsors</div>
+	  		<div> {{list.Sponsor}} </div>
+	  	</div>
+	  	<div class="card_sideline1" layout="column" layout-align="center center" flex=20>
+	  		<div>Start Date</div>
+	  		<div> {{list.Start_Date}} </div>
+	  	</div>
+	  	<div class="card_sideline1" layout="column" layout-align="center center" flex=20>
+	  		<div>Pre-Screened</div>
+	  		<div> {{list.Trial_Location}} </div>
+	  	</div>
+	  	<div class="card_sideline1" layout="column" layout-align="center center" flex=20>
+	  		<div>Status</div>
+	  		<div> {{list.Status}} </div>
+	  	</div>
+	  </div>	
+	</md-card>
+  </div>
+<div class="footer">
+   <div class="bottom_text" layout="row" layout-align="center center">
+    <div> About Clinical Trials </div>
+    <div> About Quest </div>
+    <div> Contact Us </div>
+    <div> Privacy Policy </div>
+  </div>
+  <div class="bottom_last_text" layout="row" layout-align="center center">Quest Diagnostics Incorporated© 2000-2017. All rights reserved.</div>
+</div>
+</md-content>

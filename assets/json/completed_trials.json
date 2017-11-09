@@ -1,0 +1,26 @@
+[
+    {
+      "id": 7,
+      "title":"EINSTEIN Junior Phase III: Oral Rivaroxaban in Children With Venous Thrombosis",
+      "created_by": "Dr.Jane Anderson",
+      "description": "The study is designed to compare the clinical benefit following treatment with letrozole in combination with Palbociclib versus letrozole in combination with placebo in Asian postmenopausal women with ER(+)/HER2(-) advanced breast cancer who have not received prior systemic anti cancer therapies for their advanced/metastatic disease.",
+      "Condition": "Venous Thromboembolism",
+      "Sponsor": "Bayer",
+      "Identified": "2654",
+      "Pre_Screened": "946",
+      "Qualified":"751",
+      "Enrolled":"269"
+    },
+     {
+      "id": 8,
+      "title":"Efficacy and Safety Study of TLC388 to Advanced Hepatocellular Carcinoma",
+      "created_by": "Dr.Jane Anderson",
+      "description": "The study is designed to compare the clinical benefit following treatment with letrozole in combination with Palbociclib versus letrozole in combination with placebo in Asian postmenopausal women with ER(+)/HER2(-) advanced breast cancer who have not received prior systemic anti cancer therapies for their advanced/metastatic disease.",
+      "Condition": "Hepatocellular Carcinoma",
+      "Sponsor": "Taiwan Liposome Company",
+      "Identified": "88654",
+      "Pre_Screened": "50846",
+      "Qualified":"2351",
+      "Enrolled":"365"
+    }
+]

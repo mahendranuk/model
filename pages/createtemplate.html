@@ -1,0 +1,188 @@
+
+
+<!-- Header -->
+
+<div class="outreach_header" layout="row" layout-align="space-between center" >
+  <div style="padding-left: 20px;"><h2>Create Template</h2>
+  </div>
+  <!-- <div class="md-padding">
+    <a href="#!/emailoutreach" style="color:white; text-decoration: none"> <md-button style="background-color:rgb(53,121,42)!important; color:white;" class="md-primary big_btn" >&nbsp;&nbsp;Templates</md-button></a>
+  </div> -->
+</div>
+<div layout="row"  style="background-color: #ECECEC;padding: 0 16px;margin-bottom:10px;">
+  <md-button back-button style="float:left; color:green; font-weight:bold;"><i class="fa fa-angle-left" aria-hidden="true"></i> Back</md-button>
+</div>
+
+<!-- Body - Template Type -->
+
+<div layout="column" layout-align="start" class="template_type_header">
+  <div >
+    <span>TEMPLATE TYPE</span>
+  </div>
+</div>
+<div layout="row" layout-align="space-between center" class="template_type_body">
+  <div><a href="" ng-click="show_basic()" >
+    <span>Basic</span>
+    <p>Choose from standard template types</p></a>
+  </div> 
+  <a href=""><div ><a href="" ng-click="show_themes()">
+    <span>Themes</span>
+    <p>Choose from a variety of beautiful templates</p>
+  </a></div>
+  <div ><a href="" ng-click="show_custom()">
+    <span>Custom HTML</span>
+    <p>Create a template by writing your custom code</p>
+  </a></div>
+</div>
+
+
+<!-- Basic Template -->
+<div ng-show="basictemplates">
+<div layout="column" layout-align="start"  class="template_type_header" style="margin-top: 10px;">
+  <div >
+    <span>BASIC</span>
+  </div>
+</div>
+<div layout="row" layout-align="space-between center" class="template_type_basic">
+  <div><a href="">
+    <span>1 Column</span>
+    <p><img height="200px" width="150px" src="assets/images/email_camp/n1.png"></p>
+    <md-button ng-click="show_next1=!show_next1" >Select</md-button><a href="#!/edittemplate"><md-button  ng-show="show_next1">Next ></md-button ></a>
+    </a>
+  </div> 
+  <div><a href="">
+    <span>1:2 Column</span>
+    <p><img height="200px" width="150px" src="assets/images/email_camp/1m.png"></p>
+    <md-button ng-click="show_next2=!show_next2" >Select</md-button><a href="#!/edittemplate"><md-button ng-show="show_next2">Next ></md-button ></a>
+    </a>
+  </div>
+  <div><a href="">
+    <span>2 Column</span>
+    <p><img height="200px" width="150px" src="assets/images/email_camp/26m.png"></p>
+    <md-button ng-click="show_next3=!show_next3" >Select</md-button><a href="#!/edittemplate"><md-button ng-show="show_next3">Next ></md-button ></a>
+    </a>
+  </div>
+  
+</div>
+<div layout="row" layout-align="space-between center" class="template_type_basic" style="margin-bottom: 20px;">
+  <div><a href="">
+    <span>Left Sidebar</span>
+    <p><img height="200px" width="150px" src="assets/images/email_camp/18m.png"></p>
+    <md-button ng-click="show_next4=!show_next4" >Select</md-button><a href="#!/edittemplate"><md-button ng-show="show_next4">Next ></md-button ></a>
+    </a>
+  </div> 
+  <div><a href="">
+    <span>Right Sidebar</span>
+    <p><img height="200px" width="150px" src="assets/images/email_camp/19m.png"></p>
+    <md-button ng-click="show_next5=!show_next5" >Select</md-button><a href="#!/edittemplate"><md-button ng-show="show_next5">Next ></md-button ></a>
+    </a>
+  </div>
+  <div><a href="">
+    <span>Simple Text</span>
+    <p><img height="200px" width="150px" src="assets/images/email_camp/st.png"></p>
+    <md-button ng-click="show_next6=!show_next6" >Select</md-button><a href="#!/edittemplate"><md-button ng-show="show_next6">Next ></md-button ></a>
+    </a>
+  </div>
+  
+</div>
+</div>
+
+
+
+<!-- Themes -->
+
+
+<div ng-show="themes">
+<div layout="column" layout-align="start" class="template_type_header" style="margin-top: 10px;">
+  <div >
+    <span>THEME</span>
+  </div>
+</div>
+<div layout="row" layout-align="space-between center" class="template_type_basic">
+  <div><a href="">
+    <span>1 Column</span>
+    <div class="template_type_background" style="background:url('assets/images/email_camp/2000012.jpg')"></div>
+    <md-button ng-click="show_next7=!show_next7" >Select</md-button><a href="#!/edittemplate"><md-button ng-show="show_next7">Next ></md-button ></a>
+    </a>
+  </div> 
+  <div><a href="">
+    <span>1:2 Column</span>
+    <div class="template_type_background" style="background:url('assets/images/email_camp/2000056.jpg')"></div>
+    <md-button ng-click="show_next8=!show_next8" >Select</md-button><a href="#!/edittemplate"><md-button ng-show="show_next8">Next ></md-button ></a>
+    </a>
+  </div><div><a href="">
+    <span>2 Column</span>
+    <div class="template_type_background" style="background:url('assets/images/email_camp/1000467.jpg')"></div>
+    <md-button ng-click="show_next9=!show_next9" >Select</md-button><a href="#!/edittemplate"><md-button ng-show="show_next9">Next ></md-button ></a>
+    </a>
+  </div>
+  
+</div>
+
+
+
+<div layout="row" layout-align="space-between center" class="template_type_basic" style="margin-bottom: 20px;">
+  <div><a href="">
+    <span>Left Sidebar</span>
+    <div class="template_type_background" style="background:url('assets/images/email_camp/event_jon_hicks_nb.png')"></div>
+    <md-button ng-click="show_next10=!show_next10" >Select</md-button><a href="#!/edittemplate"><md-button ng-show="show_next10">Next ></md-button ></a>
+    </a>
+  </div>
+  <div><a href="">
+    <span>Right Sidebar</span>
+    <div class="template_type_background" style="background:url('assets/images/email_camp/1000323.jpg')"></div>
+    <md-button ng-click="show_next11=!show_next11" >Select</md-button><a href="#!/edittemplate"><md-button ng-show="show_next11">Next ></md-button ></a>
+    </a>
+  </div>
+  <div><a href="">
+    <span>1 Column</span>
+    <div class="template_type_background" style="background:url('assets/images/email_camp/2000012.jpg')"></div>
+    <md-button ng-click="show_next12=!show_next12" >Select</md-button><a href="#!/edittemplate"><md-button ng-show="show_next12">Next ></md-button ></a>
+    </a>
+  </div>
+  
+</div>
+</div>
+
+<!-- custom templates -->
+
+<div ng-show="customtemplates">
+<div layout="column" layout-align="start" class="template_type_header" style="margin-top: 10px;">
+  <div >
+    <span>CUSTOM TEMPLATE</span>
+  </div>
+</div>
+<div layout="column" class="template_type_custom" style="margin-bottom: 20px;">
+<div layout="row" layout-align="space-between center"  >
+  <div layout="column" layout-align="start" style="width: 45%;">
+      <span style="padding-left: 5px;" >HTML Editor</span>
+
+       <iframe width="500" height="400" ng-src="{{html_editor}}" style="border:0;"></iframe>
+     <!--  <md-input-container style="border:solid 1px rgba(0,0,0,.05); width: 100%;" class="md-block">
+      
+         
+          <textarea ng-model="customtemplate"  rows="3"  style="width: 100%; " md-select-on-focus></textarea>
+      </md-input-container> -->
+         
+
+             
+  </div>
+<div layout="column" layout-align="start" style="width: 45%; padding-right: 10px;">
+      <span style="padding-left: 5px;" >Preview</span>
+      <md-input-container style="border:solid 1px rgba(0,0,0,.05); width: 100%;" class="md-block">
+      
+         
+          <textarea ng-model="customtemplate"  rows="3"  style="width: 100%;min-height: 300px !important;" md-select-on-focus></textarea>
+      </md-input-container>
+            
+  </div>
+</div>
+<div>
+ <md-button style="background-color:rgb(53,121,42)!important; color:white; width:50px; float: right;" class="md-primary" >Save</md-button>
+
+</div>
+</div>
+</div>
+
+
+

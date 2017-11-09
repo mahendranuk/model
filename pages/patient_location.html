@@ -1,0 +1,235 @@
+
+ <md-dialog class="fullscreen-dialog" aria-label="Full Screen Dialog Test"  >
+      <md-toolbar style="padding: 20px 0;">
+        <div class="md-toolbar-tools">
+          
+          <h2 flex="flex" style="font-size: 24px; color:white">Patients by location</h2>
+          <md-button class="md-icon-button" ng-click="closeDialog()">
+            <i class="fa fa-times fa-2x"></i>
+          </md-button>
+        </div>
+      </md-toolbar>
+      <md-dialog-content>
+      <div layout="row" layout-align="space-between start">
+
+        <div flex="20" class="bg_lite">
+
+        <div  ng-init="showDiv = true">
+  
+   <div layout="column"  layout-align="space-between stretch" style="position:relative;  border-radius: 0px;" >
+   <div layout="column">
+<span class="filter_head filter_head_first" style="padding: 24px 18px;margin-bottom: 20px;
+    background-color: rgba(204, 204, 204, 0.35);">Filter</span>
+
+<div layout="column"  layout-align="start stretch" class="filter-section fl_w" layout-padding>
+     <span class="filter_head" ng-click="filter_source=!filter_source" layout="row"  layout-align="space-between center"><span>Source </span><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+     <div ng-show = "filter_source" layout="column"  layout-align="start stretch" >
+       <md-checkbox>Data Lake ({{data_loc}})</md-checkbox>
+       <md-checkbox>MyQuest ({{myquest_loc}})</md-checkbox>
+       <md-checkbox style="margin-right:0px;">External Recruiters ({{external_loc}})</md-checkbox>
+       <md-checkbox>Outreach ({{outreach_loc}})</md-checkbox>
+       <a style="text-align: right; cursor:pointer;border-bottom: 1px dotted #d8d8d8;padding: 0 5px 0 0;width: 100%;">more</a>
+     </div>
+
+   </div>
+   <div layout="column"  layout-align="start stretch" class="filter-section fl_w" layout-padding>
+     <span class="filter_head" ng-click="filter_location=!filter_location" layout="row"  layout-align="space-between center"><span>Location</span><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+     <div ng-hide = "filter_location" layout="column"  layout-align="start stretch" >
+       <md-checkbox>Alabama ({{Alabama_loc}})</md-checkbox>
+       <md-checkbox>Alaska ({{Alaska_loc}})</md-checkbox>
+       <md-checkbox>California ({{Athens_loc}})</md-checkbox>
+       <md-checkbox>Illinois ({{Illinois_loc}})</md-checkbox>
+        <div layout="row"  layout-align="space-between center" class="filter-section fl_w" layout-padding>
+     <md-input-container class="md-block" style="width:75%; display: inline">
+                <label>Radius</label>
+                <input value="15" type="number" />
+              </md-input-container>
+                <a  class="md-primary md-button md-ink-ripple" md-ink-ripple="#A7A8AA" style="font-size: 13px;background-color: rgb(53, 121, 42);
+    color: white;line-height: 25px;" ng-click="modify_radius()">Go<div class="md-ripple-container"></div></a>
+    </div>
+       <a style="text-align: right; cursor:pointer;border-bottom: 1px dotted #d8d8d8;padding: 0 5px 0 0;width: 100%;">more</a>
+    
+    
+     </div>
+   </div>
+    <div layout="column"  layout-align="start stretch" class="filter-section fl_w" layout-padding>
+     <span class="filter_head" ng-click="filter_age=!filter_age" layout="row"  layout-align="space-between center"><span>Age</span><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+     <div ng-show="filter_age" layout="column"  layout-align="start stretch">
+     <md-checkbox>1-25 years ({{age1_loc}})</md-checkbox>
+     <md-checkbox>25-50 years ({{age2_loc}})</md-checkbox>
+     <md-checkbox>50-75 years ({{age3_loc}})</md-checkbox>
+     <md-checkbox>Above 75 years ({{age4_loc}})</md-checkbox>
+ 
+    
+      <div layout="row"  layout-align="start stretch">
+       <md-input-container class="md-block" style="width:100%">
+                 <label>From</label>
+                   <input>
+       </md-input-container>
+       <md-input-container class="md-block" style="width:100%">
+                 <label>To</label>
+                   <input>
+       </md-input-container>
+       <a href="#!/analytic_detail" class="md-primary  md-button md-ink-ripple " md-ink-ripple="#A7A8AA" style="font-size: 13px;background-color: rgb(53, 121, 42);color: white; min-width: 45px;margin-bottom: 0; margin-top: 12px;" >Go </a>
+      </div>
+ <!-- <a style="text-align: right; cursor:pointer;border-bottom: 1px dotted #d8d8d8;padding: 0 5px 0 0;width: 100%;">more</a> -->
+    </div>
+   </div>
+
+    <div layout="column"  layout-align="start stretch" class="filter-section fl_w" layout-padding>
+    <span class="filter_head" ng-click="gender_filter=!gender_filter" layout="row"  layout-align="space-between center"><span>Gender</span><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+     
+     <div ng-show ="gender_filter">
+     <md-checkbox>Male({{male_loc}})</md-checkbox>
+     <md-checkbox>Female ({{female_loc}})</md-checkbox>
+    </div>
+
+   </div>
+
+
+  </div>
+
+   </div>
+   <div class="width_100">
+     
+     <div style="position: relative;width:100%;border-bottom: 1px solid #D8D8D8;margin-bottom: 10px;">
+       <div style="
+    padding-bottom: 10px;">
+         
+         <div layout="column"   layout-align="space-between center" style="position:relative;  border-radius: 0px;">
+ 
+<!-- <h3>STRENGTH-specific analysis</h3> -->
+<div layout="column"  layout-align="start stretch" class="filter-section fl_w" layout-padding>
+     <span class="filter_head" ng-click="filter_healthstatus=!filter_healthstatus" layout="row"  layout-align="space-between center"><span>Health Status</span><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+     <div ng-show="filter_healthstatus" layout="column"  layout-align="start stretch" >
+     <md-checkbox style="width:200px">Atherosclerosis</md-checkbox>
+     <md-checkbox>Coronary artery disease</md-checkbox>
+     <md-checkbox>Cerebrovascular disease</md-checkbox>
+     <md-checkbox> Aortic aneurysm</md-checkbox>
+     <a style="text-align: right; cursor:pointer;border-bottom: 1px dotted #d8d8d8;padding: 0 5px 0 0;width: 100%;">more</a>
+     </div>
+   </div>
+   <div layout="column"  layout-align="start stretch" class="filter-section fl_w" layout-padding>
+      <span class="filter_head" ng-click="filter_diagn=!filter_diagn" layout="row"  layout-align="space-between center"><span>Diagnostic or Lab Test</span><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+     <div ng-show="filter_diagn" layout="column"  layout-align="start stretch" class="tg_holder">
+     <md-checkbox style="width:200px" ng-click="showCustom($event)">HDL Cholesterol</md-checkbox>
+     <md-checkbox>LDL-Cholesterol</md-checkbox>
+     <md-checkbox ng-click="tg_range=!tg_range">Triglycerides
+     </md-checkbox>
+     <md-checkbox>Total cholesterol</md-checkbox>
+
+     <a style="text-align: right; cursor:pointer;border-bottom: 1px dotted #d8d8d8;padding: 0 5px 0 0;width: 100%;">more</a>
+     </div>
+    
+   </div>
+    <div layout="column"  layout-align="start stretch" class="filter-section fl_w" layout-padding>
+     <span class="filter_head" style="width:100%" ng-click="filter_treatment=!filter_treatment" layout="row"  layout-align="space-between center"><span>Treatment or Health Care</span><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+     <div ng-show="filter_treatment" layout="column"  layout-align="start stretch">
+     <md-checkbox style="width:200px">chemotherapy</md-checkbox>
+     <md-checkbox>angiogram</md-checkbox>
+     <md-checkbox>Immunotherapy</md-checkbox>
+     <md-checkbox>Targeted Therapy</md-checkbox>
+     <a style="text-align: right; cursor:pointer;border-bottom: 1px dotted #d8d8d8;padding: 0 5px 0 0;width: 100%;">more</a>
+     </div>
+
+
+   </div>
+
+    <div layout="column"  layout-align="start stretch" class="filter-section fl_w" layout-padding>
+     <span class="filter_head" ng-click="filter_lifestyle=!filter_lifestyle" layout="row"  layout-align="space-between center"><span>Lifestyle Choice</span><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+     <div ng-show="filter_lifestyle" layout="column"  layout-align="start stretch" >
+     <md-checkbox style="width:200px">Addictive behavior</md-checkbox>
+     <md-checkbox>Bedtime</md-checkbox>
+      <md-checkbox>Exercise</md-checkbox>
+     <md-checkbox> Diet</md-checkbox>
+    <a style="text-align: right; cursor:pointer;border-bottom: 1px dotted #d8d8d8;padding: 0 5px 0 0;">more</a>
+    </div>
+   </div>
+
+<md-button class="md-primary" ng-click="modify_radius()" style="font-size: 13px; background-color: rgb(53, 121, 42);border:1px solid rgb(53, 121, 42);line-height: 10px;color:white" >Apply filter <i class="fa fa-filter" aria-hidden="true" style="color:#FFF" ></i></md-button>
+
+
+   </div>
+       </div>
+      
+     </div>
+
+   </div>
+   
+  </div></div>
+
+    
+<div flex="80">
+  
+<div layout="row" layout-align="space-between center"  style="padding: 10px 18px;margin-bottom: 2px;margin-left: 4px;
+    background-color: rgba(204, 204, 204, 0.35);">
+<div flex="10">Input Set:</div>
+<div flex="25">
+    <md-select ng-model="analysis" placeholder="Select" class="md-no-underline goto_list" style="display: inline">
+           <md-option value="retention" selected>Candidates within 15mi</md-option>
+          <md-option value="location">Candidates near current sites</md-option>
+          <md-option value="patients">Candidates near prospective sites</md-option>
+         
+        </md-select>
+</div>
+<div flex="45" class="results_count">Results: <span>{{patient_count}}</span></div>
+<div flex="20" layout="row" layout-align="space-between center" style="width:15%; ">
+ <a  class="md-primary md-button md-ink-ripple" md-ink-ripple="#A7A8AA" style="font-size: 13px;background-color: rgb(53, 121, 42);
+    color: white; " ng-click= "add_outreach =! add_outreach">Save Candidates<div class="md-ripple-container"></div></a>
+<div class="bg_white bx_shd" style="position: absolute;top: 130px;z-index: 9999;right: 25px; width: 300px;" ng-show="add_outreach">
+   <div layout="column"  layout-align="space-between center" class="filter-section fl_w">
+     <md-input-container class="md-block" style="width:75%; display: inline">
+                <label>Name</label>
+                <input type="text" />
+              </md-input-container>
+                <a  class="md-primary md-button md-ink-ripple" md-ink-ripple="#A7A8AA" style="font-size: 13px;background-color: rgb(53, 121, 42);
+    color: white;" ng-click= "add_outreach =! add_outreach">Save<div class="md-ripple-container"></div></a>
+    </div>
+
+
+</div>
+
+       </div>
+</div>
+
+<br clear="all">
+<!-- <div class="map_holder md-padding">
+  <div id="map"></div>
+</div> -->
+
+<div class="map_view_15" ng-show="map_view_15"></div>
+<div class="map_view_25" ng-show="map_view_25"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+      </div>
+
+
+
+
+
+
+        
+      </md-dialog-content>
+    </md-dialog>
+
+
+
+
+

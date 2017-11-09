@@ -1,0 +1,76 @@
+
+ <md-dialog class="fullscreen-dialog" aria-label="Full Screen Dialog Test"  >
+      <md-toolbar style="padding: 20px 0;">
+        <div class="md-toolbar-tools">
+          
+          <h2 flex="flex" style="font-size: 24px; color:white">A/B Analytics for STRENGTH Patients A/B Campaign</h2>
+          <md-button class="md-icon-button" ng-click="closeDialog()">
+            <i class="fa fa-times fa-2x"></i>
+          </md-button>
+        </div>
+      </md-toolbar>
+      <md-dialog-content class="patient_analytics_list" >
+     
+<div layout="row" layout-align="space-between stretch">
+
+
+ <div layout="column" class="width_100 numbers_dash p-15" flex="25">
+                         <div flex layout="column" layout-align="center center" class="pos_re">
+                          <div class="metric_status"><i class="fa fa-sort-asc" aria-hidden="true"></i></div>
+                          <div class="value">13,146</div>
+                           <div class="value_label">Open</div>
+                         </div>
+                         <div flex layout="column" layout-align="center center" class="pos_re">
+                          <div class="metric_status"><i class="fa fa-stop" aria-hidden="true"></i></div>
+                           <div class="value">643</div>
+                           <div class="value_label">Unsubscribed</div>
+                         </div>
+                         
+                  </div>
+
+
+<div flex="75" style="margin: 0 auto">
+<iframe width="850" height="370" ng-src="{{abcampaign_graphh}}" style="border:0;overflow: hidden;"></iframe>
+</div>
+
+
+
+
+
+</div>
+
+<div layout="column" class="p-15 ">
+<h4 style="border-bottom: none">Campaign Overview</h4>
+<table class="fl_w">
+
+<tr>
+<td></td><th>Campaign A</th><th>Campaign B</th>
+</tr>
+<tr>
+<td>Sent</td><td>80.00% (14,925)</td><td>20.00% (3,731)</td>
+</tr>
+<tr>
+<td>Open</td><td>68.70% (10,254)</td><td>77.51% (2,892)</td>
+</tr>
+<tr>
+<td>Clicks to landing page</td><td>27.81% (4,152)</td><td>23.63% (882)</td>
+</tr>
+<tr>
+<td>Unsubscribes</td><td>03.89% (582)</td><td>01.63% (61)</td>
+</tr>
+
+
+</table>
+</div>
+
+
+
+
+        
+      </md-dialog-content>
+    </md-dialog>
+
+
+
+
+

@@ -1,0 +1,169 @@
+<div layout="row" layout-sm="column" layout-xs="column" >
+   <div flex class="flex"  >
+       <div layout="row"  layout-align="space-between center" class="trial_head">
+      <h2> <img src="../assets/svg/list.svg"/ width="35">All Trials</h2>
+       
+      </div>
+      <md-divider ></md-divider>
+      
+      <md-card ng-repeat="trial in trial_list " class="trial_list">
+      <md-card-content>
+            <md-content>
+            <div layout="row"  layout-align="space-between center" class="trial_head">
+             <!--  <div><img src="assets/svg/trial.svg"/></div> -->
+              <div> <span class="trial_list_head flex-90" ng-click="showDiv4 = !showDiv4"><a>{{trial.title}}</a></span><br><span class="trial_creator_name flex-5">Created By <span>{{trial.created_by}}</span></span></div>
+              <div> </div>
+            <div class="analyt"> <a href="#!/analytic_landing" class=" md-ink-ripple" ><i class="fa fa-pie-chart " aria-hidden="true"></i></a></div> 
+            </div>
+               
+            </md-content>
+      </md-card-content>
+         
+         <!-- <div class="cssSlideUp" ng-show="showDiv4">
+            <md-divider ></md-divider>
+            <div flex class="flex chart_sec" layout="row" layout-align="center center">
+               <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}">
+                  <md-card-title>
+                     <md-card-title-text>
+                        <span class="md-headline">Results</span>
+                        <img src="assets/svg/graph_1.svg"/>
+                     </md-card-title-text>
+                  </md-card-title>
+                  <!--   <md-card-actions layout="row" layout-align="end center">
+                     <i class="fa fa-caret-right" aria-hidden="true"></i>
+                     
+                     </md-card-actions> 
+               </md-card>
+               <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}">
+                  <md-card-title>
+                     <md-card-title-text>
+                        <span class="md-headline">Orders</span>
+                        <img src="assets/svg/graph_2.svg"/>
+                     </md-card-title-text>
+                  </md-card-title>
+                  <!-- <md-card-actions layout="row" layout-align="end center">
+                     <i class="fa fa-caret-right" aria-hidden="true"></i>
+                     
+                     </md-card-actions> 
+               </md-card>
+               <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}">
+                  <md-card-title>
+                     <md-card-title-text>
+                        <span class="md-headline">Outreach</span>
+                        <img src="assets/svg/graph_3.svg"/>
+                     </md-card-title-text>
+                  </md-card-title>
+                  </md-card-content>
+                   <md-card-actions layout="row" layout-align="end center">
+                     <i class="fa fa-caret-right" aria-hidden="true"></i>
+                     
+                     </md-card-actions> -
+               </md-card>
+            </div>
+            <div flex class="flex md-padding p-t-0"  >
+               <md-divider ></md-divider>
+               <p>{{trial.description}}</p>
+               
+               
+            </div>
+         </div> -->
+         <!-- <div  layout="row" flex-gt-xs="100" layout-sm="column" layout-xs="column" layout-align="center center"  layout-fill class=" trail_list text-center bg_grey" >
+            <div class="list_item" flex layout-align="center center" >
+               <span class="trial_sub_head">Condition</span>
+               <div class="trial_content" style="font-style: italic;">{{trial.Condition}}</div>
+            </div>
+            <div class="list_item" flex layout-align="center center">
+               <span class="trial_sub_head">Sponsor</span>
+               <div class="trial_content">{{trial.Sponsor}}</div>
+            </div>
+            <div class="list_item" flex layout-align="center center">
+               <span class="trial_sub_head">Identified</span>
+               <div class="trial_content"> {{trial.Identified}} </div>
+            </div>
+            <div class="list_item" flex layout-align="center center">
+               <span class="trial_sub_head">Pre-Screened</span>
+               <div class="trial_content"> {{trial.Pre_Screened}} </div>
+            </div>
+            <div class="list_item" flex layout-align="center center">
+               <span class="trial_sub_head">Qualified</span>
+               <div class="trial_content"> {{trial.Qualified}} </div>
+            </div>
+            <div class="list_item" flex layout-align="center center">
+               <span class="trial_sub_head">Enrolled</span>
+               <div class="trial_content"> {{trial.Enrolled}} </div>
+            </div>
+         </div> -->
+      </md-card>
+<md-table-container>
+  <table md-table md-row-select multiple ng-model="selected" md-progress="promise">
+    <thead md-head md-order="query.order" md-on-reorder="getDesserts">
+      <tr md-row>
+        <th md-column md-order-by="nameToLower"><span>Name</span></th>
+         <th md-column ><span>Age</span></th>
+          <th md-column ><span>Gender</span></th>
+          <th md-column ><span>Source</span></th>
+          <th md-column ><span>Trial Site</span></th>
+          <th md-column ><span>Patient Location</span></th>
+          <th md-column ><span>Edit/Delete</span></th>
+     <!-- >    <th md-column md-numeric md-order-by="calories.value"><span>Age</span></th>
+        <th md-column md-numeric>Gender</th>
+        <th md-column md-numeric>Source</th>
+        <th md-column md-numeric>Trial Site</th>
+        <th md-column md-numeric>Patient Location</th>
+       <th md-column md-numeric>Edit/Delete</th> 
+       <th md-column md-numeric>Edit/Delete</th> -->
+      </tr>
+    </thead>
+    <tbody md-body>
+
+      <tr md-row md-select="identifyData" md-select-id="name" md-auto-select ng-repeat="identifyData in identifyData.data">
+        <td md-cell><a href="#" style="text-decoration: none;">{{identifyData.name}}</a></td>
+        <td md-cell>{{identifyData.age.value}}</td>
+        <td md-cell>{{identifyData.gender}}</td>
+        <td md-cell>{{identifyData.source}}</td>
+        <td md-cell>{{identifyData.trialSite}}</td>
+        <td md-cell>{{identifyData.patientLocation}}</td>
+        <td md-cell class="edit-sec"><a href=""><i class="fa fa-pencil" aria-hidden="true"></i></a><a href="#"><i class="fa fa-check" aria-hidden="true"></i></a></td>
+        <!-- <td md-cell>{{dessert.iron.value}}{{dessert.iron.unit}}</td> -->
+      </tr>
+
+    </tbody>
+  </table>
+</md-table-container>
+
+
+<div class="bg_grey" layout="row" layout-align="end center"  style="    margin: 8px;">
+<div style="width:100px !important; margin-right: 15px" id="div2">
+   <md-input-container  flex-gt-sm  style="margin: 5px 0">
+			           
+			            <md-select ng-model="user.state" >
+			              <md-option value="1 - 10 of 400" selected>
+			               1 - 10 of 400
+			              </md-option>
+			              <md-option value="11 - 20 of 400">
+			               11 - 20 of 400
+			              </md-option>
+			              <md-option value="21 - 30 of 400">
+			               21 - 30 of 400
+			              </md-option>
+			              <md-option value="31 - 40 of 400">
+			               31 - 40 of 400
+			              </md-option>
+			              <md-option value="41 - 50 of 400">
+			               41 - 50 of 400
+			              </md-option>
+			            </md-select>
+	</md-input-container>
+	</div>
+   <div>
+   
+   <i class="fa fa-angle-left" aria-hidden="true" style="margin-left: 15px; margin-right: 15px"></i> 
+   <span style="color:grey; font-size: 15px">|</span>
+   <i class="fa fa-angle-right" aria-hidden="true" style="margin-left: 15px;margin-right: 10px"></i>
+  
+   </div>
+</div>
+
+
+   </div>
+</div>

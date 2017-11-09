@@ -1,0 +1,370 @@
+<div  layout="row" layout-align="space-between center" id="div1" class="md-padding" style="border-bottom: 1px solid rgba(204, 204, 204, 0.82);background-color: white">
+  
+ <h2 class="md-padding">Trials</h2>
+   <div >
+   <md-button class="md-raised md-primary big_btn" ><a  style="color:white; text-decoration: none"><i  style="color:white;" class="fa fa-plus" aria-hidden="true"></i> Add new Trial</a></md-button>
+ 
+   </div>
+</div>
+<div layout="row"  layout-align="start center"  style="background-color: #ECECEC;padding: 0 16px"><md-button class="md-primary" ng-click="show_filter = !show_filter " style="font-size: 13px; border:0px solid rgba(53, 121, 42,0);color: rgba(0, 0, 0, 0.60);" >Filter Option <i class="fa fa-angle-down" aria-hidden="true" style="color: rgba(0, 0, 0, 0.60);" ></i></md-button>
+      </div>
+
+<div layout="row" layout-sm="column" layout-xs="column" class="md-padding" >
+   <div flex class="flex md-padding"  style="padding: 0px 16px">
+      <!--  <div layout="row"  layout-align="space-between center" class="trial_head">
+      <h2> <img src="assets/svg/list.svg"/ width="35">All Trials</h2>
+      
+      </div> -->
+     
+      
+
+      <div layout="row"  ng-show="show_filter" layout-align="space-between stretch" style="position:relative;border-radius: 3px;margin-bottom: 10px;border-radius: 3px;" >
+   <div layout="column"  layout-align="start stretch" class="filter-section" layout-padding>
+     <span class="filter_head">Source</span>
+     <md-checkbox>Data Lake (23,156)</md-checkbox>
+     <md-checkbox>MyQuest (1,254)</md-checkbox>
+     <md-checkbox>External Recruiters(758)</md-checkbox>
+     <md-checkbox>Outreach (3,157)</md-checkbox>
+
+   </div>
+   <div layout="column"  layout-align="start stretch" class="filter-section" layout-padding>
+     <span class="filter_head">Location</span>
+     <md-checkbox>Alabama (1,148)</md-checkbox>
+     <md-checkbox>Alaska (156)</md-checkbox>
+     <md-checkbox>California (49)</md-checkbox>
+     <md-checkbox>Illinois (251)</md-checkbox>
+     <md-checkbox>Missouri (1,056)</md-checkbox>
+<!-- 
+      <md-input-container class="md-block" style="width:95%">
+                <label>Radius</label><br>
+                 <md-slider flex md-discrete ng-model="rating1" step="50" min="50" max="500" aria-label="rating" class="md-primary">
+                        </md-slider>
+              </md-input-container> -->
+   </div>
+    <div layout="column"  layout-align="start stretch" class="filter-section" layout-padding>
+     <span class="filter_head">Patients Enrolled</span>
+     <md-checkbox>1-1,000</md-checkbox>
+     <md-checkbox>1,000-2,000</md-checkbox>
+     <md-checkbox>2,000-5,000</md-checkbox>
+     <md-checkbox>Above 5,000 </md-checkbox>
+      <md-checkbox>All</md-checkbox>
+      <div layout="row"  layout-align="start stretch">
+       <md-input-container class="md-block" style="width:100%">
+                 <label>From</label>
+                   <input>
+       </md-input-container>
+       <md-input-container class="md-block" style="width:100%">
+                 <label>To</label>
+                   <input>
+       </md-input-container>
+       <a href="#!/analytic_detail" class="md-primary  md-button md-ink-ripple " md-ink-ripple="#A7A8AA" style="font-size: 13px;background-color: rgb(53, 121, 42);color: white; min-width: 45px;margin-bottom: 0; margin-top: 12px;" >Go </a>
+      </div>
+
+
+   </div>
+
+    <div layout="column"  layout-align="start stretch" class="filter-section" layout-padding>
+     <span class="filter_head">Date</span>
+    <form name="myOtherForm" flex-gt-xs>
+        <h6>Select date range</h6>
+
+        <md-input-container>
+          <label>From date</label>
+          <md-datepicker ng-model="myDate1" name="dateField" md-min-date="minDate1"
+            md-max-date="maxDate1"></md-datepicker>
+
+          <div ng-messages="myOtherForm.dateField.$error">
+            <div ng-message="valid">The entered value is not a date!</div>
+            <div ng-message="required">This date is required!</div>
+            <div ng-message="mindate">Date is too early!</div>
+            <div ng-message="maxdate">Date is too late!</div>
+          </div>
+        </md-input-container>
+
+         <md-input-container>
+          <label>To date</label>
+          <md-datepicker ng-model="myDate" name="dateField" md-min-date="minDate"
+            md-max-date="maxDate"></md-datepicker>
+
+          <div ng-messages="myOtherForm.dateField.$error">
+            <div ng-message="valid">The entered value is not a date!</div>
+            <div ng-message="required">This date is required!</div>
+            <div ng-message="mindate">Date is too early!</div>
+            <div ng-message="maxdate">Date is too late!</div>
+          </div>
+        </md-input-container>
+      </form>
+    
+
+   </div>
+
+   <md-button class="md-primary" ng-click="show_filter = !show_filter " style="font-size: 13px; border:1px solid rgb(53, 121, 42); position: absolute;    bottom: -10px; right: 10px;line-height: 10px;" >Apply filter <i class="fa fa-filter" aria-hidden="true" style="color:#CCC" ></i></md-button>
+  </div>
+  <span class="list_head" >Active Trials</span>
+      <md-card ng-repeat="trial in trial_list " class="trial_list" style="margin:0; margin-bottom: 8px" ng-init="parseId(trial)">
+      <md-card-content>
+            <md-content>
+            <div layout="row"  layout-align="space-between start" class="trial_head">
+             <!--  <div><img src="assets/svg/trial.svg"/></div> -->
+              <div flex="95"> 
+              <span class="trial_list_head flex-90" ><a href="#!/trialdetail">{{trial.title}}</a></span><br>
+              <span class="trial_creator_name">Created By <span>{{trial.created_by}}</span></span></div>
+
+              
+              <div  flex="5" class="text-center"> <a class=" md-ink-ripple pointer" ng-click="showDiv4 = !showDiv4"><i class="fa fa-lg fa-chevron-down" aria-hidden="true" ></i></a></div>
+            </div>
+               
+            </md-content>
+      </md-card-content>
+         
+         <div class="cssSlideUp" ng-show="showDiv4">
+            <md-divider ></md-divider>
+            <div layout="row" layout-align="space-between center" class="fl_w">
+              
+            <div flex class="md-padding">
+            <h4 class="graph_head">Recruiting Results</h4>
+              <iframe width="450" height="400" ng-src="{{recruiting_results}}" style="border:0;"></iframe>
+            </div>
+            <div flex class="md-padding">
+            <h4 class="graph_head">Outreach by Channel</h4>
+              <iframe width="450" height="400" ng-src="{{outreach_channel}}" style="border:0;"></iframe>
+            </div>
+            </div>
+            <div flex class="flex md-padding p-t-0"  >
+               <md-divider ></md-divider>
+               <p>{{trial.description}}</p>
+            </div>
+         </div>
+         <div  layout="row" flex-gt-xs="100" layout-sm="column" layout-xs="column" layout-align="center center"  layout-fill class=" trail_list text-center bg_grey" >
+            <div class="list_item" flex layout-align="center center" >
+               <span class="trial_sub_head">Condition</span>
+               <div class="trial_content" style="font-style: italic;">{{trial.Condition}}</div>
+            </div>
+            <div class="list_item" flex layout-align="center center">
+               <span class="trial_sub_head">Sponsors</span>
+               <div class="trial_content">{{trial.Sponsor}}</div>
+            </div>
+            <div class="list_item" flex layout-align="center center">
+               <span class="trial_sub_head">Identified</span>
+               <div class="trial_content"> {{trial.Identified  | number : fractionSize}} </div>
+            </div>
+            <div class="list_item" flex layout-align="center center">
+               <span class="trial_sub_head">Pre-Screened</span>
+               <div class="trial_content"> <md-tooltip md-direction="top"> % of Identified</md-tooltip>{{trial.Pre_Screened  | number : fractionSize}} <span style="">({{(trial.Pre_Screened / trial.Identified) * 100 | number:2 }} %)</span> </div>
+            </div>
+            <div class="list_item" flex layout-align="center center">
+               <span class="trial_sub_head">Qualified</span>
+               <div class="trial_content"> <md-tooltip md-direction="top"> % of Pre-Screened</md-tooltip> {{trial.Qualified  | number : fractionSize}} <span style="">({{(trial.Qualified / trial.Pre_Screened) * 100 | number:2}} %)</span></div>
+            </div>
+            <div class="list_item" flex layout-align="center center">
+               <span class="trial_sub_head">Enrolled</span>
+               <div class="trial_content"><md-tooltip md-direction="top"> % of Qualified </md-tooltip>  {{trial.Enrolled  | number : fractionSize}} <span style=""> ({{(trial.Enrolled / trial.Qualified) * 100 | number:2}} %)</span></div>
+            </div>
+         </div>
+      </md-card>
+<br>
+<span class="list_head" >Draft Trials</span>
+      <md-card ng-repeat="trial in draft_trial_list | limitTo: 3 " ng-if="$index > 0" class="trial_list" style="margin:0; margin-bottom: 8px">
+      <md-card-content>
+            <md-content>
+            <div layout="row"  layout-align="space-between start" class="trial_head">
+             <!--  <div><img src="assets/svg/trial.svg"/></div> -->
+             <div flex="95"> 
+              <span class="trial_list_head flex-90" ><a href="#!/trialdetail">{{trial.title}}</a></span><br>
+              <span class="trial_creator_name">Created By <span>{{trial.created_by}}</span></span></div>
+
+              
+              <div  flex="5" class="text-center"> <a class=" md-ink-ripple pointer"><i class="fa fa-lg fa-edit" aria-hidden="true" ></i></a></div>
+            </div>
+               
+            </md-content>
+      </md-card-content>
+         
+         <div class="cssSlideUp" ng-show="showDiv4">
+            <md-divider ></md-divider>
+            <div flex class="flex chart_sec" layout="row" layout-align="center center">
+               <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}">
+                  <md-card-title>
+                     <md-card-title-text>
+                        <span class="md-headline">Recruiting Results</span>
+                        <img src="assets/svg/graph_1.svg"/>
+                     </md-card-title-text>
+                  </md-card-title>
+                  <!--   <md-card-actions layout="row" layout-align="end center">
+                     <i class="fa fa-caret-right" aria-hidden="true"></i>
+                     
+                     </md-card-actions> -->
+               </md-card>
+               <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}">
+                  <md-card-title>
+                     <md-card-title-text>
+                        <span class="md-headline">Outreach via Physicians</span>
+                        <img src="assets/svg/graph_2.svg"/>
+                     </md-card-title-text>
+                  </md-card-title>
+                  <!-- <md-card-actions layout="row" layout-align="end center">
+                     <i class="fa fa-caret-right" aria-hidden="true"></i>
+                     
+                     </md-card-actions> -->
+               </md-card>
+               <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}">
+                  <md-card-title>
+                     <md-card-title-text>
+                        <span class="md-headline">Direct Patient Outreach</span>
+                        <img src="assets/svg/graph_3.svg"/>
+                     </md-card-title-text>
+                  </md-card-title>
+                  </md-card-content>
+                  <!-- <md-card-actions layout="row" layout-align="end center">
+                     <i class="fa fa-caret-right" aria-hidden="true"></i>
+                     
+                     </md-card-actions> -->
+               </md-card>
+            </div>
+            <div flex class="flex md-padding p-t-0"  >
+               <md-divider ></md-divider>
+               <p>{{trial.description}}</p>
+               
+               
+            </div>
+         </div>
+         <div  layout="row" flex-gt-xs="100" layout-sm="column" layout-xs="column" layout-align="center center"  layout-fill class=" trail_list text-center bg_grey" >
+            <div class="list_item" flex layout-align="center center" >
+               <span class="trial_sub_head">Condition</span>
+               <div class="trial_content" style="font-style: italic;">{{trial.Condition}}</div>
+            </div>
+            <div class="list_item" flex layout-align="center center">
+               <span class="trial_sub_head">Sponsor</span>
+               <div class="trial_content">{{trial.Sponsor}}</div>
+            </div>
+            <div class="list_item" flex layout-align="center center">
+               <span class="trial_sub_head">Identified</span>
+               <div class="trial_content"> - </div>
+            </div>
+               <div class="list_item" flex layout-align="center center">
+               <span class="trial_sub_head">Pre-Screened</span>
+               <div class="trial_content"> 
+               -
+               <!-- <md-tooltip md-direction="top"> % of Identified</md-tooltip>{{trial.Pre_Screened  | number : fractionSize}} <span style="">({{(trial.Pre_Screened / trial.Identified) * 100 | number:2 }} %)</span> --> 
+               </div>
+            </div>
+            <div class="list_item" flex layout-align="center center">
+               <span class="trial_sub_head">Qualified</span>
+               <div class="trial_content"> 
+               -
+               <!-- <md-tooltip md-direction="top"> % of Pre-Screened</md-tooltip> {{trial.Qualified  | number : fractionSize}} <span style="">({{(trial.Qualified / trial.Pre_Screened) * 100 | number:2}} %)</span> -->
+               </div>
+            </div>
+            <div class="list_item" flex layout-align="center center">
+               <span class="trial_sub_head">Enrolled</span>
+               <div class="trial_content">
+               -
+               <!-- <md-tooltip md-direction="top"> % of Qualified </md-tooltip>  {{trial.Enrolled  | number : fractionSize}} <span style=""> ({{(trial.Enrolled / trial.Qualified) * 100 | number:2}} %)</span> -->
+               </div>
+            </div>
+         </div>
+      </md-card>
+      <br>
+      <span class="list_head" >Completed Trials</span>
+      <md-card ng-repeat="trial in completed_trial_list "  ng-if="$index > 0" class="trial_list" style="margin:0; margin-bottom: 8px">
+      <md-card-content>
+            <md-content>
+            <div layout="row"  layout-align="space-between start" class="trial_head">
+             <!--  <div><img src="assets/svg/trial.svg"/></div> -->
+             <div flex="95"> 
+              <span class="trial_list_head flex-90" ><a href="#!/trialdetail">{{trial.title}}</a></span><br>
+              <span class="trial_creator_name">Created By <span>{{trial.created_by}}</span></span></div>
+
+              
+              <div  flex="5" class="text-center"> <a class=" md-ink-ripple pointer" ng-click="showDiv4 = !showDiv4"><i class="fa fa-lg fa-chevron-down" aria-hidden="true" ></i></a></div>
+            </div>
+               
+            </md-content>
+      </md-card-content>
+         
+         <div class="cssSlideUp" ng-show="showDiv4">
+            <md-divider ></md-divider>
+            <div layout="row" layout-align="space-between center" class="fl_w">
+              
+            <div flex class="md-padding">
+            <h4 class="graph_head">Recruiting Results</h4>
+              <iframe width="450" height="400" ng-src="{{recruiting_results}}" style="border:0;"></iframe>
+            </div>
+            <div flex class="md-padding">
+            <h4 class="graph_head">Outreach by Channel</h4>
+              <iframe width="450" height="400" ng-src="{{outreach_channel}}" style="border:0;"></iframe>
+            </div>
+            </div>
+            <div flex class="flex md-padding p-t-0"  >
+               <md-divider ></md-divider>
+               <p>{{trial.description}}</p>
+            </div>
+         </div>
+         <div  layout="row" flex-gt-xs="100" layout-sm="column" layout-xs="column" layout-align="center center"  layout-fill class=" trail_list text-center bg_grey" >
+            <div class="list_item" flex layout-align="center center" >
+               <span class="trial_sub_head">Condition</span>
+               <div class="trial_content" style="font-style: italic;">{{trial.Condition}}</div>
+            </div>
+            <div class="list_item" flex layout-align="center center">
+               <span class="trial_sub_head">Sponsor</span>
+               <div class="trial_content">{{trial.Sponsor}}</div>
+            </div>
+            <div class="list_item" flex layout-align="center center">
+               <span class="trial_sub_head">Identified</span>
+               <div class="trial_content"> {{trial.Identified  | number : fractionSize}} </div>
+            </div>
+             <div class="list_item" flex layout-align="center center">
+               <span class="trial_sub_head">Pre-Screened</span>
+               <div class="trial_content"> <md-tooltip md-direction="top"> % of Identified</md-tooltip>{{trial.Pre_Screened  | number : fractionSize}} <span style="">({{(trial.Pre_Screened / trial.Identified) * 100 | number:2 }} %)</span> </div>
+            </div>
+            <div class="list_item" flex layout-align="center center">
+               <span class="trial_sub_head">Qualified</span>
+               <div class="trial_content"> <md-tooltip md-direction="top"> % of Pre-Screened</md-tooltip> {{trial.Qualified  | number : fractionSize}} <span style="">({{(trial.Qualified / trial.Pre_Screened) * 100 | number:2}} %)</span></div>
+            </div>
+            <div class="list_item" flex layout-align="center center">
+               <span class="trial_sub_head">Enrolled</span>
+               <div class="trial_content"><md-tooltip md-direction="top"> % of Qualified </md-tooltip>  {{trial.Enrolled  | number : fractionSize}} <span style=""> ({{(trial.Enrolled / trial.Qualified) * 100 | number:2}} %)</span></div>
+            </div>
+         </div>
+      </md-card>
+
+
+
+
+
+
+<!-- <div class="bg_grey" layout="row" layout-align="end center"  style="    margin: 8px;">
+<div style="width:100px !important; margin-right: 15px" id="div2">
+   <md-input-container  flex-gt-sm  style="margin: 5px 0">
+			           
+			            <md-select ng-model="user.state" >
+			              <md-option value="1 - 10 of 400" selected>
+			               1 - 10 of 400
+			              </md-option>
+			              <md-option value="11 - 20 of 400">
+			               11 - 20 of 400
+			              </md-option>
+			              <md-option value="21 - 30 of 400">
+			               21 - 30 of 400
+			              </md-option>
+			              <md-option value="31 - 40 of 400">
+			               31 - 40 of 400
+			              </md-option>
+			              <md-option value="41 - 50 of 400">
+			               41 - 50 of 400
+			              </md-option>
+			            </md-select>
+	</md-input-container>
+	</div>
+   <div>
+   
+   <i class="fa fa-angle-left" aria-hidden="true" style="margin-left: 15px; margin-right: 15px"></i> 
+   <span style="color:grey; font-size: 15px">|</span>
+   <i class="fa fa-angle-right" aria-hidden="true" style="margin-left: 15px;margin-right: 10px"></i>
+  
+   </div>
+</div> -->
+
+
+   </div>
+</div>

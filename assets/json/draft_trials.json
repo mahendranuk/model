@@ -1,0 +1,86 @@
+[
+    {
+      "id": 1,
+      "title":"Myocardial Infarction Genes (MI-GENES) Study",
+      "created_by": "Dr.Jane Anderson",
+      "description": "The study is a randomized, double-blind, placebo-controlled (corn oil), parallel group design that will enroll approximately 13,000 patients with hypertriglyceridemia and low HDL and high risk for CVD to be randomized 1:1 to either corn oil + statin or Epanova + statin, once daily, for approximately 3-5 years as determined when the number of MACE outcomes is reached.",
+      "Condition": "Myocardial Infarction",
+      "Sponsor": "Mayo Clinic",
+      "Identified": "54654",
+      "Pre_Screened": "10146",
+      "Qualified":"8351",
+      "Enrolled":"6568"
+    },
+      {
+      "id": 2,
+      "title":"Acute Myocardial Infarction With HyperOxemic Therapy II (AMIHOT II)",
+      "created_by": "Dr.Robert J Freedman",
+      "description": "The study is designed to compare the clinical benefit following treatment with letrozole in combination with Palbociclib versus letrozole in combination with placebo in Asian postmenopausal women with ER(+)/HER2(-) advanced breast cancer who have not received prior systemic anti cancer therapies for their advanced/metastatic disease.",
+      "Condition": "Myocardial Infarction",
+      "Sponsor": "TherOx",
+      "Identified": "16451",
+      "Pre_Screened": "5143",
+      "Qualified":"1310",
+      "Enrolled":"650"
+    },
+      {
+      "id": 1,
+      "title":"Myocardial Infarction Genes (MI-GENES) Study",
+      "created_by": "Dr.Jane Anderson",
+      "description": "The study is a randomized, double-blind, placebo-controlled (corn oil), parallel group design that will enroll approximately 13,000 patients with hypertriglyceridemia and low HDL and high risk for CVD to be randomized 1:1 to either corn oil + statin or Epanova + statin, once daily, for approximately 3-5 years as determined when the number of MACE outcomes is reached.",
+      "Condition": "Myocardial Infarction",
+      "Sponsor": "Mayo Clinic",
+      "Identified": "54654",
+      "Pre_Screened": "10146",
+      "Qualified":"8351",
+      "Enrolled":"6568"
+    },
+      {
+      "id": 4,
+      "title":"AZD9291 Versus Gefitinib or Erlotinib in Patients With Locally Advanced or Metastatic Non-small Cell Lung Cancer",
+      "created_by": "Dr.Jane Anderson",
+      "description": "The study is designed to compare the clinical benefit following treatment with letrozole in combination with Palbociclib versus letrozole in combination with placebo in Asian postmenopausal women with ER(+)/HER2(-) advanced breast cancer who have not received prior systemic anti cancer therapies for their advanced/metastatic disease.",
+      "Condition": "Non-small Cell Lung Carcinoma",
+      "Sponsor": "AstraZeneca",
+      "Identified": "2654",
+      "Pre_Screened": "946",
+      "Qualified":"751",
+      "Enrolled":"569"
+    },
+     {
+      "id": 5,
+      "title":"Efficacy and Safety of Belimumab in Patients With Active Lupus Nephritis",
+      "created_by": "Dr.Jane Anderson",
+      "description": "The study is designed to compare the clinical benefit following treatment with letrozole in combination with Palbociclib versus letrozole in combination with placebo in Asian postmenopausal women with ER(+)/HER2(-) advanced breast cancer who have not received prior systemic anti cancer therapies for their advanced/metastatic disease.",
+      "Condition": "Lupus Nephritis",
+      "Sponsor": "Human Genome Sciences Inc",
+      "Identified": "21745",
+      "Pre_Screened": "15482",
+      "Qualified":"4351",
+      "Enrolled":"1695"
+    },
+    {
+      "id": 6,
+      "title":"A Phase III Clinical Trial of Fruquintinib in Patients With Advanced Non-small Cell Lung Cancer",
+      "created_by": "Dr.Jane Anderson",
+      "description": "The study is designed to compare the clinical benefit following treatment with letrozole in combination with Palbociclib versus letrozole in combination with placebo in Asian postmenopausal women with ER(+)/HER2(-) advanced breast cancer who have not received prior systemic anti cancer therapies for their advanced/metastatic disease.",
+      "Condition": "NSCLC",
+      "Sponsor": "Hutchison Medipharma Limited",
+      "Identified": "15151",
+      "Pre_Screened": "8846",
+      "Qualified":"3335",
+      "Enrolled":"2360"
+    },
+    {
+      "id": 7,
+      "title":"EINSTEIN Junior Phase III: Oral Rivaroxaban in Children With Venous Thrombosis",
+      "created_by": "Dr.Jane Anderson",
+      "description": "The study is designed to compare the clinical benefit following treatment with letrozole in combination with Palbociclib versus letrozole in combination with placebo in Asian postmenopausal women with ER(+)/HER2(-) advanced breast cancer who have not received prior systemic anti cancer therapies for their advanced/metastatic disease.",
+      "Condition": "Venous Thromboembolism",
+      "Sponsor": "Bayer",
+      "Identified": "2654",
+      "Pre_Screened": "946",
+      "Qualified":"751",
+      "Enrolled":"269"
+    }
+]

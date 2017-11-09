@@ -1,0 +1,105 @@
+{
+  "count": 5,
+  "data": [
+    {
+      "campname": "Check out this clinical trial", 
+      "senton": "Sent on Sun, Dec 12, 2016 9:00 am",
+      "socialmedia": { "Media":"Facebook", "value": "3,190" },
+      "views":{ "value": "2,435" },
+      "reach": { "value": "1,223" },
+      "clicks": { "value": "1,145" },
+      "trialname": "Outcomes Study to Assess STatin Residual Risk Reduction With EpaNova in HiGh CV Risk PatienTs With Hypertriglyceridemia (STRENGTH)"
+      
+    },
+    {
+      "campname": "Physician Campaign", 
+      "senton": "Sent on Sun, May 08, 2016 9:00 am",
+      "socialmedia": { "Media":"Pinterest", "value": 145 },
+      "views":{ "value": 56 },
+      "reach": { "value": 45 },
+      "clicks": { "value": 5 },
+      "trialname": "Outcomes Study to Assess STatin Residual Risk Reduction With EpaNova in HiGh CV Risk PatienTs With Hypertriglyceridemia (STRENGTH)"
+      
+    },
+    {
+      "campname": "Sirolimus-Eluting Stent - Campaign", 
+      "senton": "Sent on Wed, Jun 01, 2016 03:00 am",
+      "socialmedia": { "Media":"Instagram", "value": 450 },
+      "views":{ "value": 98 },
+      "reach": { "value": 96 },
+      "clicks": { "value": 3 },
+      "trialname": "Outcomes Study to Assess STatin Residual Risk Reduction With EpaNova in HiGh CV Risk PatienTs With Hypertriglyceridemia (STRENGTH)"
+      
+    },
+    {
+      "campname": "Adjuvant Treatment - Campaign", 
+      "senton": "Sent on Sun, May 08, 2016 9:00 am",
+      "socialmedia": { "Media":"Twitter", "value": 201 },
+      "views":{ "value": 24 },
+      "reach": { "value": 56 },
+      "clicks": { "value": 2 },
+      "trialname": "Olaparib as Adjuvant Treatment in Patients With Germline BRCA Mutated High Risk HER2 Negative Primary Breast Cancer"
+      
+    },
+    {
+      "campname": "Campaign - Atlanta", 
+      "senton": "Sent on Wed, Jun 01, 2016 03:00 am",
+      "socialmedia": { "Media":"Linkedin", "value": 321 },
+      "views":{ "value": 55 },
+      "reach": { "value": 101 },
+      "clicks": { "value": 4 },
+      "trialname": "Clinical Trial on the Efficacy and Safety of Sirolimus-Eluting Stent (MiStent® System)"
+      
+    },
+    {
+      "campname": "Demographic target", 
+      "senton": "Sent on Fri, Nov 25, 2016 08:00 am",
+      "socialmedia": { "Media":"Instagram", "value": 95 },
+      "views":{ "value": 36 },
+      "reach": { "value": 21 },
+      "clicks": { "value": 1 },
+      "trialname": "AZD9291 Versus Gefitinib or Erlotinib in Patients With Locally Advanced or Metastatic Non-small Cell Lung Cancer"
+      
+    },
+    {
+      "campname": "Surviving Sepsis - Campaign", 
+      "senton": "Sent on Sun, May 08, 2016 9:00 am",
+      "socialmedia": { "Media":"Facebook", "value": 159 },
+      "views":{ "value": 24 },
+      "reach": { "value": 62 },
+      "clicks": { "value": 2 },
+      "trialname": "Effciency and Safety of Belimumab in Patients With Active Lupus Nephritis"
+      
+    },
+    {
+      "campname": "Campaign - Atlanta", 
+      "senton": "Sent on Tue, Dec 27, 2016 9:00 am",
+      "socialmedia": { "Media":"Linkedin", "value":88 },
+      "views":{ "value": 49 },
+      "reach": { "value": 18 },
+      "clicks": { "value": 0 },
+      "trialname": "Outcomes Study to Assess STatin Residual Risk Reduction With EpaNova in HiGh CV Risk PatienTs With Hypertriglyceridemia (STRENGTH)" 
+      
+    },
+    {
+      "campname": "STatin Residual Risk - Campaign", 
+      "senton": "Sent on Tue, Aug 02, 2016 12:00 am",
+      "socialmedia": { "Media":"twitter", "value": 189 },
+      "views":{ "value": 88 },
+      "reach": { "value": 45 },
+      "clicks": { "value": 4 },
+      "trialname": "Outcomes Study to Assess STatin Residual Risk Reduction With EpaNova in HiGh CV Risk PatienTs With Hypertriglyceridemia (STRENGTH)"
+      
+    },
+    {
+      "campname": "Surviving Sepsis - Campaign", 
+      "senton": "Sent on Sun, May 08, 2016 9:00 am",
+      "socialmedia": { "Media":"Facebook", "value": 159 },
+      "views":{ "value": 24 },
+      "reach": { "value": 62 },
+      "clicks": { "value": 2 },
+      "trialname": "Effciency and Safety of Belimumab in Patients With Active Lupus Nephritis"
+      
+    }
+  ]
+}

@@ -1,0 +1,875 @@
+
+ <md-dialog class="fullscreen-dialog" aria-label="Full Screen Dialog Test"  >
+      <md-toolbar style="padding: 20px 0;">
+        <div class="md-toolbar-tools">
+          
+          <h2 flex="flex" style="font-size: 24px; color:white">Candidates Analysis</h2>
+          <md-button class="md-icon-button" ng-click="closeDialog()">
+            <i class="fa fa-times fa-2x"></i>
+          </md-button>
+        </div>
+      </md-toolbar>
+      <md-dialog-content class="patient_analytics_list">
+      <div layout="row" layout-align="space-between start">
+
+         <div flex="20" ng-hide="filter_sec" class="bg_lite" >
+
+        <div  ng-init="showDiv = true">
+  
+   <div layout="column"  layout-align="space-between stretch" style="position:relative;  border-radius: 0px;" >
+   <div layout="column">
+<span class="filter_head filter_head_first" style="padding: 24px 18px;margin-bottom: 20px;
+    background-color: rgba(204, 204, 204, 0.35);">Filter</span>
+
+<div layout="column"  layout-align="start stretch" class="filter-section fl_w" layout-padding>
+     <span class="filter_head" ng-click="filter_source=!filter_source" layout="row"  layout-align="space-between center"><span>Source </span><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+     <div ng-show = "filter_source" layout="column"  layout-align="start stretch" >
+       <md-checkbox>Data Lake (11,192)</md-checkbox>
+       <md-checkbox>MyQuest (4,492)</md-checkbox>
+       <md-checkbox style="margin-right:0px;">External Recruiters (553)</md-checkbox>
+       <md-checkbox>Outreach (2,419)</md-checkbox>
+       <a style="text-align: right; cursor:pointer;border-bottom: 1px dotted #d8d8d8;padding: 0 5px 0 0;width: 100%;">more</a>
+     </div>
+
+   </div>
+   <div layout="column"  layout-align="start stretch" class="filter-section fl_w" layout-padding>
+     <span class="filter_head" ng-click="filter_location=!filter_location" layout="row"  layout-align="space-between center"><span>Location</span><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+     <div ng-show = "filter_location" layout="column"  layout-align="start stretch" >
+       <md-checkbox>Alabama (2,154)</md-checkbox>
+       <md-checkbox>Alaska (54)</md-checkbox>
+       <md-checkbox>California (3,316)</md-checkbox>
+       <md-checkbox>Illinois (1,325)</md-checkbox>
+        <div layout="row"  layout-align="space-between center" class="filter-section fl_w" layout-padding>
+     <md-input-container class="md-block" style="width:75%; display: inline">
+                <label>Radius</label>
+                <input value="15" type="number" />
+              </md-input-container>
+                <a  class="md-primary md-button md-ink-ripple" md-ink-ripple="#A7A8AA" style="font-size: 13px;background-color: rgb(53, 121, 42);
+    color: white;line-height: 25px;">Go<div class="md-ripple-container"></div></a>
+    </div>
+       <a style="text-align: right; cursor:pointer;border-bottom: 1px dotted #d8d8d8;padding: 0 5px 0 0;width: 100%;">more</a>
+   
+     </div>
+   </div>
+    <div layout="column"  layout-align="start stretch" class="filter-section fl_w" layout-padding>
+     <span class="filter_head" ng-click="filter_age=!filter_age" layout="row"  layout-align="space-between center"><span>Age</span><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+     <div ng-hide="filter_age" layout="column"  layout-align="start stretch">
+     <md-checkbox>1-25 years (3,152)</md-checkbox>
+     <md-checkbox>25-50 years (6,945)</md-checkbox>
+     <md-checkbox>50-75 years (8,559)</md-checkbox>
+     <md-checkbox>Above 75 years (0)</md-checkbox>
+ 
+    
+      <div layout="row"  layout-align="start stretch">
+       <md-input-container class="md-block" style="width:100%">
+                 <label>From</label>
+                   <input>
+       </md-input-container>
+       <md-input-container class="md-block" style="width:100%">
+                 <label>To</label>
+                   <input>
+       </md-input-container>
+       <a class="md-primary  md-button md-ink-ripple " md-ink-ripple="#A7A8AA" style="font-size: 13px;background-color: rgb(53, 121, 42);color: white; min-width: 45px;margin-bottom: 0; margin-top: 12px;" >Go </a>
+      </div>
+ <!-- <a style="text-align: right; cursor:pointer;border-bottom: 1px dotted #d8d8d8;padding: 0 5px 0 0;width: 100%;">more</a> -->
+    </div>
+   </div>
+
+    <div layout="column"  layout-align="start stretch" class="filter-section fl_w" layout-padding>
+    <span class="filter_head" ng-click="gender_filter=!gender_filter" layout="row"  layout-align="space-between center"><span>Gender</span><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+     
+     <div ng-hide ="gender_filter">
+     <md-checkbox>Male(10,852)</md-checkbox>
+     <md-checkbox>Female (7,804)</md-checkbox>
+    </div>
+
+   </div>
+
+
+  </div>
+
+   </div>
+   <div class="width_100">
+     
+     <div style="position: relative;width:100%;border-bottom: 1px solid #D8D8D8;margin-bottom: 10px;">
+       <div style="
+    padding-bottom: 10px;">
+         
+         <div layout="column"   layout-align="space-between center" style="position:relative;  border-radius: 0px;">
+ 
+<!-- <h3>STRENGTH-specific analysis</h3> -->
+<div layout="column"  layout-align="start stretch" class="filter-section fl_w" layout-padding>
+     <span class="filter_head" ng-click="filter_healthstatus=!filter_healthstatus" layout="row"  layout-align="space-between center"><span>Health Status</span><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+     <div ng-show="filter_healthstatus" layout="column"  layout-align="start stretch">
+     <md-checkbox style="width:200px">Atherosclerosis</md-checkbox>
+     <md-checkbox>Coronary artery disease</md-checkbox>
+     <md-checkbox>Cerebrovascular disease</md-checkbox>
+     <md-checkbox> Aortic aneurysm</md-checkbox>
+     <a style="text-align: right; cursor:pointer;border-bottom: 1px dotted #d8d8d8;padding: 0 5px 0 0;width: 100%;">more</a>
+     </div>
+   </div>
+   <div layout="column"  layout-align="start stretch" class="filter-section fl_w" layout-padding>
+     <span class="filter_head" ng-click="filter_diagn=!filter_diagn" layout="row"  layout-align="space-between center"><span>Diagnostic or Lab Test</span><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+     <div ng-show="filter_diagn" layout="column"  layout-align="start stretch">
+     <md-checkbox style="width:200px" ng-click="showCustom($event)">HDL Cholesterol</md-checkbox>
+     <md-checkbox>LDL-Cholesterol</md-checkbox>
+     <md-checkbox>Triglycerides</md-checkbox>
+     <md-checkbox>Total cholesterol</md-checkbox>
+     <a style="text-align: right; cursor:pointer;border-bottom: 1px dotted #d8d8d8;padding: 0 5px 0 0;width: 100%;">more</a>
+     </div>
+    
+   </div>
+    <div layout="column"  layout-align="start stretch" class="filter-section fl_w" layout-padding>
+     <span class="filter_head" style="width:100%" ng-click="filter_treatment=!filter_treatment" layout="row"  layout-align="space-between center"><span>Treatment or Health Care</span><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+     <div ng-show="filter_treatment" layout="column"  layout-align="start stretch">
+     <md-checkbox style="width:200px">chemotherapy</md-checkbox>
+     <md-checkbox>angiogram</md-checkbox>
+     <md-checkbox>Immunotherapy</md-checkbox>
+     <md-checkbox>Targeted Therapy</md-checkbox>
+     <a style="text-align: right; cursor:pointer;border-bottom: 1px dotted #d8d8d8;padding: 0 5px 0 0;width: 100%;">more</a>
+     </div>
+
+
+   </div>
+
+    <div layout="column"  layout-align="start stretch" class="filter-section fl_w" layout-padding>
+     <span class="filter_head" ng-click="filter_lifestyle=!filter_lifestyle" layout="row"  layout-align="space-between center"><span>Lifestyle Choice</span><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+     <div ng-show="filter_lifestyle" layout="column"  layout-align="start stretch">
+     <md-checkbox style="width:200px">Addictive behavior</md-checkbox>
+     <md-checkbox>Bedtime</md-checkbox>
+      <md-checkbox>Exercise</md-checkbox>
+     <md-checkbox> Diet</md-checkbox>
+    <a style="text-align: right; cursor:pointer;border-bottom: 1px dotted #d8d8d8;padding: 0 5px 0 0;">more</a>
+    </div>
+   </div>
+
+ <md-button class="md-primary" ng-click="modify_radius()" style="font-size: 13px; background-color: rgb(53, 121, 42);border:1px solid rgb(53, 121, 42);line-height: 10px;color:white" >Apply filter <i class="fa fa-filter" aria-hidden="true" style="color:#FFF" ></i></md-button>
+
+
+   </div>
+       </div>
+      
+     </div>
+
+   </div>
+   
+  </div>
+  </div>
+
+<div flex="{{width}}">
+ <div layout="row" layout-align="space-between center"  style="padding: 10px 18px;margin-bottom: 2px;margin-left: 4px;
+    background-color: rgba(204, 204, 204, 0.35);">
+<div flex="10">Input Set:</div>
+<div flex="25">
+    <md-select ng-model="analysis" placeholder="Go to" class="md-no-underline goto_list" style="display: inline">
+           <md-option value="retention" selected>Retention candidates</md-option>
+          <md-option value="location">Candidates within 25mi</md-option>
+          <md-option value="patients">Candidates within 15mi</md-option>
+         
+        </md-select></div>
+        <div flex="45" class="results_count">Results: <span>{{candidate_set4_count}}</span></div>
+<div flex="20" layout="row" layout-align="space-between center" style="width:15%; ">
+ <a  class="md-primary md-button md-ink-ripple" md-ink-ripple="#A7A8AA" style="font-size: 13px;background-color: rgb(53, 121, 42);
+    color: white; " ng-click= "add_outreach =! add_outreach">Save Candidates<div class="md-ripple-container"></div></a>
+<div class="bg_white bx_shd" style="position: absolute;top: 130px;z-index: 9999;right: 25px; width: 300px;" ng-show="add_outreach">
+   <div layout="column"  layout-align="space-between center" class="filter-section fl_w">
+     <md-input-container class="md-block" style="width:75%; display: inline">
+                <label>Name</label>
+                <input type="text" />
+              </md-input-container>
+                <a  class="md-primary md-button md-ink-ripple" md-ink-ripple="#A7A8AA" style="font-size: 13px;background-color: rgb(53, 121, 42);
+    color: white;" ng-click= "add_outreach =! add_outreach">Save<div class="md-ripple-container"></div></a>
+    </div>
+
+
+</div>
+
+       </div>
+</div>
+
+<!-- patient detailed view begins -->
+
+<div class="top_identity_detail" layout="row" layout-align="space-between center" ng-show="patient_analytic_back">
+  <div>
+   <md-button ng-click="clickBackPatient()" style="float:left; color:green; font-weight:bold;"><i class="fa fa-angle-left" aria-hidden="true"></i> Back</md-button>
+   </div>
+   <!-- <div style="float:right" >
+   <md-button ><a href="" style="color:rgb(53,121,42); text-decoration: none; font-weight:bold;"><i  style="color:rgb(53,121,42);" class="fa fa-pencil" aria-hidden="true"></i></a></md-button>
+   </div> -->
+</div>
+<div class="width_100" ng-show="patient_detail_view">
+<!--  Patient Profile-->
+
+
+<div layout="row" layout-align="space-between center" class="top_identity_profile md-padding " style="" >
+   <div layout="row" flex="40"><h6><div class="divround">TA</div></h6>
+      <div layout="column" layout-align="start start" class="patientprofile" style="width: inherit;">
+
+         <div style="padding-top:10px;padding-left:20px; font-family: probold; color:#6d6d6d;font-size: 12px; "> PATIENT PROFILE </div>
+         <div class="patientprofilename">Anderson, Thomas</div>
+      </div>
+      </div>
+   
+
+
+   <div layout="row" flex="60" class="patient_top_section patient_top_section_1 temp_holder min-width" layout-align="space-between center">
+   <div class="patient_top_data" flex=10>DOB
+       
+ <p class="fontprofilepatient">05/18/1980</p>
+        
+   </div>
+   <div class="patient_top_data pat_age_width" flex=5>Age
+       
+ <p class="fontprofilepatient">36</p>
+        
+   </div>
+
+   <div class="patient_top_data" flex=10>
+      Sex<p class="fontprofilepatient">Male</p>
+         
+   </div>
+    <div class="patient_top_data" flex=10>
+      Patient ID<p class="fontprofilepatient">234A-8456</p>
+       
+   </div>
+   <div class="patient_top_data" flex=10>
+      MyQuest User<p class="fontprofilepatient">Yes</p>
+         
+   </div>
+   <div class="patient_top_data" flex=15>
+      Opt-In for Trials<p class="fontprofilepatient">Yes</p>
+         
+   </div>
+   </div>
+
+      <!-- <div>
+   <md-button ><a href="" style="color:rgb(53,121,42); text-decoration: none; font-weight:bold;"><i  style="color:rgb(53,121,42);" class="fa fa-pencil" aria-hidden="true"></i></a></md-button>
+   </div> --> 
+
+</div>
+
+
+<!-- CONTACT AND REFERENCE INFORMATION -->
+<div class="md-padding patient_detail_info">
+
+<div class="patientinformationdetail" layout="column"       layout-align="start">
+   <div class="patientinfodetail">CONTACT AND REFERENCE INFORMATION
+      <span class="trigger1" ng-click="show=!show"><i class="fa fa-chevron-down" aria-hidden="true"></i>
+      </span>
+   </div>
+
+</div>
+
+
+<!-- CONTACT AND REFERENCE INFORMATION  DETAILS - SHOW-->
+
+
+<div  ng-hide="show" class="patientinformationdetails" layout="column"       layout-align="start">
+   <div class="patientinfodetail">
+      
+
+      <div layout="row" layout-align="space-between center"  class="md-padding  br-bt">
+      <div class="contactinformation">Contact Information
+      </div>
+      <div style="margin-right: 10px;">
+      <a href="" style="color:rgb(53,121,42); text-decoration: none; font-weight:bold;"><i  style="color:rgb(53,121,42);" class="fa fa-pencil" aria-hidden="true"></i></a>
+      </div></div>
+
+
+
+
+
+      <div layout="row" layout-align="start center" class="md-padding patient_detail">
+         <div class="p-10" flex="15"><div class="primary">Primary Phone</div>
+         <div class="fontprofile">(631) 213-3421</div></div>
+        <div class="p-10" flex="10"> <div class="primary">Type</div>
+            <div class="fontprofile1">Mobile</div></div>
+        
+         <div class="p-10" flex="30"><div class="primary">Preference</div> <div class="fontprofile1">Can receive  SMS notifications</div></div>
+        
+         <div class="p-10" flex="15"><div class="primary">Secondary phone</div>  <div class="fontprofile1">(631) 213-2518</div></div>
+       
+         <div class="p-10" flex="15"><div class="primary">Type</div> <div class="fontprofile1">Work</div></div>
+         
+         <div class="p-10" flex="15"><div class="primary">Extension</div>
+         <div class="fontprofile1">231</div>    </div>
+          
+      </div>
+     
+      <div layout="row" layout-align="start center" class="md-padding patient_detail">
+         <div class="p-10" flex="25"><div class="primary">Email</div>
+       <div class="fontprofile">thomas.anderson@gmail.com</div></div>
+        <div class="p-10" flex="45"> <div class="primary">Preference</div>
+
+         <div class="fontprofile1">Patient's preferred form of contact, Can receive notifications
+       </div></div>
+       <div class="p-10 " flex="30">
+         <div class="primary">Address</div>
+   <div class="fontprofile">181 Augusta Dr., Medford, NY 11763</div>
+       </div>
+      
+          
+      </div>
+  
+ <hr>
+      <div layout="row" layout-align="space-between center"  class="md-padding  br-bt">
+      <div class="contactinformation">Reference Information
+      </div>
+      </div>
+   <div layout="row" layout-align="start center" class="md-padding patient_detail">
+         <div class="p-10" flex="25"><div class="primary">Lab Reference ID</div>
+          <div class="fontprofile">A49201</div></div>
+    
+        <div class="p-10" flex="45"> <div class="primary">Health ID</div>
+        <div class="fontprofile">Mobile</div></div>
+         <div class="p-10" flex="30"><div class="primary">Photo ID image</div>
+          <div class="fontprofile">None
+      </div>
+         
+   </div></div>
+ 
+   
+    </div>
+</div><br>
+<div layout="column" layout-align="start" class="patientinformationdetail ">
+<div class="patientinfodetail">MEDICAL HISTORY
+<span class="trigger1" ng-click="show3=!show3"><i class="fa fa-chevron-down" aria-hidden="true"></i></span></div>
+</div>
+<div  ng-show="show3" class="eligibility_criteria_details"  layout="column" layout-align="start">
+
+<!-- inside question answered toggle -->
+
+<!-- inside DDX report toggle -->
+
+<!-- <div layout="column" layout-align="start" class="question_answered  p-15">
+<div class="question_answered_text">Quest Data
+<span class="trigger1"ng-click="showd=!showd"><i style="color: rgb(53,121,42)!important;" class="fa fa-chevron-down" aria-hidden="true"></i></span></div>
+</div> -->
+<div ng-hide="showd" class="patientinfodetail p-15">
+   
+   <div class="contactinformation p-15">Laboratory History<a href="" style="color:rgb(53,121,42); text-decoration: none; font-weight:bold; float: right; margin-right:10px; "><i  style="color:rgb(53,121,42);" class="fa fa-pencil" aria-hidden="true"></i></a></div>
+  
+   <!-- <div class="hr2"><hr></div> -->
+   <div layout="row"       layout-align="start">
+    <div style="padding-left: 10px !important;padding-top: 10px; width: 100%">
+
+   <table style="border-style:5px solid green; width: 98% !important;">
+   <tr>
+      <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Laboratory History</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">CPT Code 
+</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Date of First Known Occurrence Within the Lookback Period </td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Date of Most Recent Known Occurrence  </td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Number of Known Occurrences Within the Lookback Period </td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px; width: 20%">Clinician and/or Facility Associated with the Most Recent Known Occurrence </td>
+   
+   </tr>
+
+    <tr>
+    <td class="pos_relative"><span ng-click ="lipid_panel=!lipid_panel" style="border-bottom: 1px dotted #000; cursor: help">Lipid Panel </span>
+
+ <div style="position: absolute;
+    top: 50px;
+    padding: 20px;
+    background: white;
+    box-shadow: -1px 0px 13px #c0c0c0;" ng-show="lipid_panel">
+<span ng-click ="lipid_panel=!lipid_panel" class="pos_abs close_pop"><i class="fa fa-times" aria-hidden="true"></i></span>
+   <table style="width: 800px !important;z-index: 1" class="pos_relative">
+   
+   <tr>
+      <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;width: 12%">Date of Test</td>
+      <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;width: 16%">Total cholesterol</td>
+      <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px; width: 16%">HDL Cholesterol</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;width: 16%">LDL-Cholesterol 
+</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;width: 16%">Triglycerides</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;width: 20%">Clinician and/or Facility Associated with the Tests</td>
+   </tr>
+    <tr>
+      <td>05/05/2015</td>
+      <td>176 mg/dL</td>
+      <td>35 mg/dL </td>
+      <td>85 mg/dL</td>
+      <td>280 mg/dL</td>
+      <td>Quest Diagnostics - Medford PSC</td>
+   </tr>
+
+   
+   </table>
+   </div>
+
+
+
+
+    </td>
+    <td >80061</td>
+    <td >04/28/2015</td>
+    <td >05/05/2015 </td>
+    <td >2</td>
+    <td >Quest Diagnostics - Medford PSC</td>
+   
+   </tr>
+    <tr>
+      <td >Chemistry Screen Panel </td>
+    <td >80053</td>
+    <td >05/20/2015</td>
+    <td >05/20/2015 </td>
+    <td >3</td>
+    <td >Franklin Hospital</td>
+   
+   </tr>
+  <tr>
+      <td >Complete Blood Count (Includes Differential and Platelets)</td>
+    <td >85025</td>
+    <td >05/20/2015</td>
+    <td >05/20/2015</td>
+    <td >1</td>
+    <td >Franklin Hospital</td>
+   
+   </tr>
+   <tr>
+      <td >Prothrombin Time with INR </td>
+    <td >85610</td>
+    <td >05/20/2015</td>
+    <td >05/20/2015</td>
+    <td >2</td>
+    <td >Baltimore General Hospital</td>  
+   
+   </tr>
+   </table>
+   </div>
+
+   </div><br><hr>  
+   <div class="contactinformation p-15">Diagnosis History</div>
+   <div layout="row"       layout-align="start">
+    <div style="padding-left: 10px !important;padding-top: 10px;">
+
+   <table style="border-style:5px solid green; width: 98%;">
+   <tr>
+      <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Diagnosis History</td>
+      <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Source</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">ICD-9 or ICD-10  </td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Date of First Known Occurrence Within the Lookback Period </td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Date of Most Recent Known Occurrence  </td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Number of Known Occurrences Within the Lookback Period </td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Clinician and/or Facility Associated with the Most Recent Known Occurrence </td>
+
+   
+   </tr>
+    <tr>
+      <td >Atherosclerosis</td>
+      <td >Data Diagnostics Report</td>
+    <td >125.10</td>
+    <td>10/01/2014</td>
+    <td >11/01/2014</td>
+    <td >1</td>
+    <td >Franklin Hospital</td> 
+   
+   </tr>
+  <tr>
+      <td >Spinal Stenosis  (probability 80%)</td>
+      <td >ScriptCheck</td>
+    <td >V10.3</td>
+
+    <td>09/29/2014</td>
+    <td >09/30/2014</td>
+    <td >1</td>
+    <td >Eduardo Fuentes, DO</td> 
+   </tr>
+   </table>
+   </div>
+   </div><br><hr>  
+    <div class="contactinformation p-15">Medication History</div>
+   <div layout="row"       layout-align="start">
+    <div style="padding-left: 10px !important;padding-top: 10px;">
+
+   <table style="border-style:5px solid green; width: 98%;">
+   <tr>
+      <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Medication History</td>
+      <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Source</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">NDC Code  </td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Date of Most Recent Known Fill</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px; width: 20%;">Number of Known FIlls Within the Lookback Period</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;width: 20%;">Clinician and/or Facility Associated with the Most Recent Known Fill </td>
+
+   
+   </tr>
+      <tr>
+      <td >Simvastatin</td>
+    <td >ScriptCheck</td>
+    <td >00378-5403</td>
+    <td>06/22/2015</td>
+    <td >7</td>
+    <td >CTR Pharmacy</td>
+    
+   
+   </tr>
+    <tr>
+      <td >Albuterol Inhaler</td>
+    <td >Data Diagnostics Report</td>
+    <td >53002-0902</td>
+    <td>06/15/2015</td>
+    <td >4</td>
+    <td >CTR Pharmacy</td>
+    
+   
+   </tr>
+  <tr>
+      <td >Fluticasone Proprionate</td>
+    <td >ScriptCheck</td>
+    <td >53002-0902</td>
+    <td>06/15/2015</td>
+    <td >2</td>
+    <td >Main Street Pharmacy</td>
+ 
+   
+   </tr>
+   <tr>
+    <td >Percocet 325/5</td>
+    <td >ScriptCheck</td>
+    <td >53002-0902</td>
+    <td>02/11/2015</td>
+    <td >5</td>
+    <td >Hank’s Drugs</td>
+
+   
+   </tr>
+   <tr>
+    <td >Percocet 325/5</td>
+    <td >Data Diagnostics Report</td>
+    <td >53002-0902</td>
+    <td>03/20/2015</td>
+    <td >5</td>
+    <td >CTR Pharmacy </td>
+
+   
+   </tr>
+   <tr>
+    <td >Percocet 325/5</td>
+    <td >ScriptCheck</td>
+    <td >53002-0902</td>
+    <td>03/10/2015</td>
+    <td >3</td>
+    <td >Main Street Pharmacy</td>
+
+   
+   </tr>
+   </table>
+   </div>
+   </div><br><hr>
+   <div class="contactinformation p-15">Surgical Procedure History</div>
+   <div layout="row"       layout-align="start">
+    <div style="padding-left: 10px !important;padding-top: 10px; width: 100%">
+
+   <table style="border-style:5px solid green; width: 98% !important;">
+   <tr>
+      <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px; width: 50%">Known Surgical Procedure History </td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">CPT Code 
+</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Date</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Clinician and/or Facility  </td>
+   
+   </tr>
+    <tr>
+      <td >Laminectomy, facetectomy and foraminotomy (unilateral or bilateral with decompression of spinal cord, cauda equine and/or nerve root[s], [eg. Spinal or lateral recess stenosis]), single vertebral segment; lumbar</td>
+    <td >63047</td>
+    <td >05/20/2015</td>
+    <td >Franklin Hospital</td>
+   
+    
+   
+   </tr>
+  <tr>
+      <td >Valvotomy (Commisurotomy), mitral valve, closed heart</td>
+    <td >33420</td>
+    <td >11/01/2014</td>
+    <td >Franklin Hospital</td>
+   
+   
+   
+   </tr>
+   
+   </table>
+   </div>
+
+   </div><br><hr>
+   <div class="contactinformation p-15">Vaccination History</div>
+   <div layout="row"       layout-align="start">
+    <div style="padding-left: 10px !important;padding-top: 10px; width: 100%">
+
+   <table style="border-style:5px solid green; width: 98% !important;">
+   <tr>
+      <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px; width: 50%">Known Vaccination History</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">CPT Code 
+</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Date</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Clinician and/or Facility  </td>
+   
+   </tr>
+    <tr>
+      <td >Afluria (IIV3) </td>
+    <td >90656</td>
+    <td >10/01/2014</td>
+    <td >Thomas Boyer, MD</td>   
+   </tr>
+
+   
+   </table>
+   </div>
+
+   </div><br><hr>
+   <div class="contactinformation p-15">Radiological Study History </div>
+   <div layout="row"       layout-align="start">
+    <div style="padding-left: 10px !important;padding-top: 10px; width: 100%">
+
+   <table style="border-style:5px solid green; width: 98% !important;">
+   <tr>
+      <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px; width: 50%">Known Radiological Study History </td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">CPT Code 
+</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Date</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Clinician and/or Facility  </td>
+   
+   </tr>
+    <tr>
+      <td >Magnetic resonance imaging, spinal canal and contents, lumbar; without contrast material </td>
+    <td >72148</td>
+    <td >05/10/2015</td>
+    <td >Franklin Hospital</td>   
+   </tr>
+   <tr>
+      <td >Chest X-Ray 2-view</td>
+    <td >71020</td>
+    <td >05/10/2015</td>
+    <td >Franklin Hospital</td>   
+   </tr>
+
+   
+   </table>
+   </div>
+
+   </div><br><hr>
+   <div class="contactinformation p-15">Clinician Visit History</div>
+   <div layout="row"       layout-align="start">
+    <div style="padding-left: 10px !important;padding-top: 10px;">
+
+   <table style="border-style:5px solid green; width: 98%;">
+   <tr>
+      <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Known Clinician Visit History</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Date of First Known Encounter Within the Lookback Period </td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Date of Most Recent Known Encounter</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px; ">Number of Known FIlls Within the Lookback Period</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Clinician and/or Facility Associated with the Most Recent Known Fill </td>
+
+   
+   </tr>
+    <tr>
+      <td >Office or other outpatient visit for the evaluation and management of an established patient</td>
+    <td >06/12/2015</td>
+    <td>08/25/2015</td>
+    <td >2</td>
+    <td >Anna Schultz, MD</td>
+    
+   
+   </tr>
+  <tr>
+      <td >Office or other outpatient visit for the evaluation and management of an established patient</td>
+    <td >10/01/2014</td>
+    <td>07/12/2015</td>
+    <td>4</td>
+    <td>Thomas Boyer, MD</td>
+ 
+   
+   </tr>
+   <tr>
+    <td >Office or other outpatient visit for the evaluation and management of an established patient</td>
+    <td >09/29/2014</td>
+    <td>07/12/2015</td>
+    <td >5</td>
+    <td >Eduardo Fuentes, DO</td>
+
+   
+   </tr>
+   </table>
+   </div>
+   </div><br><hr>
+   <div class="contactinformation p-15">Cardiac Study History </div>
+   <div layout="row"       layout-align="start">
+    <div style="padding-left: 10px !important;padding-top: 10px;">
+
+   <table style="border-style:5px solid green; width: 98%; ">
+   <tr>
+      <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px; width: 50%">Known Cardiac Study History </td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">CPT Code</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Date of Most Recent Known Study</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px; ">Number of Known Study Within the Lookback Period</td>
+    <td style="color:rgba(0, 0, 0, 0.60) !important;font-size:13px;">Clinician and/or Facility Associated with the Most Recent Known Fill </td>
+
+   
+   </tr>
+    <tr>
+      <td >Echocardiography, transthoracic, real-time with image documentation (2D), includes M-mode recording, when performed, complete, with spectral Doppler echocardiography, and with color flow Doppler echocardiography</td>
+    <td >93306  </td>
+    <td>05/15/2015</td>
+    <td >2</td>
+    <td >Franklin Hospital</td>
+    
+   </tr>
+   </table>
+   </div>
+   </div><br><hr>
+   <md-button  style="float:left; color:green;font-size:13px; font-weight:bold;" > For more details download patient report here</md-button>
+    </div>
+
+</div>
+
+    
+
+<br>
+
+<div layout="column" layout-align="start" class="patientinformationdetail">
+<div class="patientinfodetail">QUESTIONNAIRE
+<span class="trigger1" ng-click="show1=!show1"><i class="fa fa-chevron-down" aria-hidden="true"></i></span></div>
+</div>
+<div ng-show="show1" class="eligibility_criteria_details p-15"  layout="column" layout-align="start ">
+<div class="patientinfodetailnopadding" style="color:#000;">
+   
+No questions answered by the Candidate yet.
+    </div>
+    
+
+</div>
+<br>
+
+
+<div layout="column" layout-align="start" class="patientinformationdetail">
+<div class="patientinfodetail">OUTREACH HISTORY
+<span class="trigger1" ng-click="show5=!show5"><i class="fa fa-chevron-down" aria-hidden="true"></i></span></div>
+</div>
+<div  ng-show="show5" class="eligibility_criteria_details p-15"  layout="column" layout-align="start">
+  <div class="patientinfodetail">
+     <div layout="row" layout-align="space-between center">
+     <div class="contactinformation">Campaign History</div>
+     <div>
+     <!-- <a href="" style="color:rgb(53,121,42); text-decoration: none; font-weight:bold; padding-top: 15px; ">
+      <i  style="color:rgb(53,121,42);" class="fa fa-pencil" aria-hidden="true"></i>
+      </a> -->
+      <md-button  style="color:white;background-color:rgb(53,121,42)!important;font-size:12px; font-weight:bold;"> Add to Campaign</md-button>
+      
+      </div>
+    </div>
+     <div>
+       No Campaigns found
+     </div>
+     
+   
+    <div layout="row"       layout-align="space-between center">
+     <div class="contactinformation">Social Outreach History</div>
+     <div style="padding-top: 10px;"><md-button  style="color:white;background-color:rgb(53,121,42)!important;font-size:12px; font-weight:bold;"> New Post</md-button></div>
+    </div>
+     <div>
+       No Outreach found
+     </div>
+    
+  </div>
+</div>
+<br>
+
+<!-- <div layout="column" layout-align="start" class="patientinformationdetail">
+<div class="patientinfodetail">PREVIOUS TRIALS
+<span class="trigger1" ng-click="prev_trials=!prev_trials"><i class="fa fa-chevron-down" aria-hidden="true"></i></span></div>
+</div>
+<div  ng-show="prev_trials" class="eligibility_criteria_details p-15"  layout="column" layout-align="start">
+  <div class="patientinfodetail">
+     <div layout="row" layout-align="space-between center">
+   <div class="p-15 prev_trials_style" style="padding-top: 0 !important">
+   <div class="contactinformation">Efficacy and Safety of Belimumab in Patients With Active Lupus Nephritis</div>
+      <div class="contactinformation">Clinical Trial on the Efficacy and Safety of Sirolimus-Eluting Stent (MiStent® System)</div>
+   <div class="contactinformation" style="margin-bottom:20px; ">AZD9291 Versus Gefitinib or Erlotinib in Patients With Locally Advanced or Metastatic Non-small Cell Lung Cancer</div>
+  </div>
+    </div>
+     
+    
+  </div>
+</div> -->
+
+
+
+</div>
+</div>
+<!-- patient detailed view ends -->
+
+
+
+<div class="md-padding user_list" ng-hide="patient_list">
+<md-table-container >
+  <table md-table md-row-select multiple md-progress="promise">
+    <thead md-head md-order="test" >
+      <tr md-row>
+        <th md-column md-order-by="nameToLower"><span>Name</span></th>
+         <th md-column ><span>Age</span></th>
+          <th md-column ><span>Gender</span></th>
+          <th md-column ><span>Source</span></th>
+          <th md-column ><span>Trial Site</span></th>
+          <th md-column ><span>Patient Location</span></th>
+          <th md-column ><span>Edit/Delete</span></th>
+     <!-- >    <th md-column md-numeric md-order-by="calories.value"><span>Age</span></th>
+        <th md-column md-numeric>Gender</th>
+        <th md-column md-numeric>Source</th>
+        <th md-column md-numeric>Trial Site</th>
+        <th md-column md-numeric>Patient Location</th>
+       <th md-column md-numeric>Edit/Delete</th> 
+       <th md-column md-numeric>Edit/Delete</th> -->
+      </tr>
+    </thead>
+    <tbody md-body>
+
+      <tr md-row md-select="patientanalytics" md-select-id="name" md-auto-select ng-repeat="patientanalytics in patient_analytic">
+        <td md-cell><span ng-click="clickPatientdetail();" style="text-decoration: none; cursor: pointer;  color: rgb(34,103,42);">{{patientanalytics.name}}</span></td>
+        <td md-cell>{{patientanalytics.age.value}}</td>
+        <td md-cell>{{patientanalytics.gender}}</td>
+        <td md-cell>{{patientanalytics.source}}</td>
+        <td md-cell>{{patientanalytics.trialSite}}</td>
+        <td md-cell>{{patientanalytics.patientLocation}}</td>
+        <td md-cell class="edit-sec"><a href=""><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+        <!-- <td md-cell>{{dessert.iron.value}}{{dessert.iron.unit}}</td> -->
+      </tr>
+
+    </tbody>
+  </table>
+</md-table-container>
+
+<md-table-pagination md-limit="query.limit"  md-page="query.page" md-total="{{identifyData.count}}" md-on-paginate="getDesserts" md-page-select></md-table-pagination>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+      </div>
+
+
+
+
+
+
+        
+      </md-dialog-content>
+    </md-dialog>
+
+
+
+
+

@@ -1,0 +1,823 @@
+<!-- <link rel="stylesheet" href="../assets/css/patient.css"> -->
+<div ng-controller="outreach_questionCtrl as demo">
+    <div  layout="row" layout-align="space-between center" id="div1" class="md-padding" style="border-bottom: 1px solid rgba(204, 204, 204, 0.82);background-color: white">
+        <h2 class="md-padding"> Trial Questions</h2>
+       <!--  <md-fab-speed-dial ng-hide="demo.hidden" md-direction="left" md-open="demo.isOpen"
+            class="md-scale md-fab-top-right" ng-class="{ 'md-hover-full': demo.hover }"
+            ng-mouseenter="demo.isOpen=true" ng-mouseleave="demo.isOpen=false" >
+            <md-fab-trigger>
+                <md-button aria-label="menu" class="md-fab md-warn">
+                    <md-tooltip md-direction="top" md-visible="tooltipVisible">Add Questionire</md-tooltip>
+                    <i class="fa fa-plus fa-lg " style="color: white;line-height: 30px;aria-hidden="true"></i>
+                </md-button>
+            </md-fab-trigger>
+            <md-fab-actions>
+                <div ng-repeat="item in demo.items">
+                    <md-button  class="md-fab md-raised md-mini"
+                        ng-click="add_question()">
+                        <md-tooltip md-direction="{{item.direction}}" md-visible="tooltipVisible"
+                            md-autohide="false">
+                            {{item.name}}
+                        </md-tooltip>
+                        <i class="{{item.icon}}" aria-label="{{item.name}}"></i>
+                    </md-button>
+                </div>
+            </md-fab-actions>
+        </md-fab-speed-dial> -->
+    </div>
+    <div layout="row"  layout-align="space-between center"  style="background-color: #ECECEC;padding: 0 16px">
+      <md-button back-button style="float:left; color:green; font-weight:bold;"><i class="fa fa-angle-left" aria-hidden="true"></i> Back</md-button>
+    </div>
+    <div class=" md-padding" ng-scope>
+        <div  layout="column" layout-sm="column" class="" layout-xs="column"  >
+            <div>
+                <form name="trial_qn_form" class="trial_qn_form">
+                    <div layout="column" layout-align="space-between center" class="fl_w">
+                        <div class="bg_white fl_w bx_shd md-padding">
+                            <div>
+                                <md-input-container class="md-block form_title" flex-gt-sm>
+                                    <label>Campaign Title</label>
+                                    <input ng-model="form_title" >
+                                </md-input-container>
+                            </div>
+                            <div>
+                                <md-input-container class="md-block form_descrip" flex-gt-sm>
+                                    <label>Description</label>
+                                    <textarea ng-model="quest_des"></textarea>
+                                </md-input-container>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="bg_white fl_w bx_shd" layout="row" layout-align="space-between stretch">
+
+                            <div class="q_head">
+                              <h2 >Q1</h2>
+                              </div>
+                            
+                           <div  layout="column" layout-align="space-between stretch" class="fl_w qst">
+                                  <md-input-container class="md-block p-x-10">
+                                      <input type="text"  value="Please confirm your age"/>
+                                  </md-input-container>
+                                  <md-input-container class="md-block p-x-10">
+                                      <md-select ng-model="user.state">
+                                          <md-option value="17_below">17 or below </md-option>
+                                          <md-option value="18">18 </md-option>
+                                          <md-option value="19">19 </md-option>
+                                          <md-option value="20">20 </md-option>
+                                          <md-option value="21" selected>21 </md-option>
+                                          <md-option value="22">22 </md-option>
+                                          <md-option value="23">23 </md-option>
+                                          <md-option value="24">24 </md-option>
+                                          <md-option value="25">25 </md-option>
+                                          <md-option value="26">26 </md-option>
+                                          <md-option value="27">27 </md-option>
+                                          <md-option value="28">28 </md-option>
+                                          <md-option value="29">29 </md-option>
+                                          <md-option value="30">30 </md-option>
+                                          <md-option value="31">31 </md-option>
+                                          <md-option value="32">32 </md-option>
+                                          <md-option value="33">33 </md-option>
+                                          <md-option value="34">34 </md-option>
+                                          <md-option value="35">35 </md-option>
+                                          <md-option value="36">36 </md-option>
+                                          <md-option value="37">37 </md-option>
+                                          <md-option value="38">38 </md-option>
+                                          <md-option value="39">39 </md-option>
+                                          <md-option value="40">40 </md-option>
+                                          <md-option value="41">41 </md-option>
+                                          <md-option value="42">42 </md-option>
+                                          <md-option value="43">43 </md-option>
+                                          <md-option value="44">44 </md-option>
+                                          <md-option value="45">45 </md-option>
+                                          <md-option value="46">46 </md-option>
+                                          <md-option value="47">47 </md-option>
+                                          <md-option value="48">48 </md-option>
+                                          <md-option value="49">49 </md-option>
+                                          <md-option value="50">50 </md-option>
+                                          <md-option value="51">51 </md-option>
+                                          <md-option value="52">52 </md-option>
+                                          <md-option value="53">53 </md-option>
+                                          <md-option value="54">54 </md-option>
+                                          <md-option value="55">55 </md-option>
+                                          <md-option value="56">56 </md-option>
+                                          <md-option value="57">57 </md-option>
+                                          <md-option value="58">58 </md-option>
+                                          <md-option value="59">59 </md-option>
+                                          <md-option value="60">60 </md-option>
+                                          <md-option value="61">61 </md-option>
+                                          <md-option value="62">62 </md-option>
+                                          <md-option value="63">63 </md-option>
+                                          <md-option value="64">64 </md-option>
+                                          <md-option value="65">65 </md-option>
+                                          <md-option value="66">66 </md-option>
+                                          <md-option value="67">67 </md-option>
+                                          <md-option value="68">68 </md-option>
+                                          <md-option value="69">69 </md-option>
+                                          <md-option value="70">70 </md-option>
+                                          <md-option value="71">71 </md-option>
+                                          <md-option value="72">72 </md-option>
+                                          <md-option value="73">73 </md-option>
+                                          <md-option value="74">74 </md-option>
+                                          <md-option value="75">75 </md-option>
+                                          <md-option value="76">76 </md-option>
+                                          <md-option value="77">77 </md-option>
+                                          <md-option value="78">78 </md-option>
+                                          <md-option value="79">79 </md-option>
+                                          <md-option value="80">80 </md-option>
+                                          <md-option value="81">81 </md-option>
+                                          <md-option value="82">82 </md-option>
+                                          <md-option value="83">83 </md-option>
+                                          <md-option value="84">84 </md-option>
+                                          <md-option value="85">85 </md-option>
+                                          <md-option value="86">86 </md-option>
+                                          <md-option value="87">87 </md-option>
+                                          <md-option value="88">88 </md-option>
+                                          <md-option value="89">89 </md-option>
+                                          <md-option value="90">90 </md-option>
+                                          <md-option value="91">91 </md-option>
+                                          <md-option value="92">92 </md-option>
+                                          <md-option value="93">93 </md-option>
+                                          <md-option value="94">94 </md-option>
+                                          <md-option value="95">95 </md-option>
+                                          <md-option value="96">96 </md-option>
+                                          <md-option value="97">97 </md-option>
+                                          <md-option value="98">98 </md-option>
+                                          <md-option value="99">99 </md-option>
+                                          <md-option value="100">100 </md-option>
+                                      </md-select>
+                                  </md-input-container>
+                            </div>
+                            <div layout="column" layout-align="start start"  style="width:20%" class="md-padding">
+
+<div layout="row" layout-align="center start"><h5>Inclusion Criteria <i class="fa fa-cog p-l-10" aria-hidden="true"></i></h5> </div>
+<h5 class="no_und">Demographics | Age</h5>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="bg_white fl_w bx_shd" layout="row" layout-align="space-between stretch">
+
+                           <div class="q_head">
+                              <h2 >Q2</h2>
+                           </div>
+
+
+                      <div  layout="column" layout-align="space-between stretch" class="fl_w qst">
+                            <md-input-container class="md-block  p-x-10" >
+                                
+                                 <input type="text" value="Please confirm that you are taking a statin drug such as simvastatin (Zocor), atorvastatin (Lipitor), rosuvastatin (Crestor), or other statin:">
+                             </md-input-container>
+                              
+                               <md-input-container class="md-block  p-x-10" >
+                                <md-radio-group ng-model="q2">
+                                    <md-radio-button value="yes" class="md-primary">Yes, I Confirm</md-radio-button>
+                                    <md-radio-button value="no" class="md-primary"> No, I Do Not </md-radio-button>
+                                    <md-radio-button value="None" class="md-primary"> I Don’t Know </md-radio-button>
+                                </md-radio-group>
+                            </md-input-container>
+                            </div>
+
+                              <div layout="column" layout-align="start start"  style="width:20%" class="md-padding">
+
+<div layout="row" layout-align="center start"><h5>Inclusion Criteria <i class="fa fa-cog p-l-10" aria-hidden="true"></i></h5> </div>
+<h5 class="no_und">Treatment or healthcare | Drug</h5>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="bg_white fl_w bx_shd" layout="row" layout-align="space-between stretch">
+
+                         <div class="q_head">
+                              <h2 >Q3</h2>
+                           </div>
+                             <div  layout="column" layout-align="space-between stretch" class="fl_w qst">
+                            <md-input-container class="md-block p-x-10">
+                             <input type="text" value="Please confirm that your HDL (“good”) cholesterol is lower than normal:">
+                              
+                               </md-input-container>
+                                <md-input-container class="md-block p-x-10" >
+                                <md-radio-group ng-model="hdl">
+                                    <md-radio-button value="42" class="md-primary">Yes, I Confirm</md-radio-button>
+                                    <md-radio-button value="47" class="md-primary"> No, I Do Not </md-radio-button>
+                                    <md-radio-button value="90" class="md-primary"> I Don’t Know </md-radio-button>
+                                </md-radio-group>
+                            </md-input-container>
+                            </div>
+
+                               <div layout="column" layout-align="start start"  style="width:20%" class="md-padding">
+
+<div layout="row" layout-align="center start"><h5>Inclusion Criteria <i class="fa fa-cog p-l-10" aria-hidden="true"></i></h5> </div>
+<h5 class="no_und">Diagnostic or Lab Test | Lab Test</h5>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="bg_white fl_w bx_shd" layout="row" layout-align="space-between stretch">
+
+                        <div class="q_head">
+                              <h2 >Q4</h2>
+                           </div>
+                            <div  layout="column" layout-align="space-between stretch" class="fl_w qst">
+                           <md-input-container class="md-block p-x-10">
+                                 <input type="text" value="Please confirm that you have a history of heart problems such as atherosclerosis, heart attack, stroke, or have diabetes:">
+                                
+                           </md-input-container>
+                           <md-input-container class="md-block p-x-10">
+                                <md-radio-group ng-model="history">
+                                    <md-radio-button value="yes" class="md-primary">Yes, I Confirm</md-radio-button>
+                                    <md-radio-button value="no" class="md-primary">No, I Do Not</md-radio-button>
+                                    <md-radio-button value="maybe" class="md-primary">I Don’t Know</md-radio-button>
+                                </md-radio-group>
+                            </md-input-container>
+                            </div>
+
+                            <div layout="column" layout-align="start start"  style="width:20%" class="md-padding">
+
+<div layout="row" layout-align="center start"><h5>Inclusion Criteria <i class="fa fa-cog p-l-10" aria-hidden="true"></i></h5> </div>
+<h5 class="no_und">Diagnostic or Lab Test | Lab Test</h5>
+                            </div>
+                        </div><br ng-show="q_6">
+               <div class="bg_white fl_w bx_shd" layout="column" layout-align="space-between stretch" ng-show="q_6">
+                          <div layout="row" layout-align="space-between stretch"><div class="q_head">
+                              <h2 >Q5</h2>
+                           </div>
+                             <div  layout="column" layout-align="space-between stretch" class="fl_w qst">
+                             
+                           <md-input-container class="md-block p-x-10">
+                            <input type="text" value="Are you allergic to Omega-3 carboxylic acids, Omega-3 fatty acids, Omega-3-acid ethyl esters?">
+                            
+                           </md-input-container>
+                           <md-input-container class="md-block p-x-10" layout="row" layout-align="space-between center">
+                                <md-checkbox  ng-model="inc_10=true">
+                                  Omega-3 carboxylic acids
+                                </md-checkbox>
+                                 <md-checkbox  ng-model="inc_101=true">
+                                  Omega-3 fatty acids
+                                </md-checkbox>
+                                  <md-checkbox  ng-model="inc_102=true">
+                                  Omega-3-acid ethyl esters
+                                </md-checkbox>
+                               
+                                  <md-checkbox  ng-model="inc_13" ng-show="view_add_option">
+                                   Corn oil
+                                  </md-checkbox>
+                             
+                                
+                            </md-input-container>
+                          <div layout="row" layout-align="space-between center" ng-show="add_option" >
+                            <md-input-container class="md-block form_descrip " flex-gt-sm  >
+                                   <input type="text" ng-model="new_option" placeholder="New option">
+                                  
+                            </md-input-container>
+                             <md-button   class="md-primary md-raised" ng-click="view_add_option=!view_add_option;add_option=!add_option" >
+                             Save option
+                            </md-button>
+
+                            </div>
+                            </div>
+
+                             <div layout="column" layout-align="start center"  style="width:20%" class="md-padding">
+
+<div  layout="row" layout-align="center start"><h5>Inclusion Criteria <i class="fa fa-cog p-l-10" aria-hidden="true"></i></h5> </div>
+  <h5 style="cursor: pointer;margin-right: 10px;  border-bottom: none; text-align: left;" ng-click="show_qn2=!show_qn2"><i class="fa fa-plus" aria-hidden="true"></i> &nbsp;Add more question</h5> <h5 style="display:inline; margin-left:10px; cursor:pointer" ng-click="add_option=!add_option"><i class="fa fa-plus" aria-hidden="true"></i> Add new option</h5>
+                            </div></div>
+<div class="bg_white md-padding" ng-show="show_qn2">
+                            <div layout-gt-sm="row">
+                                <md-input-container flex class="md-block form_descrip" flex-gt-sm>
+                                    <label>Question</label>
+                                    <input ng-model="ng_question">
+                                </md-input-container>
+                                <md-select ng-model="selectinput" class="inp_ctrl_selector" style="min-width: 200px;">
+                                    <md-option value="sel" selected> Select input </md-option>
+                                    <md-option value="choice" ng-click="show_radio_func()"  class="opt_height" ><i class="inp_fa fa fa-circle-o fa-fw"></i> choice </md-option>
+                                    <md-option value="check" ng-click="show_check_func()"  class="opt_height"> <i class="inp_fa fa fa-square-o fa-fw"></i> Checkbox</md-option>
+                                    <md-option value="dropdown" ng-click="show_drop_func()" class="opt_height"> <i class="inp_fa fa fa-caret-down fa-fw"></i> dropdown</md-option>
+                                    <md-option value="date" ng-click="show_date_func()" class="opt_height"> <i class="inp_fa fa fa-calendar fa-fw"></i> Date</md-option>
+                                    <md-option value="textbox" ng-click="show_textbox_func()" class="opt_height"> <i class="inp_fa fa fa-window-minimize fa-fw"></i> Short answer</md-option>
+                                    <md-option value="textarea" ng-click="show_textarea_func()" class="opt_height"> <i class="inp_fa fa fa-bars fa-fw"></i> Paragraph</md-option>
+                                </md-select>
+                            </div>
+                            <!-- Radio -->
+                            <div ng-show="show_radio_btn">
+                                <md-content layout-padding >
+                                    <div layout-gt-sm="row">
+                                       
+                                        <md-input-container class="md-block form_descrip" flex-gt-sm>
+                                            <label>Option1</label>
+                                            <input ng-model="rad_opt1"/>
+                                        </md-input-container>
+                                    </div>
+                                </md-content>
+                                 <div layout="row" layout-align="space-between center">
+                                <md-content layout-padding style="width:90%">
+                                    <div layout-gt-sm="row">
+                                     
+                                        <md-input-container class="md-block form_descrip" flex-gt-sm>
+                                            <label>Option2</label>
+                                            <input ng-model="rad_opt2">
+                                        </md-input-container>
+                                    </div>
+                                </md-content>
+                               <md-content layout-padding  style="width:10%">
+                                    <div layout-gt-sm="row">
+                                        <label class="blue_color">+ Add new</label>
+                                        
+                                    </div>
+                                </md-content>
+                                </div>
+                            </div>
+                            <!-- Checkbox -->
+                            <div ng-show="show_checkbox">
+                                <md-content layout-padding >
+                                    <div layout-gt-sm="row">
+                                        
+                                        <md-input-container class="md-block form_descrip" flex-gt-sm>
+                                            <label>Check option1</label>
+                                            <input ng-model="form_descrip_ch1">
+                                        </md-input-container>
+                                    </div>
+                                </md-content>
+                               <div layout="row" layout-align="space-between center">
+                                <md-content layout-padding style="width:90%">
+                                    <div layout-gt-sm="row">
+                                       
+                                        <md-input-container class="md-block form_descrip" flex-gt-sm>
+                                            <label>Check Option2</label>
+                                            <input ng-model="form_descrip_ch2">
+                                        </md-input-container>
+                                    </div>
+                                </md-content>
+                                <md-content layout-padding  style="width:10%">
+                                    <div layout-gt-sm="row">
+                                        <label class="blue_color">+ Add new</label>
+                                       
+                                    </div>
+                                </md-content>
+                                </div>
+                            </div>
+                            <!-- Dropdown -->
+                            <div ng-show="show_dropdown" >
+                                <md-content layout-padding >
+                                    <div layout-gt-sm="row">
+                                        <md-input-container class="md-block form_descrip" flex-gt-sm>
+                                            <label> Dropdown option1</label>
+                                            <input ng-model="form_descrip_d1">
+                                        </md-input-container>
+                                    </div>
+                                </md-content>
+                                <div layout="row" layout-align="space-between center">
+                                <md-content layout-padding style="width:90%">
+                                    <div layout-gt-sm="row">
+                                        <md-input-container class="md-block form_descrip" flex-gt-sm>
+                                            <label>Dropdown Option2</label>
+                                            <input ng-model="form_descrip_d2">
+                                        </md-input-container>
+                                    </div>
+                                </md-content>
+                                <md-content layout-padding style="width:10%">
+                                    <div layout-gt-sm="row">
+                                    
+                                        <label class="blue_color">+ Add new</label>
+                                        
+                                    </div>
+                                </md-content>
+                                </div>
+                            </div>
+                            <!-- Date -->
+                            <div  ng-show="show_date">
+                                <md-content layout-padding  flex=50>
+                                    <div layout-gt-sm="row">
+                                        <i class="fa fa-calendar fa-fw options_circle"></i>  
+                                        <md-input-container class="md-block form_descrip" flex-gt-sm>
+                                            <label> MM/DD/YYYY</label>
+                                            <input ng-model="form_descrip_date" ng-readonly="true">
+                                        </md-input-container>
+                                    </div>
+                                </md-content>
+                            </div>
+                            <!-- Textbox -->
+                            <div  ng-show="show_textbox">
+                                <md-content layout-padding  flex=40>
+                                    <div layout-gt-sm="row">
+                                        <md-input-container class="md-block form_descrip" flex-gt-sm>
+                                            <div class="top20"> Short asnwer</div>
+                                            <input ng-model="form_descrip_short" ng-readonly="true">
+                                        </md-input-container>
+                                    </div>
+                                </md-content>
+                            </div>
+                            <!-- Paragraph -->
+                            <div  ng-show="show_textarea">
+                                <md-content layout-padding >
+                                    <div layout-gt-sm="row">
+                                        <md-input-container class="md-block form_descrip" flex-gt-sm>
+                                            <div class="top20"> Paragraph</div>
+                                            <input ng-model="form_descrip_para" ng-readonly="true">
+                                        </md-input-container>
+                                    </div>
+                                </md-content>
+                            </div>
+
+
+                        </div>
+
+ <div layout="row" layout-align="end center" class="md-padding">
+                            <md-button   class="md-primary md-raised" ng-click="q_6=!q_6; after_save=!after_save" >
+                             Save question
+                            </md-button></div>
+                        </div>
+               
+                        
+ <br ng-show="after_save">
+                         <div class="bg_white fl_w bx_shd" layout="row" layout-align="space-between stretch" ng-show="after_save">
+
+                          <div class="q_head">
+                              <h2 >Q5</h2>
+                           </div>
+                             <div  layout="column" layout-align="space-between stretch" class="fl_w qst">
+                           <md-input-container class="md-block p-x-10">
+                            <input type="text" value="Are you allergic to Omega-3 carboxylic acids, Omega-3 fatty acids, Omega-3-acid ethyl esters or Corn oil?">
+                            
+                           </md-input-container>
+                         
+                          
+                           <md-input-container class="md-block p-x-10">
+                                <md-radio-group ng-model="data.statin">
+                                    <md-radio-button value="11" class="md-primary">Yes</md-radio-button>
+                                    <md-radio-button value="01" class="md-primary"> No </md-radio-button>
+                                    <md-radio-button value="21" class="md-primary"> I don’t know </md-radio-button>
+                                </md-radio-group>
+                            </md-input-container>
+                            </div>
+
+                            <div layout="column" layout-align="start start"  style="width:20%" class="md-padding">
+
+<div layout="row" layout-align="center start"><h5>Exclusion Criteria <i class="fa fa-cog p-l-10" aria-hidden="true"></i></h5> </div>
+<h5 class="no_und">Health Status | Condition</h5>
+                            </div>
+                        </div>
+                        <br ng-show="after_save_new">
+                         <div class="bg_white fl_w bx_shd" layout="row" layout-align="space-between stretch" ng-show="after_save_new">
+
+                          <div class="q_head">
+                              <h2 >Q6</h2>
+                           </div>
+                             <div  layout="column" layout-align="space-between stretch" class="fl_w qst">
+                           <md-input-container class="md-block p-x-10">
+                            <input type="text" value="Are you allergic to the following:">
+                            
+                           </md-input-container>
+                           <md-input-container class="md-block p-x-10">
+                                <md-radio-group ng-model="new_qstn_mod">
+                                    <md-radio-button value="11" class="md-primary">Yes</md-radio-button>
+                                    <md-radio-button value="01" class="md-primary"> No </md-radio-button>
+                                    <md-radio-button value="21" class="md-primary"> I don’t know </md-radio-button>
+                                </md-radio-group>
+                            </md-input-container>
+                            </div>
+
+                            <div layout="column" layout-align="start start"  style="width:20%" class="md-padding">
+
+<div layout="row" layout-align="center start"><h5>Exclusion Criteria <i class="fa fa-cog p-l-10" aria-hidden="true"></i></h5> </div>
+<h5 class="no_und">Health Status | Condition</h5>
+                            </div>
+                        </div>
+                        <br>
+                        <!--New question-->
+    <div class="bg_white fl_w bx_shd" layout="row" layout-align="space-between stretch" ng-show="new_qstn">
+                          <div class="q_head">
+                              <h2 >Q6</h2>
+                           </div>
+                         <div class="bg_white md-padding fl_w" ng-hide="show_qn2">
+                            <div layout-gt-sm="row">
+                                <md-input-container flex class="md-block form_descrip" flex-gt-sm>
+                                    <label>Question</label>
+                                    <input ng-model="ng_question">
+                                </md-input-container>
+                                <md-select ng-model="selectinput" class="inp_ctrl_selector" style="min-width: 200px;">
+                                    <md-option value="sel" selected> Select input </md-option>
+                                    <md-option value="choice" ng-click="show_radio_func()"  class="opt_height" ><i class="inp_fa fa fa-circle-o fa-fw"></i> choice </md-option>
+                                    <md-option value="check" ng-click="show_check_func()"  class="opt_height"> <i class="inp_fa fa fa-square-o fa-fw"></i> Checkbox</md-option>
+                                    <md-option value="dropdown" ng-click="show_drop_func()" class="opt_height"> <i class="inp_fa fa fa-caret-down fa-fw"></i> dropdown</md-option>
+                                    <md-option value="date" ng-click="show_date_func()" class="opt_height"> <i class="inp_fa fa fa-calendar fa-fw"></i> Date</md-option>
+                                    <md-option value="textbox" ng-click="show_textbox_func()" class="opt_height"> <i class="inp_fa fa fa-window-minimize fa-fw"></i> Short answer</md-option>
+                                    <md-option value="textarea" ng-click="show_textarea_func()" class="opt_height"> <i class="inp_fa fa fa-bars fa-fw"></i> Paragraph</md-option>
+                                </md-select>
+                                  <md-select ng-model="selectcriteria" class="inp_ctrl_selector" style="min-width: 200px;">
+                                   <md-option value="sel" selected> Select input </md-option>
+                                    <md-option value="inc" selected> Inclusion criteria </md-option>
+                                     <md-option value="exc" selected> Exclusion criteria </md-option>
+                                  </md-select>
+                                <div layout="row" layout-align="end center" class="md-padding">
+                            <md-button   class="md-primary md-raised" ng-click="after_save_new=!after_save_new; new_qstn=!new_qstn" >
+                             Save question
+                            </md-button></div>
+                            </div>
+                            <!-- Radio -->
+                            <div ng-show="show_radio_btn">
+                                <md-content layout-padding >
+                                    <div layout-gt-sm="row">
+                                       
+                                        <md-input-container class="md-block form_descrip" flex-gt-sm>
+                                            <label>Option1</label>
+                                            <input ng-model="rad_opt1"/>
+                                        </md-input-container>
+                                    </div>
+                                </md-content>
+                                 <div layout="row" layout-align="space-between center">
+                                <md-content layout-padding style="width:90%">
+                                    <div layout-gt-sm="row">
+                                     
+                                        <md-input-container class="md-block form_descrip" flex-gt-sm>
+                                            <label>Option2</label>
+                                            <input ng-model="rad_opt2">
+                                        </md-input-container>
+                                    </div>
+                                </md-content>
+                               <md-content layout-padding  style="width:10%">
+                                    <div layout-gt-sm="row">
+                                        <label class="blue_color">+ Add new</label>
+                                        
+                                    </div>
+                                </md-content>
+                                </div>
+                            </div>
+                            <!-- Checkbox -->
+                            <div ng-show="show_checkbox">
+                                <md-content layout-padding >
+                                    <div layout-gt-sm="row">
+                                        
+                                        <md-input-container class="md-block form_descrip" flex-gt-sm>
+                                            <label>Check option1</label>
+                                            <input ng-model="form_descrip_ch1">
+                                        </md-input-container>
+                                    </div>
+                                </md-content>
+                               <div layout="row" layout-align="space-between center">
+                                <md-content layout-padding style="width:90%">
+                                    <div layout-gt-sm="row">
+                                       
+                                        <md-input-container class="md-block form_descrip" flex-gt-sm>
+                                            <label>Check Option2</label>
+                                            <input ng-model="form_descrip_ch2">
+                                        </md-input-container>
+                                    </div>
+                                </md-content>
+                                <md-content layout-padding  style="width:10%">
+                                    <div layout-gt-sm="row">
+                                        <label class="blue_color">+ Add new</label>
+                                       
+                                    </div>
+                                </md-content>
+                                </div>
+                            </div>
+                            <!-- Dropdown -->
+                            <div ng-show="show_dropdown" >
+                                <md-content layout-padding >
+                                    <div layout-gt-sm="row">
+                                        <md-input-container class="md-block form_descrip" flex-gt-sm>
+                                            <label> Dropdown option1</label>
+                                            <input ng-model="form_descrip_d1">
+                                        </md-input-container>
+                                    </div>
+                                </md-content>
+                                <div layout="row" layout-align="space-between center">
+                                <md-content layout-padding style="width:90%">
+                                    <div layout-gt-sm="row">
+                                        <md-input-container class="md-block form_descrip" flex-gt-sm>
+                                            <label>Dropdown Option2</label>
+                                            <input ng-model="form_descrip_d2">
+                                        </md-input-container>
+                                    </div>
+                                </md-content>
+                                <md-content layout-padding style="width:10%">
+                                    <div layout-gt-sm="row">
+                                    
+                                        <label class="blue_color">+ Add new</label>
+                                        
+                                    </div>
+                                </md-content>
+                                </div>
+                            </div>
+                            <!-- Date -->
+                            <div  ng-show="show_date">
+                                <md-content layout-padding  flex=50>
+                                    <div layout-gt-sm="row">
+                                        <i class="fa fa-calendar fa-fw options_circle"></i>  
+                                        <md-input-container class="md-block form_descrip" flex-gt-sm>
+                                            <label> MM/DD/YYYY</label>
+                                            <input ng-model="form_descrip_date" ng-readonly="true">
+                                        </md-input-container>
+                                    </div>
+                                </md-content>
+                            </div>
+                            <!-- Textbox -->
+                            <div  ng-show="show_textbox">
+                                <md-content layout-padding  flex=40>
+                                    <div layout-gt-sm="row">
+                                        <md-input-container class="md-block form_descrip" flex-gt-sm>
+                                            <div class="top20"> Short asnwer</div>
+                                            <input ng-model="form_descrip_short" ng-readonly="true">
+                                        </md-input-container>
+                                    </div>
+                                </md-content>
+                            </div>
+                            <!-- Paragraph -->
+                            <div  ng-show="show_textarea">
+                                <md-content layout-padding >
+                                    <div layout-gt-sm="row">
+                                        <md-input-container class="md-block form_descrip" flex-gt-sm>
+                                            <div class="top20"> Paragraph</div>
+                                            <input ng-model="form_descrip_para" ng-readonly="true">
+                                        </md-input-container>
+                                    </div>
+                                </md-content>
+                            </div>
+
+
+                        </div>
+
+ 
+
+                           
+                        </div>
+
+<!--End New question-->
+<br>
+
+                        <div class="bg_white fl_w  md-padding" layout="row" layout-align="end center">
+                      
+
+                         <md-menu >
+                            <md-button aria-label="Open demo menu"  ng-click="$mdOpenMenu($event)" >
+                             Add new Question
+                            </md-button>
+                            <md-menu-content width="4" style="padding:0" >
+                              <md-menu-item >
+                                <md-button ng-click="showpredefinedqust()" class="add_new_qst_btn " >
+                               
+                                 <i class="fa fa-list" aria-hidden="true"></i>Predefined criteria
+                                </md-button>
+
+                               
+                             
+
+                               
+                              </md-menu-item>
+
+                                <md-menu-item >
+
+                                 <md-button ng-click="newquestion()" class="add_new_qst_btn   ">
+                               
+                                 <i class="fa fa-file-o" aria-hidden="true"></i>Create new
+                                </md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                          </md-menu>
+                          <md-button class ="md-raised md-primary" aria-label="Open demo menu" href="#!/questionnaire">
+                             Submit
+                            </md-button>
+                        </div>
+                        
+                     
+                        <br>
+
+      
+                        
+                    </div>
+                </form>
+            </div>
+            <div ng-show="show_qn21">
+                <form name="trial_qn_form" class="trial_qn_form">
+                    <md-content layout-padding class="box_shad_top">
+                        <div layout-gt-sm="row">
+                            <md-input-container flex class="md-block form_descrip" flex-gt-sm>
+                                <label>Question</label>
+                                <input ng-model="form_descrip_qn2">
+                            </md-input-container>
+                            <md-select ng-model="selectinput2" class="inp_ctrl_selector" style="min-width: 200px;">
+                                <md-option value="sel" selected>Select input </md-option>
+                                <md-option value="choice" ng-click="show_radio_func2()"  class="opt_height" ><i class="inp_fa fa fa-circle-o fa-fw"></i> choice </md-option>
+                                <md-option value="check" ng-click="show_check_func2()"  class="opt_height"> <i class="inp_fa fa fa-square-o fa-fw"></i> Checkbox</md-option>
+                                <md-option value="dropdown" ng-click="show_drop_func2()" class="opt_height"> <i class="inp_fa fa fa-caret-down fa-fw"></i> dropdown</md-option>
+                                <md-option value="date" ng-click="show_date_func2()" class="opt_height"> <i class="inp_fa fa fa-calendar fa-fw"></i> Date</md-option>
+                                <md-option value="textbox" ng-click="show_textbox_func2()" class="opt_height"> <i class="inp_fa fa fa-window-minimize fa-fw"></i> Short answer</md-option>
+                                <md-option value="textarea" ng-click="show_textarea_func2()" class="opt_height"> <i class="inp_fa fa fa-bars fa-fw"></i> Paragraph</md-option>
+                            </md-select>
+                        </div>
+                    </md-content>
+                    <!-- Radio -->
+                    <div ng-show="show_radio_btn2">
+                        <md-content layout-padding >
+                            <div layout-gt-sm="row">
+                                <i class="fa fa-circle-o fa-fw options_circle"></i> 
+                                <md-input-container class="md-block form_descrip" flex-gt-sm>
+                                    <label>Option1</label>
+                                    <input ng-model="form_descrip_opp1">
+                                </md-input-container>
+                            </div>
+                        </md-content>
+                        <md-content layout-padding class="fl" flex=50>
+                            <div layout-gt-sm="row">
+                                <i class="fa fa-circle-o fa-fw options_circle"></i> 
+                                <md-input-container class="md-block form_descrip" flex-gt-sm>
+                                    <label>Option2</label>
+                                    <input ng-model="form_descrip_opp2">
+                                </md-input-container>
+                            </div>
+                        </md-content>
+                        <md-content layout-padding class="fl" flex=50>
+                            <div layout-gt-sm="row">
+                                <label class="blue_color">+ Add new</label>
+                                </md-input-container>
+                            </div>
+                        </md-content>
+                    </div>
+                    <!-- Checkbox -->
+                    <div ng-show="show_checkbox2">
+                        <md-content layout-padding >
+                            <div layout-gt-sm="row">
+                                <i class="fa fa-square-o fa-fw options_circle"></i> 
+                                <md-input-container class="md-block form_descrip" flex-gt-sm>
+                                    <label>Check option1</label>
+                                    <input ng-model="form_descripch21">
+                                </md-input-container>
+                            </div>
+                        </md-content>
+                        <md-content layout-padding class="fl" flex=50>
+                            <div layout-gt-sm="row">
+                                <i class="fa fa-square-o fa-fw options_circle"></i> 
+                                <md-input-container class="md-block form_descrip" flex-gt-sm>
+                                    <label>Check Option2</label>
+                                    <input ng-model="form_descrip_ch22">
+                                </md-input-container>
+                            </div>
+                        </md-content>
+                        <md-content layout-padding class="fl" flex=50>
+                            <div layout-gt-sm="row">
+                                <label class="blue_color">+ Add new</label>
+                                </md-input-container>
+                            </div>
+                        </md-content>
+                    </div>
+                    <!-- Dropdown -->
+                    <div ng-show="show_dropdown2" >
+                        <md-content layout-padding >
+                            <div layout-gt-sm="row">
+                                <md-input-container class="md-block form_descrip" flex-gt-sm>
+                                    <label> Dropdown option1</label>
+                                    <input ng-model="form_descrip_dd21">
+                                </md-input-container>
+                            </div>
+                        </md-content>
+                        <md-content layout-padding class="fl" flex=50>
+                            <div layout-gt-sm="row">
+                                <md-input-container class="md-block form_descrip" flex-gt-sm>
+                                    <label>Dropdown Option2</label>
+                                    <input ng-model="form_descrip_dd22">
+                                </md-input-container>
+                            </div>
+                        </md-content>
+                        <md-content layout-padding class="fl" flex=50>
+                            <div layout-gt-sm="row">
+                                <label class="blue_color">+ Add new</label>
+                                </md-input-container>
+                            </div>
+                        </md-content>
+                    </div>
+                    <!-- Date -->
+                    <div  ng-show="show_date2">
+                        <md-content layout-padding  flex=50>
+                            <div layout-gt-sm="row">
+                                <i class="fa fa-calendar fa-fw options_circle"></i>  
+                                <md-input-container class="md-block form_descrip" flex-gt-sm>
+                                    <label> MM/DD/YYYY</label>
+                                    <input ng-model="form_descrip_date2" ng-readonly="true">
+                                </md-input-container>
+                            </div>
+                        </md-content>
+                    </div>
+                    <!-- Textbox -->
+                    <div  ng-show="show_textbox2">
+                        <md-content layout-padding  flex=40>
+                            <div layout-gt-sm="row">
+                                <md-input-container class="md-block form_descrip" flex-gt-sm>
+                                    <div class="top20"> Short asnwer</div>
+                                    <input ng-model="form_descrip_short2" ng-readonly="true">
+                                </md-input-container>
+                            </div>
+                        </md-content>
+                    </div>
+                    <!-- Paragraph -->
+                    <div  ng-show="show_textarea2">
+                        <md-content layout-padding >
+                            <div layout-gt-sm="row">
+                                <md-input-container class="md-block form_descrip" flex-gt-sm>
+                                    <div class="top20"> Paragraph</div>
+                                    <input ng-model="form_descrip_para2" ng-readonly="true">
+                                </md-input-container>
+                            </div>
+                        </md-content>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

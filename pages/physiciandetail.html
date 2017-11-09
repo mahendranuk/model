@@ -1,0 +1,214 @@
+
+<!--  Header -->
+
+<div class="top_identity_detail" layout="row" layout-align="space-between center" id="top">
+  <div>
+   <md-button back-button style="float:left; color:green; font-weight:bold;"><i class="fa fa-angle-left" aria-hidden="true"></i> Back</md-button>
+   </div>
+   <!-- <div style="float:right" >
+   <md-button ><a href="" style="color:rgb(53,121,42); text-decoration: none; font-weight:bold;"><i  style="color:rgb(53,121,42);" class="fa fa-pencil" aria-hidden="true"></i></a></md-button>
+   </div> -->
+</div>
+
+<md-content class="bg_lite">
+<!--  Patient Information -->
+
+
+<div layout="row" layout-align="start center" class="patientinformation md-padding p-t-0 br-bt">
+  
+   <h2>Physician Information</h2>
+</div>
+
+
+<!--  Patient Profile-->
+
+
+<div layout="row" layout-align="space-between center" class="top_identity_profile md-padding " style="" >
+   <div layout="row" flex="40"><h6><div class="divround">JA</div></h6>
+      <div layout="column" layout-align="start start" class="patientprofile" style="width: inherit;">
+
+         <div style="padding-top:10px;padding-left:20px; font-family: probold; color:#6d6d6d;font-size: 12px; "> PHYSICIAN PROFILE </div>
+         <div class="patientprofilename">John R. Abraham</div>
+      </div>
+      </div>
+   
+
+
+   <div layout="row" flex="60" class="patient_top_section patient_top_section_1 phy_top_section min-width" layout-align="end center">
+   <div class="patient_top_data">DOB
+       
+ <p class="fontprofilepatient">05/22/1976</p>
+        
+   </div>
+<div class="patient_top_data" flex=15>Age
+       
+ <p class="fontprofilepatient">40</p>
+        
+   </div>
+   <div class="patient_top_data">
+      Sex<p class="fontprofilepatient">Male</p>
+         
+   </div>
+    <div class="patient_top_data">
+      Physician NPI<p class="fontprofilepatient">2514789642</p>
+       
+   </div>
+   <div class="patient_top_data">
+      Speciality<p class="fontprofilepatient">Cardiology</p>
+         
+   </div>
+  <!--  <div class="patient_top_data">
+      Opt-In for Trials<p class="fontprofilepatient">Yes</p>
+         
+   </div> -->
+   </div>
+
+      <!-- <div>
+   <md-button ><a href="" style="color:rgb(53,121,42); text-decoration: none; font-weight:bold;"><i  style="color:rgb(53,121,42);" class="fa fa-pencil" aria-hidden="true"></i></a></md-button>
+   </div> --> 
+
+</div>
+
+
+<!-- CONTACT AND REFERENCE INFORMATION -->
+<div class="md-padding patient_detail_info">
+
+<div class="patientinformationdetail" layout="column" layout-align="start">
+   <div class="patientinfodetail">CONTACT AND REFERENCE INFORMATION
+      <span class="trigger1" ng-click="show=!show"><i class="fa fa-chevron-down" aria-hidden="true"></i>
+      </span>
+   </div>
+
+</div>
+
+
+<!-- CONTACT AND REFERENCE INFORMATION  DETAILS - SHOW-->
+
+
+<div  ng-hide="show" class="patientinformationdetails" layout="column"       layout-align="start">
+   <div class="patientinfodetail">
+      
+
+      <div layout="row" layout-align="space-between center"  class="md-padding  br-bt">
+      <div class="contactinformation">Contact Information
+      </div>
+      <div style="margin-right: 10px;">
+      <a href="" style="color:rgb(53,121,42); text-decoration: none; font-weight:bold;"><i  style="color:rgb(53,121,42);" class="fa fa-pencil" aria-hidden="true"></i></a>
+      </div></div>
+
+
+
+
+
+      <div layout="row" layout-align="start center" class="md-padding patient_detail">
+         <div class="p-10" flex="15"><div class="primary">Primary Phone</div>
+         <div class="fontprofile">(631) 415-2431</div></div>
+        <div class="p-10" flex="10"> <div class="primary">Type</div>
+            <div class="fontprofile1">Mobile</div></div>
+        
+         <div class="p-10" flex="30"><div class="primary">Preference</div> <div class="fontprofile1">Can receive  SMS notifications</div></div>
+        
+         <div class="p-10" flex="15"><div class="primary">Secondary phone</div>  <div class="fontprofile1">(631) 415-1527</div></div>
+       
+         <div class="p-10" flex="15"><div class="primary">Type</div> <div class="fontprofile1">Work</div></div>
+         
+         <div class="p-10" flex="15"><div class="primary">Extension</div>
+         <div class="fontprofile1">231</div>    </div>
+          
+      </div>
+     
+      <div layout="row" layout-align="start center" class="md-padding patient_detail">
+         <div class="p-10" flex="25"><div class="primary">Email</div>
+       <div class="fontprofile">johnrabraham@gmail.com</div></div>
+        <div class="p-10" flex="45"> <div class="primary">Preference</div>
+
+         <div class="fontprofile1">Physician's preferred form of contact, Can receive notifications
+       </div></div>
+       <div class="p-10 " flex="30">
+         <div class="primary">Address</div>
+   <div class="fontprofile">242 Quaker Path, Stony Brook, NY 11790</div>
+       </div>
+      
+          
+      </div>
+  
+ <hr>
+      <div layout="row" layout-align="space-between center"  class="md-padding  br-bt">
+      <div class="contactinformation">Reference Information
+      </div>
+      </div>
+   <div layout="row" layout-align="start center" class="md-padding patient_detail">
+         <div class="p-10" flex="25"><div class="primary">Lab Reference ID</div>
+          <div class="fontprofile">A49201</div></div>
+    
+        <div class="p-10" flex="45"> <div class="primary">Physician NPI</div>
+        <div class="fontprofile">2514789642</div></div>
+         <div class="p-10" flex="30"><div class="primary">Photo ID image</div>
+          <div class="fontprofile">None
+     <!--  <h5 style="color:green;font-size:13px; font-family:probold; text-align:left;margin:0; margin-top: 5px; border-bottom: none"> View</h5></div> -->
+         
+   </div></div>
+ 
+   
+    </div>
+</div></div>
+<br>
+  <div layout="column" layout-align="start" class="patientinformationdetail">
+<div class="patientinfodetail">Candidates associated (125)
+<span class="trigger1" ng-click="prev_trials=!prev_trials"><i class="fa fa-chevron-down" aria-hidden="true"></i></span></div>
+</div>
+
+<div  ng-hide="prev_trials" class="eligibility_criteria_details p-15"  layout="column" layout-align="start">
+  <div class="patientinfodetail">
+     <div layout="row" layout-align="space-between center">
+   <div class="p-15 prev_trials_style" style="padding-top: 0 !important;padding-bottom: 0 !important; width:100%">
+ <div ng-repeat="patient in patients_list"  class=" bg_white m-b-10 bx_shd "  layout="column" layout-wrap>
+   <div layout="row" layout-wrap layout-align="space-around center" >
+    <span class="rounded_text md-margin" flex="5" style="text-transform: uppercase;">{{ patient.patient_name | myfilter}}</span>
+    <span flex="40">
+      <div class="patient_name"><a  href="#!/identitydetail">{{ patient.patient_name }}</a></div>
+      <div class="patient_add">{{ patient.Address }}</div>
+    </span>
+    <span flex="10" class="br-rt">
+    <div class="patient_add" >Gender</div>
+    <div>{{ patient.Gender }}</div>
+    </span>
+    <span flex="10" class="br-rt">
+    <div class="patient_add">Age</div>
+    <div>
+    {{ patient.Age }}
+    </div>
+    </span>
+    <span flex="10">
+    <div class="patient_add">Status</div>
+    <div>
+    {{ patient.stage }}
+    </div>
+    </span>
+    <!-- <span flex="10"  class="patient_name"><a>View profile</a></span> -->
+   </div>
+
+
+  <!--  <div layout="row" layout-wrap layout-align="start center" class="footer_sec">
+
+<div class="patient_add1"><i class="fa fa-clock-o" aria-hidden="true"></i></div>
+<div class="patient_add m-l-15">09.13.16</div>
+
+   </div> -->
+ 
+  </div>
+  </div>
+    </div>
+     
+    
+  </div>
+  <md-table-pagination md-limit="query.limit"  md-page="query.page" md-total="{{identifyData.count}}" md-on-paginate="getDesserts" md-page-select></md-table-pagination>
+</div>
+
+<br>
+
+
+
+
+</md-content>
+

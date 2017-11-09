@@ -1,0 +1,50 @@
+[
+    {
+      "id": 1,
+      "title":"A Study Of Palbociclib + Letrozole VS. Placebo+ Letrozole For 1st Line Treatment Of Asian Postmenopausal Women With ER+/HER2- Advanced Breast Cancer",
+      "created_by": "Dr.Jane Anderson",
+      "description": "The study is designed to compare the clinical benefit following treatment with letrozole in combination with Palbociclib versus letrozole in combination with placebo in Asian postmenopausal women with ER(+)/HER2(-) advanced breast cancer who have not received prior systemic anti cancer therapies for their advanced/metastatic disease.",
+      "Condition": "B+ve",
+      "Sponsor": "Nagercoil",
+      "Identified": 14521,
+      "Pre-Screened": 13571,
+      "Qualified":1524,
+      "Enrolled":2457
+    },
+      {
+      "id": 2,
+      "title":"A Study Of Palbociclib + Letrozole VS. Placebo+ Letrozole For 1st Line Treatment Of Asian Postmenopausal Women With ER+/HER2- Advanced Breast Cancer",
+      "created_by": "Dr.Jane Anderson",
+      "description": "The study is designed to compare the clinical benefit following treatment with letrozole in combination with Palbociclib versus letrozole in combination with placebo in Asian postmenopausal women with ER(+)/HER2(-) advanced breast cancer who have not received prior systemic anti cancer therapies for their advanced/metastatic disease.",
+      "Condition": "B+ve",
+      "Sponsor": "Nagercoil",
+      "Identified": 1,
+      "Pre-Screened": 1,
+      "Qualified":1,
+      "Enrolled":2
+    },
+      {
+      "id": 3,
+      "title":"A Study Of Palbociclib + Letrozole VS. Placebo+ Letrozole For 1st Line Treatment Of Asian Postmenopausal Women With ER+/HER2- Advanced Breast Cancer",
+      "created_by": "Dr.Jane Anderson",
+      "description": "The study is designed to compare the clinical benefit following treatment with letrozole in combination with Palbociclib versus letrozole in combination with placebo in Asian postmenopausal women with ER(+)/HER2(-) advanced breast cancer who have not received prior systemic anti cancer therapies for their advanced/metastatic disease.",
+      "Condition": "B+ve",
+      "Sponsor": "Nagercoil",
+      "Identified": 1,
+      "Pre-Screened": 1,
+      "Qualified":1,
+      "Enrolled":2
+    },
+      {
+      "id": 4,
+      "title":"A Study Of Palbociclib + Letrozole VS. Placebo+ Letrozole For 1st Line Treatment Of Asian Postmenopausal Women With ER+/HER2- Advanced Breast Cancer",
+      "created_by": "Dr.Jane Anderson",
+      "description": "The study is designed to compare the clinical benefit following treatment with letrozole in combination with Palbociclib versus letrozole in combination with placebo in Asian postmenopausal women with ER(+)/HER2(-) advanced breast cancer who have not received prior systemic anti cancer therapies for their advanced/metastatic disease.",
+      "Condition": "B+ve",
+      "Sponsor": "Nagercoil",
+      "Identified": 1,
+      "Pre-Screened": 1,
+      "Qualified":1,
+      "Enrolled":2
+    }
+]
